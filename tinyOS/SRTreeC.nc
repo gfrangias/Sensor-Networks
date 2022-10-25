@@ -6,14 +6,15 @@
 module SRTreeC
 {
 	uses interface Boot;
+	uses interface Leds;
 	uses interface SplitControl as RadioControl;
 #ifdef SERIAL_EN
 	uses interface SplitControl as SerialControl;
 #endif
 
+	uses interface Packet as RoutingPacket;
 	uses interface AMSend as RoutingAMSend;
 	uses interface AMPacket as RoutingAMPacket;
-	uses interface Packet as RoutingPacket;
 	
 	uses interface AMSend as NotifyAMSend;
 	uses interface AMPacket as NotifyAMPacket;
@@ -24,11 +25,10 @@ module SRTreeC
 	uses interface AMPacket as SerialAMPacket;
 	uses interface Packet as SerialPacket;
 #endif
-	uses interface Leds;
-	uses interface Timer<TMilli> as RoutingMsgTimer;
 	uses interface Timer<TMilli> as Led0Timer;
 	uses interface Timer<TMilli> as Led1Timer;
 	uses interface Timer<TMilli> as Led2Timer;
+	uses interface Timer<TMilli> as RoutingMsgTimer;
 	uses interface Timer<TMilli> as LostTaskTimer;
 	
 	uses interface Receive as RoutingReceive;
@@ -169,7 +169,7 @@ implementation
 #endif
 	event void Boot.booted()
 	{
-		// arxikopoiisi radio kai serial
+		/////// arxikopoiisi radio kai serial
 		call RadioControl.start();
 		
 		setRoutingSendBusy(FALSE);

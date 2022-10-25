@@ -1,7 +1,5 @@
 #include "SimpleRoutingTree.h"
 
-//#include "printf.h"
-
 configuration SRTreeAppC @safe() { }
 implementation{
 	components SRTreeC;
@@ -13,11 +11,11 @@ implementation{
 #ifdef PRINTFDBG_MODE
 		components PrintfC;
 #endif
-	components MainC, LedsC , ActiveMessageC , SerialActiveMessageC;
-	components new TimerMilliC() as RoutingMsgTimerC;
+	components MainC, ActiveMessageC, SerialActiveMessageC, LedsC;
 	components new TimerMilliC() as Led0TimerC;
 	components new TimerMilliC() as Led1TimerC;
 	components new TimerMilliC() as Led2TimerC;
+	components new TimerMilliC() as RoutingMsgTimerC;
 	components new TimerMilliC() as LostTaskTimerC;
 	
 	components new AMSenderC(AM_ROUTINGMSG) as RoutingSenderC;
@@ -33,17 +31,15 @@ implementation{
 	components new PacketQueueC(SENDER_QUEUE_SIZE) as NotifySendQueueC;
 	components new PacketQueueC(RECEIVER_QUEUE_SIZE) as NotifyReceiveQueueC;
 	
-	//SRTreeC.Boot -> PrintfC.MainBoot;
-	//PrintfC->MainC.Boot;
 	SRTreeC.Boot->MainC.Boot;
 	
 	SRTreeC.RadioControl -> ActiveMessageC;
 	SRTreeC.Leds-> LedsC;
 	
-	SRTreeC.RoutingMsgTimer->RoutingMsgTimerC;
 	SRTreeC.Led0Timer-> Led0TimerC;
 	SRTreeC.Led1Timer-> Led1TimerC;
 	SRTreeC.Led2Timer-> Led2TimerC;
+	SRTreeC.RoutingMsgTimer->RoutingMsgTimerC;
 	SRTreeC.LostTaskTimer->LostTaskTimerC;
 	
 	SRTreeC.RoutingPacket->RoutingSenderC.Packet;
