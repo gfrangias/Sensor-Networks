@@ -12,8 +12,8 @@ module SRTreeC
 	uses interface SplitControl as SerialControl;
 #endif
 
-	uses interface Packet as RoutingPacket;
-	uses interface AMSend as RoutingAMSend;
+	uses interface Packet as RoutingPacket;	
+	uses interface AMSend as RoutingAMSend;	
 	uses interface AMPacket as RoutingAMPacket;
 	
 	uses interface AMSend as NotifyAMSend;
@@ -811,9 +811,9 @@ implementation
 				
 				if (call NotifySendQueue.enqueue(tmp)==SUCCESS)
 				{
-					dbg("SRTreeC", "receiveRoutingTask(): NotifyParentMsg enqueued in SendingQueue successfully!!!");
+					dbg("SRTreeC", "receiveRoutingTask(): NotifyParentMsg enqueued in SendingQueue successfully!!!\n");
 #ifdef PRINTFDBG_MODE
-					printf("receiveRoutingTask(): NotifyParentMsg enqueued successfully!!!");
+					printf("receiveRoutingTask(): NotifyParentMsg enqueued successfully!!!\n");
 					printfflush();
 #endif
 					if (call NotifySendQueue.size() == 1)

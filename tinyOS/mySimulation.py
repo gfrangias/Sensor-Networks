@@ -20,8 +20,8 @@ print "TicksPerSecond : ", t.ticksPerSecond(),"\n"
 #t.addChannel("NotifyParentMsg",f)
 #t.addChannel("Radio",f)
 #t.addChannel("Serial",f)
-#t.addChannel("SRTreeC",f)
-t.addChannel("PacketQueueC",f)
+t.addChannel("SRTreeC",f)
+#t.addChannel("PacketQueueC",f)
 #################################################################
 
 ####### Start nodes in range, at slightly different moments #######
@@ -31,7 +31,7 @@ for i in range(0,10):
 ###################################################################
 
 # Choose which topology file to open 
-topo = open("topology.txt", "r")
+topo = open("topology3.txt", "r")
 
 # When topology file can't be found
 if topo is None:
