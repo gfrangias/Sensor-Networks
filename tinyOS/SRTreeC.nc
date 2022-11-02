@@ -471,6 +471,7 @@ implementation
 		msource = call NotifyAMPacket.source(msg);
 		
 		dbg("SRTreeC", "### NotifyReceive.receive() start ##### \n");
+		/*payload->senderID---->Initial NotifyParentMsg sender,  msource---->Last mediator of NotifyParentMsg*/
 		dbg("SRTreeC", "Something received!!!  from %u   %u \n",((NotifyParentMsg*) payload)->senderID, msource);
 #ifdef PRINTFDBG_MODE		
 		printf("Something Received!!!, len = %u , npm=%u , rm=%u\n",len, sizeof(NotifyParentMsg), sizeof(RoutingMsg));
