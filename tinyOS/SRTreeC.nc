@@ -68,6 +68,7 @@ implementation
 	uint8_t curdepth;
 	uint16_t parentID;
 	uint8_t tct;
+	uint8_t agg_function;
 	
 	task void sendRoutingTask();
 	task void sendNotifyTask();
@@ -319,10 +320,20 @@ implementation
 			dbg("SRTreeC", "\n ##################################### \n");
 			dbg("SRTreeC", "#######   ROUND   %u    ############## \n", roundCounter);
 			dbg("SRTreeC", "#####################################\n");
-			//srand(time(0));
 			tct = 5*((rand() % 4) + 1);
-			dbg("TCT", "TCT for current round is %u\n", tct);
+			dbg("TCT", "TCT for round %u is %u\n", roundCounter, tct);
+			agg_function = (rand() % 3);
+
+			if(agg_function == 0){
+				dbg("AGGREGATION_FUNCTION", "Aggregation function for round %u is MAX\n", roundCounter);
+			}else if(agg_function == 1){
+				dbg("AGGREGATION_FUNCTION", "Aggregation function for round %u is COUNT\n", roundCounter);
+			}else{
+				dbg("AGGREGATION_FUNCTION", "Aggregation function for round %u is MAX&COUNT\n", roundCounter);
+			}
+
 			call RoutingMsgTimer.startOneShot(TIMER_PERIOD_MILLI);
+
 		}
 		
 		if(call RoutingSendQueue.full())
@@ -349,6 +360,7 @@ implementation
 		mrpkt->senderID=TOS_NODE_ID;
 		mrpkt->depth = curdepth;
 		mrpkt->tct = tct;
+		mrpkt->agg_function = agg_function;
 		}
 		dbg("SRTreeC" , "Sending RoutingMsg... \n");
 
@@ -798,6 +810,7 @@ implementation
 				parentID= call RoutingAMPacket.source(&radioRoutingRecPkt);//mpkt->senderID;q
 				curdepth= mpkt->depth + 1;
 				tct = mpkt->tct;
+				agg_function = mpkt->agg_function;
 #ifdef PRINTFDBG_MODE
 				printf("NodeID= %d : curdepth= %d , parentID= %d \n", TOS_NODE_ID ,curdepth , parentID);
 				printfflush();

@@ -10,7 +10,7 @@ f=sys.stdout #open('./logfile.txt','w')
 ####################################
 
 # Compute when the simulation ended
-SIM_END_TIME= 1000 * t.ticksPerSecond()
+SIM_END_TIME= 1200 * t.ticksPerSecond()
 
 print "TicksPerSecond : ", t.ticksPerSecond(),"\n"
 
@@ -23,6 +23,7 @@ print "TicksPerSecond : ", t.ticksPerSecond(),"\n"
 #t.addChannel("SRTreeC",f)
 #t.addChannel("PacketQueueC",f)
 t.addChannel("TCT",f)
+t.addChannel("AGGREGATION_FUNCTION",f)
 #################################################################
 
 ####### Start nodes in range, at slightly different moments #######
