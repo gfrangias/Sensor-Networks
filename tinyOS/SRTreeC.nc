@@ -67,6 +67,7 @@ implementation
 	
 	uint8_t curdepth;
 	uint16_t parentID;
+	uint8_t tct;
 	
 	task void sendRoutingTask();
 	task void sendNotifyTask();
@@ -303,7 +304,6 @@ implementation
 	{
 		message_t tmp;
 		error_t enqueueDone;
-		int tct = 5*((rand() % 4) + 1);
 
 		RoutingMsg* mrpkt;
 		dbg("SRTreeC", "RoutingMsgTimer fired!  radioBusy = %s \n",(RoutingSendBusy)?"True":"False");
@@ -319,7 +319,9 @@ implementation
 			dbg("SRTreeC", "\n ##################################### \n");
 			dbg("SRTreeC", "#######   ROUND   %u    ############## \n", roundCounter);
 			dbg("SRTreeC", "#####################################\n");
-			srand(time(0));
+			//srand(time(0));
+			tct = 5*((rand() % 4) + 1);
+			dbg("TCT", "TCT for current round is %u\n", tct);
 			call RoutingMsgTimer.startOneShot(TIMER_PERIOD_MILLI);
 		}
 		
@@ -530,7 +532,7 @@ implementation
 		msource =call RoutingAMPacket.source(msg);
 		
 		dbg("SRTreeC", "### RoutingReceive.receive() start ##### \n");
-		dbg("SRTreeC", "Something received!!!  from %u  %u %u\n",((RoutingMsg*) payload)->senderID ,  msource, ((RoutingMsg*) payload)->tct );
+		dbg("SRTreeC", "Something received!!!  from %u  %u\n",((RoutingMsg*) payload)->senderID ,  msource);
 		//dbg("SRTreeC", "Something received!!!\n");
 #ifdef PRINTFDBG_MODE		
 		printf("Something Received!!!, len = %u , npm=%u , rm=%u\n",len, sizeof(NotifyParentMsg), sizeof(RoutingMsg));
@@ -795,6 +797,7 @@ implementation
 				// tote den exei akoma patera
 				parentID= call RoutingAMPacket.source(&radioRoutingRecPkt);//mpkt->senderID;q
 				curdepth= mpkt->depth + 1;
+				tct = mpkt->tct;
 #ifdef PRINTFDBG_MODE
 				printf("NodeID= %d : curdepth= %d , parentID= %d \n", TOS_NODE_ID ,curdepth , parentID);
 				printfflush();
