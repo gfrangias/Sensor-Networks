@@ -20,7 +20,7 @@ print "TicksPerSecond : ", t.ticksPerSecond(),"\n"
 #t.addChannel("NotifyParentMsg",f)
 #t.addChannel("Radio",f)
 #t.addChannel("Serial",f)
-#t.addChannel("SRTreeC",f)
+t.addChannel("SRTreeC",f)
 #t.addChannel("PacketQueueC",f)
 t.addChannel("TCT",f)
 t.addChannel("AGGREGATION_FUNCTION",f)

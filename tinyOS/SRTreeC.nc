@@ -798,19 +798,28 @@ implementation
 			//}
 			//
 			
-			dbg("SRTreeC" , "receiveRoutingTask():senderID= %d , depth= %d \n", mpkt->senderID , mpkt->depth);
+			dbg("SRTreeC" , "***********************************************\nreceiveRoutingTask():senderID= %d , depth= %d \n", mpkt->senderID , mpkt->depth);
+			dbg("TCT", "receiveRoutingTask():TCT=%d, senderID=%d \n", mpkt->tct, mpkt->senderID);
+			if(mpkt->agg_function == 0){
+				dbg("AGGREGATION_FUNCTION", "receiveRoutingTask():Aggregation fuction=MAX, senderID=%d \n", mpkt->senderID);
+			}else if(mpkt->agg_function == 1){
+				dbg("AGGREGATION_FUNCTION", "receiveRoutingTask():Aggregation fuction=COUNT, senderID=%d \n", mpkt->senderID);
+			}else{
+				dbg("AGGREGATION_FUNCTION", "receiveRoutingTask():Aggregation fuction=MAX&COUNT, senderID=%d \n", mpkt->senderID);
+			}
 #ifdef PRINTFDBG_MODE
 			printf("NodeID= %d , RoutingMsg received! \n",TOS_NODE_ID);
 			printf("receiveRoutingTask():senderID= %d , depth= %d \n", mpkt->senderID , mpkt->depth);
 			printfflush();
 #endif
+			tct = mpkt->tct;
+			agg_function = mpkt->agg_function;
+			// If there is no parent yet...
 			if ( (parentID<0)||(parentID>=65535))
 			{
 				// tote den exei akoma patera
 				parentID= call RoutingAMPacket.source(&radioRoutingRecPkt);//mpkt->senderID;q
 				curdepth= mpkt->depth + 1;
-				tct = mpkt->tct;
-				agg_function = mpkt->agg_function;
 #ifdef PRINTFDBG_MODE
 				printf("NodeID= %d : curdepth= %d , parentID= %d \n", TOS_NODE_ID ,curdepth , parentID);
 				printfflush();
@@ -848,7 +857,7 @@ implementation
 			}
 			else
 			{
-				
+				//If your depth is the same as your parent or you are the parent of yourself
 				if (( curdepth > mpkt->depth +1) || (mpkt->senderID==parentID))
 				{
 					uint16_t oldparentID = parentID;
@@ -868,6 +877,7 @@ implementation
 					printf("NotifyParentMsg sending to node=%d... \n", oldparentID);
 					printfflush();
 #endif
+					// If you don't have an old parent or you can't find a new parent
 					if ( (oldparentID<65535) || (oldparentID>0) || (oldparentID==parentID))
 					{
 						m = (NotifyParentMsg *) (call NotifyPacket.getPayload(&tmp, sizeof(NotifyParentMsg)));
