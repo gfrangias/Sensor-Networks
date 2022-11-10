@@ -31,6 +31,7 @@ module SRTreeC
 	uses interface Timer<TMilli> as Led2Timer;
 	uses interface Timer<TMilli> as RoutingMsgTimer;
 	uses interface Timer<TMilli> as LostTaskTimer;
+	uses interface Timer<TMilli> as StartMeasureTimer;
 	
 	uses interface Receive as RoutingReceive;
 	uses interface Receive as NotifyReceive;
@@ -317,8 +318,8 @@ implementation
 		{
 			roundCounter+=1;
 			
-			dbg("SRTreeC", "\n ##################################### \n");
-			dbg("SRTreeC", "#######   ROUND   %u    ############## \n", roundCounter);
+			dbg("SRTreeC", "##################################### \n");
+			dbg("SRTreeC", "#######   ROUND   %u    ############# \n", roundCounter);
 			dbg("SRTreeC", "#####################################\n");
 			tct = 5*((rand() % 4) + 1);
 			dbg("TCT", "TCT for round %u is %u\n", roundCounter, tct);
@@ -333,7 +334,7 @@ implementation
 			}
 
 			call RoutingMsgTimer.startOneShot(TIMER_PERIOD_MILLI);
-
+			call StartMeasureTimer.startOneShot(TIMER_START_MEASURE);
 		}
 		
 		if(call RoutingSendQueue.full())
@@ -416,6 +417,7 @@ implementation
 	
 	event void RoutingAMSend.sendDone(message_t * msg , error_t err)
 	{
+		dbg("Routing result", "------Node (%d)----------curdepth = %d  ,  parentID= %d \n", TOS_NODE_ID, curdepth , parentID);
 		dbg("SRTreeC", "A Routing package sent... %s \n",(err==SUCCESS)?"True":"False");
 #ifdef PRINTFDBG_MODE
 		printf("A Routing package sent... %s \n",(err==SUCCESS)?"True":"False");
@@ -798,7 +800,7 @@ implementation
 			//}
 			//
 			
-			dbg("SRTreeC" , "***********************************************\nreceiveRoutingTask():senderID= %d , depth= %d \n", mpkt->senderID , mpkt->depth);
+			dbg("SRTreeC" , "receiveRoutingTask():senderID= %d , depth= %d \n", mpkt->senderID , mpkt->depth);
 			dbg("TCT", "receiveRoutingTask():TCT=%d, senderID=%d \n", mpkt->tct, mpkt->senderID);
 			if(mpkt->agg_function == 0){
 				dbg("AGGREGATION_FUNCTION", "receiveRoutingTask():Aggregation fuction=MAX, senderID=%d \n", mpkt->senderID);
@@ -1067,5 +1069,124 @@ implementation
 		}
 		
 	}
-	
+
+	event void StartMeasureTimer.fired()
+	{
+		message_t tmp;
+		error_t enqueueDone;
+		OneMeasMsg* ommpkt;
+		TwoMeasMsg* tmmpkt;
+
+		
+		if (TOS_NODE_ID!=0)
+		{
+			
+		}
+
+
+
+
+	}
+
+	/*
+	event void RoutingMsgTimer.fired()
+	{
+		message_t tmp;
+		error_t enqueueDone;
+
+		RoutingMsg* mrpkt;
+		dbg("SRTreeC", "RoutingMsgTimer fired!  radioBusy = %s \n",(RoutingSendBusy)?"True":"False");
+#ifdef PRINTFDBG_MODE
+		printfflush();
+		printf("RoutingMsgTimer fired!  radioBusy = %s \n",(RoutingSendBusy)?"True":"False");
+		printfflush();
+#endif
+		if (TOS_NODE_ID==0)
+		{
+			roundCounter+=1;
+			
+			dbg("SRTreeC", "##################################### \n");
+			dbg("SRTreeC", "#######   ROUND   %u    ############# \n", roundCounter);
+			dbg("SRTreeC", "#####################################\n");
+			tct = 5*((rand() % 4) + 1);
+			dbg("TCT", "TCT for round %u is %u\n", roundCounter, tct);
+			agg_function = (rand() % 3);
+
+			if(agg_function == 0){
+				dbg("AGGREGATION_FUNCTION", "Aggregation function for round %u is MAX\n", roundCounter);
+			}else if(agg_function == 1){
+				dbg("AGGREGATION_FUNCTION", "Aggregation function for round %u is COUNT\n", roundCounter);
+			}else{
+				dbg("AGGREGATION_FUNCTION", "Aggregation function for round %u is MAX&COUNT\n", roundCounter);
+			}
+
+			call RoutingMsgTimer.startOneShot(TIMER_PERIOD_MILLI);
+			call StartMeasureTimer.startOneShot(TIMER_START_MEASURE);
+		}
+		
+		if(call RoutingSendQueue.full())
+		{
+#ifdef PRINTFDBG_MODE
+			printf("RoutingSendQueue is FULL!!! \n");
+			printfflush();
+#endif
+			return;
+		}
+		
+		
+		mrpkt = (RoutingMsg*) (call RoutingPacket.getPayload(&tmp, sizeof(RoutingMsg)));
+		if(mrpkt==NULL)
+		{
+			dbg("SRTreeC","RoutingMsgTimer.fired(): No valid payload... \n");
+#ifdef PRINTFDBG_MODE
+			printf("RoutingMsgTimer.fired(): No valid payload... \n");
+			printfflush();
+#endif
+			return;
+		}
+		atomic{
+		mrpkt->senderID=TOS_NODE_ID;
+		mrpkt->depth = curdepth;
+		mrpkt->tct = tct;
+		mrpkt->agg_function = agg_function;
+		}
+		dbg("SRTreeC" , "Sending RoutingMsg... \n");
+
+#ifdef PRINTFDBG_MODE
+		printf("NodeID= %d : RoutingMsg sending...!!!! \n", TOS_NODE_ID);
+		printfflush();
+#endif		
+		call RoutingAMPacket.setDestination(&tmp, AM_BROADCAST_ADDR);
+		call RoutingPacket.setPayloadLength(&tmp, sizeof(RoutingMsg));
+		
+		enqueueDone=call RoutingSendQueue.enqueue(tmp);
+		
+		if( enqueueDone==SUCCESS)
+		{
+			if (call RoutingSendQueue.size()==1)
+			{
+				dbg("SRTreeC", "SendTask() posted!!\n");
+#ifdef PRINTFDBG_MODE
+				printf("SendTask() posted!!\n");
+				printfflush();
+#endif
+				post sendRoutingTask();
+			}
+			
+			dbg("SRTreeC","RoutingMsg enqueued successfully in SendingQueue!!!\n");
+#ifdef PRINTFDBG_MODE
+			printf("RoutingMsg enqueued successfully in SendingQueue!!!\n");
+			printfflush();
+#endif
+		}
+		else
+		{
+			dbg("SRTreeC","RoutingMsg failed to be enqueued in SendingQueue!!!");
+#ifdef PRINTFDBG_MODE			
+			printf("RoutingMsg failed to be enqueued in SendingQueue!!!\n");
+			printfflush();
+#endif
+		}		
+	}
+	*/
 }
