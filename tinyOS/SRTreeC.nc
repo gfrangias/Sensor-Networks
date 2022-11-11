@@ -1,4 +1,5 @@
 #include "SimpleRoutingTree.h"
+#include <time.h>
 #ifdef PRINTFDBG_MODE
 	#include "printf.h"
 #endif
@@ -13,6 +14,7 @@ module SRTreeC
 	uses interface AMPacket as RoutingAMPacket;
 
 	uses interface Timer<TMilli> as RoutingMsgTimer;
+	uses interface Timer<TMilli> as StartMeasureTimer;
 	
 	uses interface Receive as RoutingReceive;
 	
@@ -34,6 +36,7 @@ implementation
 	uint16_t parentID;
 	uint8_t tct;
 	uint8_t agg_function;
+	uint8_t meas;
 	
 	task void sendRoutingTask();
 	task void receiveRoutingTask();
@@ -76,6 +79,7 @@ implementation
 
 	event void Boot.booted()
 	{
+		srand(time(0));
 		call RadioControl.start();
 		
 		setRoutingSendBusy(FALSE);
@@ -173,6 +177,7 @@ implementation
 				dbg("AGGREGATION_FUNCTION", "Aggregation function for round %u is MAX&COUNT\n", roundCounter);
 			}
 			call RoutingMsgTimer.startOneShot(TIMER_PERIOD_MILLI);
+			call StartMeasureTimer.startOneShot(TIMER_START_MEASURE);
 		}
 		
 		if(call RoutingSendQueue.full())
@@ -495,4 +500,25 @@ implementation
 		
 	}
 	
+
+
+
+	event void StartMeasureTimer.fired()
+	{
+		message_t tmp;
+		error_t enqueueDone;
+		OneMeasMsg* ommpkt;
+		TwoMeasMsg* tmmpkt;
+
+		meas = (rand() % 80) + 1;
+		dbg("Measures", "Measurement for node %d depth %d: %d\n", TOS_NODE_ID, curdepth, meas);
+		if (TOS_NODE_ID!=0)
+		{
+
+		}
+
+
+
+
+	}
 }
