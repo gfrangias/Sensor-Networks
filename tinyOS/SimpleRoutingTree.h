@@ -9,7 +9,7 @@ enum{
 	AM_ROUTINGMSG=22,
 	AM_NOTIFYPARENTMSG=12,
 	SEND_CHECK_MILLIS=70000,
-	TIMER_PERIOD_MILLI=150000,
+	TIMER_PERIOD_MILLI=30720, 	// EPOCH
 	TIMER_FAST_PERIOD=200,
 	TIMER_LEDS_MILLI=1000,
 };
@@ -20,6 +20,8 @@ typedef nx_struct RoutingMsg
 {
 	nx_uint16_t senderID;
 	nx_uint8_t depth;
+	nx_uint8_t tct;
+	nx_uint8_t agg_function;
 } RoutingMsg;
 
 typedef nx_struct NotifyParentMsg

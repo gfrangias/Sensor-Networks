@@ -10,7 +10,7 @@ f=sys.stdout #open('./logfile.txt','w')
 ####################################
 
 # Compute when the simulation ended
-SIM_END_TIME= 1000 * t.ticksPerSecond()
+SIM_END_TIME= 1200 * t.ticksPerSecond()
 
 print "TicksPerSecond : ", t.ticksPerSecond(),"\n"
 
@@ -20,8 +20,12 @@ print "TicksPerSecond : ", t.ticksPerSecond(),"\n"
 #t.addChannel("NotifyParentMsg",f)
 #t.addChannel("Radio",f)
 #t.addChannel("Serial",f)
-#t.addChannel("SRTreeC",f)
-t.addChannel("PacketQueueC",f)
+t.addChannel("SRTreeC",f)
+#t.addChannel("PacketQueueC",f)
+t.addChannel("TCT",f)
+t.addChannel("AGGREGATION_FUNCTION",f)
+t.addChannel("Routing result",f)
+t.addChannel("Measures",f)
 #################################################################
 
 ####### Start nodes in range, at slightly different moments #######
@@ -83,11 +87,3 @@ while(h):
 		h=False
 	if(h<=0):
 		ok=False
-
-# Show if the left node is connected to the right node and the inverse
-# These should be either both True or both False
-print "Node 0 connected with node 1" , r.connected(0,1) , r.connected(1,0)
-print "Node 0 connected with node 2" , r.connected(0,2) , r.connected(2,0)
-print "Node 1 connected with node 7" , r.connected(1,7) , r.connected(7,1)
-print "Node 2 connected with node 3" , r.connected(2,3) , r.connected(3,2)
-print "Node 4 connected with node 8" , r.connected(4,8) , r.connected(8,4)
