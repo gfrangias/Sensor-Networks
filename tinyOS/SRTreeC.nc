@@ -1,7 +1,8 @@
 #include "SimpleRoutingTree.h"
 #include <time.h>
+#include <math.h>
 #ifdef PRINTFDBG_MODE
-	#include "printf.h"
+#include "printf.h"
 #endif
 
 module SRTreeC
@@ -38,7 +39,10 @@ implementation
 	uint8_t tct;
 	uint8_t agg_function;
 	uint8_t meas;
-	clock_t epoch_start_time;
+	uint8_t min_val;
+	uint8_t max_val;
+	//children_values = (uint8_t*)malloc(MAX_CHILDREN * sizeof(uint8_t));
+
 	
 	task void sendRoutingTask();
 	task void receiveRoutingTask();
@@ -81,8 +85,6 @@ implementation
 
 	event void Boot.booted()
 	{
-		epoch_start_time = clock();
-		dbg("Measures", "Time %d\n", clock());
 		srand(time(0));
 		call RadioControl.start();
 		
@@ -502,7 +504,7 @@ implementation
 			return;
 		}
 	
-	
+
 	call StartMeasureTimer.startPeriodicAt(-((curdepth+1)*TIMER_VERY_FAST_PERIOD),TIMER_PERIOD_MILLI);
 	dbg("Measures", "Timer will wait for: %d \n", TIMER_PERIOD_MILLI-((curdepth+1)*TIMER_VERY_FAST_PERIOD));
 	dbg("Measures", "Measurement for node %d depth %d \n", TOS_NODE_ID, curdepth);
@@ -518,15 +520,24 @@ implementation
 		OneMeasMsg* ommpkt;
 		TwoMeasMsg* tmmpkt;
 
-		meas = (rand() % 80) + 1;
-		dbg("Measures", "Measurement in depth %d: %d\n", curdepth, meas);
-
-		if (TOS_NODE_ID!=0)
-		{
-
+		// If it's the first epoch and there is no measurement
+		if(meas==0){
+			dbg("Measures", "Measurement was 0 \n");
+			meas = (rand() % 80) + 1;
+			dbg("Measures", "Measurement in depth %d: %d\n", curdepth, meas);
+		// If a new measurement is needed
+		}else{
+			dbg("Measures", "Old Measurement: %d\n", meas);
+			if((int)(0.1*meas)>0){
+				min_val = meas - (int)(0.1*meas);
+				max_val = meas + (int)(0.1*meas);
+				srand ( time(0) );
+				meas =  min_val + (rand() % (max_val-min_val));
+				dbg("Measures", "Measurement in depth %d: %d\n", curdepth, meas);
+			}
 		}
 
-
+		
 
 
 	}
