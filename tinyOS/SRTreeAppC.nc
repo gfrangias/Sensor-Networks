@@ -14,7 +14,8 @@ implementation{
 	components MainC, ActiveMessageC;
 	components new TimerMilliC() as RoutingMsgTimerC;
 	components new TimerMilliC() as StartMeasureTimerC;
-	
+	components new TimerMilliC() as NewEpochTimer;
+
 	components new AMSenderC(AM_ROUTINGMSG) as RoutingSenderC;
 	components new AMReceiverC(AM_ROUTINGMSG) as RoutingReceiverC;
 	components new PacketQueueC(SENDER_QUEUE_SIZE) as RoutingSendQueueC;
@@ -27,6 +28,7 @@ implementation{
 
 	SRTreeC.RoutingMsgTimer->RoutingMsgTimerC;
 	SRTreeC.StartMeasureTimer->StartMeasureTimerC;
+	SRTreeC.NewEpochTimer->NewEpochTimer;
 	
 	SRTreeC.RoutingPacket->RoutingSenderC.Packet;
 	SRTreeC.RoutingAMPacket->RoutingSenderC.AMPacket;

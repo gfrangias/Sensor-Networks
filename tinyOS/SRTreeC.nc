@@ -15,6 +15,7 @@ module SRTreeC
 
 	uses interface Timer<TMilli> as RoutingMsgTimer;
 	uses interface Timer<TMilli> as StartMeasureTimer;
+	uses interface Timer<TMilli> as NewEpochTimer;
 	
 	uses interface Receive as RoutingReceive;
 	
@@ -37,6 +38,7 @@ implementation
 	uint8_t tct;
 	uint8_t agg_function;
 	uint8_t meas;
+	clock_t epoch_start_time;
 	
 	task void sendRoutingTask();
 	task void receiveRoutingTask();
@@ -79,6 +81,8 @@ implementation
 
 	event void Boot.booted()
 	{
+		epoch_start_time = clock();
+		dbg("Measures", "Time %d\n", clock());
 		srand(time(0));
 		call RadioControl.start();
 		
@@ -162,9 +166,9 @@ implementation
 		{
 			roundCounter+=1;
 			
-			dbg("SRTreeC", "##################################### \n");
-			dbg("SRTreeC", "#######   ROUND   %u    ############# \n", roundCounter);
-			dbg("SRTreeC", "#####################################\n");
+			dbg("Epoch", "##################################### \n");
+			dbg("Epoch", "#######   ROUND   %u    ############# \n", roundCounter);
+			dbg("Epoch", "#####################################\n");
 			tct = 5*((rand() % 4) + 1);
 			dbg("TCT", "TCT for round %u is %u\n", roundCounter, tct);
 			agg_function = (rand() % 3);
@@ -176,7 +180,7 @@ implementation
 			}else{
 				dbg("AGGREGATION_FUNCTION", "Aggregation function for round %u is MAX&COUNT\n", roundCounter);
 			}
-			call RoutingMsgTimer.startOneShot(TIMER_PERIOD_MILLI);
+			call NewEpochTimer.startPeriodic(TIMER_PERIOD_MILLI);
 			}
 		
 		if(call RoutingSendQueue.full())
@@ -244,6 +248,15 @@ implementation
 		}		
 	}
 	
+	event void NewEpochTimer.fired()
+	{
+			roundCounter+=1;
+			
+			dbg("Epoch", "##################################### \n");
+			dbg("Epoch", "#######   ROUND   %u    ############# \n", roundCounter);
+			dbg("Epoch", "#####################################\n");
+	}
+
 	event void RoutingAMSend.sendDone(message_t * msg , error_t err)
 	{
 		dbg("Routing result", "------Node (%d)----------curdepth = %d , parentID= %d \n", TOS_NODE_ID, curdepth , parentID);
@@ -488,8 +501,10 @@ implementation
 			setLostRoutingRecTask(TRUE);
 			return;
 		}
-		
-	call StartMeasureTimer.startOneShot(TIMER_PERIOD_MILLI-TIMER_ROUTING-((curdepth+1)*TIMER_NOT_SO_FAST_PERIOD));
+	
+	
+	call StartMeasureTimer.startPeriodicAt(-((curdepth+1)*TIMER_VERY_FAST_PERIOD),TIMER_PERIOD_MILLI);
+	dbg("Measures", "Timer will wait for: %d \n", TIMER_PERIOD_MILLI-((curdepth+1)*TIMER_VERY_FAST_PERIOD));
 	dbg("Measures", "Measurement for node %d depth %d \n", TOS_NODE_ID, curdepth);
 	}
 	
@@ -504,7 +519,7 @@ implementation
 		TwoMeasMsg* tmmpkt;
 
 		meas = (rand() % 80) + 1;
-		dbg("Measures", "Measurement for node %d depth %d: %d\n", TOS_NODE_ID, curdepth, meas);
+		dbg("Measures", "Measurement in depth %d: %d\n", curdepth, meas);
 
 		if (TOS_NODE_ID!=0)
 		{

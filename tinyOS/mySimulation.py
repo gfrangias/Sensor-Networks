@@ -10,7 +10,7 @@ f=sys.stdout #open('./logfile.txt','w')
 ####################################
 
 # Compute when the simulation ended
-SIM_END_TIME= 1200 * t.ticksPerSecond()
+SIM_END_TIME= 1210 * t.ticksPerSecond()
 
 print "TicksPerSecond : ", t.ticksPerSecond(),"\n"
 
@@ -26,6 +26,7 @@ print "TicksPerSecond : ", t.ticksPerSecond(),"\n"
 #t.addChannel("AGGREGATION_FUNCTION",f)
 #t.addChannel("Routing result",f)
 t.addChannel("Measures",f)
+t.addChannel("Epoch",f)
 #################################################################
 
 ####### Start nodes in range, at slightly different moments #######
