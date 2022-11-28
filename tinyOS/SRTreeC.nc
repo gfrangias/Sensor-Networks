@@ -177,8 +177,7 @@ implementation
 				dbg("AGGREGATION_FUNCTION", "Aggregation function for round %u is MAX&COUNT\n", roundCounter);
 			}
 			call RoutingMsgTimer.startOneShot(TIMER_PERIOD_MILLI);
-			call StartMeasureTimer.startOneShot(TIMER_START_MEASURE);
-		}
+			}
 		
 		if(call RoutingSendQueue.full())
 		{
@@ -424,12 +423,6 @@ implementation
 		{
 			RoutingMsg * mpkt = (RoutingMsg*) (call RoutingPacket.getPayload(&radioRoutingRecPkt,len));
 			
-			//if(TOS_NODE_ID >0)
-			//{
-				//call RoutingMsgTimer.startOneShot(TIMER_PERIOD_MILLI);
-			//}
-			//
-			
 			dbg("SRTreeC" , "receiveRoutingTask():senderID= %d , depth= %d \n", mpkt->senderID , mpkt->depth);
 			dbg("TCT", "receiveRoutingTask():TCT=%d, senderID=%d \n", mpkt->tct, mpkt->senderID);
 			if(mpkt->agg_function == 0){
@@ -481,8 +474,6 @@ implementation
 					{
 						call RoutingMsgTimer.startOneShot(TIMER_FAST_PERIOD);
 					}
-					// tha stelnei kai ena minima NotifyParentMsg 
-					// ston kainourio patera kai ston palio patera.
 				}
 								
 			}
@@ -498,6 +489,8 @@ implementation
 			return;
 		}
 		
+	call StartMeasureTimer.startOneShot(TIMER_PERIOD_MILLI-TIMER_ROUTING-((curdepth+1)*TIMER_NOT_SO_FAST_PERIOD));
+	dbg("Measures", "Measurement for node %d depth %d \n", TOS_NODE_ID, curdepth);
 	}
 	
 
@@ -512,6 +505,7 @@ implementation
 
 		meas = (rand() % 80) + 1;
 		dbg("Measures", "Measurement for node %d depth %d: %d\n", TOS_NODE_ID, curdepth, meas);
+
 		if (TOS_NODE_ID!=0)
 		{
 

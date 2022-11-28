@@ -11,8 +11,9 @@ enum{
 	SEND_CHECK_MILLIS=70000,
 	TIMER_PERIOD_MILLI=30720, 	// EPOCH
 	TIMER_FAST_PERIOD=200,
+	TIMER_NOT_SO_FAST_PERIOD=400,
 	TIMER_LEDS_MILLI=1000,
-	TIMER_START_MEASURE=2048, // Time dedicated to Routing
+	TIMER_ROUTING=1024, // Time dedicated to Routing
 };
 /*uint16_t AM_ROUTINGMSG=AM_SIMPLEROUTINGTREEMSG;
 uint16_t AM_NOTIFYPARENTMSG=AM_SIMPLEROUTINGTREEMSG;
@@ -42,5 +43,9 @@ typedef nx_struct TwoMeasMsg
 	nx_uint8_t measurement1;
 	nx_uint8_t measurement2;
 }TwoMeasMsg;
+
+typedef struct nodeInfo{
+	nx_uint16_t nodeID
+}nodeInfo;
 
 #endif
