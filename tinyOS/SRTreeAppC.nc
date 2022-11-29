@@ -21,6 +21,10 @@ implementation{
 	components new PacketQueueC(SENDER_QUEUE_SIZE) as RoutingSendQueueC;
 	components new PacketQueueC(RECEIVER_QUEUE_SIZE) as RoutingReceiveQueueC;
 
+	components new AMSenderC(AM_ROUTINGMSG) as MeasureSenderC;
+	components new AMReceiverC(AM_ROUTINGMSG) as MeasureReceiverC;
+	components new PacketQueueC(SENDER_QUEUE_SIZE) as MeasureSendQueueC;
+	components new PacketQueueC(RECEIVER_QUEUE_SIZE) as MeasureReceiveQueueC;
 	
 	SRTreeC.Boot->MainC.Boot;
 	
@@ -35,7 +39,14 @@ implementation{
 	SRTreeC.RoutingAMSend->RoutingSenderC.AMSend;
 	SRTreeC.RoutingReceive->RoutingReceiverC.Receive;
 
+	SRTreeC.MeasurePacket->MeasureSenderC.Packet;
+	SRTreeC.MeasureAMPacket->MeasureSenderC.AMPacket;
+	SRTreeC.MeasureAMSend->MeasureSenderC.AMSend;
+	SRTreeC.MeasureReceive->MeasureReceiverC.Receive;
+
 	SRTreeC.RoutingSendQueue->RoutingSendQueueC;
 	SRTreeC.RoutingReceiveQueue->RoutingReceiveQueueC;
-	
+
+	SRTreeC.MeasureSendQueue->MeasureSendQueueC;
+	SRTreeC.MeasureReceiveQueue->MeasureReceiveQueueC;	
 }

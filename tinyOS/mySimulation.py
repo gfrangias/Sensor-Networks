@@ -27,6 +27,7 @@ print "TicksPerSecond : ", t.ticksPerSecond(),"\n"
 #t.addChannel("Routing result",f)
 t.addChannel("Measures",f)
 t.addChannel("Epoch",f)
+t.addChannel("MeasureMsg",f)
 #################################################################
 
 ####### Start nodes in range, at slightly different moments #######

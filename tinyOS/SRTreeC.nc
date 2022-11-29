@@ -14,22 +14,32 @@ module SRTreeC
 	uses interface AMSend as RoutingAMSend;
 	uses interface AMPacket as RoutingAMPacket;
 
+	uses interface Packet as MeasurePacket;
+	uses interface AMSend as MeasureAMSend;
+	uses interface AMPacket as MeasureAMPacket;
+
 	uses interface Timer<TMilli> as RoutingMsgTimer;
 	uses interface Timer<TMilli> as StartMeasureTimer;
 	uses interface Timer<TMilli> as NewEpochTimer;
 	
 	uses interface Receive as RoutingReceive;
+	uses interface Receive as MeasureReceive;
 	
 	uses interface PacketQueue as RoutingSendQueue;
 	uses interface PacketQueue as RoutingReceiveQueue;
+
+	uses interface PacketQueue as MeasureSendQueue;
+	uses interface PacketQueue as MeasureReceiveQueue;
 }
 implementation
 {
 	uint16_t  roundCounter;
 	
 	message_t radioRoutingSendPkt;
-	
+	message_t radioOneMeasMsgSendPkt;
+		
 	bool RoutingSendBusy=FALSE;
+	bool MeasureSendBusy=FALSE;
 	
 	bool lostRoutingSendTask=FALSE;
 	bool lostRoutingRecTask=FALSE;
@@ -41,12 +51,10 @@ implementation
 	uint8_t meas;
 	uint8_t min_val;
 	uint8_t max_val;
-	//children_values = (uint8_t*)malloc(MAX_CHILDREN * sizeof(uint8_t));
-
 	
 	task void sendRoutingTask();
 	task void receiveRoutingTask();
-	
+
 	void setLostRoutingSendTask(bool state)
 	{
 		atomic{
@@ -505,40 +513,162 @@ implementation
 		}
 	
 
-	call StartMeasureTimer.startPeriodicAt(-((curdepth+1)*TIMER_VERY_FAST_PERIOD),TIMER_PERIOD_MILLI);
+	call StartMeasureTimer.startPeriodicAt(-((curdepth+1)*TIMER_VERY_FAST_PERIOD+TOS_NODE_ID),TIMER_PERIOD_MILLI);
 	dbg("Measures", "Timer will wait for: %d \n", TIMER_PERIOD_MILLI-((curdepth+1)*TIMER_VERY_FAST_PERIOD));
 	dbg("Measures", "Measurement for node %d depth %d \n", TOS_NODE_ID, curdepth);
 	}
+
+
+	// Send one measurement
+	task void sendOneMeasMsg()
+	{
+		uint8_t mlen;
+		uint16_t mdest;
+		error_t sendDone;
+
+		if (call MeasureSendQueue.empty())
+		{
+			dbg("MeasureMsg","sendOneMeasMsg(): Q is empty!\n");
+			return;
+		}
+		
+		
+		if(MeasureSendBusy)
+		{
+			dbg("MeasureMsg","sendOneMeasMsg(): MeasureSendBusy= TRUE!!!\n");
+			return;
+		}
+		
+		radioOneMeasMsgSendPkt = call MeasureSendQueue.dequeue();
+		
+		mlen= call MeasurePacket.payloadLength(&radioOneMeasMsgSendPkt);
+		mdest=call MeasureAMPacket.destination(&radioOneMeasMsgSendPkt);
+		if(mlen!=sizeof(OneMeasMsg))
+		{
+			dbg("MeasureMsg","\t\\sendOneMeasMsg(): Unknown message!!!\n");
+			return;
+		}
+		sendDone=call MeasureAMSend.send(mdest,&radioOneMeasMsgSendPkt,mlen);
+		
+		if ( sendDone== SUCCESS)
+		{
+			dbg("MeasureMsg","sendOneMeasMsg(): Send returned success!!!\n");
+			setRoutingSendBusy(TRUE);
+		}
+		else
+		{
+			dbg("MeasureMsg","send failed!!!\n");
+		}
+
+	}
+
+	// Receive one measurement
+	task void receiveOneMeasMsg()
+	{
+		message_t tmp;
+		uint8_t len;
+		message_t radioOneMeasMsgRecPkt;
+
+		radioOneMeasMsgRecPkt= call MeasureReceiveQueue.dequeue();
+		
+		len= call MeasurePacket.payloadLength(&radioOneMeasMsgRecPkt);
+		
+		dbg("MeasureMsg","receiveOneMeasMsg(): len=%u \n",len);
+
+		// processing of radioRecPkt
+		
+		// pos tha xexorizo ta 2 diaforetika minimata???
+				
+		if(len == sizeof(OneMeasMsg))
+		{
+			OneMeasMsg * mpkt = (OneMeasMsg*) (call MeasurePacket.getPayload(&radioOneMeasMsgRecPkt,len));
+			
+			//dbg("MeasureMsg" , "receiveOneMeasMsg():senderID= %d , depth= %d \n", mpkt->senderID , mpkt->depth);
+			//dbg("TCT", "receiveOneMeasMsg():TCT=%d, senderID=%d \n", mpkt->tct, mpkt->senderID);
+
+			// Aggregation etc...
+		}
+		else
+		{
+			dbg("MeasureMsg","receiveOneMeasMsg():Empty message!!! \n");
+			return;
+		}
+	}
+
+	event void MeasureAMSend.sendDone(message_t * msg , error_t err)
+	{
+		if(!(call MeasureSendQueue.empty()))
+		{
+			post sendOneMeasMsg();
+		}
+	}
+
+	event message_t* MeasureReceive.receive( message_t * msg , void * payload, uint8_t len)
+	{
+		error_t enqueueDone;
+		message_t tmp;
+		uint16_t msource;
+		
+		msource = call MeasureAMPacket.source(msg);
+		
+		dbg("MeasureMsg", "### MeasureReceive.receive() start ##### \n");
+		dbg("MeasureMsg", "Something received!!! from %u %u\n",((OneMeasMsg*) payload)->senderID , msource);	
+
+		atomic{
+			memcpy(&tmp,msg,sizeof(message_t));
+			//tmp=*(message_t*)msg;
+		}
+		enqueueDone=call MeasureReceiveQueue.enqueue(tmp);
+
+		if(enqueueDone == SUCCESS)
+		{
+			post receiveOneMeasMsg();
+		}
+		else
+		{
+			dbg("MeasureMsg","MeasureMsg enqueue failed!!! \n");
+		}
+				
+		dbg("MeasureMsg", "### MeasureReceive.receive() end ##### \n");
+		return msg;
+	}
 	
-
-
-
+	// Create new measurement values / Compute the aggregation functions
+	// Validate based on TiNA / Call send tasks
 	event void StartMeasureTimer.fired()
 	{
 		message_t tmp;
 		error_t enqueueDone;
 		OneMeasMsg* ommpkt;
 		TwoMeasMsg* tmmpkt;
+		uint8_t* children_values;
 
 		// If it's the first epoch and there is no measurement
 		if(meas==0){
+			children_values = (uint8_t*)malloc(MAX_CHILDREN * sizeof(uint8_t));
+			srand ( TOS_NODE_ID + time(0) );
 			dbg("Measures", "Measurement was 0 \n");
 			meas = (rand() % 80) + 1;
 			dbg("Measures", "Measurement in depth %d: %d\n", curdepth, meas);
+
 		// If a new measurement is needed
 		}else{
 			dbg("Measures", "Old Measurement: %d\n", meas);
 			if((int)(0.1*meas)>0){
 				min_val = meas - (int)(0.1*meas);
 				max_val = meas + (int)(0.1*meas);
-				srand ( time(0) );
+				srand ( TOS_NODE_ID + time(0) );
 				meas =  min_val + (rand() % (max_val-min_val));
-				dbg("Measures", "Measurement in depth %d: %d\n", curdepth, meas);
 			}
-		}
+		}		
 
-		
+		dbg("Measures", "Measurement in depth %d: %d\n", curdepth, meas);
 
+		// Compute the new answer
 
+		// Check if the new answer is TiNA compatible
+
+		// Send message if needed
 	}
+
 }
