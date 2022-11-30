@@ -37,8 +37,7 @@ typedef nx_struct NotifyParentMsg
 typedef nx_struct OneMeasMsg
 {	
 	nx_uint16_t senderID;
-	nx_uint16_t parentID;
-	nx_uint8_t measurement; // Here in the last bits is a flag for the agg. function 
+	nx_uint8_t measurement; // Here in the last bits is a flag for the agg. function
 }OneMeasMsg;
 
 typedef nx_struct TwoMeasMsg

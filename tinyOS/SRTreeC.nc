@@ -664,6 +664,32 @@ implementation
 
 		dbg("Measures", "Measurement in depth %d: %d\n", curdepth, meas);
 
+
+		if(call MeasureSendQueue.full())
+		{
+			return;
+		}
+		
+		
+		ommpkt = (OneMeasMsg*) (call MeasurePacket.getPayload(&tmp, sizeof(OneMeasMsg)));
+		if(ommpkt==NULL)
+		{
+			dbg("MeasureMsg","StartMeasureTimer.fired(): No valid payload... \n");
+			return;
+		}
+		atomic{
+		ommpkt->senderID=TOS_NODE_ID;
+		ommpkt->depth = curdepth;
+		ommpkt->tct = tct;
+		ommpkt->agg_function = agg_function;
+		}
+		dbg("MeasureMsg" , "Sending MeasureMsg... \n");
+	
+		call MeasureAMPacket.setDestination(&tmp, parentID);
+		call MeasurePacket.setPayloadLength(&tmp, sizeof(OneMeasMsg));
+		
+
+
 		// Compute the new answer
 
 		// Check if the new answer is TiNA compatible
