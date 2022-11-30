@@ -36,7 +36,7 @@ implementation
 	uint16_t  roundCounter;
 	
 	message_t radioRoutingSendPkt;
-	message_t radioOneMeasMsgSendPkt;
+	message_t radioMeasMsgSendPkt;
 		
 	bool RoutingSendBusy=FALSE;
 	bool MeasureSendBusy=FALSE;
@@ -520,7 +520,7 @@ implementation
 
 
 	// Send one measurement
-	task void sendOneMeasMsg()
+	task void sendMeasMsg()
 	{
 		uint8_t mlen;
 		uint16_t mdest;
@@ -528,31 +528,31 @@ implementation
 
 		if (call MeasureSendQueue.empty())
 		{
-			dbg("MeasureMsg","sendOneMeasMsg(): Q is empty!\n");
+			dbg("MeasureMsg","sendMeasMsg(): Q is empty!\n");
 			return;
 		}
 		
 		
 		if(MeasureSendBusy)
 		{
-			dbg("MeasureMsg","sendOneMeasMsg(): MeasureSendBusy= TRUE!!!\n");
+			dbg("MeasureMsg","sendMeasMsg(): MeasureSendBusy= TRUE!!!\n");
 			return;
 		}
 		
-		radioOneMeasMsgSendPkt = call MeasureSendQueue.dequeue();
+		radioMeasMsgSendPkt = call MeasureSendQueue.dequeue();
 		
-		mlen= call MeasurePacket.payloadLength(&radioOneMeasMsgSendPkt);
-		mdest=call MeasureAMPacket.destination(&radioOneMeasMsgSendPkt);
+		mlen= call MeasurePacket.payloadLength(&radioMeasMsgSendPkt);
+		mdest=call MeasureAMPacket.destination(&radioMeasMsgSendPkt);
 		if(mlen!=sizeof(OneMeasMsg))
 		{
-			dbg("MeasureMsg","\t\\sendOneMeasMsg(): Unknown message!!!\n");
+			dbg("MeasureMsg","\t\\sendMeasMsg(): Unknown message!!!\n");
 			return;
 		}
-		sendDone=call MeasureAMSend.send(mdest,&radioOneMeasMsgSendPkt,mlen);
+		sendDone=call MeasureAMSend.send(mdest,&radioMeasMsgSendPkt,mlen);
 		
 		if ( sendDone== SUCCESS)
 		{
-			dbg("MeasureMsg","sendOneMeasMsg(): Send returned success!!!\n");
+			dbg("MeasureMsg","sendMeasMsg(): Send returned success!!!\n");
 			setRoutingSendBusy(TRUE);
 		}
 		else
@@ -563,17 +563,17 @@ implementation
 	}
 
 	// Receive one measurement
-	task void receiveOneMeasMsg()
+	task void receiveMeasMsg()
 	{
 		message_t tmp;
 		uint8_t len;
-		message_t radioOneMeasMsgRecPkt;
+		message_t radioMeasMsgRecPkt;
 
-		radioOneMeasMsgRecPkt= call MeasureReceiveQueue.dequeue();
+		radioMeasMsgRecPkt= call MeasureReceiveQueue.dequeue();
 		
-		len= call MeasurePacket.payloadLength(&radioOneMeasMsgRecPkt);
+		len= call MeasurePacket.payloadLength(&radioMeasMsgRecPkt);
 		
-		dbg("MeasureMsg","receiveOneMeasMsg(): len=%u \n",len);
+		dbg("MeasureMsg","receiveMeasMsg(): len=%u \n",len);
 
 		// processing of radioRecPkt
 		
@@ -581,16 +581,16 @@ implementation
 				
 		if(len == sizeof(OneMeasMsg))
 		{
-			OneMeasMsg * mpkt = (OneMeasMsg*) (call MeasurePacket.getPayload(&radioOneMeasMsgRecPkt,len));
+			OneMeasMsg * mpkt = (OneMeasMsg*) (call MeasurePacket.getPayload(&radioMeasMsgRecPkt,len));
 			
-			//dbg("MeasureMsg" , "receiveOneMeasMsg():senderID= %d , depth= %d \n", mpkt->senderID , mpkt->depth);
-			//dbg("TCT", "receiveOneMeasMsg():TCT=%d, senderID=%d \n", mpkt->tct, mpkt->senderID);
+			//dbg("MeasureMsg" , "receiveMeasMsg():senderID= %d , depth= %d \n", mpkt->senderID , mpkt->depth);
+			//dbg("TCT", "receiveMeasMsg():TCT=%d, senderID=%d \n", mpkt->tct, mpkt->senderID);
 
 			// Aggregation etc...
 		}
 		else
 		{
-			dbg("MeasureMsg","receiveOneMeasMsg():Empty message!!! \n");
+			dbg("MeasureMsg","receiveMeasMsg():Empty message!!! \n");
 			return;
 		}
 	}
@@ -599,7 +599,7 @@ implementation
 	{
 		if(!(call MeasureSendQueue.empty()))
 		{
-			post sendOneMeasMsg();
+			post sendMeasMsg();
 		}
 	}
 
@@ -622,7 +622,7 @@ implementation
 
 		if(enqueueDone == SUCCESS)
 		{
-			post receiveOneMeasMsg();
+			post receiveMeasMsg();
 		}
 		else
 		{
