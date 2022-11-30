@@ -30,16 +30,20 @@ module SRTreeC
 
 	uses interface PacketQueue as MeasureSendQueue;
 	uses interface PacketQueue as MeasureReceiveQueue;
+
+	uses interface Random;
 }
 implementation
 {
 	uint16_t  roundCounter;
-	
+	uint8_t rand_num;
+
 	message_t radioRoutingSendPkt;
 	message_t radioMeasMsgSendPkt;
 		
 	bool RoutingSendBusy=FALSE;
 	bool MeasureSendBusy=FALSE;
+	bool MeasureTimerSet=FALSE;
 	
 	bool lostRoutingSendTask=FALSE;
 	bool lostRoutingRecTask=FALSE;
@@ -93,7 +97,6 @@ implementation
 
 	event void Boot.booted()
 	{
-		srand(time(0));
 		call RadioControl.start();
 		
 		setRoutingSendBusy(FALSE);
@@ -190,7 +193,7 @@ implementation
 			}else{
 				dbg("AGGREGATION_FUNCTION", "Aggregation function for round %u is MAX&COUNT\n", roundCounter);
 			}
-			call NewEpochTimer.startPeriodic(TIMER_PERIOD_MILLI);
+			call NewEpochTimer.startPeriodicAt(-BOOT_TIME, TIMER_PERIOD_MILLI);
 			}
 		
 		if(call RoutingSendQueue.full())
@@ -512,10 +515,15 @@ implementation
 			return;
 		}
 	
+	if(!MeasureTimerSet){
+		srand ( TOS_NODE_ID + time(0) );
+		rand_num = rand() % 120;
+		dbg("Random", "Node: %d, Random: %d \n", TOS_NODE_ID, rand_num);
+		call StartMeasureTimer.startPeriodicAt(-BOOT_TIME-((curdepth+1)*TIMER_VERY_FAST_PERIOD+rand_num),TIMER_PERIOD_MILLI);
+		//dbg("Measures", "Timer will wait for: %d \n", TIMER_PERIOD_MILLI-((curdepth+1)*TIMER_VERY_FAST_PERIOD));
+		MeasureTimerSet = TRUE;
+	}
 
-	call StartMeasureTimer.startPeriodicAt(-((curdepth+1)*TIMER_VERY_FAST_PERIOD+TOS_NODE_ID),TIMER_PERIOD_MILLI);
-	dbg("Measures", "Timer will wait for: %d \n", TIMER_PERIOD_MILLI-((curdepth+1)*TIMER_VERY_FAST_PERIOD));
-	dbg("Measures", "Measurement for node %d depth %d \n", TOS_NODE_ID, curdepth);
 	}
 
 
@@ -541,7 +549,7 @@ implementation
 		
 		radioMeasMsgSendPkt = call MeasureSendQueue.dequeue();
 		
-		mlen= call MeasurePacket.payloadLength(&radioMeasMsgSendPkt);
+		mlen=call MeasurePacket.payloadLength(&radioMeasMsgSendPkt);
 		mdest=call MeasureAMPacket.destination(&radioMeasMsgSendPkt);
 		if(mlen!=sizeof(OneMeasMsg))
 		{
@@ -553,7 +561,7 @@ implementation
 		if ( sendDone== SUCCESS)
 		{
 			dbg("MeasureMsg","sendMeasMsg(): Send returned success!!!\n");
-			setRoutingSendBusy(TRUE);
+			//setRoutingSendBusy(TRUE);
 		}
 		else
 		{
@@ -646,18 +654,18 @@ implementation
 		// If it's the first epoch and there is no measurement
 		if(meas==0){
 			children_values = (uint8_t*)malloc(MAX_CHILDREN * sizeof(uint8_t));
-			srand ( TOS_NODE_ID + time(0) );
-			dbg("Measures", "Measurement was 0 \n");
+			//dbg("Measures", "Measurement was 0 \n");
+			srand ( time(0) + TOS_NODE_ID);
 			meas = (rand() % 80) + 1;
-			dbg("Measures", "Measurement in depth %d: %d\n", curdepth, meas);
+			//dbg("Measures", "Measurement in depth %d: %d\n", curdepth, meas);
 
 		// If a new measurement is needed
 		}else{
-			dbg("Measures", "Old Measurement: %d\n", meas);
-			if((int)(0.1*meas)>0){
-				min_val = meas - (int)(0.1*meas);
-				max_val = meas + (int)(0.1*meas);
-				srand ( TOS_NODE_ID + time(0) );
+			//dbg("Measures", "Old Measurement: %d\n", meas);
+			if((meas / 10)>0){
+				min_val = meas - (meas / 10);
+				max_val = meas + (meas / 10);
+				srand ( time(0) );
 				meas =  min_val + (rand() % (max_val-min_val));
 			}
 		}		
@@ -679,22 +687,31 @@ implementation
 		}
 		atomic{
 		ommpkt->senderID=TOS_NODE_ID;
-		ommpkt->depth = curdepth;
-		ommpkt->tct = tct;
-		ommpkt->agg_function = agg_function;
+		ommpkt->measurement=meas;
 		}
 		dbg("MeasureMsg" , "Sending MeasureMsg... \n");
 	
 		call MeasureAMPacket.setDestination(&tmp, parentID);
 		call MeasurePacket.setPayloadLength(&tmp, sizeof(OneMeasMsg));
 		
+		enqueueDone=call MeasureSendQueue.enqueue(tmp);
+		
+		if( enqueueDone==SUCCESS)
+		{
+			if (call MeasureSendQueue.size()==1)
+			{
+				dbg("MeasureMsg", "SendTask() posted!!\n");
+				post sendMeasMsg();
+			}
+			
+			dbg("MeasureMsg","MeasMsg enqueued successfully in MeasureSendQueue!!!\n");
 
+		}
+		else
+		{
 
-		// Compute the new answer
+		}		
 
-		// Check if the new answer is TiNA compatible
-
-		// Send message if needed
 	}
 
 }

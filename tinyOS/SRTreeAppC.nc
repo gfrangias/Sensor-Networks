@@ -11,7 +11,7 @@ implementation{
 #ifdef PRINTFDBG_MODE
 		components PrintfC;
 #endif
-	components MainC, ActiveMessageC;
+	components MainC, ActiveMessageC, RandomC;
 	components new TimerMilliC() as RoutingMsgTimerC;
 	components new TimerMilliC() as StartMeasureTimerC;
 	components new TimerMilliC() as NewEpochTimer;
@@ -49,4 +49,6 @@ implementation{
 
 	SRTreeC.MeasureSendQueue->MeasureSendQueueC;
 	SRTreeC.MeasureReceiveQueue->MeasureReceiveQueueC;	
+
+	SRTreeC.Random->RandomC;
 }
