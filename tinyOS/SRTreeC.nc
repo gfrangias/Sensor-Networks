@@ -1,6 +1,7 @@
 #include "SimpleRoutingTree.h"
 #include <time.h>
 #include <math.h>
+#include <stdlib.h>
 #ifdef PRINTFDBG_MODE
 #include "printf.h"
 #endif
@@ -47,6 +48,7 @@ implementation
 	
 	bool lostRoutingSendTask=FALSE;
 	bool lostRoutingRecTask=FALSE;
+	bool tina_condition=FALSE;
 
 	uint8_t curdepth;
 	uint16_t parentID;
@@ -55,8 +57,13 @@ implementation
 	uint8_t meas;
 	uint8_t min_val;
 	uint8_t max_val;
+	uint8_t i;
+	uint16_t seed;
+	uint8_t last_max;
+	uint8_t last_count;
+	FILE* f;
 
-	//children_values nodeInfo[MAX_CHILDREN];
+	nodeInfo children_values[MAX_CHILDREN];
 	
 	task void sendRoutingTask();
 	task void receiveRoutingTask();
@@ -103,6 +110,12 @@ implementation
 		
 		setRoutingSendBusy(FALSE);
 		roundCounter =0;
+
+		//generate seed using urandom from UNIX
+		f = fopen("/dev/urandom", "r");
+		fread(&seed, sizeof(seed), 1, f);
+		fclose(f);
+		srand(seed + TOS_NODE_ID + 1);
 		
 		if(TOS_NODE_ID==0)
 		{
@@ -184,16 +197,18 @@ implementation
 			dbg("Epoch", "##################################### \n");
 			dbg("Epoch", "#######   ROUND   %u    ############# \n", roundCounter);
 			dbg("Epoch", "#####################################\n");
-			tct = 5*((rand() % 4) + 1);
+			//tct = 5*((rand() % 4) + 1);
+			tct = 10;
 			dbg("TCT", "TCT for round %u is %u\n", roundCounter, tct);
-			agg_function = (rand() % 3);
+			//agg_function = (rand() % 3);
+			agg_function = 0;
 
 			if(agg_function == 0){
-				dbg("AGGREGATION_FUNCTION", "Aggregation function for round %u is MAX\n", roundCounter);
+				dbg("aggregation_function", "Aggregation function for round %u is MAX\n", roundCounter);
 			}else if(agg_function == 1){
-				dbg("AGGREGATION_FUNCTION", "Aggregation function for round %u is COUNT\n", roundCounter);
+				dbg("aggregation_function", "Aggregation function for round %u is COUNT\n", roundCounter);
 			}else{
-				dbg("AGGREGATION_FUNCTION", "Aggregation function for round %u is MAX&COUNT\n", roundCounter);
+				dbg("aggregation_function", "Aggregation function for round %u is MAX&COUNT\n", roundCounter);
 			}
 			call NewEpochTimer.startPeriodicAt(-BOOT_TIME, TIMER_PERIOD_MILLI);
 			}
@@ -452,14 +467,6 @@ implementation
 			RoutingMsg * mpkt = (RoutingMsg*) (call RoutingPacket.getPayload(&radioRoutingRecPkt,len));
 			
 			dbg("SRTreeC" , "receiveRoutingTask():senderID= %d , depth= %d \n", mpkt->senderID , mpkt->depth);
-			dbg("TCT", "receiveRoutingTask():TCT=%d, senderID=%d \n", mpkt->tct, mpkt->senderID);
-			if(mpkt->agg_function == 0){
-				dbg("AGGREGATION_FUNCTION", "receiveRoutingTask():Aggregation fuction=MAX, senderID=%d \n", mpkt->senderID);
-			}else if(mpkt->agg_function == 1){
-				dbg("AGGREGATION_FUNCTION", "receiveRoutingTask():Aggregation fuction=COUNT, senderID=%d \n", mpkt->senderID);
-			}else{
-				dbg("AGGREGATION_FUNCTION", "receiveRoutingTask():Aggregation fuction=MAX&COUNT, senderID=%d \n", mpkt->senderID);
-			}
 #ifdef PRINTFDBG_MODE
 			printf("NodeID= %d , RoutingMsg received! \n",TOS_NODE_ID);
 			printf("receiveRoutingTask():senderID= %d , depth= %d \n", mpkt->senderID , mpkt->depth);
@@ -518,7 +525,7 @@ implementation
 		}
 	
 	if(!MeasureTimerSet){
-		srand ( TOS_NODE_ID + time(0) );
+		//srand ( TOS_NODE_ID + time(0) );
 		rand_num = rand() % 120;
 		dbg("Random", "Node: %d, Random: %d \n", TOS_NODE_ID, rand_num);
 		call StartMeasureTimer.startPeriodicAt(-BOOT_TIME-((curdepth+1)*TIMER_VERY_FAST_PERIOD+rand_num),TIMER_PERIOD_MILLI);
@@ -597,6 +604,20 @@ implementation
 			//dbg("TCT", "receiveMeasMsg():TCT=%d, senderID=%d \n", mpkt->tct, mpkt->senderID);
 
 			// Aggregation etc...
+			for(i = 0; i<MAX_CHILDREN; i++)
+			{
+				if(children_values[i].nodeID == mpkt->senderID || children_values[i].nodeID == 0)
+				{
+					children_values[i].nodeID = mpkt->senderID;
+
+					if(agg_function == 0)
+						children_values[i].max = mpkt->measurement;
+					if(agg_function == 1)
+						children_values[i].count = mpkt->measurement;
+
+					break;
+				}
+			}
 		}
 		else
 		{
@@ -650,27 +671,93 @@ implementation
 		message_t tmp;
 		error_t enqueueDone;
 		OneMeasMsg* ommpkt;
-		TwoMeasMsg* tmmpkt;
+		TwoMeasMsg* tmmpkt;		
 
-		// If it's the first epoch and there is no measurement
-		if(meas==0){
-			//dbg("Measures", "Measurement was 0 \n");
-			srand ( time(0) + TOS_NODE_ID);
-			meas = (rand() % 80) + 1;
-			//dbg("Measures", "Measurement in depth %d: %d\n", curdepth, meas);
+		//agg_function = MAX
+		if(agg_function == 0)
+		{
+			// If it's the first epoch and there is no measurement
+			if(meas==0){
+				//dbg("Measures", "Measurement was 0 \n");
+				//srand ( time(0) + TOS_NODE_ID);
+				meas = (rand() % 80) + 1;
+				dbg("Measures", "Measurement of node in depth %d: %d\n", curdepth, meas);
 
-		// If a new measurement is needed
-		}else{
-			//dbg("Measures", "Old Measurement: %d\n", meas);
-			if((meas / 10)>0){
-				min_val = meas - (meas / 10);
-				max_val = meas + (meas / 10);
-				srand ( time(0) );
-				meas =  min_val + (rand() % (max_val-min_val));
+			// If a new measurement is needed
+			}else{
+				//dbg("Measures", "Old Measurement: %d\n", meas);
+				if((meas / 10)>0){
+					min_val = meas - (meas / 10);
+					max_val = meas + (meas / 10);
+					//srand ( time(0) );
+					meas =  min_val + (rand() % (max_val-min_val));
+				}
 			}
-		}		
 
-		dbg("Measures", "Measurement in depth %d: %d\n", curdepth, meas);
+			//Loop through children and find MAX
+			for(i=0; i<MAX_CHILDREN; i++)
+			{
+				if(children_values[i].nodeID == 0)
+					break;
+
+				if(meas<children_values[i].max)
+					meas = children_values[i].max;	
+			}
+		}
+		//agg_function = COUNT
+		else if(agg_function == 1) 
+		{	
+			meas = 1;
+			//Calculate COUNT
+			for(i=0; i<MAX_CHILDREN; i++)
+			{
+				if(children_values[i].nodeID == 0)
+					break;
+
+				meas += children_values[i].count;	
+			}
+		}
+		else
+			exit(0);
+
+		dbg("Measures", "Measurement in depth %d after aggregation without Tina: %d\n", curdepth, meas);
+
+		if(agg_function == 0)
+		{
+			uint8_t meas_diff = 0;
+
+			if(last_max != 0)
+				meas_diff = (abs(last_max - meas)*100)/last_max;
+
+			//dbg("Tina", "Diff: %d\n", meas_diff);
+
+			if(meas_diff > tct || last_max == 0)
+			{
+				tina_condition = TRUE;
+				dbg("Tina", "Tina PASS, Last MAX: %d New MAX: %d\n", last_max, meas);
+				last_max = meas;
+			}
+			else
+				tina_condition = FALSE;
+		}
+		else if(agg_function == 1)
+		{
+			uint8_t meas_diff = 0;
+			
+			if(last_count != 0)
+				meas_diff = (abs(last_count - meas)*100)/last_count;
+
+			if(meas_diff > tct || last_count == 0)
+			{
+				tina_condition = TRUE;
+				dbg("Tina", "Tina PASS, Last COUNT: %d New COUNT: %d\n", last_count, meas);
+				last_count = meas;
+			}
+			else
+				tina_condition = FALSE;
+		}
+		else
+			exit(0);
 
 
 		if(call MeasureSendQueue.full())
@@ -678,39 +765,42 @@ implementation
 			return;
 		}
 		
-		
-		ommpkt = (OneMeasMsg*) (call MeasurePacket.getPayload(&tmp, sizeof(OneMeasMsg)));
-		if(ommpkt==NULL)
+		if(tina_condition)
 		{
-			dbg("MeasureMsg","StartMeasureTimer.fired(): No valid payload... \n");
-			return;
-		}
-		atomic{
-		ommpkt->senderID=TOS_NODE_ID;
-		ommpkt->measurement=meas;
-		}
-		dbg("MeasureMsg" , "Sending MeasureMsg... \n");
-	
-		call MeasureAMPacket.setDestination(&tmp, parentID);
-		call MeasurePacket.setPayloadLength(&tmp, sizeof(OneMeasMsg));
-		
-		enqueueDone=call MeasureSendQueue.enqueue(tmp);
-		
-		if( enqueueDone==SUCCESS)
-		{
-			if (call MeasureSendQueue.size()==1)
+			ommpkt = (OneMeasMsg*) (call MeasurePacket.getPayload(&tmp, sizeof(OneMeasMsg)));
+			if(ommpkt==NULL)
 			{
-				dbg("MeasureMsg", "SendTask() posted!!\n");
-				post sendMeasMsg();
+				dbg("MeasureMsg","StartMeasureTimer.fired(): No valid payload... \n");
+				return;
 			}
+			atomic{
+			ommpkt->senderID=TOS_NODE_ID;
+			ommpkt->measurement=meas;
+			}
+			dbg("MeasureMsg" , "Sending MeasureMsg... \n");
+		
+			call MeasureAMPacket.setDestination(&tmp, parentID);
+			call MeasurePacket.setPayloadLength(&tmp, sizeof(OneMeasMsg));
 			
-			dbg("MeasureMsg","MeasMsg enqueued successfully in MeasureSendQueue!!!\n");
+			enqueueDone=call MeasureSendQueue.enqueue(tmp);
 
-		}
-		else
-		{
+			/*for(i=0;i<MAX_CHILDREN;i++)
+			{
+				dbg("Matrix", "Children values: %d %d %d\n", children_values[i].nodeID, children_values[i].max, children_values[i].count);
+			}*/
+			
+			if( enqueueDone==SUCCESS)
+			{
+				if (call MeasureSendQueue.size()==1)
+				{
+					dbg("MeasureMsg", "SendTask() posted!!\n");
+					post sendMeasMsg();
+				}
+				
+				dbg("MeasureMsg","MeasMsg enqueued successfully in MeasureSendQueue!!!\n");
 
-		}		
+			}	
+		}	
 
 	}
 

@@ -22,13 +22,15 @@ print "TicksPerSecond : ", t.ticksPerSecond(),"\n"
 #t.addChannel("Serial",f)
 #t.addChannel("SRTreeC",f)
 #t.addChannel("PacketQueueC",f)
-#t.addChannel("TCT",f)
-#t.addChannel("AGGREGATION_FUNCTION",f)
+t.addChannel("TCT",f)
+t.addChannel("aggregation_function",f)
 t.addChannel("Routing result",f)
-#t.addChannel("Measures",f)
+t.addChannel("Measures",f)
 t.addChannel("Epoch",f)
-t.addChannel("MeasureMsg",f)
-t.addChannel("Random",f)
+#t.addChannel("MeasureMsg",f)
+#t.addChannel("Random",f)
+t.addChannel("Matrix",f)
+t.addChannel("Tina",f)
 #################################################################
 
 ####### Start nodes in range, at slightly different moments #######
