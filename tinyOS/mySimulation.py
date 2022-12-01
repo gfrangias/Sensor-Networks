@@ -24,10 +24,10 @@ print "TicksPerSecond : ", t.ticksPerSecond(),"\n"
 #t.addChannel("PacketQueueC",f)
 #t.addChannel("TCT",f)
 #t.addChannel("AGGREGATION_FUNCTION",f)
-#t.addChannel("Routing result",f)
-t.addChannel("Measures",f)
+t.addChannel("Routing result",f)
+#t.addChannel("Measures",f)
 t.addChannel("Epoch",f)
-#t.addChannel("MeasureMsg",f)
+t.addChannel("MeasureMsg",f)
 t.addChannel("Random",f)
 #################################################################
 

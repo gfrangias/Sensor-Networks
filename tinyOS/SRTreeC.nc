@@ -55,6 +55,8 @@ implementation
 	uint8_t meas;
 	uint8_t min_val;
 	uint8_t max_val;
+
+	//children_values nodeInfo[MAX_CHILDREN];
 	
 	task void sendRoutingTask();
 	task void receiveRoutingTask();
@@ -649,11 +651,9 @@ implementation
 		error_t enqueueDone;
 		OneMeasMsg* ommpkt;
 		TwoMeasMsg* tmmpkt;
-		uint8_t* children_values;
 
 		// If it's the first epoch and there is no measurement
 		if(meas==0){
-			children_values = (uint8_t*)malloc(MAX_CHILDREN * sizeof(uint8_t));
 			//dbg("Measures", "Measurement was 0 \n");
 			srand ( time(0) + TOS_NODE_ID);
 			meas = (rand() % 80) + 1;

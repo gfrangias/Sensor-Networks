@@ -50,7 +50,9 @@ typedef nx_struct TwoMeasMsg
 }TwoMeasMsg;
 
 typedef struct nodeInfo{
-	nx_uint16_t nodeID
+	nx_uint16_t nodeID;
+	nx_uint8_t max;
+	nx_uint8_t count;
 }nodeInfo;
 
 #endif
