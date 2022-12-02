@@ -28,13 +28,13 @@ t.addChannel("Routing result",f)
 t.addChannel("Measures",f)
 t.addChannel("Epoch",f)
 #t.addChannel("MeasureMsg",f)
-#t.addChannel("Random",f)
+t.addChannel("Random",f)
 t.addChannel("Matrix",f)
 t.addChannel("Tina",f)
 #################################################################
 
 ####### Start nodes in range, at slightly different moments #######
-for i in range(0,10):
+for i in range(0,9):
 	m=t.getNode(i)
 	m.bootAtTime(10*t.ticksPerSecond() + i)
 ###################################################################
@@ -68,10 +68,10 @@ for line in lines:
 	str1=line.strip()
 	if str1:
 		val=int(str1)
-		for i in range(0,10):
+		for i in range(0,9):
 			t.getNode(i).addNoiseTraceReading(val)
 noiseF.close()
-for i in range(0,10):
+for i in range(0,9):
 	t.getNode(i).createNoiseModel()
 	
 ok=False

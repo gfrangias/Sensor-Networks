@@ -22,6 +22,7 @@ module SRTreeC
 	uses interface Timer<TMilli> as RoutingMsgTimer;
 	uses interface Timer<TMilli> as StartMeasureTimer;
 	uses interface Timer<TMilli> as NewEpochTimer;
+	uses interface Timer<TMilli> as EndRoutingTimer;
 	
 	uses interface Receive as RoutingReceive;
 	uses interface Receive as MeasureReceive;
@@ -54,7 +55,6 @@ implementation
 	uint16_t parentID;
 	uint8_t tct;
 	uint8_t agg_function;
-	uint8_t meas;
 	uint8_t min_val;
 	uint8_t max_val;
 	uint8_t i;
@@ -62,7 +62,10 @@ implementation
 	uint8_t last_max;
 	uint8_t last_count;
 	uint8_t last_tina_max;
-	uint8_t last tina_count;
+	uint8_t last_tina_count;
+	uint8_t meas_max;
+	uint8_t meas_count;
+	
 	FILE* f;
 
 	nodeInfo children_values[MAX_CHILDREN];
@@ -117,7 +120,7 @@ implementation
 		f = fopen("/dev/urandom", "r");
 		fread(&seed, sizeof(seed), 1, f);
 		fclose(f);
-		srand(seed + TOS_NODE_ID + 1);
+		srand(seed);
 		
 		if(TOS_NODE_ID==0)
 		{
@@ -150,6 +153,7 @@ implementation
 			printf("Radio initialized successfully!!!\n");
 			printfflush();
 #endif
+			call EndRoutingTimer.startOneShot(TIMER_ROUTING);
 			
 			//call RoutingMsgTimer.startOneShot(TIMER_PERIOD_MILLI);
 			//call RoutingMsgTimer.startPeriodic(TIMER_PERIOD_MILLI);
@@ -525,15 +529,18 @@ implementation
 			setLostRoutingRecTask(TRUE);
 			return;
 		}
-	
-	if(!MeasureTimerSet){
-		rand_num = rand() % 120;
+	}
+
+	event void EndRoutingTimer.fired(){
+
+		if(!MeasureTimerSet){
+			rand_num = rand() % 240;
+		
 		dbg("Random", "Node: %d, Random: %d \n", TOS_NODE_ID, rand_num);
 		call StartMeasureTimer.startPeriodicAt(-BOOT_TIME-((curdepth+1)*TIMER_VERY_FAST_PERIOD+rand_num),TIMER_PERIOD_MILLI);
 		//dbg("Measures", "Timer will wait for: %d \n", TIMER_PERIOD_MILLI-((curdepth+1)*TIMER_VERY_FAST_PERIOD));
 		MeasureTimerSet = TRUE;
-	}
-
+		}
 	}
 
 
@@ -662,6 +669,7 @@ implementation
 		}
 				
 		dbg("MeasureMsg", "### MeasureReceive.receive() end ##### \n");
+		dbg("Tina", "Received from %d\n", ((OneMeasMsg*) payload)->senderID);
 		return msg;
 	}
 	
@@ -674,35 +682,38 @@ implementation
 		OneMeasMsg* ommpkt;
 		TwoMeasMsg* tmmpkt;		
 
+		//dbg("Measures", "Timer FIRED...\n");
+
 		//agg_function = MAX
 		if(agg_function == 0)
 		{
 			// If it's the first epoch and there is no measurement
-			if(last_max==0){
+			if(meas_max==0){
 				//dbg("Measures", "Measurement was 0 \n");
-				last_max = (rand() % 80) + 1;
-				last_tina_max = last_max;
-				dbg("Measures", "First ever measurement of node in depth %d: %d\n", curdepth, last_max);
-
+				meas_max = (rand() % 80) + 1;
 			// If a new measurement is needed
 			}else{
 				//dbg("Measures", "Old Measurement: %d\n", meas);
-				if((last_max / 10)>0){
-					min_val = last_max - (last_max / 10);
-					max_val = last_max + (last_max / 10);
-					last_max =  min_val + (rand() % (max_val-min_val));
+				if((meas_max / 10)>0){
+					min_val = meas_max - (meas_max / 10);
+					max_val = meas_max + (meas_max / 10);
+					meas_max =  min_val + (rand() % (max_val-min_val));
 				}
 			}
 
+			dbg("Measures", "Measurement of node in depth %d before aggregation: %d\n", curdepth, meas_max);
+
+			last_max = meas_max;
 			//Loop through children and find MAX
 			for(i=0; i<MAX_CHILDREN; i++)
 			{
 				if(children_values[i].nodeID == 0)
 					break;
 
-				if(meas<children_values[i].max)
+				if(meas_max<children_values[i].max)
 					last_max = children_values[i].max;	
 			}
+			dbg("Measures", "Measurement in depth %d after aggregation without Tina: %d\n", curdepth, last_max);
 		}
 		//agg_function = COUNT
 		else if(agg_function == 1) 
@@ -716,24 +727,26 @@ implementation
 
 				last_count += children_values[i].count;	
 			}
+
+			dbg("Measures", "Measurement in depth %d after aggregation without Tina: %d\n", curdepth, last_count);
 		}
 		else
 			exit(0);
 
-		dbg("Measures", "Measurement in depth %d after aggregation without Tina: %d\n", curdepth, meas);
 
 		if(agg_function == 0)
 		{
 			uint8_t meas_diff = 0;
 
-			meas_diff = (abs(last_tina_max - last_max)*100)/last_tina_max;
+			if(last_tina_max != 0)
+				meas_diff = (abs(last_tina_max - last_max)*100)/last_tina_max;
 
 			//dbg("Tina", "Diff: %d\n", meas_diff);
 
-			if(meas_diff > tct)
+			if(meas_diff > tct || last_tina_max == 0)
 			{
 				tina_condition = TRUE;
-				dbg("Tina", "Tina PASS, Last MAX: %d New MAX: %d\n", last_max, meas);
+				dbg("Tina", "Tina PASS, Last MAX: %d New MAX: %d\n", last_tina_max, last_max);
 				last_tina_max = last_max;
 			}
 			else
@@ -743,14 +756,14 @@ implementation
 		{
 			uint8_t meas_diff = 0;
 			
-			if(last_count != 0)
-				meas_diff = (abs(last_count - meas)*100)/last_count;
+			if(last_tina_count != 0)
+				meas_diff = (abs(last_tina_count - last_count)*100)/last_tina_count;
 
-			if(meas_diff > tct || last_count == 0)
+			if(meas_diff > tct || last_tina_count == 0)
 			{
 				tina_condition = TRUE;
-				dbg("Tina", "Tina PASS, Last COUNT: %d New COUNT: %d\n", last_count, meas);
-				last_count = meas;
+				dbg("Tina", "Tina PASS, Last COUNT: %d New COUNT: %d\n", last_tina_count, last_count);
+				last_tina_count = last_count;
 			}
 			else
 				tina_condition = FALSE;
@@ -764,7 +777,7 @@ implementation
 			return;
 		}
 		
-		if(tina_condition)
+		if(tina_condition && TOS_NODE_ID != 0)
 		{
 			ommpkt = (OneMeasMsg*) (call MeasurePacket.getPayload(&tmp, sizeof(OneMeasMsg)));
 			if(ommpkt==NULL)
@@ -772,10 +785,25 @@ implementation
 				dbg("MeasureMsg","StartMeasureTimer.fired(): No valid payload... \n");
 				return;
 			}
-			atomic{
-			ommpkt->senderID=TOS_NODE_ID;
-			ommpkt->measurement=meas;
+			if(agg_function == 0)
+			{
+				atomic{
+				ommpkt->senderID=TOS_NODE_ID;
+				ommpkt->measurement=last_tina_max;
+				}
+				dbg("Tina", "Sending Measurement to parent %d: %d\n", parentID, last_tina_max);
 			}
+			else if(agg_function == 1)
+			{
+				atomic{
+				ommpkt->senderID=TOS_NODE_ID;
+				ommpkt->measurement=last_tina_count;
+				}
+				dbg("Tina", "Sending Measurement to parent %d: %d\n", parentID, last_tina_count);
+			}
+			else
+				exit(0);
+
 			dbg("MeasureMsg" , "Sending MeasureMsg... \n");
 		
 			call MeasureAMPacket.setDestination(&tmp, parentID);
@@ -783,10 +811,11 @@ implementation
 			
 			enqueueDone=call MeasureSendQueue.enqueue(tmp);
 
-			/*for(i=0;i<MAX_CHILDREN;i++)
+			for(i=0;i<MAX_CHILDREN;i++)
 			{
-				dbg("Matrix", "Children values: %d %d %d\n", children_values[i].nodeID, children_values[i].max, children_values[i].count);
-			}*/
+				if(children_values[i].nodeID !=0)
+					dbg("Matrix", "Children values: %d %d %d\n", children_values[i].nodeID, children_values[i].max, children_values[i].count);
+			}
 			
 			if( enqueueDone==SUCCESS)
 			{
@@ -799,7 +828,16 @@ implementation
 				dbg("MeasureMsg","MeasMsg enqueued successfully in MeasureSendQueue!!!\n");
 
 			}	
-		}	
+		}
+		else if(TOS_NODE_ID == 0)
+		{
+			if(agg_function == 0)
+				dbg("Tina", "Result of aggregation: %d\n", last_tina_max);
+			else if(agg_function == 1)
+				dbg("Tina", "Result of aggregation: %d\n", last_tina_count);
+			else
+				exit(0);
+		}
 
 	}
 
