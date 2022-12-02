@@ -61,6 +61,8 @@ implementation
 	uint16_t seed;
 	uint8_t last_max;
 	uint8_t last_count;
+	uint8_t last_tina_max;
+	uint8_t last tina_count;
 	FILE* f;
 
 	nodeInfo children_values[MAX_CHILDREN];
@@ -525,7 +527,6 @@ implementation
 		}
 	
 	if(!MeasureTimerSet){
-		//srand ( TOS_NODE_ID + time(0) );
 		rand_num = rand() % 120;
 		dbg("Random", "Node: %d, Random: %d \n", TOS_NODE_ID, rand_num);
 		call StartMeasureTimer.startPeriodicAt(-BOOT_TIME-((curdepth+1)*TIMER_VERY_FAST_PERIOD+rand_num),TIMER_PERIOD_MILLI);
@@ -677,20 +678,19 @@ implementation
 		if(agg_function == 0)
 		{
 			// If it's the first epoch and there is no measurement
-			if(meas==0){
+			if(last_max==0){
 				//dbg("Measures", "Measurement was 0 \n");
-				//srand ( time(0) + TOS_NODE_ID);
-				meas = (rand() % 80) + 1;
-				dbg("Measures", "Measurement of node in depth %d: %d\n", curdepth, meas);
+				last_max = (rand() % 80) + 1;
+				last_tina_max = last_max;
+				dbg("Measures", "First ever measurement of node in depth %d: %d\n", curdepth, last_max);
 
 			// If a new measurement is needed
 			}else{
 				//dbg("Measures", "Old Measurement: %d\n", meas);
-				if((meas / 10)>0){
-					min_val = meas - (meas / 10);
-					max_val = meas + (meas / 10);
-					//srand ( time(0) );
-					meas =  min_val + (rand() % (max_val-min_val));
+				if((last_max / 10)>0){
+					min_val = last_max - (last_max / 10);
+					max_val = last_max + (last_max / 10);
+					last_max =  min_val + (rand() % (max_val-min_val));
 				}
 			}
 
@@ -701,20 +701,20 @@ implementation
 					break;
 
 				if(meas<children_values[i].max)
-					meas = children_values[i].max;	
+					last_max = children_values[i].max;	
 			}
 		}
 		//agg_function = COUNT
 		else if(agg_function == 1) 
 		{	
-			meas = 1;
+			last_count = 1;
 			//Calculate COUNT
 			for(i=0; i<MAX_CHILDREN; i++)
 			{
 				if(children_values[i].nodeID == 0)
 					break;
 
-				meas += children_values[i].count;	
+				last_count += children_values[i].count;	
 			}
 		}
 		else
@@ -726,16 +726,15 @@ implementation
 		{
 			uint8_t meas_diff = 0;
 
-			if(last_max != 0)
-				meas_diff = (abs(last_max - meas)*100)/last_max;
+			meas_diff = (abs(last_tina_max - last_max)*100)/last_tina_max;
 
 			//dbg("Tina", "Diff: %d\n", meas_diff);
 
-			if(meas_diff > tct || last_max == 0)
+			if(meas_diff > tct)
 			{
 				tina_condition = TRUE;
 				dbg("Tina", "Tina PASS, Last MAX: %d New MAX: %d\n", last_max, meas);
-				last_max = meas;
+				last_tina_max = last_max;
 			}
 			else
 				tina_condition = FALSE;
