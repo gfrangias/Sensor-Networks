@@ -50,6 +50,10 @@ implementation
 	bool lostRoutingSendTask=FALSE;
 	bool lostRoutingRecTask=FALSE;
 	bool tina_condition=FALSE;
+	bool max=FALSE;
+	bool count=FALSE;
+	bool max_change=FALSE;
+	bool count_change=FALSE;
 
 	uint8_t curdepth;
 	uint16_t parentID;
@@ -684,8 +688,18 @@ implementation
 
 		//dbg("Measures", "Timer FIRED...\n");
 
+		if(agg_function==0)
+			max = TRUE;
+		else if(agg_function == 1)
+			count =TRUE;
+		else
+		{
+			max = TRUE;
+			count = TRUE;
+		}
+
 		//agg_function = MAX
-		if(agg_function == 0)
+		if(max)
 		{
 			// If it's the first epoch and there is no measurement
 			if(meas_max==0){
@@ -716,7 +730,7 @@ implementation
 			dbg("Measures", "Measurement in depth %d after aggregation without Tina: %d\n", curdepth, last_max);
 		}
 		//agg_function = COUNT
-		else if(agg_function == 1) 
+		if(count) 
 		{	
 			last_count = 1;
 			//Calculate COUNT
@@ -730,11 +744,9 @@ implementation
 
 			dbg("Measures", "Measurement in depth %d after aggregation without Tina: %d\n", curdepth, last_count);
 		}
-		else
-			exit(0);
+	
 
-
-		if(agg_function == 0)
+		if(max)
 		{
 			uint8_t meas_diff = 0;
 
@@ -746,13 +758,18 @@ implementation
 			if(meas_diff > tct || last_tina_max == 0)
 			{
 				tina_condition = TRUE;
+				max_change = TRUE;
 				dbg("Tina", "Tina PASS, Last MAX: %d New MAX: %d\n", last_tina_max, last_max);
 				last_tina_max = last_max;
 			}
 			else
+			{
 				tina_condition = FALSE;
+				max_change = FALSE;
+			}
 		}
-		else if(agg_function == 1)
+		
+		if(count)
 		{
 			uint8_t meas_diff = 0;
 			
@@ -762,22 +779,23 @@ implementation
 			if(meas_diff > tct || last_tina_count == 0)
 			{
 				tina_condition = TRUE;
+				count_change = TRUE;
 				dbg("Tina", "Tina PASS, Last COUNT: %d New COUNT: %d\n", last_tina_count, last_count);
 				last_tina_count = last_count;
 			}
 			else
+			{
 				tina_condition = FALSE;
+				count_change = FALSE;
+			}
 		}
-		else
-			exit(0);
-
 
 		if(call MeasureSendQueue.full())
 		{
 			return;
 		}
 		
-		if(tina_condition && TOS_NODE_ID != 0)
+		if(tina_condition && TOS_NODE_ID != 0 && !(max_change && count_change))
 		{
 			ommpkt = (OneMeasMsg*) (call MeasurePacket.getPayload(&tmp, sizeof(OneMeasMsg)));
 			if(ommpkt==NULL)
@@ -785,7 +803,7 @@ implementation
 				dbg("MeasureMsg","StartMeasureTimer.fired(): No valid payload... \n");
 				return;
 			}
-			if(agg_function == 0)
+			if(max_change)
 			{
 				atomic{
 				ommpkt->senderID=TOS_NODE_ID;
@@ -793,7 +811,7 @@ implementation
 				}
 				dbg("Tina", "Sending Measurement to parent %d: %d\n", parentID, last_tina_max);
 			}
-			else if(agg_function == 1)
+			if(count_change)
 			{
 				atomic{
 				ommpkt->senderID=TOS_NODE_ID;
@@ -801,8 +819,6 @@ implementation
 				}
 				dbg("Tina", "Sending Measurement to parent %d: %d\n", parentID, last_tina_count);
 			}
-			else
-				exit(0);
 
 			dbg("MeasureMsg" , "Sending MeasureMsg... \n");
 		
@@ -829,14 +845,54 @@ implementation
 
 			}	
 		}
+		else if(tina_condition && TOS_NODE_ID != 0 && (max_change && count_change))
+		{
+			tmmpkt = (TwoMeasMsg*) (call MeasurePacket.getPayload(&tmp, sizeof(TwoMeasMsg)));
+			if(tmmpkt==NULL)
+			{
+				dbg("MeasureMsg","StartMeasureTimer.fired(): No valid payload... \n");
+				return;
+			}
+
+			atomic{
+			tmmpkt->senderID=TOS_NODE_ID;
+			tmmpkt->count=last_tina_count;
+			tmmpkt->max=last_tina_max;
+			}
+			dbg("Tina", "Sending Measurement COUNT to parent %d: %d\n", parentID, last_tina_count);
+			dbg("Tina", "Sending Measurement MAX to parent %d: %d\n", parentID, last_tina_max);
+
+			dbg("MeasureMsg" , "Sending MeasureMsg... \n");
+		
+			call MeasureAMPacket.setDestination(&tmp, parentID);
+			call MeasurePacket.setPayloadLength(&tmp, sizeof(TwoMeasMsg));
+			
+			enqueueDone=call MeasureSendQueue.enqueue(tmp);
+
+			for(i=0;i<MAX_CHILDREN;i++)
+			{
+				if(children_values[i].nodeID !=0)
+					dbg("Matrix", "Children values: %d %d %d\n", children_values[i].nodeID, children_values[i].max, children_values[i].count);
+			}
+			
+			if( enqueueDone==SUCCESS)
+			{
+				if (call MeasureSendQueue.size()==1)
+				{
+					dbg("MeasureMsg", "SendTask() posted!!\n");
+					post sendMeasMsg();
+				}
+				
+				dbg("MeasureMsg","MeasMsg enqueued successfully in MeasureSendQueue!!!\n");
+
+			}	
+		}
 		else if(TOS_NODE_ID == 0)
 		{
-			if(agg_function == 0)
-				dbg("Tina", "Result of aggregation: %d\n", last_tina_max);
-			else if(agg_function == 1)
-				dbg("Tina", "Result of aggregation: %d\n", last_tina_count);
-			else
-				exit(0);
+			if(max)
+				dbg("Tina", "Result of MAX aggregation: %d\n", last_tina_max);
+			if(count)
+				dbg("Tina", "Result of COUNT aggregation: %d\n", last_tina_count);
 		}
 
 	}

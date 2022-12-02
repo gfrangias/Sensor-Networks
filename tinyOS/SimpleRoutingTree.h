@@ -45,8 +45,8 @@ typedef nx_struct TwoMeasMsg
 {
 	nx_uint16_t senderID;
 	nx_uint16_t parentID;
-	nx_uint8_t measurement1;
-	nx_uint8_t measurement2;
+	nx_uint8_t max;
+	nx_uint8_t count;
 }TwoMeasMsg;
 
 typedef struct nodeInfo{
