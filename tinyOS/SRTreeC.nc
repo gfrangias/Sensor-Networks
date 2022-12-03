@@ -193,7 +193,7 @@ implementation
 			tct = 10;
 			dbg("TCT", "TCT for round %u is %u\n", roundCounter, tct);
 			//agg_function = (rand() % 3);
-			agg_function = 1;
+			agg_function = 2;
 
 			if(agg_function == 0){
 				dbg("aggregation_function", "Aggregation function for round %u is MAX\n", roundCounter);
@@ -264,7 +264,7 @@ implementation
 		else
 		{
 			dbg("Routing result", "|          %d => %d          |\n", TOS_NODE_ID, parentID);
-			fprintf(tree_file,"%d %d\n", TOS_NODE_ID, parentID);
+			//fprintf(tree_file,"%d %d\n", TOS_NODE_ID, parentID);
 
 		}
 
@@ -477,7 +477,7 @@ implementation
 		
 		mlen=call MeasurePacket.payloadLength(&radioMeasMsgSendPkt);
 		mdest=call MeasureAMPacket.destination(&radioMeasMsgSendPkt);
-		if(mlen!=sizeof(OneMeasMsg))
+		if(mlen!=sizeof(OneMeasMsg) && mlen!=sizeof(TwoMeasMsg))
 		{
 			dbg("MeasureMsg","\t\\sendMeasMsg(): Unknown message!!!\n");
 			return;
@@ -529,7 +529,36 @@ implementation
 					if(agg_function == 0)
 						children_values[i].max = mpkt->measurement;
 					if(agg_function == 1)
-						children_values[i].count = mpkt->measurement;
+					{
+						children_values[i].count = mpkt->measurement & 0x7f;
+					}
+					if(agg_function == 2)
+					{
+						if(mpkt->measurement >> 8 == 1)
+							children_values[i].count = mpkt->measurement & 0x7f;
+						else
+							children_values[i].max = mpkt->measurement;
+					}
+
+					break;
+				}
+			}
+		}
+		else if(len == sizeof(TwoMeasMsg))
+		{
+			TwoMeasMsg * mpkt = (TwoMeasMsg*) (call MeasurePacket.getPayload(&radioMeasMsgRecPkt,len));
+			
+			//dbg("MeasureMsg" , "receiveMeasMsg():senderID= %d , depth= %d \n", mpkt->senderID , mpkt->depth);
+			//dbg("TCT", "receiveMeasMsg():TCT=%d, senderID=%d \n", mpkt->tct, mpkt->senderID);
+
+			for(i = 0; i<MAX_CHILDREN; i++)
+			{
+				if(children_values[i].nodeID == mpkt->senderID || children_values[i].nodeID == 0)
+				{
+					children_values[i].nodeID = mpkt->senderID;
+
+					children_values[i].max = mpkt->max;
+					children_values[i].count = mpkt->count;
 
 					break;
 				}
@@ -559,7 +588,10 @@ implementation
 		msource = call MeasureAMPacket.source(msg);
 		
 		dbg("MeasureMsg", "### MeasureReceive.receive() start ##### \n");
-		dbg("MeasureMsg", "Something received!!! from %u %u\n",((OneMeasMsg*) payload)->senderID , msource);	
+		if(len == sizeof(OneMeasMsg))
+			dbg("MeasureMsg", "Something received!!! from %u %u\n",((OneMeasMsg*) payload)->senderID , msource);	
+		else
+			dbg("MeasureMsg", "Something received!!! from %u %u\n",((TwoMeasMsg*) payload)->senderID , msource);
 
 		atomic{
 			memcpy(&tmp,msg,sizeof(message_t));
@@ -578,7 +610,12 @@ implementation
 				
 		dbg("MeasureMsg", "### MeasureReceive.receive() end ##### \n");
 		if (MeasureTimerSet)
-			dbg("Tina", "| Node %d received from %d\n", TOS_NODE_ID, ((OneMeasMsg*) payload)->senderID);
+		{
+			if(len == sizeof(OneMeasMsg))
+				dbg("Tina", "| Node %d received from %d\n", TOS_NODE_ID, ((OneMeasMsg*) payload)->senderID);
+			else
+				dbg("Tina", "| Node %d received from %d\n", TOS_NODE_ID, ((TwoMeasMsg*) payload)->senderID);
+		}
 		return msg;
 	}
 	
@@ -681,7 +718,6 @@ implementation
 			}
 			else
 			{
-				tina_condition = FALSE;
 				max_change = FALSE;
 			}
 		}
@@ -702,10 +738,12 @@ implementation
 			}
 			else
 			{
-				tina_condition = FALSE;
 				count_change = FALSE;
 			}
 		}
+
+		if(!(count_change || max_change))
+			tina_condition = FALSE;
 
 		if(call MeasureSendQueue.full())
 		{
@@ -726,17 +764,17 @@ implementation
 				ommpkt->senderID=TOS_NODE_ID;
 				ommpkt->measurement=last_tina_max;
 				}                                                               
-				dbg("Tina", "|  ****SEND TiNA****  | Node: %d MAX: %d\n*****************************************\n", TOS_NODE_ID, last_tina_max);
+				dbg("Tina", "|  ****SEND TiNA****  | Node: %d MAX: %d\n", TOS_NODE_ID, last_tina_max);
 			}
 			if(count_change)
 			{
 				atomic{
 				ommpkt->senderID=TOS_NODE_ID;
-				ommpkt->measurement=last_tina_count;
+				ommpkt->measurement = last_tina_count | 1 << 8;
 				}
-				dbg("Tina", "|  ****SEND TiNA****  | Node: %d COUNT: %d\n*****************************************\n", TOS_NODE_ID, last_tina_count);
+				dbg("Tina", "|  ****SEND TiNA****  | Node: %d COUNT: %d\n", TOS_NODE_ID, last_tina_count);
 			}
-
+			dbg("Tina", "|  ****SEND TiNA****  | Sending ONE MEAS\n*****************************************\n");
 			dbg("MeasureMsg" , "Sending MeasureMsg... \n");
 		
 			call MeasureAMPacket.setDestination(&tmp, parentID);
@@ -756,7 +794,7 @@ implementation
 
 			}	
 		}
-		else if(tina_condition && TOS_NODE_ID != 0 && (max_change && count_change))
+		else if(tina_condition && TOS_NODE_ID != 0 && max_change && count_change)
 		{
 			tmmpkt = (TwoMeasMsg*) (call MeasurePacket.getPayload(&tmp, sizeof(TwoMeasMsg)));
 			if(tmmpkt==NULL)
@@ -770,8 +808,9 @@ implementation
 			tmmpkt->count=last_tina_count;
 			tmmpkt->max=last_tina_max;
 			}
-			dbg("Tina", "|  ****SEND TiNA****  | Node: %d MAX: %d\n*****************************************\n", TOS_NODE_ID, last_tina_max);
-			dbg("Tina", "|  ****SEND TiNA****  | Node: %d COUNT: %d\n*****************************************\n", TOS_NODE_ID, last_tina_count);
+			dbg("Tina", "|  ****SEND TiNA****  | Node: %d MAX: %d\n", TOS_NODE_ID, last_tina_max);
+			dbg("Tina", "|  ****SEND TiNA****  | Node: %d COUNT: %d\n", TOS_NODE_ID, last_tina_count);
+			dbg("Tina", "|  ****SEND TiNA****  | Sending TWO MEAS\n*****************************************\n");
 			dbg("MeasureMsg" , "Sending MeasureMsg... \n");
 		
 			call MeasureAMPacket.setDestination(&tmp, parentID);
@@ -800,9 +839,9 @@ implementation
 		else if(TOS_NODE_ID == 0)
 		{
 			if(max)
-				dbg("Tina", "^^^^^^^^^^^Result of MAX for epoch %d: %d^^^^^^^^^^^\n\n\n", roundCounter, last_tina_max);
+				dbg("Result", "^^^^^^^^^^^Result of MAX for epoch %d: %d^^^^^^^^^^^\n\n\n", roundCounter, last_tina_max);
 			if(count)
-				dbg("Tina", "^^^^^^^^^^^Result of COUNT for epoch %d: %d^^^^^^^^^^^\n\n\n", roundCounter, last_tina_count);
+				dbg("Result", "^^^^^^^^^^^Result of COUNT for epoch %d: %d^^^^^^^^^^^\n\n\n", roundCounter, last_tina_count);
 		}
 
 	}

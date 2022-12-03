@@ -23,25 +23,26 @@ print "TicksPerSecond : ", t.ticksPerSecond(),"\n"
 #t.addChannel("Serial",f)
 #t.addChannel("SRTreeC",f)
 #t.addChannel("PacketQueueC",f)
-t.addChannel("TCT",f)
-t.addChannel("aggregation_function",f)
+#t.addChannel("TCT",f)
+#t.addChannel("aggregation_function",f)
 t.addChannel("Routing result",f)
-t.addChannel("Measures",f)
+#t.addChannel("Measures",f)
 t.addChannel("Epoch",f)
 #t.addChannel("MeasureMsg",f)
-t.addChannel("Random",f)
-t.addChannel("Matrix",f)
-t.addChannel("Tina",f)
+#t.addChannel("Random",f)
+#t.addChannel("Matrix",f)
+#t.addChannel("Tina",f)
+t.addChannel("Result",f)
 #################################################################
 
 ####### Start nodes in range, at slightly different moments #######
-for i in range(0,9):
+for i in range(0,63):
 	m=t.getNode(i)
 	m.bootAtTime(10*t.ticksPerSecond() + i)
 ###################################################################
 
 # Choose which topology file to open 
-topo = open("topology.txt", "r")
+topo = open("topology5.txt", "r")
 
 # When topology file can't be found
 if topo is None:
@@ -69,10 +70,10 @@ for line in lines:
 	str1=line.strip()
 	if str1:
 		val=int(str1)
-		for i in range(0,9):
+		for i in range(0,63):
 			t.getNode(i).addNoiseTraceReading(val)
 noiseF.close()
-for i in range(0,9):
+for i in range(0,63):
 	t.getNode(i).createNoiseModel()
 	
 ok=False
@@ -91,6 +92,6 @@ while(h):
 
 	if (t.time()>= SIM_END_TIME):
 		h=False
-		subprocess.call("python tree_print.py", shell=True)
+		#subprocess.call("python tree_print.py", shell=True)
 	if(h<=0):
 		ok=False
