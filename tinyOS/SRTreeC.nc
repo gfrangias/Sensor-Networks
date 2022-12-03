@@ -55,6 +55,8 @@ implementation
 	bool max_change=FALSE;
 	bool count_change=FALSE;
 
+	char line[10];
+
 	uint8_t curdepth;
 	uint16_t parentID;
 	uint8_t tct;
@@ -70,7 +72,8 @@ implementation
 	uint8_t meas_max;
 	uint8_t meas_count;
 	
-	FILE* f;
+	FILE* urandom_file;
+	FILE* tree_file;
 
 	nodeInfo children_values[MAX_CHILDREN];
 	
@@ -121,30 +124,26 @@ implementation
 		roundCounter =0;
 
 		//generate seed using urandom from UNIX
-		f = fopen("/dev/urandom", "r");
-		fread(&seed, sizeof(seed), 1, f);
-		fclose(f);
+		urandom_file = fopen("/dev/urandom", "r");
+		fread(&seed, sizeof(seed), 1, urandom_file);
+		fclose(urandom_file);
 		srand(seed);
+
+		tree_file = fopen("tree.txt", "w");
+		fclose(tree_file);
+		tree_file = fopen("tree.txt", "a");
 		
 		if(TOS_NODE_ID==0)
 		{
 			curdepth=0;
 			parentID=0;
 			dbg("Boot", "curdepth = %d  ,  parentID= %d \n", curdepth , parentID);
-#ifdef PRINTFDBG_MODE
-			printf("Booted NodeID= %d : curdepth= %d , parentID= %d \n", TOS_NODE_ID ,curdepth , parentID);
-			printfflush();
-#endif
 		}
 		else
 		{
 			curdepth=-1;
 			parentID=-1;
 			dbg("Boot", "curdepth = %d  ,  parentID= %d \n", curdepth , parentID);
-#ifdef PRINTFDBG_MODE
-			printf("Booted NodeID= %d : curdepth= %d , parentID= %d \n", TOS_NODE_ID ,curdepth , parentID);
-			printfflush();
-#endif
 		}
 	}
 	
@@ -153,10 +152,6 @@ implementation
 		if (err == SUCCESS)
 		{
 			dbg("Radio" , "Radio initialized successfully!!!\n");
-#ifdef PRINTFDBG_MODE
-			printf("Radio initialized successfully!!!\n");
-			printfflush();
-#endif
 			call EndRoutingTimer.startOneShot(TIMER_ROUTING);
 			
 			//call RoutingMsgTimer.startOneShot(TIMER_PERIOD_MILLI);
@@ -170,10 +165,6 @@ implementation
 		else
 		{
 			dbg("Radio" , "Radio initialization failed! Retrying...\n");
-#ifdef PRINTFDBG_MODE
-			printf("Radio initialization failed! Retrying...\n");
-			printfflush();
-#endif
 			call RadioControl.start();
 		}
 	}
@@ -181,10 +172,6 @@ implementation
 	event void RadioControl.stopDone(error_t err)
 	{ 
 		dbg("Radio", "Radio stopped!\n");
-#ifdef PRINTFDBG_MODE
-		printf("Radio stopped!\n");
-		printfflush();
-#endif
 	}
 
 	
@@ -195,23 +182,18 @@ implementation
 		
 		RoutingMsg* mrpkt;
 		dbg("SRTreeC", "RoutingMsgTimer fired!  radioBusy = %s \n",(RoutingSendBusy)?"True":"False");
-#ifdef PRINTFDBG_MODE
-		printfflush();
-		printf("RoutingMsgTimer fired!  radioBusy = %s \n",(RoutingSendBusy)?"True":"False");
-		printfflush();
-#endif
 		if (TOS_NODE_ID==0)
 		{
 			roundCounter+=1;
 			
-			dbg("Epoch", "##################################### \n");
-			dbg("Epoch", "#######   ROUND   %u    ############# \n", roundCounter);
-			dbg("Epoch", "#####################################\n");
+			dbg("Epoch", "################################################### \n");
+			dbg("Epoch", "##############   ROUND   %u    #################### \n", roundCounter);
+			dbg("Epoch", "###################################################\n");
 			//tct = 5*((rand() % 4) + 1);
 			tct = 10;
 			dbg("TCT", "TCT for round %u is %u\n", roundCounter, tct);
 			//agg_function = (rand() % 3);
-			agg_function = 0;
+			agg_function = 1;
 
 			if(agg_function == 0){
 				dbg("aggregation_function", "Aggregation function for round %u is MAX\n", roundCounter);
@@ -225,10 +207,6 @@ implementation
 		
 		if(call RoutingSendQueue.full())
 		{
-#ifdef PRINTFDBG_MODE
-			printf("RoutingSendQueue is FULL!!! \n");
-			printfflush();
-#endif
 			return;
 		}
 		
@@ -237,10 +215,6 @@ implementation
 		if(mrpkt==NULL)
 		{
 			dbg("SRTreeC","RoutingMsgTimer.fired(): No valid payload... \n");
-#ifdef PRINTFDBG_MODE
-			printf("RoutingMsgTimer.fired(): No valid payload... \n");
-			printfflush();
-#endif
 			return;
 		}
 		atomic{
@@ -251,10 +225,6 @@ implementation
 		}
 		dbg("SRTreeC" , "Sending RoutingMsg... \n");
 
-#ifdef PRINTFDBG_MODE
-		printf("NodeID= %d : RoutingMsg sending...!!!! \n", TOS_NODE_ID);
-		printfflush();
-#endif		
 		call RoutingAMPacket.setDestination(&tmp, AM_BROADCAST_ADDR);
 		call RoutingPacket.setPayloadLength(&tmp, sizeof(RoutingMsg));
 		
@@ -265,26 +235,14 @@ implementation
 			if (call RoutingSendQueue.size()==1)
 			{
 				dbg("SRTreeC", "SendTask() posted!!\n");
-#ifdef PRINTFDBG_MODE
-				printf("SendTask() posted!!\n");
-				printfflush();
-#endif
 				post sendRoutingTask();
 			}
 			
 			dbg("SRTreeC","RoutingMsg enqueued successfully in SendingQueue!!!\n");
-#ifdef PRINTFDBG_MODE
-			printf("RoutingMsg enqueued successfully in SendingQueue!!!\n");
-			printfflush();
-#endif
 		}
 		else
 		{
 			dbg("SRTreeC","RoutingMsg failed to be enqueued in SendingQueue!!!");
-#ifdef PRINTFDBG_MODE			
-			printf("RoutingMsg failed to be enqueued in SendingQueue!!!\n");
-			printfflush();
-#endif
 		}		
 	}
 	
@@ -292,25 +250,27 @@ implementation
 	{
 			roundCounter+=1;
 			
-			dbg("Epoch", "##################################### \n");
-			dbg("Epoch", "#######   ROUND   %u    ############# \n", roundCounter);
-			dbg("Epoch", "#####################################\n");
+			dbg("Epoch", "################################################### \n");
+			dbg("Epoch", "##############   ROUND   %u    #################### \n", roundCounter);
+			dbg("Epoch", "###################################################\n");
 	}
 
 	event void RoutingAMSend.sendDone(message_t * msg , error_t err)
-	{
-		dbg("Routing result", "------Node (%d)----------curdepth = %d , parentID= %d \n", TOS_NODE_ID, curdepth , parentID);
+	{	if(TOS_NODE_ID==0)
+		{
+			dbg("Routing result", "----------------------------\n");
+			dbg("Routing result", "|------ROUTING RESULT------|\n");
+		}
+		else
+		{
+			dbg("Routing result", "|          %d => %d          |\n", TOS_NODE_ID, parentID);
+			fprintf(tree_file,"%d %d\n", TOS_NODE_ID, parentID);
+
+		}
+
 		dbg("SRTreeC", "A Routing package sent... %s \n",(err==SUCCESS)?"True":"False");
-#ifdef PRINTFDBG_MODE
-		printf("A Routing package sent... %s \n",(err==SUCCESS)?"True":"False");
-		printfflush();
-#endif
 		
 		dbg("SRTreeC" , "Package sent %s \n", (err==SUCCESS)?"True":"False");
-#ifdef PRINTFDBG_MODE
-		printf("Package sent %s \n", (err==SUCCESS)?"True":"False");
-		printfflush();
-#endif
 		setRoutingSendBusy(FALSE);
 		
 		if(!(call RoutingSendQueue.empty()))
@@ -350,19 +310,11 @@ implementation
 		enqueueDone=call RoutingReceiveQueue.enqueue(tmp);
 		if(enqueueDone == SUCCESS)
 		{
-#ifdef PRINTFDBG_MODE
-			printf("posting receiveRoutingTask()!!!! \n");
-			printfflush();
-#endif
 			post receiveRoutingTask();
 		}
 		else
 		{
-			dbg("SRTreeC","RoutingMsg enqueue failed!!! \n");
-#ifdef PRINTFDBG_MODE
-			printf("RoutingMsg enqueue failed!!! \n");
-			printfflush();
-#endif			
+			dbg("SRTreeC","RoutingMsg enqueue failed!!! \n");		
 		}
 				
 		dbg("SRTreeC", "### RoutingReceive.receive() end ##### \n");
@@ -380,17 +332,9 @@ implementation
 		error_t sendDone;
 		//message_t radioRoutingSendPkt;
 		
-#ifdef PRINTFDBG_MODE
-		printf("SendRoutingTask(): Starting....\n");
-		printfflush();
-#endif
 		if (call RoutingSendQueue.empty())
 		{
 			dbg("SRTreeC","sendRoutingTask(): Q is empty!\n");
-#ifdef PRINTFDBG_MODE		
-			printf("sendRoutingTask():Q is empty!\n");
-			printfflush();
-#endif
 			return;
 		}
 		
@@ -398,10 +342,6 @@ implementation
 		if(RoutingSendBusy)
 		{
 			dbg("SRTreeC","sendRoutingTask(): RoutingSendBusy= TRUE!!!\n");
-#ifdef PRINTFDBG_MODE
-			printf(	"sendRoutingTask(): RoutingSendBusy= TRUE!!!\n");
-			printfflush();
-#endif
 			setLostRoutingSendTask(TRUE);
 			return;
 		}
@@ -413,10 +353,6 @@ implementation
 		if(mlen!=sizeof(RoutingMsg))
 		{
 			dbg("SRTreeC","\t\tsendRoutingTask(): Unknown message!!!\n");
-#ifdef PRINTFDBG_MODE
-			printf("\t\tsendRoutingTask(): Unknown message!!!!\n");
-			printfflush();
-#endif
 			return;
 		}
 		sendDone=call RoutingAMSend.send(mdest,&radioRoutingSendPkt,mlen);
@@ -424,18 +360,11 @@ implementation
 		if ( sendDone== SUCCESS)
 		{
 			dbg("SRTreeC","sendRoutingTask(): Send returned success!!!\n");
-#ifdef PRINTFDBG_MODE
-			printf("sendRoutingTask(): Send returned success!!!\n");
-			printfflush();
-#endif
 			setRoutingSendBusy(TRUE);
 		}
 		else
 		{
 			dbg("SRTreeC","send failed!!!\n");
-#ifdef PRINTFDBG_MODE
-			printf("SendRoutingTask(): send failed!!!\n");
-#endif
 			//setRoutingSendBusy(FALSE);
 		}
 	}
@@ -455,19 +384,11 @@ implementation
 		uint8_t len;
 		message_t radioRoutingRecPkt;
 		
-#ifdef PRINTFDBG_MODE
-		printf("ReceiveRoutingTask():received msg...\n");
-		printfflush();
-#endif
 		radioRoutingRecPkt= call RoutingReceiveQueue.dequeue();
 		
 		len= call RoutingPacket.payloadLength(&radioRoutingRecPkt);
 		
 		dbg("SRTreeC","ReceiveRoutingTask(): len=%u \n",len);
-#ifdef PRINTFDBG_MODE
-		printf("ReceiveRoutingTask(): len=%u!\n",len);
-		printfflush();
-#endif
 		// processing of radioRecPkt
 		
 		// pos tha xexorizo ta 2 diaforetika minimata???
@@ -476,12 +397,7 @@ implementation
 		{
 			RoutingMsg * mpkt = (RoutingMsg*) (call RoutingPacket.getPayload(&radioRoutingRecPkt,len));
 			
-			dbg("SRTreeC" , "receiveRoutingTask():senderID= %d , depth= %d \n", mpkt->senderID , mpkt->depth);
-#ifdef PRINTFDBG_MODE
-			printf("NodeID= %d , RoutingMsg received! \n",TOS_NODE_ID);
-			printf("receiveRoutingTask():senderID= %d , depth= %d \n", mpkt->senderID , mpkt->depth);
-			printfflush();
-#endif		
+			dbg("SRTreeC" , "receiveRoutingTask():senderID= %d , depth= %d \n", mpkt->senderID , mpkt->depth);	
 			tct = mpkt->tct;
 			agg_function = mpkt->agg_function;
 			if ( (parentID<0)||(parentID>=65535))
@@ -489,10 +405,6 @@ implementation
 				// tote den exei akoma patera
 				parentID= call RoutingAMPacket.source(&radioRoutingRecPkt);//mpkt->senderID;q
 				curdepth= mpkt->depth + 1;
-#ifdef PRINTFDBG_MODE
-				printf("NodeID= %d : curdepth= %d , parentID= %d \n", TOS_NODE_ID ,curdepth , parentID);
-				printfflush();
-#endif
 
 				if (TOS_NODE_ID!=0)
 				{
@@ -508,12 +420,7 @@ implementation
 					
 				
 					parentID= call RoutingAMPacket.source(&radioRoutingRecPkt);//mpkt->senderID;
-					curdepth = mpkt->depth + 1;
-				
-#ifdef PRINTFDBG_MODE
-					printf("NodeID= %d : curdepth= %d , parentID= %d \n", TOS_NODE_ID ,curdepth , parentID);
-					printfflush();
-#endif					
+					curdepth = mpkt->depth + 1;				
 									
 					if (TOS_NODE_ID!=0)
 					{
@@ -526,10 +433,6 @@ implementation
 		else
 		{
 			dbg("SRTreeC","receiveRoutingTask():Empty message!!! \n");
-#ifdef PRINTFDBG_MODE
-			printf("receiveRoutingTask():Empty message!!! \n");
-			printfflush();
-#endif
 			setLostRoutingRecTask(TRUE);
 			return;
 		}
@@ -538,12 +441,14 @@ implementation
 	event void EndRoutingTimer.fired(){
 
 		if(!MeasureTimerSet){
-			rand_num = rand() % 240;
+			rand_num = rand() % (TIMER_VERY_FAST_PERIOD-20);
 		
-		dbg("Random", "Node: %d, Random: %d \n", TOS_NODE_ID, rand_num);
-		call StartMeasureTimer.startPeriodicAt(-BOOT_TIME-((curdepth+1)*TIMER_VERY_FAST_PERIOD+rand_num),TIMER_PERIOD_MILLI);
-		//dbg("Measures", "Timer will wait for: %d \n", TIMER_PERIOD_MILLI-((curdepth+1)*TIMER_VERY_FAST_PERIOD));
-		MeasureTimerSet = TRUE;
+			dbg("Random", "Node: %d, Random: %d \n", TOS_NODE_ID, rand_num);
+			call StartMeasureTimer.startPeriodicAt(-BOOT_TIME-((curdepth+1)*TIMER_VERY_FAST_PERIOD+rand_num),TIMER_PERIOD_MILLI);
+			//dbg("Measures", "Timer will wait for: %d \n", TIMER_PERIOD_MILLI-((curdepth+1)*TIMER_VERY_FAST_PERIOD));
+			MeasureTimerSet = TRUE;
+			fclose(tree_file);
+			
 		}
 	}
 
@@ -615,7 +520,6 @@ implementation
 			//dbg("MeasureMsg" , "receiveMeasMsg():senderID= %d , depth= %d \n", mpkt->senderID , mpkt->depth);
 			//dbg("TCT", "receiveMeasMsg():TCT=%d, senderID=%d \n", mpkt->tct, mpkt->senderID);
 
-			// Aggregation etc...
 			for(i = 0; i<MAX_CHILDREN; i++)
 			{
 				if(children_values[i].nodeID == mpkt->senderID || children_values[i].nodeID == 0)
@@ -673,7 +577,8 @@ implementation
 		}
 				
 		dbg("MeasureMsg", "### MeasureReceive.receive() end ##### \n");
-		dbg("Tina", "Received from %d\n", ((OneMeasMsg*) payload)->senderID);
+		if (MeasureTimerSet)
+			dbg("Tina", "| Node %d received from %d\n", TOS_NODE_ID, ((OneMeasMsg*) payload)->senderID);
 		return msg;
 	}
 	
@@ -687,6 +592,19 @@ implementation
 		TwoMeasMsg* tmmpkt;		
 
 		//dbg("Measures", "Timer FIRED...\n");
+
+		for(i=0;i<MAX_CHILDREN;i++)
+		{
+			if(children_values[i].nodeID !=0)
+			{	
+				if(i==0)
+				{
+					dbg("Matrix", "Children Array of node %d\n", TOS_NODE_ID);
+					dbg("Matrix", "---Child-MAX-COUNT---\n", children_values[i].nodeID, children_values[i].max, children_values[i].count);
+				}
+				dbg("Matrix", "---| %d | %d | %d |-----\n", children_values[i].nodeID, children_values[i].max, children_values[i].count);
+			}		
+		}
 
 		if(agg_function==0)
 			max = TRUE;
@@ -715,7 +633,7 @@ implementation
 				}
 			}
 
-			dbg("Measures", "Measurement of node in depth %d before aggregation: %d\n", curdepth, meas_max);
+			dbg("Measures", "| Before agg. / No TiNA | Node: %d MAX: %d\n", TOS_NODE_ID, meas_max);
 
 			last_max = meas_max;
 			//Loop through children and find MAX
@@ -724,10 +642,10 @@ implementation
 				if(children_values[i].nodeID == 0)
 					break;
 
-				if(meas_max<children_values[i].max)
+				if(meas_max<children_values[i].max && last_max<children_values[i].max)
 					last_max = children_values[i].max;	
 			}
-			dbg("Measures", "Measurement in depth %d after aggregation without Tina: %d\n", curdepth, last_max);
+			dbg("Measures", "| After agg. / No TiNA  | Node: %d MAX: %d\n.........................................\n", TOS_NODE_ID, last_max);
 		}
 		//agg_function = COUNT
 		if(count) 
@@ -741,8 +659,7 @@ implementation
 
 				last_count += children_values[i].count;	
 			}
-
-			dbg("Measures", "Measurement in depth %d after aggregation without Tina: %d\n", curdepth, last_count);
+			dbg("Measures", "| After agg. / No TiNA  | Node: %d COUNT: %d\n.........................................\n", TOS_NODE_ID, last_count);
 		}
 	
 
@@ -759,7 +676,7 @@ implementation
 			{
 				tina_condition = TRUE;
 				max_change = TRUE;
-				dbg("Tina", "Tina PASS, Last MAX: %d New MAX: %d\n", last_tina_max, last_max);
+				dbg("Tina", "| ****PASSED TiNA**** | Node: %d Last MAX: %d New MAX: %d\n", TOS_NODE_ID, last_tina_max, last_max);
 				last_tina_max = last_max;
 			}
 			else
@@ -780,7 +697,7 @@ implementation
 			{
 				tina_condition = TRUE;
 				count_change = TRUE;
-				dbg("Tina", "Tina PASS, Last COUNT: %d New COUNT: %d\n", last_tina_count, last_count);
+				dbg("Tina", "| ****PASSED TiNA**** | Node: %d Last COUNT: %d New COUNT: %d\n", TOS_NODE_ID, last_tina_count, last_count);
 				last_tina_count = last_count;
 			}
 			else
@@ -808,8 +725,8 @@ implementation
 				atomic{
 				ommpkt->senderID=TOS_NODE_ID;
 				ommpkt->measurement=last_tina_max;
-				}
-				dbg("Tina", "Sending Measurement to parent %d: %d\n", parentID, last_tina_max);
+				}                                                               
+				dbg("Tina", "|  ****SEND TiNA****  | Node: %d MAX: %d\n*****************************************\n", TOS_NODE_ID, last_tina_max);
 			}
 			if(count_change)
 			{
@@ -817,7 +734,7 @@ implementation
 				ommpkt->senderID=TOS_NODE_ID;
 				ommpkt->measurement=last_tina_count;
 				}
-				dbg("Tina", "Sending Measurement to parent %d: %d\n", parentID, last_tina_count);
+				dbg("Tina", "|  ****SEND TiNA****  | Node: %d COUNT: %d\n*****************************************\n", TOS_NODE_ID, last_tina_count);
 			}
 
 			dbg("MeasureMsg" , "Sending MeasureMsg... \n");
@@ -826,12 +743,6 @@ implementation
 			call MeasurePacket.setPayloadLength(&tmp, sizeof(OneMeasMsg));
 			
 			enqueueDone=call MeasureSendQueue.enqueue(tmp);
-
-			for(i=0;i<MAX_CHILDREN;i++)
-			{
-				if(children_values[i].nodeID !=0)
-					dbg("Matrix", "Children values: %d %d %d\n", children_values[i].nodeID, children_values[i].max, children_values[i].count);
-			}
 			
 			if( enqueueDone==SUCCESS)
 			{
@@ -859,9 +770,8 @@ implementation
 			tmmpkt->count=last_tina_count;
 			tmmpkt->max=last_tina_max;
 			}
-			dbg("Tina", "Sending Measurement COUNT to parent %d: %d\n", parentID, last_tina_count);
-			dbg("Tina", "Sending Measurement MAX to parent %d: %d\n", parentID, last_tina_max);
-
+			dbg("Tina", "|  ****SEND TiNA****  | Node: %d MAX: %d\n*****************************************\n", TOS_NODE_ID, last_tina_max);
+			dbg("Tina", "|  ****SEND TiNA****  | Node: %d COUNT: %d\n*****************************************\n", TOS_NODE_ID, last_tina_count);
 			dbg("MeasureMsg" , "Sending MeasureMsg... \n");
 		
 			call MeasureAMPacket.setDestination(&tmp, parentID);
@@ -890,9 +800,9 @@ implementation
 		else if(TOS_NODE_ID == 0)
 		{
 			if(max)
-				dbg("Tina", "Result of MAX aggregation: %d\n", last_tina_max);
+				dbg("Tina", "^^^^^^^^^^^Result of MAX for epoch %d: %d^^^^^^^^^^^\n\n\n", roundCounter, last_tina_max);
 			if(count)
-				dbg("Tina", "Result of COUNT aggregation: %d\n", last_tina_count);
+				dbg("Tina", "^^^^^^^^^^^Result of COUNT for epoch %d: %d^^^^^^^^^^^\n\n\n", roundCounter, last_tina_count);
 		}
 
 	}
