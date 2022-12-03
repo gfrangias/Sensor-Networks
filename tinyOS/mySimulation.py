@@ -4,6 +4,7 @@
 from TOSSIM import *
 import sys ,os
 import random
+import subprocess
 
 t=Tossim([])
 f=sys.stdout #open('./logfile.txt','w')
@@ -90,5 +91,6 @@ while(h):
 
 	if (t.time()>= SIM_END_TIME):
 		h=False
+		subprocess.call("python tree_print.py", shell=True)
 	if(h<=0):
 		ok=False
