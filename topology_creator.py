@@ -19,5 +19,5 @@ with open("topology.txt",'w') as f:
                 dist = math.sqrt((i_long-j_long)**2 +(i_lat-j_lat)**2)
                 # Check if the distance is in range
                 if dist <= r:
-                    line = str(i)+" "+str(j)+" -50.0"+ "\n"
+                    line = str(i)+" "+str(j)+" 0.0"+ "\n"
                     f.write(line)  

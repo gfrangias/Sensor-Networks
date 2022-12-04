@@ -73,7 +73,6 @@ implementation
 	uint8_t meas_count;
 	
 	FILE* urandom_file;
-	FILE* tree_file;
 
 	nodeInfo children_values[MAX_CHILDREN];
 	
@@ -128,10 +127,6 @@ implementation
 		fread(&seed, sizeof(seed), 1, urandom_file);
 		fclose(urandom_file);
 		srand(seed);
-
-		tree_file = fopen("tree.txt", "w");
-		fclose(tree_file);
-		tree_file = fopen("tree.txt", "a");
 		
 		if(TOS_NODE_ID==0)
 		{
@@ -264,8 +259,6 @@ implementation
 		else
 		{
 			dbg("Routing result", "|          %d => %d          |\n", TOS_NODE_ID, parentID);
-			//fprintf(tree_file,"%d %d\n", TOS_NODE_ID, parentID);
-
 		}
 
 		dbg("SRTreeC", "A Routing package sent... %s \n",(err==SUCCESS)?"True":"False");
@@ -447,7 +440,7 @@ implementation
 			call StartMeasureTimer.startPeriodicAt(-BOOT_TIME-((curdepth+1)*TIMER_VERY_FAST_PERIOD+rand_num),TIMER_PERIOD_MILLI);
 			//dbg("Measures", "Timer will wait for: %d \n", TIMER_PERIOD_MILLI-((curdepth+1)*TIMER_VERY_FAST_PERIOD));
 			MeasureTimerSet = TRUE;
-			fclose(tree_file);
+			//fclose(tree_file);
 			
 		}
 	}
