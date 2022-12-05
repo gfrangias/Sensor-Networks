@@ -55,8 +55,6 @@ implementation
 	bool max_change=FALSE;
 	bool count_change=FALSE;
 
-	char line[10];
-
 	uint8_t curdepth;
 	uint16_t parentID;
 	uint8_t tct;
@@ -438,9 +436,7 @@ implementation
 		
 			dbg("Random", "Node: %d, Random: %d \n", TOS_NODE_ID, rand_num);
 			call StartMeasureTimer.startPeriodicAt(-BOOT_TIME-((curdepth+1)*TIMER_VERY_FAST_PERIOD+rand_num),TIMER_PERIOD_MILLI);
-			//dbg("Measures", "Timer will wait for: %d \n", TIMER_PERIOD_MILLI-((curdepth+1)*TIMER_VERY_FAST_PERIOD));
 			MeasureTimerSet = TRUE;
-			//fclose(tree_file);
 			
 		}
 	}
@@ -665,13 +661,17 @@ implementation
 
 			dbg("Measures", "| Before agg. / No TiNA | Node: %d MAX: %d\n", TOS_NODE_ID, meas_max);
 
+			//Set max as the parent measurement
 			last_max = meas_max;
 			//Loop through children and find MAX
 			for(i=0; i<MAX_CHILDREN; i++)
 			{
+				//If you searched all children break
 				if(children_values[i].nodeID == 0)
 					break;
-
+				//If the parent is less than the child max 
+				//and the current max is less than the child max.
+				//Set new max
 				if(meas_max<children_values[i].max && last_max<children_values[i].max)
 					last_max = children_values[i].max;	
 			}
