@@ -12,8 +12,8 @@ enum{
 	SEND_CHECK_MILLIS=70000,
 	TIMER_PERIOD_MILLI=30*1024, 	// Epoch
 	TIMER_FAST_PERIOD=200,
-	TIMER_VERY_FAST_PERIOD=256,	// Measurement window
-	TIMER_ROUTING=1*1024, 
+	TIMER_VERY_FAST_PERIOD=350,	// Measurement window
+	TIMER_ROUTING=3*1024, 
 	MAX_CHILDREN=10,
 	BOOT_TIME=10240,
 };
@@ -24,8 +24,7 @@ typedef nx_struct RoutingMsg
 {
 	nx_uint16_t senderID;
 	nx_uint8_t depth;
-	nx_uint8_t tct;
-	nx_uint8_t agg_function;
+	nx_uint8_t parameters;
 } RoutingMsg;
 
 typedef nx_struct OneMeasMsg

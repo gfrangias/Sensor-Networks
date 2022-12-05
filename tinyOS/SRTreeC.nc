@@ -182,11 +182,11 @@ implementation
 			dbg("Epoch", "################################################### \n");
 			dbg("Epoch", "##############   ROUND   %u    #################### \n", roundCounter);
 			dbg("Epoch", "###################################################\n");
-			//tct = 5*((rand() % 4) + 1);
-			tct = 10;
-			dbg("TCT", "TCT for round %u is %u\n", roundCounter, tct);
-			//agg_function = (rand() % 3);
-			agg_function = 2;
+			tct = rand() % 4;
+			//tct = 10;
+			dbg("TCT", "TCT for round %u is %u\n", roundCounter, (tct + 1)*5);
+			agg_function = rand() % 3;
+			//agg_function = 2;
 
 			if(agg_function == 0){
 				dbg("aggregation_function", "Aggregation function for round %u is MAX\n", roundCounter);
@@ -213,8 +213,7 @@ implementation
 		atomic{
 		mrpkt->senderID=TOS_NODE_ID;
 		mrpkt->depth = curdepth;
-		mrpkt->tct = tct;
-		mrpkt->agg_function = agg_function;
+		mrpkt->parameters = (tct << 4) | agg_function; 
 		}
 		dbg("SRTreeC" , "Sending RoutingMsg... \n");
 
@@ -389,8 +388,10 @@ implementation
 			RoutingMsg * mpkt = (RoutingMsg*) (call RoutingPacket.getPayload(&radioRoutingRecPkt,len));
 			
 			dbg("SRTreeC" , "receiveRoutingTask():senderID= %d , depth= %d \n", mpkt->senderID , mpkt->depth);	
-			tct = mpkt->tct;
-			agg_function = mpkt->agg_function;
+			tct = mpkt->parameters >> 4;
+			agg_function = mpkt->parameters & 0x0f;
+			dbg("TCT", "TCT is %u\n",tct);
+			dbg("aggregation_function", "Aggregation is %u\n",agg_function);
 			if ( (parentID<0)||(parentID>=65535))
 			{
 				// tote den exei akoma patera
@@ -401,24 +402,6 @@ implementation
 				{
 					call RoutingMsgTimer.startOneShot(TIMER_FAST_PERIOD);
 				}
-			}
-			else
-			{
-				
-				if (( curdepth > mpkt->depth +1) || (mpkt->senderID==parentID))
-				{
-					uint16_t oldparentID = parentID;
-					
-				
-					parentID= call RoutingAMPacket.source(&radioRoutingRecPkt);//mpkt->senderID;
-					curdepth = mpkt->depth + 1;				
-									
-					if (TOS_NODE_ID!=0)
-					{
-						call RoutingMsgTimer.startOneShot(TIMER_FAST_PERIOD);
-					}
-				}
-								
 			}
 		}
 		else
@@ -702,7 +685,7 @@ implementation
 
 			//dbg("Tina", "Diff: %d\n", meas_diff);
 
-			if(meas_diff > tct || last_tina_max == 0)
+			if(meas_diff > (tct + 1)*5 || last_tina_max == 0)
 			{
 				tina_condition = TRUE;
 				max_change = TRUE;
@@ -722,7 +705,7 @@ implementation
 			if(last_tina_count != 0)
 				meas_diff = (abs(last_tina_count - last_count)*100)/last_tina_count;
 
-			if(meas_diff > tct || last_tina_count == 0)
+			if(meas_diff > (tct + 1)*5 || last_tina_count == 0)
 			{
 				tina_condition = TRUE;
 				count_change = TRUE;
