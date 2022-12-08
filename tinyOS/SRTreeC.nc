@@ -150,9 +150,6 @@ implementation
 			dbg("Radio" , "Radio initialized successfully!!!\n");
 			call EndRoutingTimer.startOneShot(TIMER_ROUTING);
 			
-			//call RoutingMsgTimer.startOneShot(TIMER_PERIOD_MILLI);
-			//call RoutingMsgTimer.startPeriodic(TIMER_PERIOD_MILLI);
-			//call LostTaskTimer.startPeriodic(SEND_CHECK_MILLIS);
 			if (TOS_NODE_ID==0)
 			{
 				call RoutingMsgTimer.startOneShot(TIMER_FAST_PERIOD);
@@ -185,11 +182,10 @@ implementation
 			dbg("Epoch", "################################################### \n");
 			dbg("Epoch", "##############   ROUND   %u    #################### \n", roundCounter);
 			dbg("Epoch", "###################################################\n");
-			//tct = rand() % 4;
-			tct = 1;
+			//Calculate random TCT and Aggregation function
+			tct = rand() % 4;
 			dbg("TCT", "TCT for round %u is %u\n", roundCounter, (tct + 1)*5);
-			//agg_function = rand() % 3;
-			agg_function = 2;
+			agg_function = rand() % 3;
 
 			if(agg_function == 0){
 				dbg("aggregation_function", "Aggregation function for round %u is MAX\n", roundCounter);
@@ -198,6 +194,7 @@ implementation
 			}else{
 				dbg("aggregation_function", "Aggregation function for round %u is MAX&COUNT\n", roundCounter);
 			}
+			//Call periodic new epoch timer
 			call NewEpochTimer.startPeriodicAt(-BOOT_TIME, TIMER_PERIOD_MILLI);
 			}
 		
@@ -213,6 +210,7 @@ implementation
 			dbg("SRTreeC","RoutingMsgTimer.fired(): No valid payload... \n");
 			return;
 		}
+		//Encode TCT and Aggregation into parameters
 		atomic{
 		mrpkt->depth = curdepth;
 		mrpkt->parameters = (tct << 4) | agg_function; 
@@ -284,21 +282,9 @@ implementation
 		
 		dbg("SRTreeC", "### RoutingReceive.receive() start ##### \n");
 		dbg("SRTreeC", "Something received!!! from %u\n", msource);		
-		//dbg("SRTreeC", "Something received!!!\n");
-		
-		//if(len!=sizeof(RoutingMsg))
-		//{
-			//dbg("SRTreeC","\t\tUnknown message received!!!\n");
-//#ifdef PRINTFDBG_MODE
-			//printf("\t\t Unknown message received!!!\n");
-			//printfflush();
-//#endif
-			//return msg;
-		//}
 		
 		atomic{
 		memcpy(&tmp,msg,sizeof(message_t));
-		//tmp=*(message_t*)msg;
 		}
 		enqueueDone=call RoutingReceiveQueue.enqueue(tmp);
 		if(enqueueDone == SUCCESS)
@@ -319,11 +305,9 @@ implementation
 	
 	task void sendRoutingTask()
 	{
-		//uint8_t skip;
 		uint8_t mlen;
 		uint16_t mdest;
 		error_t sendDone;
-		//message_t radioRoutingSendPkt;
 		
 		if (call RoutingSendQueue.empty())
 		{
@@ -358,7 +342,6 @@ implementation
 		else
 		{
 			dbg("SRTreeC","send failed!!!\n");
-			//setRoutingSendBusy(FALSE);
 		}
 	}
 	/**
@@ -400,7 +383,7 @@ implementation
 			if ( (parentID<0)||(parentID>=65535))
 			{
 				// tote den exei akoma patera
-				parentID= call RoutingAMPacket.source(&radioRoutingRecPkt);//mpkt->senderID;q
+				parentID= call RoutingAMPacket.source(&radioRoutingRecPkt);
 				curdepth= mpkt->depth + 1;
 
 				if (TOS_NODE_ID!=0)
@@ -466,7 +449,6 @@ implementation
 		if ( sendDone== SUCCESS)
 		{
 			dbg("MeasureMsg","sendMeasMsg(): Send returned success!!!\n");
-			//setRoutingSendBusy(TRUE);
 		}
 		else
 		{
@@ -498,9 +480,6 @@ implementation
 			OneMeasMsg * mpkt = (OneMeasMsg*) (call MeasurePacket.getPayload(&radioMeasMsgRecPkt,len));
 
 			uint16_t senderID = call MeasureAMPacket.source(&radioMeasMsgRecPkt);//Get the sender of the message
-			
-			//dbg("MeasureMsg" , "receiveMeasMsg():senderID= %d , depth= %d \n", mpkt->senderID , mpkt->depth);
-			//dbg("TCT", "receiveMeasMsg():TCT=%d, senderID=%d \n", mpkt->tct, mpkt->senderID);
 
 			for(i = 0; i<MAX_CHILDREN; i++)
 			{
@@ -532,9 +511,6 @@ implementation
 		{
 			TwoMeasMsg * mpkt = (TwoMeasMsg*) (call MeasurePacket.getPayload(&radioMeasMsgRecPkt,len));
 			uint16_t senderID = call MeasureAMPacket.source(&radioMeasMsgRecPkt);
-			
-			//dbg("MeasureMsg" , "receiveMeasMsg():senderID= %d , depth= %d \n", mpkt->senderID , mpkt->depth);
-			//dbg("TCT", "receiveMeasMsg():TCT=%d, senderID=%d \n", mpkt->tct, mpkt->senderID);
 
 			for(i = 0; i<MAX_CHILDREN; i++)
 			{
@@ -581,7 +557,6 @@ implementation
 
 		atomic{
 			memcpy(&tmp,msg,sizeof(message_t));
-			//tmp=*(message_t*)msg;
 		}
 		enqueueDone=call MeasureReceiveQueue.enqueue(tmp);
 
@@ -613,8 +588,6 @@ implementation
 		error_t enqueueDone;
 		OneMeasMsg* ommpkt;
 		TwoMeasMsg* tmmpkt;		
-
-		//dbg("Measures", "Timer FIRED...\n");
 
 		for(i=0;i<MAX_CHILDREN;i++)
 		{
@@ -697,8 +670,6 @@ implementation
 
 			if(last_tina_max != 0)
 				meas_diff = (abs(last_tina_max - last_max)*100)/last_tina_max;
-
-			//dbg("Tina", "Diff: %d\n", meas_diff);
 
 			if(meas_diff > (tct + 1)*5 || last_tina_max == 0)
 			{
