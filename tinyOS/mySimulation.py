@@ -28,12 +28,12 @@ t.addChannel("Matrix",f)
 t.addChannel("Tina",f)
 t.addChannel("Result",f)
 
-for i in range(0,10):
+for i in range(0,25):
 	m=t.getNode(i)
 	m.bootAtTime(10*t.ticksPerSecond() + i)
 
 
-topo = open("topology3.1.0.txt", "r")
+topo = open("topology5.1.50.txt", "r")
 
 if topo is None:
 	print "Topology file not opened!!! \n"
@@ -56,10 +56,10 @@ for line in  lines:
 	str1=line.strip()
 	if str1:
 		val=int(str1)
-		for i in range(0,10):
+		for i in range(0,25):
 			t.getNode(i).addNoiseTraceReading(val)
 noiseF.close()
-for i in range(0,10):
+for i in range(0,25):
 	t.getNode(i).createNoiseModel()
 	
 ok=False
