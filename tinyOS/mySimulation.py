@@ -11,29 +11,29 @@ SIM_END_TIME= 1200 * t.ticksPerSecond()
 print "TicksPerSecond : ", t.ticksPerSecond(),"\n"
 
 #t.addChannel("Boot",f)
-#t.addChannel("RoutingMsg",f)
+t.addChannel("RoutingMsg",f)
 #t.addChannel("NotifyParentMsg",f)
 #t.addChannel("Radio",f)
 #t.addChannel("Serial",f)
 #t.addChannel("SRTreeC",f)
 #t.addChannel("PacketQueueC",f)
-t.addChannel("TCT",f)
-t.addChannel("aggregation_function",f)
+#t.addChannel("TCT",f)
+#t.addChannel("aggregation_function",f)
 t.addChannel("Routing result",f)
 #t.addChannel("Measures",f)
-#t.addChannel("Epoch",f)
-#t.addChannel("MeasureMsg",f)
+t.addChannel("Epoch",f)
+t.addChannel("MeasureMsg",f)
 #t.addChannel("Random",f)
 #t.addChannel("Matrix",f)
 #t.addChannel("Tina",f)
-t.addChannel("Result",f)
+#t.addChannel("Result",f)
 
-for i in range(0,100):
+for i in range(0,10):
 	m=t.getNode(i)
 	m.bootAtTime(10*t.ticksPerSecond() + i)
 
 
-topo = open("topology100.1.0.txt", "r")
+topo = open("topology3.1.0.txt", "r")
 
 if topo is None:
 	print "Topology file not opened!!! \n"
@@ -56,10 +56,10 @@ for line in  lines:
 	str1=line.strip()
 	if str1:
 		val=int(str1)
-		for i in range(0,100):
+		for i in range(0,10):
 			t.getNode(i).addNoiseTraceReading(val)
 noiseF.close()
-for i in range(0,100):
+for i in range(0,10):
 	t.getNode(i).createNoiseModel()
 	
 ok=False

@@ -211,7 +211,6 @@ implementation
 			return;
 		}
 		atomic{
-		mrpkt->senderID=TOS_NODE_ID;
 		mrpkt->depth = curdepth;
 		mrpkt->parameters = (tct << 4) | agg_function; 
 		}
@@ -280,7 +279,7 @@ implementation
 		msource =call RoutingAMPacket.source(msg);
 		
 		dbg("SRTreeC", "### RoutingReceive.receive() start ##### \n");
-		dbg("SRTreeC", "Something received!!! from %u %u\n",((RoutingMsg*) payload)->senderID , msource);		
+		dbg("SRTreeC", "Something received!!! from %u\n", msource);		
 		//dbg("SRTreeC", "Something received!!!\n");
 		
 		//if(len!=sizeof(RoutingMsg))
@@ -386,8 +385,9 @@ implementation
 		if(len == sizeof(RoutingMsg))
 		{
 			RoutingMsg * mpkt = (RoutingMsg*) (call RoutingPacket.getPayload(&radioRoutingRecPkt,len));
+			uint16_t msource = call RoutingAMPacket.source(&radioRoutingRecPkt);
 			
-			dbg("SRTreeC" , "receiveRoutingTask():senderID= %d , depth= %d \n", mpkt->senderID , mpkt->depth);	
+			dbg("SRTreeC" , "receiveRoutingTask():senderID= %d , depth= %d \n", msource , mpkt->depth);	
 			tct = mpkt->parameters >> 4;
 			agg_function = mpkt->parameters & 0x0f;
 			dbg("TCT", "TCT is %u\n",tct);
@@ -488,15 +488,16 @@ implementation
 		if(len == sizeof(OneMeasMsg))
 		{
 			OneMeasMsg * mpkt = (OneMeasMsg*) (call MeasurePacket.getPayload(&radioMeasMsgRecPkt,len));
+			uint16_t senderID = call MeasureAMPacket.source(&radioMeasMsgRecPkt);
 			
 			//dbg("MeasureMsg" , "receiveMeasMsg():senderID= %d , depth= %d \n", mpkt->senderID , mpkt->depth);
 			//dbg("TCT", "receiveMeasMsg():TCT=%d, senderID=%d \n", mpkt->tct, mpkt->senderID);
 
 			for(i = 0; i<MAX_CHILDREN; i++)
 			{
-				if(children_values[i].nodeID == mpkt->senderID || children_values[i].nodeID == 0)
+				if(children_values[i].nodeID == senderID || children_values[i].nodeID == 0)
 				{
-					children_values[i].nodeID = mpkt->senderID;
+					children_values[i].nodeID = senderID;
 
 					if(agg_function == 0)
 						children_values[i].max = mpkt->measurement;
@@ -519,15 +520,16 @@ implementation
 		else if(len == sizeof(TwoMeasMsg))
 		{
 			TwoMeasMsg * mpkt = (TwoMeasMsg*) (call MeasurePacket.getPayload(&radioMeasMsgRecPkt,len));
+			uint16_t senderID = call MeasureAMPacket.source(&radioMeasMsgRecPkt);
 			
 			//dbg("MeasureMsg" , "receiveMeasMsg():senderID= %d , depth= %d \n", mpkt->senderID , mpkt->depth);
 			//dbg("TCT", "receiveMeasMsg():TCT=%d, senderID=%d \n", mpkt->tct, mpkt->senderID);
 
 			for(i = 0; i<MAX_CHILDREN; i++)
 			{
-				if(children_values[i].nodeID == mpkt->senderID || children_values[i].nodeID == 0)
+				if(children_values[i].nodeID == senderID || children_values[i].nodeID == 0)
 				{
-					children_values[i].nodeID = mpkt->senderID;
+					children_values[i].nodeID = senderID;
 
 					children_values[i].max = mpkt->max;
 					children_values[i].count = mpkt->count;
@@ -561,9 +563,9 @@ implementation
 		
 		dbg("MeasureMsg", "### MeasureReceive.receive() start ##### \n");
 		if(len == sizeof(OneMeasMsg))
-			dbg("MeasureMsg", "Something received!!! from %u %u\n",((OneMeasMsg*) payload)->senderID , msource);	
+			dbg("MeasureMsg", "Something received!!! from %u\n",msource);	
 		else
-			dbg("MeasureMsg", "Something received!!! from %u %u\n",((TwoMeasMsg*) payload)->senderID , msource);
+			dbg("MeasureMsg", "Something received!!! from %u\n",msource);
 
 		atomic{
 			memcpy(&tmp,msg,sizeof(message_t));
@@ -584,9 +586,9 @@ implementation
 		if (MeasureTimerSet)
 		{
 			if(len == sizeof(OneMeasMsg))
-				dbg("Tina", "| Node %d received from %d\n", TOS_NODE_ID, ((OneMeasMsg*) payload)->senderID);
+				dbg("Tina", "| Node %d received from %d\n", TOS_NODE_ID, msource);
 			else
-				dbg("Tina", "| Node %d received from %d\n", TOS_NODE_ID, ((TwoMeasMsg*) payload)->senderID);
+				dbg("Tina", "| Node %d received from %d\n", TOS_NODE_ID, msource);
 		}
 		return msg;
 	}
@@ -737,7 +739,6 @@ implementation
 			if(max_change)
 			{
 				atomic{
-				ommpkt->senderID=TOS_NODE_ID;
 				ommpkt->measurement=last_tina_max;
 				}                                                               
 				dbg("Tina", "|  ****SEND TiNA****  | Node: %d MAX: %d\n", TOS_NODE_ID, last_tina_max);
@@ -745,7 +746,6 @@ implementation
 			if(count_change)
 			{
 				atomic{
-				ommpkt->senderID=TOS_NODE_ID;
 				ommpkt->measurement = last_tina_count | 1 << 8;
 				}
 				dbg("Tina", "|  ****SEND TiNA****  | Node: %d COUNT: %d\n", TOS_NODE_ID, last_tina_count);
@@ -780,7 +780,6 @@ implementation
 			}
 
 			atomic{
-			tmmpkt->senderID=TOS_NODE_ID;
 			tmmpkt->count=last_tina_count;
 			tmmpkt->max=last_tina_max;
 			}
