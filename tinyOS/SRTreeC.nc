@@ -73,6 +73,9 @@ implementation
 	FILE* urandom_file;
 
 	nodeInfo children_values[MAX_CHILDREN];
+
+	task void sendMeasMsg();
+	task void receiveMeasMsg();
 	
 	task void sendRoutingTask();
 	task void receiveRoutingTask();
@@ -182,11 +185,11 @@ implementation
 			dbg("Epoch", "################################################### \n");
 			dbg("Epoch", "##############   ROUND   %u    #################### \n", roundCounter);
 			dbg("Epoch", "###################################################\n");
-			tct = rand() % 4;
-			//tct = 10;
+			//tct = rand() % 4;
+			tct = 1;
 			dbg("TCT", "TCT for round %u is %u\n", roundCounter, (tct + 1)*5);
-			agg_function = rand() % 3;
-			//agg_function = 2;
+			//agg_function = rand() % 3;
+			agg_function = 2;
 
 			if(agg_function == 0){
 				dbg("aggregation_function", "Aggregation function for round %u is MAX\n", roundCounter);
@@ -237,6 +240,7 @@ implementation
 		}		
 	}
 	
+	//Timer for every round
 	event void NewEpochTimer.fired()
 	{
 			roundCounter+=1;
@@ -385,9 +389,10 @@ implementation
 		if(len == sizeof(RoutingMsg))
 		{
 			RoutingMsg * mpkt = (RoutingMsg*) (call RoutingPacket.getPayload(&radioRoutingRecPkt,len));
-			uint16_t msource = call RoutingAMPacket.source(&radioRoutingRecPkt);
+			uint16_t msource = call RoutingAMPacket.source(&radioRoutingRecPkt); //Get the sender of the message
 			
 			dbg("SRTreeC" , "receiveRoutingTask():senderID= %d , depth= %d \n", msource , mpkt->depth);	
+			//Extract the tct and aggregation function from parameters
 			tct = mpkt->parameters >> 4;
 			agg_function = mpkt->parameters & 0x0f;
 			dbg("TCT", "TCT is %u\n",tct);
@@ -412,6 +417,7 @@ implementation
 		}
 	}
 
+	//Start the periodic timer to produce random measures every round
 	event void EndRoutingTimer.fired(){
 
 		if(!MeasureTimerSet){
@@ -449,6 +455,7 @@ implementation
 		
 		mlen=call MeasurePacket.payloadLength(&radioMeasMsgSendPkt);
 		mdest=call MeasureAMPacket.destination(&radioMeasMsgSendPkt);
+
 		if(mlen!=sizeof(OneMeasMsg) && mlen!=sizeof(TwoMeasMsg))
 		{
 			dbg("MeasureMsg","\t\\sendMeasMsg(): Unknown message!!!\n");
@@ -485,16 +492,19 @@ implementation
 		
 		// pos tha xexorizo ta 2 diaforetika minimata???
 				
+		//Case of one measurement comes
 		if(len == sizeof(OneMeasMsg))
 		{
 			OneMeasMsg * mpkt = (OneMeasMsg*) (call MeasurePacket.getPayload(&radioMeasMsgRecPkt,len));
-			uint16_t senderID = call MeasureAMPacket.source(&radioMeasMsgRecPkt);
+
+			uint16_t senderID = call MeasureAMPacket.source(&radioMeasMsgRecPkt);//Get the sender of the message
 			
 			//dbg("MeasureMsg" , "receiveMeasMsg():senderID= %d , depth= %d \n", mpkt->senderID , mpkt->depth);
 			//dbg("TCT", "receiveMeasMsg():TCT=%d, senderID=%d \n", mpkt->tct, mpkt->senderID);
 
 			for(i = 0; i<MAX_CHILDREN; i++)
 			{
+				//Update node info in children matrix
 				if(children_values[i].nodeID == senderID || children_values[i].nodeID == 0)
 				{
 					children_values[i].nodeID = senderID;
@@ -507,6 +517,7 @@ implementation
 					}
 					if(agg_function == 2)
 					{
+						//check if we sent count or max as one measure
 						if(mpkt->measurement >> 8 == 1)
 							children_values[i].count = mpkt->measurement & 0x7f;
 						else
@@ -527,6 +538,7 @@ implementation
 
 			for(i = 0; i<MAX_CHILDREN; i++)
 			{
+				//Update node info in children matrix
 				if(children_values[i].nodeID == senderID || children_values[i].nodeID == 0)
 				{
 					children_values[i].nodeID = senderID;
@@ -617,6 +629,7 @@ implementation
 			}		
 		}
 
+		//Enable calculation for MAX and/or COUNT in correspondance with agg_function
 		if(agg_function==0)
 			max = TRUE;
 		else if(agg_function == 1)
@@ -677,7 +690,7 @@ implementation
 			dbg("Measures", "| After agg. / No TiNA  | Node: %d COUNT: %d\n.........................................\n", TOS_NODE_ID, last_count);
 		}
 	
-
+		//Calculate Tina condition for MAX
 		if(max)
 		{
 			uint8_t meas_diff = 0;
@@ -700,6 +713,7 @@ implementation
 			}
 		}
 		
+		//Calculate Tina condition for COUNT
 		if(count)
 		{
 			uint8_t meas_diff = 0;
@@ -720,6 +734,7 @@ implementation
 			}
 		}
 
+		//If we had no change for count or max we don't have Tina
 		if(!(count_change || max_change))
 			tina_condition = FALSE;
 
@@ -728,6 +743,7 @@ implementation
 			return;
 		}
 		
+		//If we have Tina and we are not in node 0 and there is one change only send OneMeasMsg to parent
 		if(tina_condition && TOS_NODE_ID != 0 && !(max_change && count_change))
 		{
 			ommpkt = (OneMeasMsg*) (call MeasurePacket.getPayload(&tmp, sizeof(OneMeasMsg)));
@@ -770,6 +786,7 @@ implementation
 
 			}	
 		}
+		//If we have Tina and we are not in node 0 and there is change in MAX and COUNT send TwoMeasMsg to parent
 		else if(tina_condition && TOS_NODE_ID != 0 && max_change && count_change)
 		{
 			tmmpkt = (TwoMeasMsg*) (call MeasurePacket.getPayload(&tmp, sizeof(TwoMeasMsg)));

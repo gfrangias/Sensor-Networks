@@ -17,9 +17,6 @@ enum{
 	MAX_CHILDREN=10,
 	BOOT_TIME=10240,
 };
-/*uint16_t AM_ROUTINGMSG=AM_SIMPLEROUTINGTREEMSG;
-uint16_t AM_NOTIFYPARENTMSG=AM_SIMPLEROUTINGTREEMSG;
-*/
 typedef nx_struct RoutingMsg
 {
 	nx_uint8_t depth;
@@ -28,7 +25,7 @@ typedef nx_struct RoutingMsg
 
 typedef nx_struct OneMeasMsg
 {	
-	nx_uint8_t measurement; // Here in the last bits is a flag for the agg. function
+	nx_uint8_t measurement; // Here in the MSB is a flag for the agg. function
 }OneMeasMsg;
 
 typedef nx_struct TwoMeasMsg
