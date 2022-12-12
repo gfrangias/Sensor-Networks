@@ -11,7 +11,7 @@ SIM_END_TIME= 1200 * t.ticksPerSecond()
 print "TicksPerSecond : ", t.ticksPerSecond(),"\n"
 
 #t.addChannel("Boot",f)
-t.addChannel("RoutingMsg",f)
+#t.addChannel("RoutingMsg",f)
 #t.addChannel("NotifyParentMsg",f)
 #t.addChannel("Radio",f)
 #t.addChannel("Serial",f)
@@ -20,13 +20,15 @@ t.addChannel("RoutingMsg",f)
 #t.addChannel("TCT",f)
 #t.addChannel("aggregation_function",f)
 t.addChannel("Routing result",f)
-t.addChannel("Measures",f)
+#t.addChannel("Measures",f)
 t.addChannel("Epoch",f)
 #t.addChannel("MeasureMsg",f)
 #t.addChannel("Random",f)
-t.addChannel("Matrix",f)
-t.addChannel("Tina",f)
-t.addChannel("Result",f)
+#t.addChannel("Matrix",f)
+#t.addChannel("Tina",f)
+#t.addChannel("Result",f)
+t.addChannel("ChangeAggrResult",f)
+
 
 for i in range(0,10):
 	m=t.getNode(i)

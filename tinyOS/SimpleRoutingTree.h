@@ -9,6 +9,7 @@ enum{
 	AM_ROUTINGMSG=17,
 	AM_ONEMEASMSG=8,
 	AM_TWOMEASMSG=16,
+	AM_AGGMSG=9,
 	SEND_CHECK_MILLIS=70000,
 	TIMER_PERIOD_MILLI=30*1024, 	// Epoch
 	TIMER_FAST_PERIOD=200,
@@ -34,10 +35,16 @@ typedef nx_struct TwoMeasMsg
 	nx_uint8_t count;
 }TwoMeasMsg;
 
-typedef struct nodeInfo{
+typedef struct nodeInfo
+{
 	nx_uint16_t nodeID;
 	nx_uint8_t max;
 	nx_uint8_t count;
 }nodeInfo;
+
+typedef struct AggMessage
+{
+	nx_uint8_t agg_msg;
+}AggMessage;
 
 #endif

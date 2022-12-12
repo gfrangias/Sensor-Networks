@@ -19,16 +19,25 @@ module SRTreeC
 	uses interface AMSend as MeasureAMSend;
 	uses interface AMPacket as MeasureAMPacket;
 
+	uses interface Packet as AggregationPacket;
+	uses interface AMSend as AggregationAMSend;
+	uses interface AMPacket as AggregationAMPacket;
+
 	uses interface Timer<TMilli> as RoutingMsgTimer;
 	uses interface Timer<TMilli> as StartMeasureTimer;
 	uses interface Timer<TMilli> as NewEpochTimer;
-	uses interface Timer<TMilli> as EndRoutingTimer;
+	//uses interface Timer<TMilli> as EndRoutingTimer;
+	uses interface Timer<TMilli> as NewAggTimer;
 	
 	uses interface Receive as RoutingReceive;
 	uses interface Receive as MeasureReceive;
+	uses interface Receive as AggregationReceive;
 	
 	uses interface PacketQueue as RoutingSendQueue;
 	uses interface PacketQueue as RoutingReceiveQueue;
+
+	uses interface PacketQueue as AggregationSendQueue;
+	uses interface PacketQueue as AggregationReceiveQueue;
 
 	uses interface PacketQueue as MeasureSendQueue;
 	uses interface PacketQueue as MeasureReceiveQueue;
@@ -42,9 +51,11 @@ implementation
 
 	message_t radioRoutingSendPkt;
 	message_t radioMeasMsgSendPkt;
+	message_t radioAggrMsgSendPkt;
 		
 	bool RoutingSendBusy=FALSE;
 	bool MeasureSendBusy=FALSE;
+	bool AggregationSendBusy=FALSE;
 	bool MeasureTimerSet=FALSE;
 	
 	bool lostRoutingSendTask=FALSE;
@@ -54,6 +65,7 @@ implementation
 	bool count=FALSE;
 	bool max_change=FALSE;
 	bool count_change=FALSE;
+	bool agg_change=FALSE;
 
 	uint8_t curdepth;
 	uint16_t parentID;
@@ -69,6 +81,8 @@ implementation
 	uint8_t last_tina_count;
 	uint8_t meas_max;
 	uint8_t meas_count;
+	sim_time_t sim;
+	uint16_t p;
 	
 	FILE* urandom_file;
 
@@ -79,6 +93,9 @@ implementation
 	
 	task void sendRoutingTask();
 	task void receiveRoutingTask();
+
+	task void sendAggregationTask();
+	task void receiveAggregationTask();
 
 	void setLostRoutingSendTask(bool state)
 	{
@@ -148,7 +165,7 @@ implementation
 		if (err == SUCCESS)
 		{
 			dbg("Radio" , "Radio initialized successfully!!!\n");
-			call EndRoutingTimer.startOneShot(TIMER_ROUTING);
+			//call EndRoutingTimer.startOneShot(TIMER_ROUTING);
 			
 			if (TOS_NODE_ID==0)
 			{
@@ -182,10 +199,12 @@ implementation
 			dbg("Epoch", "################################################### \n");
 			dbg("Epoch", "##############   ROUND   %u    #################### \n", roundCounter);
 			dbg("Epoch", "###################################################\n");
+
 			//Calculate random TCT and Aggregation function
 			tct = rand() % 4;
 			dbg("TCT", "TCT for round %u is %u\n", roundCounter, (tct + 1)*5);
-			agg_function = rand() % 3;
+			//agg_function = rand() % 3;
+			agg_function = 2;
 
 			if(agg_function == 0){
 				dbg("aggregation_function", "Aggregation function for round %u is MAX\n", roundCounter);
@@ -242,10 +261,30 @@ implementation
 	event void NewEpochTimer.fired()
 	{
 			roundCounter+=1;
-			
+
+			p = rand()%100;
+
+			if(p<=5)
+			{
+				agg_function = (agg_function + 1) % 3;
+				agg_change = TRUE;
+			}
+			else if(p>5 && p<=10)
+			{
+				agg_function = (agg_function + 2) % 3;
+				agg_change = TRUE;
+			}
+			else
+				agg_change = FALSE;
+
 			dbg("Epoch", "################################################### \n");
 			dbg("Epoch", "##############   ROUND   %u    #################### \n", roundCounter);
 			dbg("Epoch", "###################################################\n");
+			if(agg_change)
+			{
+				dbg("ChangeAggr", "Aggregation function changed to: %d for period: %d\n", agg_function, roundCounter);
+				call NewAggTimer.startOneShot(TIMER_FAST_PERIOD);
+			}
 	}
 
 	event void RoutingAMSend.sendDone(message_t * msg , error_t err)
@@ -398,10 +437,15 @@ implementation
 			setLostRoutingRecTask(TRUE);
 			return;
 		}
+		rand_num = rand() % (TIMER_VERY_FAST_PERIOD-20);
+		dbg("Random", "Node: %d, Random: %d \n", TOS_NODE_ID, rand_num);
+
+		sim = sim_time()/10000000;
+		call StartMeasureTimer.startPeriodicAt(-sim-((curdepth+1)*TIMER_VERY_FAST_PERIOD+rand_num),TIMER_PERIOD_MILLI);
 	}
 
 	//Start the periodic timer to produce random measures every round
-	event void EndRoutingTimer.fired(){
+	/*event void EndRoutingTimer.fired(){
 
 		if(!MeasureTimerSet){
 			rand_num = rand() % (TIMER_VERY_FAST_PERIOD-20);
@@ -411,7 +455,7 @@ implementation
 			MeasureTimerSet = TRUE;
 			
 		}
-	}
+	}*/
 
 
 	// Send one measurement
@@ -630,7 +674,7 @@ implementation
 				}
 			}
 
-			dbg("Measures", "| Before agg. / No TiNA | Node: %d MAX: %d\n", TOS_NODE_ID, meas_max);
+			dbg("Measures", "| Before agg. / No TiNA | Node: %d Depth: %d MAX: %d\n", TOS_NODE_ID, curdepth, meas_max);
 
 			//Set max as the parent measurement
 			last_max = meas_max;
@@ -646,7 +690,7 @@ implementation
 				if(meas_max<children_values[i].max && last_max<children_values[i].max)
 					last_max = children_values[i].max;	
 			}
-			dbg("Measures", "| After agg. / No TiNA  | Node: %d MAX: %d\n.........................................\n", TOS_NODE_ID, last_max);
+			dbg("Measures", "| After agg. / No TiNA  | Node: %d Depth: %d MAX: %d\n.........................................\n", TOS_NODE_ID, curdepth, last_max);
 		}
 		//agg_function = COUNT
 		if(count) 
@@ -660,7 +704,7 @@ implementation
 
 				last_count += children_values[i].count;	
 			}
-			dbg("Measures", "| After agg. / No TiNA  | Node: %d COUNT: %d\n.........................................\n", TOS_NODE_ID, last_count);
+			dbg("Measures", "| After agg. / No TiNA  | Node: %d Depth: %d COUNT: %d\n.........................................\n", TOS_NODE_ID, curdepth, last_count);
 		}
 	
 		//Calculate Tina condition for MAX
@@ -809,4 +853,178 @@ implementation
 
 	}
 
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Aggregation function Change  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	// Send Aggregation function
+	task void sendAggregationTask()
+	{
+		uint8_t mlen;
+		uint16_t mdest;
+		error_t sendDone;
+
+		if (call AggregationSendQueue.empty())
+		{
+			dbg("ChangeAggr","sendAggregationTask(): Q is empty!\n");
+			return;
+		}
+		
+		
+		if(AggregationSendBusy)
+		{
+			dbg("ChangeAggr","sendAggregationTask(): AggregationSendBusy= TRUE!!!\n");
+			return;
+		}
+		
+		radioAggrMsgSendPkt = call AggregationSendQueue.dequeue();
+		
+		mlen=call AggregationPacket.payloadLength(&radioAggrMsgSendPkt);
+		mdest=call AggregationAMPacket.destination(&radioAggrMsgSendPkt);
+
+		if(mlen!=sizeof(AggMessage))
+		{
+			dbg("ChangeAggr","\t\\sendAggregationTask(): Unknown message!!!\n");
+			return;
+		}
+		sendDone=call AggregationAMSend.send(mdest,&radioAggrMsgSendPkt,mlen);
+		
+		if ( sendDone== SUCCESS)
+		{
+			dbg("ChangeAggr","sendAggregationTask(): Send returned success!!!\n");
+		}
+		else
+		{
+			dbg("ChangeAggr","send failed!!!\n");
+		}
+
+	}
+
+	// Receive Aggregation function
+	task void receiveAggregationTask()
+	{
+		message_t tmp;
+		uint8_t len;
+		message_t radioAggrMsgRecPkt;
+
+		radioAggrMsgRecPkt= call AggregationReceiveQueue.dequeue();
+		
+		len= call AggregationPacket.payloadLength(&radioAggrMsgRecPkt);
+		
+		dbg("ChangeAggr","receiveAggregationTask(): len=%u \n",len);
+
+		// processing of radioRecPkt
+		
+		// pos tha xexorizo ta 2 diaforetika minimata???
+				
+		//Case of one measurement comes
+		if(len == sizeof(AggMessage))
+		{
+			AggMessage* ampkt = (AggMessage*) (call AggregationPacket.getPayload(&radioAggrMsgRecPkt,len));
+
+			agg_function = ampkt->agg_msg;
+			dbg("ChangeAggrResult", "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\n");
+			dbg("ChangeAggrResult", "Node: %d Depth: %d New Aggregation is : %d\n", TOS_NODE_ID, curdepth, agg_function);
+			dbg("ChangeAggrResult", "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\n");
+
+			if (TOS_NODE_ID!=0)
+			{
+				call NewAggTimer.startOneShot(TIMER_FAST_PERIOD);
+			}
+		}
+		else
+		{
+			dbg("ChangeAggr","receiveAggregationTask():Empty message!!! \n");
+			return;
+		}
+	}
+
+	event void AggregationAMSend.sendDone(message_t * msg , error_t err)
+	{
+		if(!(call AggregationSendQueue.empty()))
+		{
+			post sendAggregationTask();
+		}
+	}
+
+	event message_t* AggregationReceive.receive( message_t * msg , void * payload, uint8_t len)
+	{
+		error_t enqueueDone;
+		message_t tmp;
+		uint16_t msource;
+		
+		msource = call AggregationAMPacket.source(msg);
+		
+		dbg("ChangeAggr", "### AggregationReceive.receive() start ##### \n");
+		if(len == sizeof(AggMessage))
+			dbg("ChangeAggr", "Something received!!! from %u\n",msource);	
+		else
+			dbg("ChangeAggr", "Something received!!! from %u\n",msource);
+
+		atomic{
+			memcpy(&tmp,msg,sizeof(message_t));
+		}
+		enqueueDone=call AggregationReceiveQueue.enqueue(tmp);
+
+		if(enqueueDone == SUCCESS)
+		{
+			post receiveAggregationTask();
+		}
+		else
+		{
+			dbg("ChangeAggr","AggMsg enqueue failed!!! \n");
+		}
+				
+		dbg("ChangeAggr", "### AggregationReceive.receive() end ##### \n");
+		return msg;
+	}
+
+	event void NewAggTimer.fired()
+	{
+		message_t tmp;
+		error_t enqueueDone;
+		
+		AggMessage* ampkt;
+		dbg("ChangeAggr", "NewAggTimer.fired()!\n");
+
+		if(call AggregationSendQueue.full())
+		{
+			return;
+		}
+		
+		ampkt = (AggMessage*) (call AggregationPacket.getPayload(&tmp, sizeof(AggMessage)));
+		if(ampkt==NULL)
+		{
+			dbg("ChangeAggr","NewAggTimer.fired(): No valid payload... \n");
+			return;
+		}
+		//Assign new Aggregation
+		atomic{
+		ampkt->agg_msg = agg_function;
+		}
+		dbg("ChangeAggr" , "Sending AggMessage... \n");
+
+		call AggregationAMPacket.setDestination(&tmp, AM_BROADCAST_ADDR);
+		call AggregationPacket.setPayloadLength(&tmp, sizeof(AggMessage));
+		
+		enqueueDone=call AggregationSendQueue.enqueue(tmp);
+		
+		if( enqueueDone==SUCCESS)
+		{
+			if (call AggregationSendQueue.size()==1)
+			{
+				dbg("ChangeAggr", "SendTask() posted!!\n");
+				post sendAggregationTask();
+			}
+			
+			dbg("ChangeAggr","AggMessage enqueued successfully in SendingQueue!!!\n");
+		}
+		else
+		{
+			dbg("ChangeAggr","AggMessage failed to be enqueued in SendingQueue!!!");
+		}		
+	
+	}
 }
