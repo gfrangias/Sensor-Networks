@@ -651,6 +651,17 @@ implementation
 		TwoMeasMsg* tmmpkt;	
 
 		sendAggChange = FALSE;
+
+		while(! (call AggregationReceiveQueue.empty())){
+			dbg("ChangeAggrResult", "QUeeeeeeeeeeeeeeeeeeee\n");
+			call AggregationReceiveQueue.dequeue();
+		}
+
+		while(! (call AggregationSendQueue.empty())){
+			dbg("ChangeAggrResult", "Quuuuuuuuuuuuuuuuuuuuue\n");
+			call AggregationSendQueue.dequeue();
+		}
+
 		if(!sendAggChange)
 		{
 			dbg("ChangeAggrResult", "Node: %d changed sendAggChange to False...\n", TOS_NODE_ID);
