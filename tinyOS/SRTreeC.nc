@@ -66,6 +66,7 @@ implementation
 	bool max_change=FALSE;
 	bool count_change=FALSE;
 	bool agg_change=FALSE;
+	bool sendAggChange = FALSE;
 
 	uint8_t curdepth;
 	uint16_t parentID;
@@ -263,26 +264,42 @@ implementation
 			roundCounter+=1;
 
 			p = rand()%100;
-
+			if(agg_function==2){
+				agg_change = TRUE;
+				sendAggChange = TRUE;
+				agg_function=0;
+			}
+			else if(agg_function == 0){
+				agg_change = TRUE;
+				sendAggChange = TRUE;
+				agg_function = 1;
+			}
+			else
+				agg_change = FALSE;
+/*
 			if(p<=5)
 			{
 				agg_function = (agg_function + 1) % 3;
 				agg_change = TRUE;
+				sendAggChange = TRUE;
 			}
 			else if(p>5 && p<=10)
 			{
 				agg_function = (agg_function + 2) % 3;
 				agg_change = TRUE;
+				sendAggChange = TRUE;
 			}
 			else
+			{
 				agg_change = FALSE;
+			}*/
 
 			dbg("Epoch", "################################################### \n");
 			dbg("Epoch", "##############   ROUND   %u    #################### \n", roundCounter);
 			dbg("Epoch", "###################################################\n");
 			if(agg_change)
 			{
-				dbg("ChangeAggr", "Aggregation function changed to: %d for period: %d\n", agg_function, roundCounter);
+				dbg("ChangeAggrResult", "Aggregation function changed to: %d for period: %d\n", agg_function, roundCounter);
 				call NewAggTimer.startOneShot(TIMER_FAST_PERIOD);
 			}
 	}
@@ -631,7 +648,13 @@ implementation
 		message_t tmp;
 		error_t enqueueDone;
 		OneMeasMsg* ommpkt;
-		TwoMeasMsg* tmmpkt;		
+		TwoMeasMsg* tmmpkt;	
+
+		sendAggChange = FALSE;
+		if(!sendAggChange)
+		{
+			dbg("ChangeAggrResult", "Node: %d changed sendAggChange to False...\n", TOS_NODE_ID);
+		}
 
 		for(i=0;i<MAX_CHILDREN;i++)
 		{
@@ -648,9 +671,18 @@ implementation
 
 		//Enable calculation for MAX and/or COUNT in correspondance with agg_function
 		if(agg_function==0)
+		{
 			max = TRUE;
+			count = FALSE;
+			count_change = FALSE;
+
+		}
 		else if(agg_function == 1)
-			count =TRUE;
+		{
+			count = TRUE;
+			max = FALSE;
+			max_change = FALSE;
+		}
 		else
 		{
 			max = TRUE;
@@ -909,35 +941,40 @@ implementation
 		uint8_t len;
 		message_t radioAggrMsgRecPkt;
 
-		radioAggrMsgRecPkt= call AggregationReceiveQueue.dequeue();
-		
-		len= call AggregationPacket.payloadLength(&radioAggrMsgRecPkt);
-		
-		dbg("ChangeAggr","receiveAggregationTask(): len=%u \n",len);
-
-		// processing of radioRecPkt
-		
-		// pos tha xexorizo ta 2 diaforetika minimata???
-				
-		//Case of one measurement comes
-		if(len == sizeof(AggMessage))
+		if(!sendAggChange)
 		{
-			AggMessage* ampkt = (AggMessage*) (call AggregationPacket.getPayload(&radioAggrMsgRecPkt,len));
 
-			agg_function = ampkt->agg_msg;
-			dbg("ChangeAggrResult", "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\n");
-			dbg("ChangeAggrResult", "Node: %d Depth: %d New Aggregation is : %d\n", TOS_NODE_ID, curdepth, agg_function);
-			dbg("ChangeAggrResult", "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\n");
+			radioAggrMsgRecPkt= call AggregationReceiveQueue.dequeue();
+			
+			len= call AggregationPacket.payloadLength(&radioAggrMsgRecPkt);
+			
+			dbg("ChangeAggr","receiveAggregationTask(): len=%u \n",len);
 
-			if (TOS_NODE_ID!=0)
+			// processing of radioRecPkt
+			
+			// pos tha xexorizo ta 2 diaforetika minimata???
+					
+			//Case of one measurement comes
+			if(len == sizeof(AggMessage))
 			{
-				call NewAggTimer.startOneShot(TIMER_FAST_PERIOD);
+				AggMessage* ampkt = (AggMessage*) (call AggregationPacket.getPayload(&radioAggrMsgRecPkt,len));
+
+				agg_function = ampkt->agg_msg;
+				sendAggChange = TRUE;
+				dbg("ChangeAggrResult", "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\n");
+				dbg("ChangeAggrResult", "Node: %d Depth: %d New Aggregation is : %d\n", TOS_NODE_ID, curdepth, agg_function);
+				dbg("ChangeAggrResult", "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\n");
+
+				if (TOS_NODE_ID!=0)
+				{
+					call NewAggTimer.startOneShot(TIMER_FAST_PERIOD);
+				}
 			}
-		}
-		else
-		{
-			dbg("ChangeAggr","receiveAggregationTask():Empty message!!! \n");
-			return;
+			else
+			{
+				dbg("ChangeAggr","receiveAggregationTask():Empty message!!! \n");
+				return;
+			}
 		}
 	}
 
@@ -954,9 +991,9 @@ implementation
 		error_t enqueueDone;
 		message_t tmp;
 		uint16_t msource;
-		
+
 		msource = call AggregationAMPacket.source(msg);
-		
+	
 		dbg("ChangeAggr", "### AggregationReceive.receive() start ##### \n");
 		if(len == sizeof(AggMessage))
 			dbg("ChangeAggr", "Something received!!! from %u\n",msource);	
@@ -979,6 +1016,7 @@ implementation
 				
 		dbg("ChangeAggr", "### AggregationReceive.receive() end ##### \n");
 		return msg;
+
 	}
 
 	event void NewAggTimer.fired()
@@ -988,6 +1026,11 @@ implementation
 		
 		AggMessage* ampkt;
 		dbg("ChangeAggr", "NewAggTimer.fired()!\n");
+
+		if(!sendAggChange)
+		{
+			dbg("ChangeAggrResult", "Node: %d sendAggChange False...\n", TOS_NODE_ID);
+		}
 
 		if(call AggregationSendQueue.full())
 		{
@@ -1001,9 +1044,9 @@ implementation
 			return;
 		}
 		//Assign new Aggregation
-		atomic{
 		ampkt->agg_msg = agg_function;
-		}
+
+		dbg("ChangeAggrResult", "Node: %d Agg Function: %d, %d\n", TOS_NODE_ID, agg_function, ampkt->agg_msg);
 		dbg("ChangeAggr" , "Sending AggMessage... \n");
 
 		call AggregationAMPacket.setDestination(&tmp, AM_BROADCAST_ADDR);
@@ -1025,6 +1068,5 @@ implementation
 		{
 			dbg("ChangeAggr","AggMessage failed to be enqueued in SendingQueue!!!");
 		}		
-	
 	}
 }

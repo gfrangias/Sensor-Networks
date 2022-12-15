@@ -6,7 +6,7 @@ import random
 
 t=Tossim([])
 f=sys.stdout #open('./logfile.txt','w')
-SIM_END_TIME= 1200 * t.ticksPerSecond()
+SIM_END_TIME= 90 * t.ticksPerSecond()
 
 print "TicksPerSecond : ", t.ticksPerSecond(),"\n"
 
@@ -24,9 +24,10 @@ t.addChannel("Routing result",f)
 t.addChannel("Epoch",f)
 #t.addChannel("MeasureMsg",f)
 #t.addChannel("Random",f)
-#t.addChannel("Matrix",f)
-#t.addChannel("Tina",f)
-#t.addChannel("Result",f)
+t.addChannel("Matrix",f)
+t.addChannel("Tina",f)
+t.addChannel("Result",f)
+t.addChannel("ChangeAggr", f)
 t.addChannel("ChangeAggrResult",f)
 
 
