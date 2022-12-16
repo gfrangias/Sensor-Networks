@@ -264,19 +264,7 @@ implementation
 			roundCounter+=1;
 
 			p = rand()%100;
-			if(agg_function==2){
-				agg_change = TRUE;
-				sendAggChange = TRUE;
-				agg_function=0;
-			}
-			else if(agg_function == 0){
-				agg_change = TRUE;
-				sendAggChange = TRUE;
-				agg_function = 1;
-			}
-			else
-				agg_change = FALSE;
-/*
+
 			if(p<=5)
 			{
 				agg_function = (agg_function + 1) % 3;
@@ -292,14 +280,14 @@ implementation
 			else
 			{
 				agg_change = FALSE;
-			}*/
+			}
 
 			dbg("Epoch", "################################################### \n");
 			dbg("Epoch", "##############   ROUND   %u    #################### \n", roundCounter);
 			dbg("Epoch", "###################################################\n");
 			if(agg_change)
 			{
-				dbg("ChangeAggrResult", "Aggregation function changed to: %d for period: %d\n", agg_function, roundCounter);
+				dbg("Epoch", "Aggregation function changed to: %d for period: %d\n", agg_function, roundCounter);
 				call NewAggTimer.startOneShot(TIMER_FAST_PERIOD);
 			}
 	}
@@ -652,16 +640,6 @@ implementation
 
 		sendAggChange = FALSE;
 
-		while(! (call AggregationReceiveQueue.empty())){
-			dbg("ChangeAggrResult", "QUeeeeeeeeeeeeeeeeeeee\n");
-			call AggregationReceiveQueue.dequeue();
-		}
-
-		while(! (call AggregationSendQueue.empty())){
-			dbg("ChangeAggrResult", "Quuuuuuuuuuuuuuuuuuuuue\n");
-			call AggregationSendQueue.dequeue();
-		}
-
 		if(!sendAggChange)
 		{
 			dbg("ChangeAggrResult", "Node: %d changed sendAggChange to False...\n", TOS_NODE_ID);
@@ -1003,29 +981,32 @@ implementation
 		message_t tmp;
 		uint16_t msource;
 
-		msource = call AggregationAMPacket.source(msg);
-	
-		dbg("ChangeAggr", "### AggregationReceive.receive() start ##### \n");
-		if(len == sizeof(AggMessage))
-			dbg("ChangeAggr", "Something received!!! from %u\n",msource);	
-		else
-			dbg("ChangeAggr", "Something received!!! from %u\n",msource);
-
-		atomic{
-			memcpy(&tmp,msg,sizeof(message_t));
-		}
-		enqueueDone=call AggregationReceiveQueue.enqueue(tmp);
-
-		if(enqueueDone == SUCCESS)
+		if(!sendAggChange)
 		{
-			post receiveAggregationTask();
+			msource = call AggregationAMPacket.source(msg);
+		
+			dbg("ChangeAggr", "### AggregationReceive.receive() start ##### \n");
+			if(len == sizeof(AggMessage))
+				dbg("ChangeAggr", "Something received!!! from %u\n",msource);	
+			else
+				dbg("ChangeAggr", "Something received!!! from %u\n",msource);
+
+			atomic{
+				memcpy(&tmp,msg,sizeof(message_t));
+			}
+			enqueueDone=call AggregationReceiveQueue.enqueue(tmp);
+
+			if(enqueueDone == SUCCESS)
+			{
+				post receiveAggregationTask();
+			}
+			else
+			{
+				dbg("ChangeAggr","AggMsg enqueue failed!!! \n");
+			}
+					
+			dbg("ChangeAggr", "### AggregationReceive.receive() end ##### \n");
 		}
-		else
-		{
-			dbg("ChangeAggr","AggMsg enqueue failed!!! \n");
-		}
-				
-		dbg("ChangeAggr", "### AggregationReceive.receive() end ##### \n");
 		return msg;
 
 	}
