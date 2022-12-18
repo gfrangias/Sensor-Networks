@@ -1,0 +1,2164 @@
+TicksPerSecond :  10000000000 
+
+  0   1   0.0
+  0   4   0.0
+  1   0   0.0
+  1   2   0.0
+  1   5   0.0
+  2   1   0.0
+  2   3   0.0
+  2   6   0.0
+  3   2   0.0
+  3   7   0.0
+  4   0   0.0
+  4   5   0.0
+  4   8   0.0
+  5   1   0.0
+  5   4   0.0
+  5   6   0.0
+  5   9   0.0
+  6   2   0.0
+  6   5   0.0
+  6   7   0.0
+  6   10   0.0
+  7   3   0.0
+  7   6   0.0
+  7   11   0.0
+  8   4   0.0
+  8   9   0.0
+  8   12   0.0
+  9   5   0.0
+  9   8   0.0
+  9   10   0.0
+  9   13   0.0
+  10   6   0.0
+  10   9   0.0
+  10   11   0.0
+  10   14   0.0
+  11   7   0.0
+  11   10   0.0
+  11   15   0.0
+  12   8   0.0
+  12   13   0.0
+  13   9   0.0
+  13   12   0.0
+  13   14   0.0
+  14   10   0.0
+  14   13   0.0
+  14   15   0.0
+  15   11   0.0
+  15   14   0.0
+0:0:10.195312510 DEBUG (0): ################################################### 
+0:0:10.195312510 DEBUG (0): ##############   ROUND   1    #################### 
+0:0:10.195312510 DEBUG (0): ###################################################
+0:0:10.204589819 DEBUG (0): ----------------------------
+0:0:10.204589819 DEBUG (0): |------ROUTING RESULT------|
+0:0:10.406875587 DEBUG (4): |          4 => 0          |
+0:0:10.408050506 DEBUG (1): |          1 => 0          |
+0:0:10.604309086 DEBUG (5): |          5 => 4          |
+0:0:10.605270384 DEBUG (8): |          8 => 4          |
+0:0:10.606399533 DEBUG (2): |          2 => 1          |
+0:0:10.807052591 DEBUG (12): |          12 => 8          |
+0:0:10.807739226 DEBUG (6): |          6 => 5          |
+0:0:10.809402425 DEBUG (9): |          9 => 5          |
+0:0:10.809860196 DEBUG (3): |          3 => 2          |
+0:0:11.004394537 DEBUG (7): |          7 => 6          |
+0:0:11.006256099 DEBUG (13): |          13 => 12          |
+0:0:11.009384132 DEBUG (10): |          10 => 6          |
+0:0:11.204635609 DEBUG (11): |          11 => 7          |
+0:0:11.210983240 DEBUG (14): |          14 => 13          |
+0:0:11.409759482 DEBUG (15): |          15 => 11          |
+0:0:26.627929699 DEBUG (15): | ****PASSED TiNA**** | Node: 15 Last MAX: 0 New MAX: 43
+0:0:26.627929699 DEBUG (15): | ****PASSED TiNA**** | Node: 15 Last COUNT: 0 New COUNT: 1
+0:0:26.627929699 DEBUG (15): |  ****SEND TiNA****  | Node: 15 MAX: 43
+0:0:26.627929699 DEBUG (15): |  ****SEND TiNA****  | Node: 15 COUNT: 1
+0:0:26.627929699 DEBUG (15): |  ****SEND TiNA****  | Sending TWO MEAS
+*****************************************
+0:0:26.637695323 DEBUG (14): | ****PASSED TiNA**** | Node: 14 Last MAX: 0 New MAX: 5
+0:0:26.637695323 DEBUG (14): | ****PASSED TiNA**** | Node: 14 Last COUNT: 0 New COUNT: 1
+0:0:26.637695323 DEBUG (14): |  ****SEND TiNA****  | Node: 14 MAX: 5
+0:0:26.637695323 DEBUG (14): |  ****SEND TiNA****  | Node: 14 COUNT: 1
+0:0:26.637695323 DEBUG (14): |  ****SEND TiNA****  | Sending TWO MEAS
+*****************************************
+0:0:26.782226573 DEBUG (11): Children Array of node 11
+0:0:26.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:0:26.782226573 DEBUG (11): ---| 15 | 43 | 1 |-----
+0:0:26.782226573 DEBUG (11): | ****PASSED TiNA**** | Node: 11 Last MAX: 0 New MAX: 43
+0:0:26.782226573 DEBUG (11): | ****PASSED TiNA**** | Node: 11 Last COUNT: 0 New COUNT: 2
+0:0:26.782226573 DEBUG (11): |  ****SEND TiNA****  | Node: 11 MAX: 43
+0:0:26.782226573 DEBUG (11): |  ****SEND TiNA****  | Node: 11 COUNT: 2
+0:0:26.782226573 DEBUG (11): |  ****SEND TiNA****  | Sending TWO MEAS
+*****************************************
+0:0:26.782226573 DEBUG (11): Children values: 15 43 1
+0:0:27.120117198 DEBUG (7): Children Array of node 7
+0:0:27.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:0:27.120117198 DEBUG (7): ---| 11 | 43 | 2 |-----
+0:0:27.120117198 DEBUG (7): | ****PASSED TiNA**** | Node: 7 Last MAX: 0 New MAX: 43
+0:0:27.120117198 DEBUG (7): | ****PASSED TiNA**** | Node: 7 Last COUNT: 0 New COUNT: 3
+0:0:27.120117198 DEBUG (7): |  ****SEND TiNA****  | Node: 7 MAX: 43
+0:0:27.120117198 DEBUG (7): |  ****SEND TiNA****  | Node: 7 COUNT: 3
+0:0:27.120117198 DEBUG (7): |  ****SEND TiNA****  | Sending TWO MEAS
+*****************************************
+0:0:27.120117198 DEBUG (7): Children values: 11 43 2
+0:0:27.292968761 DEBUG (13): Children Array of node 13
+0:0:27.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:0:27.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:0:27.292968761 DEBUG (13): | ****PASSED TiNA**** | Node: 13 Last MAX: 0 New MAX: 31
+0:0:27.292968761 DEBUG (13): | ****PASSED TiNA**** | Node: 13 Last COUNT: 0 New COUNT: 2
+0:0:27.292968761 DEBUG (13): |  ****SEND TiNA****  | Node: 13 MAX: 31
+0:0:27.292968761 DEBUG (13): |  ****SEND TiNA****  | Node: 13 COUNT: 2
+0:0:27.292968761 DEBUG (13): |  ****SEND TiNA****  | Sending TWO MEAS
+*****************************************
+0:0:27.292968761 DEBUG (13): Children values: 14 5 1
+0:0:27.324218761 DEBUG (10): | ****PASSED TiNA**** | Node: 10 Last MAX: 0 New MAX: 37
+0:0:27.324218761 DEBUG (10): | ****PASSED TiNA**** | Node: 10 Last COUNT: 0 New COUNT: 1
+0:0:27.324218761 DEBUG (10): |  ****SEND TiNA****  | Node: 10 MAX: 37
+0:0:27.324218761 DEBUG (10): |  ****SEND TiNA****  | Node: 10 COUNT: 1
+0:0:27.324218761 DEBUG (10): |  ****SEND TiNA****  | Sending TWO MEAS
+*****************************************
+0:0:27.654296886 DEBUG (12): Children Array of node 12
+0:0:27.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:0:27.654296886 DEBUG (12): ---| 13 | 31 | 2 |-----
+0:0:27.654296886 DEBUG (12): | ****PASSED TiNA**** | Node: 12 Last MAX: 0 New MAX: 31
+0:0:27.654296886 DEBUG (12): | ****PASSED TiNA**** | Node: 12 Last COUNT: 0 New COUNT: 3
+0:0:27.654296886 DEBUG (12): |  ****SEND TiNA****  | Node: 12 MAX: 31
+0:0:27.654296886 DEBUG (12): |  ****SEND TiNA****  | Node: 12 COUNT: 3
+0:0:27.654296886 DEBUG (12): |  ****SEND TiNA****  | Sending TWO MEAS
+*****************************************
+0:0:27.654296886 DEBUG (12): Children values: 13 31 2
+0:0:27.666992198 DEBUG (6): Children Array of node 6
+0:0:27.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:0:27.666992198 DEBUG (6): ---| 7 | 43 | 3 |-----
+0:0:27.666992198 DEBUG (6): ---| 10 | 37 | 1 |-----
+0:0:27.666992198 DEBUG (6): | ****PASSED TiNA**** | Node: 6 Last MAX: 0 New MAX: 74
+0:0:27.666992198 DEBUG (6): | ****PASSED TiNA**** | Node: 6 Last COUNT: 0 New COUNT: 5
+0:0:27.666992198 DEBUG (6): |  ****SEND TiNA****  | Node: 6 MAX: 74
+0:0:27.666992198 DEBUG (6): |  ****SEND TiNA****  | Node: 6 COUNT: 5
+0:0:27.666992198 DEBUG (6): |  ****SEND TiNA****  | Sending TWO MEAS
+*****************************************
+0:0:27.666992198 DEBUG (6): Children values: 7 43 3
+0:0:27.666992198 DEBUG (6): Children values: 10 37 1
+0:0:27.860351572 DEBUG (3): | ****PASSED TiNA**** | Node: 3 Last MAX: 0 New MAX: 35
+0:0:27.860351572 DEBUG (3): | ****PASSED TiNA**** | Node: 3 Last COUNT: 0 New COUNT: 1
+0:0:27.860351572 DEBUG (3): |  ****SEND TiNA****  | Node: 3 MAX: 35
+0:0:27.860351572 DEBUG (3): |  ****SEND TiNA****  | Node: 3 COUNT: 1
+0:0:27.860351572 DEBUG (3): |  ****SEND TiNA****  | Sending TWO MEAS
+*****************************************
+0:0:27.878906260 DEBUG (9): | ****PASSED TiNA**** | Node: 9 Last MAX: 0 New MAX: 77
+0:0:27.878906260 DEBUG (9): | ****PASSED TiNA**** | Node: 9 Last COUNT: 0 New COUNT: 1
+0:0:27.878906260 DEBUG (9): |  ****SEND TiNA****  | Node: 9 MAX: 77
+0:0:27.878906260 DEBUG (9): |  ****SEND TiNA****  | Node: 9 COUNT: 1
+0:0:27.878906260 DEBUG (9): |  ****SEND TiNA****  | Sending TWO MEAS
+*****************************************
+0:0:28.212890635 DEBUG (2): Children Array of node 2
+0:0:28.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:0:28.212890635 DEBUG (2): ---| 3 | 35 | 1 |-----
+0:0:28.212890635 DEBUG (2): | ****PASSED TiNA**** | Node: 2 Last MAX: 0 New MAX: 76
+0:0:28.212890635 DEBUG (2): | ****PASSED TiNA**** | Node: 2 Last COUNT: 0 New COUNT: 2
+0:0:28.212890635 DEBUG (2): |  ****SEND TiNA****  | Node: 2 MAX: 76
+0:0:28.212890635 DEBUG (2): |  ****SEND TiNA****  | Node: 2 COUNT: 2
+0:0:28.212890635 DEBUG (2): |  ****SEND TiNA****  | Sending TWO MEAS
+*****************************************
+0:0:28.212890635 DEBUG (2): Children values: 3 35 1
+0:0:28.354492198 DEBUG (5): Children Array of node 5
+0:0:28.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:0:28.354492198 DEBUG (5): ---| 6 | 74 | 5 |-----
+0:0:28.354492198 DEBUG (5): ---| 9 | 77 | 1 |-----
+0:0:28.354492198 DEBUG (5): | ****PASSED TiNA**** | Node: 5 Last MAX: 0 New MAX: 77
+0:0:28.354492198 DEBUG (5): | ****PASSED TiNA**** | Node: 5 Last COUNT: 0 New COUNT: 7
+0:0:28.354492198 DEBUG (5): |  ****SEND TiNA****  | Node: 5 MAX: 77
+0:0:28.354492198 DEBUG (5): |  ****SEND TiNA****  | Node: 5 COUNT: 7
+0:0:28.354492198 DEBUG (5): |  ****SEND TiNA****  | Sending TWO MEAS
+*****************************************
+0:0:28.354492198 DEBUG (5): Children values: 6 74 5
+0:0:28.354492198 DEBUG (5): Children values: 9 77 1
+0:0:28.389648448 DEBUG (8): Children Array of node 8
+0:0:28.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:0:28.389648448 DEBUG (8): ---| 12 | 31 | 3 |-----
+0:0:28.389648448 DEBUG (8): | ****PASSED TiNA**** | Node: 8 Last MAX: 0 New MAX: 31
+0:0:28.389648448 DEBUG (8): | ****PASSED TiNA**** | Node: 8 Last COUNT: 0 New COUNT: 4
+0:0:28.389648448 DEBUG (8): |  ****SEND TiNA****  | Node: 8 MAX: 31
+0:0:28.389648448 DEBUG (8): |  ****SEND TiNA****  | Node: 8 COUNT: 4
+0:0:28.389648448 DEBUG (8): |  ****SEND TiNA****  | Sending TWO MEAS
+*****************************************
+0:0:28.389648448 DEBUG (8): Children values: 12 31 3
+0:0:28.753906260 DEBUG (1): Children Array of node 1
+0:0:28.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:0:28.753906260 DEBUG (1): ---| 2 | 76 | 2 |-----
+0:0:28.753906260 DEBUG (1): | ****PASSED TiNA**** | Node: 1 Last MAX: 0 New MAX: 76
+0:0:28.753906260 DEBUG (1): | ****PASSED TiNA**** | Node: 1 Last COUNT: 0 New COUNT: 3
+0:0:28.753906260 DEBUG (1): |  ****SEND TiNA****  | Node: 1 MAX: 76
+0:0:28.753906260 DEBUG (1): |  ****SEND TiNA****  | Node: 1 COUNT: 3
+0:0:28.753906260 DEBUG (1): |  ****SEND TiNA****  | Sending TWO MEAS
+*****************************************
+0:0:28.753906260 DEBUG (1): Children values: 2 76 2
+0:0:28.868164072 DEBUG (4): Children Array of node 4
+0:0:28.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:0:28.868164072 DEBUG (4): ---| 5 | 77 | 7 |-----
+0:0:28.868164072 DEBUG (4): ---| 8 | 31 | 4 |-----
+0:0:28.868164072 DEBUG (4): | ****PASSED TiNA**** | Node: 4 Last MAX: 0 New MAX: 77
+0:0:28.868164072 DEBUG (4): | ****PASSED TiNA**** | Node: 4 Last COUNT: 0 New COUNT: 12
+0:0:28.868164072 DEBUG (4): |  ****SEND TiNA****  | Node: 4 MAX: 77
+0:0:28.868164072 DEBUG (4): |  ****SEND TiNA****  | Node: 4 COUNT: 12
+0:0:28.868164072 DEBUG (4): |  ****SEND TiNA****  | Sending TWO MEAS
+*****************************************
+0:0:28.868164072 DEBUG (4): Children values: 5 77 7
+0:0:28.868164072 DEBUG (4): Children values: 8 31 4
+0:0:29.330078135 DEBUG (0): Children Array of node 0
+0:0:29.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:0:29.330078135 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:0:29.330078135 DEBUG (0): ---| 4 | 77 | 12 |-----
+0:0:29.330078135 DEBUG (0): | ****PASSED TiNA**** | Node: 0 Last MAX: 0 New MAX: 77
+0:0:29.330078135 DEBUG (0): | ****PASSED TiNA**** | Node: 0 Last COUNT: 0 New COUNT: 16
+0:0:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 1: 77^^^^^^^^^^^
+
+
+0:0:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 1: 16^^^^^^^^^^^
+
+
+0:0:30.000000010 DEBUG (0): ################################################### 
+0:0:30.000000010 DEBUG (0): ##############   ROUND   2    #################### 
+0:0:30.000000010 DEBUG (0): ###################################################
+0:0:56.782226573 DEBUG (11): Children Array of node 11
+0:0:56.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:0:56.782226573 DEBUG (11): ---| 15 | 43 | 1 |-----
+0:0:57.120117198 DEBUG (7): Children Array of node 7
+0:0:57.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:0:57.120117198 DEBUG (7): ---| 11 | 43 | 2 |-----
+0:0:57.292968761 DEBUG (13): Children Array of node 13
+0:0:57.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:0:57.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:0:57.654296886 DEBUG (12): Children Array of node 12
+0:0:57.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:0:57.654296886 DEBUG (12): ---| 13 | 31 | 2 |-----
+0:0:57.666992198 DEBUG (6): Children Array of node 6
+0:0:57.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:0:57.666992198 DEBUG (6): ---| 7 | 43 | 3 |-----
+0:0:57.666992198 DEBUG (6): ---| 10 | 37 | 1 |-----
+0:0:58.212890635 DEBUG (2): Children Array of node 2
+0:0:58.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:0:58.212890635 DEBUG (2): ---| 3 | 35 | 1 |-----
+0:0:58.354492198 DEBUG (5): Children Array of node 5
+0:0:58.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:0:58.354492198 DEBUG (5): ---| 6 | 74 | 5 |-----
+0:0:58.354492198 DEBUG (5): ---| 9 | 77 | 1 |-----
+0:0:58.389648448 DEBUG (8): Children Array of node 8
+0:0:58.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:0:58.389648448 DEBUG (8): ---| 12 | 31 | 3 |-----
+0:0:58.753906260 DEBUG (1): Children Array of node 1
+0:0:58.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:0:58.753906260 DEBUG (1): ---| 2 | 76 | 2 |-----
+0:0:58.868164072 DEBUG (4): Children Array of node 4
+0:0:58.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:0:58.868164072 DEBUG (4): ---| 5 | 77 | 7 |-----
+0:0:58.868164072 DEBUG (4): ---| 8 | 31 | 4 |-----
+0:0:59.330078135 DEBUG (0): Children Array of node 0
+0:0:59.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:0:59.330078135 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:0:59.330078135 DEBUG (0): ---| 4 | 77 | 12 |-----
+0:0:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 2: 77^^^^^^^^^^^
+
+
+0:0:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 2: 16^^^^^^^^^^^
+
+
+0:1:0.000000010 DEBUG (0): ################################################### 
+0:1:0.000000010 DEBUG (0): ##############   ROUND   3    #################### 
+0:1:0.000000010 DEBUG (0): ###################################################
+0:1:26.782226573 DEBUG (11): Children Array of node 11
+0:1:26.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:1:26.782226573 DEBUG (11): ---| 15 | 43 | 1 |-----
+0:1:27.120117198 DEBUG (7): Children Array of node 7
+0:1:27.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:1:27.120117198 DEBUG (7): ---| 11 | 43 | 2 |-----
+0:1:27.292968761 DEBUG (13): Children Array of node 13
+0:1:27.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:1:27.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:1:27.654296886 DEBUG (12): Children Array of node 12
+0:1:27.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:1:27.654296886 DEBUG (12): ---| 13 | 31 | 2 |-----
+0:1:27.666992198 DEBUG (6): Children Array of node 6
+0:1:27.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:1:27.666992198 DEBUG (6): ---| 7 | 43 | 3 |-----
+0:1:27.666992198 DEBUG (6): ---| 10 | 37 | 1 |-----
+0:1:28.212890635 DEBUG (2): Children Array of node 2
+0:1:28.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:1:28.212890635 DEBUG (2): ---| 3 | 35 | 1 |-----
+0:1:28.354492198 DEBUG (5): Children Array of node 5
+0:1:28.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:1:28.354492198 DEBUG (5): ---| 6 | 74 | 5 |-----
+0:1:28.354492198 DEBUG (5): ---| 9 | 77 | 1 |-----
+0:1:28.389648448 DEBUG (8): Children Array of node 8
+0:1:28.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:1:28.389648448 DEBUG (8): ---| 12 | 31 | 3 |-----
+0:1:28.753906260 DEBUG (1): Children Array of node 1
+0:1:28.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:1:28.753906260 DEBUG (1): ---| 2 | 76 | 2 |-----
+0:1:28.868164072 DEBUG (4): Children Array of node 4
+0:1:28.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:1:28.868164072 DEBUG (4): ---| 5 | 77 | 7 |-----
+0:1:28.868164072 DEBUG (4): ---| 8 | 31 | 4 |-----
+0:1:29.330078135 DEBUG (0): Children Array of node 0
+0:1:29.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:1:29.330078135 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:1:29.330078135 DEBUG (0): ---| 4 | 77 | 12 |-----
+0:1:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 3: 77^^^^^^^^^^^
+
+
+0:1:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 3: 16^^^^^^^^^^^
+
+
+0:1:30.000000010 DEBUG (0): ################################################### 
+0:1:30.000000010 DEBUG (0): ##############   ROUND   4    #################### 
+0:1:30.000000010 DEBUG (0): ###################################################
+0:1:56.782226573 DEBUG (11): Children Array of node 11
+0:1:56.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:1:56.782226573 DEBUG (11): ---| 15 | 43 | 1 |-----
+0:1:57.120117198 DEBUG (7): Children Array of node 7
+0:1:57.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:1:57.120117198 DEBUG (7): ---| 11 | 43 | 2 |-----
+0:1:57.292968761 DEBUG (13): Children Array of node 13
+0:1:57.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:1:57.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:1:57.654296886 DEBUG (12): Children Array of node 12
+0:1:57.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:1:57.654296886 DEBUG (12): ---| 13 | 31 | 2 |-----
+0:1:57.666992198 DEBUG (6): Children Array of node 6
+0:1:57.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:1:57.666992198 DEBUG (6): ---| 7 | 43 | 3 |-----
+0:1:57.666992198 DEBUG (6): ---| 10 | 37 | 1 |-----
+0:1:58.212890635 DEBUG (2): Children Array of node 2
+0:1:58.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:1:58.212890635 DEBUG (2): ---| 3 | 35 | 1 |-----
+0:1:58.354492198 DEBUG (5): Children Array of node 5
+0:1:58.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:1:58.354492198 DEBUG (5): ---| 6 | 74 | 5 |-----
+0:1:58.354492198 DEBUG (5): ---| 9 | 77 | 1 |-----
+0:1:58.389648448 DEBUG (8): Children Array of node 8
+0:1:58.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:1:58.389648448 DEBUG (8): ---| 12 | 31 | 3 |-----
+0:1:58.753906260 DEBUG (1): Children Array of node 1
+0:1:58.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:1:58.753906260 DEBUG (1): ---| 2 | 76 | 2 |-----
+0:1:58.868164072 DEBUG (4): Children Array of node 4
+0:1:58.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:1:58.868164072 DEBUG (4): ---| 5 | 77 | 7 |-----
+0:1:58.868164072 DEBUG (4): ---| 8 | 31 | 4 |-----
+0:1:59.330078135 DEBUG (0): Children Array of node 0
+0:1:59.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:1:59.330078135 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:1:59.330078135 DEBUG (0): ---| 4 | 77 | 12 |-----
+0:1:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 4: 77^^^^^^^^^^^
+
+
+0:1:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 4: 16^^^^^^^^^^^
+
+
+0:2:0.000000010 DEBUG (0): ################################################### 
+0:2:0.000000010 DEBUG (0): ##############   ROUND   5    #################### 
+0:2:0.000000010 DEBUG (0): ###################################################
+0:2:26.782226573 DEBUG (11): Children Array of node 11
+0:2:26.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:2:26.782226573 DEBUG (11): ---| 15 | 43 | 1 |-----
+0:2:27.120117198 DEBUG (7): Children Array of node 7
+0:2:27.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:2:27.120117198 DEBUG (7): ---| 11 | 43 | 2 |-----
+0:2:27.292968761 DEBUG (13): Children Array of node 13
+0:2:27.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:2:27.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:2:27.654296886 DEBUG (12): Children Array of node 12
+0:2:27.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:2:27.654296886 DEBUG (12): ---| 13 | 31 | 2 |-----
+0:2:27.666992198 DEBUG (6): Children Array of node 6
+0:2:27.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:2:27.666992198 DEBUG (6): ---| 7 | 43 | 3 |-----
+0:2:27.666992198 DEBUG (6): ---| 10 | 37 | 1 |-----
+0:2:27.878906260 DEBUG (9): | ****PASSED TiNA**** | Node: 9 Last MAX: 77 New MAX: 94
+0:2:27.878906260 DEBUG (9): |  ****SEND TiNA****  | Node: 9 MAX: 94
+0:2:27.878906260 DEBUG (9): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:2:28.212890635 DEBUG (2): Children Array of node 2
+0:2:28.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:2:28.212890635 DEBUG (2): ---| 3 | 35 | 1 |-----
+0:2:28.354492198 DEBUG (5): Children Array of node 5
+0:2:28.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:2:28.354492198 DEBUG (5): ---| 6 | 74 | 5 |-----
+0:2:28.354492198 DEBUG (5): ---| 9 | 94 | 1 |-----
+0:2:28.354492198 DEBUG (5): | ****PASSED TiNA**** | Node: 5 Last MAX: 77 New MAX: 94
+0:2:28.354492198 DEBUG (5): |  ****SEND TiNA****  | Node: 5 MAX: 94
+0:2:28.354492198 DEBUG (5): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:2:28.389648448 DEBUG (8): Children Array of node 8
+0:2:28.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:2:28.389648448 DEBUG (8): ---| 12 | 31 | 3 |-----
+0:2:28.753906260 DEBUG (1): Children Array of node 1
+0:2:28.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:2:28.753906260 DEBUG (1): ---| 2 | 76 | 2 |-----
+0:2:28.868164072 DEBUG (4): Children Array of node 4
+0:2:28.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:2:28.868164072 DEBUG (4): ---| 5 | 94 | 7 |-----
+0:2:28.868164072 DEBUG (4): ---| 8 | 31 | 4 |-----
+0:2:28.868164072 DEBUG (4): | ****PASSED TiNA**** | Node: 4 Last MAX: 77 New MAX: 94
+0:2:28.868164072 DEBUG (4): |  ****SEND TiNA****  | Node: 4 MAX: 94
+0:2:28.868164072 DEBUG (4): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:2:29.330078135 DEBUG (0): Children Array of node 0
+0:2:29.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:2:29.330078135 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:2:29.330078135 DEBUG (0): ---| 4 | 94 | 12 |-----
+0:2:29.330078135 DEBUG (0): | ****PASSED TiNA**** | Node: 0 Last MAX: 77 New MAX: 94
+0:2:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 5: 94^^^^^^^^^^^
+
+
+0:2:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 5: 16^^^^^^^^^^^
+
+
+0:2:30.000000010 DEBUG (0): ################################################### 
+0:2:30.000000010 DEBUG (0): ##############   ROUND   6    #################### 
+0:2:30.000000010 DEBUG (0): ###################################################
+0:2:56.782226573 DEBUG (11): Children Array of node 11
+0:2:56.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:2:56.782226573 DEBUG (11): ---| 15 | 43 | 1 |-----
+0:2:57.120117198 DEBUG (7): Children Array of node 7
+0:2:57.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:2:57.120117198 DEBUG (7): ---| 11 | 43 | 2 |-----
+0:2:57.292968761 DEBUG (13): Children Array of node 13
+0:2:57.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:2:57.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:2:57.654296886 DEBUG (12): Children Array of node 12
+0:2:57.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:2:57.654296886 DEBUG (12): ---| 13 | 31 | 2 |-----
+0:2:57.666992198 DEBUG (6): Children Array of node 6
+0:2:57.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:2:57.666992198 DEBUG (6): ---| 7 | 43 | 3 |-----
+0:2:57.666992198 DEBUG (6): ---| 10 | 37 | 1 |-----
+0:2:58.212890635 DEBUG (2): Children Array of node 2
+0:2:58.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:2:58.212890635 DEBUG (2): ---| 3 | 35 | 1 |-----
+0:2:58.354492198 DEBUG (5): Children Array of node 5
+0:2:58.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:2:58.354492198 DEBUG (5): ---| 6 | 74 | 5 |-----
+0:2:58.354492198 DEBUG (5): ---| 9 | 94 | 1 |-----
+0:2:58.389648448 DEBUG (8): Children Array of node 8
+0:2:58.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:2:58.389648448 DEBUG (8): ---| 12 | 31 | 3 |-----
+0:2:58.753906260 DEBUG (1): Children Array of node 1
+0:2:58.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:2:58.753906260 DEBUG (1): ---| 2 | 76 | 2 |-----
+0:2:58.868164072 DEBUG (4): Children Array of node 4
+0:2:58.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:2:58.868164072 DEBUG (4): ---| 5 | 94 | 7 |-----
+0:2:58.868164072 DEBUG (4): ---| 8 | 31 | 4 |-----
+0:2:59.330078135 DEBUG (0): Children Array of node 0
+0:2:59.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:2:59.330078135 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:2:59.330078135 DEBUG (0): ---| 4 | 94 | 12 |-----
+0:2:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 6: 94^^^^^^^^^^^
+
+
+0:2:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 6: 16^^^^^^^^^^^
+
+
+0:3:0.000000010 DEBUG (0): ################################################### 
+0:3:0.000000010 DEBUG (0): ##############   ROUND   7    #################### 
+0:3:0.000000010 DEBUG (0): ###################################################
+0:3:26.782226573 DEBUG (11): Children Array of node 11
+0:3:26.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:3:26.782226573 DEBUG (11): ---| 15 | 43 | 1 |-----
+0:3:27.120117198 DEBUG (7): Children Array of node 7
+0:3:27.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:3:27.120117198 DEBUG (7): ---| 11 | 43 | 2 |-----
+0:3:27.292968761 DEBUG (13): Children Array of node 13
+0:3:27.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:3:27.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:3:27.292968761 DEBUG (13): | ****PASSED TiNA**** | Node: 13 Last MAX: 31 New MAX: 24
+0:3:27.292968761 DEBUG (13): |  ****SEND TiNA****  | Node: 13 MAX: 24
+0:3:27.292968761 DEBUG (13): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:3:27.654296886 DEBUG (12): Children Array of node 12
+0:3:27.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:3:27.654296886 DEBUG (12): ---| 13 | 24 | 2 |-----
+0:3:27.654296886 DEBUG (12): | ****PASSED TiNA**** | Node: 12 Last MAX: 31 New MAX: 24
+0:3:27.654296886 DEBUG (12): |  ****SEND TiNA****  | Node: 12 MAX: 24
+0:3:27.654296886 DEBUG (12): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:3:27.666992198 DEBUG (6): Children Array of node 6
+0:3:27.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:3:27.666992198 DEBUG (6): ---| 7 | 43 | 3 |-----
+0:3:27.666992198 DEBUG (6): ---| 10 | 37 | 1 |-----
+0:3:28.212890635 DEBUG (2): Children Array of node 2
+0:3:28.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:3:28.212890635 DEBUG (2): ---| 3 | 35 | 1 |-----
+0:3:28.354492198 DEBUG (5): Children Array of node 5
+0:3:28.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:3:28.354492198 DEBUG (5): ---| 6 | 74 | 5 |-----
+0:3:28.354492198 DEBUG (5): ---| 9 | 94 | 1 |-----
+0:3:28.389648448 DEBUG (8): Children Array of node 8
+0:3:28.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:3:28.389648448 DEBUG (8): ---| 12 | 24 | 3 |-----
+0:3:28.389648448 DEBUG (8): | ****PASSED TiNA**** | Node: 8 Last MAX: 31 New MAX: 24
+0:3:28.389648448 DEBUG (8): |  ****SEND TiNA****  | Node: 8 MAX: 24
+0:3:28.389648448 DEBUG (8): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:3:28.753906260 DEBUG (1): Children Array of node 1
+0:3:28.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:3:28.753906260 DEBUG (1): ---| 2 | 76 | 2 |-----
+0:3:28.868164072 DEBUG (4): Children Array of node 4
+0:3:28.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:3:28.868164072 DEBUG (4): ---| 5 | 94 | 7 |-----
+0:3:28.868164072 DEBUG (4): ---| 8 | 24 | 4 |-----
+0:3:29.330078135 DEBUG (0): Children Array of node 0
+0:3:29.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:3:29.330078135 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:3:29.330078135 DEBUG (0): ---| 4 | 94 | 12 |-----
+0:3:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 7: 94^^^^^^^^^^^
+
+
+0:3:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 7: 16^^^^^^^^^^^
+
+
+0:3:30.000000010 DEBUG (0): ################################################### 
+0:3:30.000000010 DEBUG (0): ##############   ROUND   8    #################### 
+0:3:30.000000010 DEBUG (0): ###################################################
+0:3:56.782226573 DEBUG (11): Children Array of node 11
+0:3:56.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:3:56.782226573 DEBUG (11): ---| 15 | 43 | 1 |-----
+0:3:57.120117198 DEBUG (7): Children Array of node 7
+0:3:57.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:3:57.120117198 DEBUG (7): ---| 11 | 43 | 2 |-----
+0:3:57.292968761 DEBUG (13): Children Array of node 13
+0:3:57.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:3:57.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:3:57.654296886 DEBUG (12): Children Array of node 12
+0:3:57.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:3:57.654296886 DEBUG (12): ---| 13 | 24 | 2 |-----
+0:3:57.666992198 DEBUG (6): Children Array of node 6
+0:3:57.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:3:57.666992198 DEBUG (6): ---| 7 | 43 | 3 |-----
+0:3:57.666992198 DEBUG (6): ---| 10 | 37 | 1 |-----
+0:3:58.212890635 DEBUG (2): Children Array of node 2
+0:3:58.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:3:58.212890635 DEBUG (2): ---| 3 | 35 | 1 |-----
+0:3:58.354492198 DEBUG (5): Children Array of node 5
+0:3:58.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:3:58.354492198 DEBUG (5): ---| 6 | 74 | 5 |-----
+0:3:58.354492198 DEBUG (5): ---| 9 | 94 | 1 |-----
+0:3:58.389648448 DEBUG (8): Children Array of node 8
+0:3:58.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:3:58.389648448 DEBUG (8): ---| 12 | 24 | 3 |-----
+0:3:58.753906260 DEBUG (1): Children Array of node 1
+0:3:58.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:3:58.753906260 DEBUG (1): ---| 2 | 76 | 2 |-----
+0:3:58.868164072 DEBUG (4): Children Array of node 4
+0:3:58.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:3:58.868164072 DEBUG (4): ---| 5 | 94 | 7 |-----
+0:3:58.868164072 DEBUG (4): ---| 8 | 24 | 4 |-----
+0:3:59.330078135 DEBUG (0): Children Array of node 0
+0:3:59.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:3:59.330078135 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:3:59.330078135 DEBUG (0): ---| 4 | 94 | 12 |-----
+0:3:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 8: 94^^^^^^^^^^^
+
+
+0:3:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 8: 16^^^^^^^^^^^
+
+
+0:4:0.000000010 DEBUG (0): ################################################### 
+0:4:0.000000010 DEBUG (0): ##############   ROUND   9    #################### 
+0:4:0.000000010 DEBUG (0): ###################################################
+0:4:26.782226573 DEBUG (11): Children Array of node 11
+0:4:26.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:4:26.782226573 DEBUG (11): ---| 15 | 43 | 1 |-----
+0:4:27.120117198 DEBUG (7): Children Array of node 7
+0:4:27.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:4:27.120117198 DEBUG (7): ---| 11 | 43 | 2 |-----
+0:4:27.292968761 DEBUG (13): Children Array of node 13
+0:4:27.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:4:27.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:4:27.654296886 DEBUG (12): Children Array of node 12
+0:4:27.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:4:27.654296886 DEBUG (12): ---| 13 | 24 | 2 |-----
+0:4:27.666992198 DEBUG (6): Children Array of node 6
+0:4:27.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:4:27.666992198 DEBUG (6): ---| 7 | 43 | 3 |-----
+0:4:27.666992198 DEBUG (6): ---| 10 | 37 | 1 |-----
+0:4:28.212890635 DEBUG (2): Children Array of node 2
+0:4:28.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:4:28.212890635 DEBUG (2): ---| 3 | 35 | 1 |-----
+0:4:28.354492198 DEBUG (5): Children Array of node 5
+0:4:28.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:4:28.354492198 DEBUG (5): ---| 6 | 74 | 5 |-----
+0:4:28.354492198 DEBUG (5): ---| 9 | 94 | 1 |-----
+0:4:28.389648448 DEBUG (8): Children Array of node 8
+0:4:28.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:4:28.389648448 DEBUG (8): ---| 12 | 24 | 3 |-----
+0:4:28.753906260 DEBUG (1): Children Array of node 1
+0:4:28.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:4:28.753906260 DEBUG (1): ---| 2 | 76 | 2 |-----
+0:4:28.868164072 DEBUG (4): Children Array of node 4
+0:4:28.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:4:28.868164072 DEBUG (4): ---| 5 | 94 | 7 |-----
+0:4:28.868164072 DEBUG (4): ---| 8 | 24 | 4 |-----
+0:4:29.330078135 DEBUG (0): Children Array of node 0
+0:4:29.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:4:29.330078135 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:4:29.330078135 DEBUG (0): ---| 4 | 94 | 12 |-----
+0:4:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 9: 94^^^^^^^^^^^
+
+
+0:4:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 9: 16^^^^^^^^^^^
+
+
+0:4:30.000000010 DEBUG (0): ################################################### 
+0:4:30.000000010 DEBUG (0): ##############   ROUND   10    #################### 
+0:4:30.000000010 DEBUG (0): ###################################################
+0:4:56.782226573 DEBUG (11): Children Array of node 11
+0:4:56.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:4:56.782226573 DEBUG (11): ---| 15 | 43 | 1 |-----
+0:4:57.120117198 DEBUG (7): Children Array of node 7
+0:4:57.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:4:57.120117198 DEBUG (7): ---| 11 | 43 | 2 |-----
+0:4:57.292968761 DEBUG (13): Children Array of node 13
+0:4:57.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:4:57.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:4:57.654296886 DEBUG (12): Children Array of node 12
+0:4:57.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:4:57.654296886 DEBUG (12): ---| 13 | 24 | 2 |-----
+0:4:57.666992198 DEBUG (6): Children Array of node 6
+0:4:57.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:4:57.666992198 DEBUG (6): ---| 7 | 43 | 3 |-----
+0:4:57.666992198 DEBUG (6): ---| 10 | 37 | 1 |-----
+0:4:58.212890635 DEBUG (2): Children Array of node 2
+0:4:58.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:4:58.212890635 DEBUG (2): ---| 3 | 35 | 1 |-----
+0:4:58.354492198 DEBUG (5): Children Array of node 5
+0:4:58.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:4:58.354492198 DEBUG (5): ---| 6 | 74 | 5 |-----
+0:4:58.354492198 DEBUG (5): ---| 9 | 94 | 1 |-----
+0:4:58.389648448 DEBUG (8): Children Array of node 8
+0:4:58.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:4:58.389648448 DEBUG (8): ---| 12 | 24 | 3 |-----
+0:4:58.753906260 DEBUG (1): Children Array of node 1
+0:4:58.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:4:58.753906260 DEBUG (1): ---| 2 | 76 | 2 |-----
+0:4:58.868164072 DEBUG (4): Children Array of node 4
+0:4:58.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:4:58.868164072 DEBUG (4): ---| 5 | 94 | 7 |-----
+0:4:58.868164072 DEBUG (4): ---| 8 | 24 | 4 |-----
+0:4:59.330078135 DEBUG (0): Children Array of node 0
+0:4:59.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:4:59.330078135 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:4:59.330078135 DEBUG (0): ---| 4 | 94 | 12 |-----
+0:4:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 10: 94^^^^^^^^^^^
+
+
+0:4:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 10: 16^^^^^^^^^^^
+
+
+0:5:0.000000010 DEBUG (0): ################################################### 
+0:5:0.000000010 DEBUG (0): ##############   ROUND   11    #################### 
+0:5:0.000000010 DEBUG (0): ###################################################
+0:5:26.782226573 DEBUG (11): Children Array of node 11
+0:5:26.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:5:26.782226573 DEBUG (11): ---| 15 | 43 | 1 |-----
+0:5:27.120117198 DEBUG (7): Children Array of node 7
+0:5:27.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:5:27.120117198 DEBUG (7): ---| 11 | 43 | 2 |-----
+0:5:27.292968761 DEBUG (13): Children Array of node 13
+0:5:27.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:5:27.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:5:27.654296886 DEBUG (12): Children Array of node 12
+0:5:27.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:5:27.654296886 DEBUG (12): ---| 13 | 24 | 2 |-----
+0:5:27.666992198 DEBUG (6): Children Array of node 6
+0:5:27.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:5:27.666992198 DEBUG (6): ---| 7 | 43 | 3 |-----
+0:5:27.666992198 DEBUG (6): ---| 10 | 37 | 1 |-----
+0:5:28.212890635 DEBUG (2): Children Array of node 2
+0:5:28.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:5:28.212890635 DEBUG (2): ---| 3 | 35 | 1 |-----
+0:5:28.354492198 DEBUG (5): Children Array of node 5
+0:5:28.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:5:28.354492198 DEBUG (5): ---| 6 | 74 | 5 |-----
+0:5:28.354492198 DEBUG (5): ---| 9 | 94 | 1 |-----
+0:5:28.389648448 DEBUG (8): Children Array of node 8
+0:5:28.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:5:28.389648448 DEBUG (8): ---| 12 | 24 | 3 |-----
+0:5:28.753906260 DEBUG (1): Children Array of node 1
+0:5:28.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:5:28.753906260 DEBUG (1): ---| 2 | 76 | 2 |-----
+0:5:28.868164072 DEBUG (4): Children Array of node 4
+0:5:28.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:5:28.868164072 DEBUG (4): ---| 5 | 94 | 7 |-----
+0:5:28.868164072 DEBUG (4): ---| 8 | 24 | 4 |-----
+0:5:29.330078135 DEBUG (0): Children Array of node 0
+0:5:29.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:5:29.330078135 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:5:29.330078135 DEBUG (0): ---| 4 | 94 | 12 |-----
+0:5:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 11: 94^^^^^^^^^^^
+
+
+0:5:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 11: 16^^^^^^^^^^^
+
+
+0:5:30.000000010 DEBUG (0): ################################################### 
+0:5:30.000000010 DEBUG (0): ##############   ROUND   12    #################### 
+0:5:30.000000010 DEBUG (0): ###################################################
+0:5:56.782226573 DEBUG (11): Children Array of node 11
+0:5:56.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:5:56.782226573 DEBUG (11): ---| 15 | 43 | 1 |-----
+0:5:57.120117198 DEBUG (7): Children Array of node 7
+0:5:57.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:5:57.120117198 DEBUG (7): ---| 11 | 43 | 2 |-----
+0:5:57.292968761 DEBUG (13): Children Array of node 13
+0:5:57.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:5:57.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:5:57.654296886 DEBUG (12): Children Array of node 12
+0:5:57.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:5:57.654296886 DEBUG (12): ---| 13 | 24 | 2 |-----
+0:5:57.666992198 DEBUG (6): Children Array of node 6
+0:5:57.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:5:57.666992198 DEBUG (6): ---| 7 | 43 | 3 |-----
+0:5:57.666992198 DEBUG (6): ---| 10 | 37 | 1 |-----
+0:5:58.212890635 DEBUG (2): Children Array of node 2
+0:5:58.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:5:58.212890635 DEBUG (2): ---| 3 | 35 | 1 |-----
+0:5:58.354492198 DEBUG (5): Children Array of node 5
+0:5:58.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:5:58.354492198 DEBUG (5): ---| 6 | 74 | 5 |-----
+0:5:58.354492198 DEBUG (5): ---| 9 | 94 | 1 |-----
+0:5:58.389648448 DEBUG (8): Children Array of node 8
+0:5:58.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:5:58.389648448 DEBUG (8): ---| 12 | 24 | 3 |-----
+0:5:58.753906260 DEBUG (1): Children Array of node 1
+0:5:58.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:5:58.753906260 DEBUG (1): ---| 2 | 76 | 2 |-----
+0:5:58.868164072 DEBUG (4): Children Array of node 4
+0:5:58.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:5:58.868164072 DEBUG (4): ---| 5 | 94 | 7 |-----
+0:5:58.868164072 DEBUG (4): ---| 8 | 24 | 4 |-----
+0:5:59.330078135 DEBUG (0): Children Array of node 0
+0:5:59.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:5:59.330078135 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:5:59.330078135 DEBUG (0): ---| 4 | 94 | 12 |-----
+0:5:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 12: 94^^^^^^^^^^^
+
+
+0:5:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 12: 16^^^^^^^^^^^
+
+
+0:6:0.000000010 DEBUG (0): ################################################### 
+0:6:0.000000010 DEBUG (0): ##############   ROUND   13    #################### 
+0:6:0.000000010 DEBUG (0): ###################################################
+0:6:26.782226573 DEBUG (11): Children Array of node 11
+0:6:26.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:6:26.782226573 DEBUG (11): ---| 15 | 43 | 1 |-----
+0:6:27.120117198 DEBUG (7): Children Array of node 7
+0:6:27.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:6:27.120117198 DEBUG (7): ---| 11 | 43 | 2 |-----
+0:6:27.292968761 DEBUG (13): Children Array of node 13
+0:6:27.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:6:27.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:6:27.654296886 DEBUG (12): Children Array of node 12
+0:6:27.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:6:27.654296886 DEBUG (12): ---| 13 | 24 | 2 |-----
+0:6:27.666992198 DEBUG (6): Children Array of node 6
+0:6:27.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:6:27.666992198 DEBUG (6): ---| 7 | 43 | 3 |-----
+0:6:27.666992198 DEBUG (6): ---| 10 | 37 | 1 |-----
+0:6:27.878906260 DEBUG (9): | ****PASSED TiNA**** | Node: 9 Last MAX: 94 New MAX: 116
+0:6:27.878906260 DEBUG (9): |  ****SEND TiNA****  | Node: 9 MAX: 116
+0:6:27.878906260 DEBUG (9): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:6:28.212890635 DEBUG (2): Children Array of node 2
+0:6:28.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:6:28.212890635 DEBUG (2): ---| 3 | 35 | 1 |-----
+0:6:28.354492198 DEBUG (5): Children Array of node 5
+0:6:28.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:6:28.354492198 DEBUG (5): ---| 6 | 74 | 5 |-----
+0:6:28.354492198 DEBUG (5): ---| 9 | 116 | 1 |-----
+0:6:28.354492198 DEBUG (5): | ****PASSED TiNA**** | Node: 5 Last MAX: 94 New MAX: 116
+0:6:28.354492198 DEBUG (5): |  ****SEND TiNA****  | Node: 5 MAX: 116
+0:6:28.354492198 DEBUG (5): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:6:28.389648448 DEBUG (8): Children Array of node 8
+0:6:28.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:6:28.389648448 DEBUG (8): ---| 12 | 24 | 3 |-----
+0:6:28.753906260 DEBUG (1): Children Array of node 1
+0:6:28.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:6:28.753906260 DEBUG (1): ---| 2 | 76 | 2 |-----
+0:6:28.868164072 DEBUG (4): Children Array of node 4
+0:6:28.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:6:28.868164072 DEBUG (4): ---| 5 | 116 | 7 |-----
+0:6:28.868164072 DEBUG (4): ---| 8 | 24 | 4 |-----
+0:6:28.868164072 DEBUG (4): | ****PASSED TiNA**** | Node: 4 Last MAX: 94 New MAX: 116
+0:6:28.868164072 DEBUG (4): |  ****SEND TiNA****  | Node: 4 MAX: 116
+0:6:28.868164072 DEBUG (4): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:6:29.330078135 DEBUG (0): Children Array of node 0
+0:6:29.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:6:29.330078135 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:6:29.330078135 DEBUG (0): ---| 4 | 116 | 12 |-----
+0:6:29.330078135 DEBUG (0): | ****PASSED TiNA**** | Node: 0 Last MAX: 94 New MAX: 116
+0:6:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 13: 116^^^^^^^^^^^
+
+
+0:6:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 13: 16^^^^^^^^^^^
+
+
+0:6:30.000000010 DEBUG (0): ################################################### 
+0:6:30.000000010 DEBUG (0): ##############   ROUND   14    #################### 
+0:6:30.000000010 DEBUG (0): ###################################################
+0:6:56.782226573 DEBUG (11): Children Array of node 11
+0:6:56.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:6:56.782226573 DEBUG (11): ---| 15 | 43 | 1 |-----
+0:6:57.120117198 DEBUG (7): Children Array of node 7
+0:6:57.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:6:57.120117198 DEBUG (7): ---| 11 | 43 | 2 |-----
+0:6:57.292968761 DEBUG (13): Children Array of node 13
+0:6:57.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:6:57.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:6:57.324218761 DEBUG (10): | ****PASSED TiNA**** | Node: 10 Last MAX: 37 New MAX: 29
+0:6:57.324218761 DEBUG (10): |  ****SEND TiNA****  | Node: 10 MAX: 29
+0:6:57.324218761 DEBUG (10): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:6:57.654296886 DEBUG (12): Children Array of node 12
+0:6:57.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:6:57.654296886 DEBUG (12): ---| 13 | 24 | 2 |-----
+0:6:57.666992198 DEBUG (6): Children Array of node 6
+0:6:57.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:6:57.666992198 DEBUG (6): ---| 7 | 43 | 3 |-----
+0:6:57.666992198 DEBUG (6): ---| 10 | 29 | 1 |-----
+0:6:58.212890635 DEBUG (2): Children Array of node 2
+0:6:58.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:6:58.212890635 DEBUG (2): ---| 3 | 35 | 1 |-----
+0:6:58.354492198 DEBUG (5): Children Array of node 5
+0:6:58.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:6:58.354492198 DEBUG (5): ---| 6 | 74 | 5 |-----
+0:6:58.354492198 DEBUG (5): ---| 9 | 116 | 1 |-----
+0:6:58.389648448 DEBUG (8): Children Array of node 8
+0:6:58.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:6:58.389648448 DEBUG (8): ---| 12 | 24 | 3 |-----
+0:6:58.753906260 DEBUG (1): Children Array of node 1
+0:6:58.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:6:58.753906260 DEBUG (1): ---| 2 | 76 | 2 |-----
+0:6:58.868164072 DEBUG (4): Children Array of node 4
+0:6:58.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:6:58.868164072 DEBUG (4): ---| 5 | 116 | 7 |-----
+0:6:58.868164072 DEBUG (4): ---| 8 | 24 | 4 |-----
+0:6:59.330078135 DEBUG (0): Children Array of node 0
+0:6:59.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:6:59.330078135 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:6:59.330078135 DEBUG (0): ---| 4 | 116 | 12 |-----
+0:6:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 14: 116^^^^^^^^^^^
+
+
+0:6:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 14: 16^^^^^^^^^^^
+
+
+0:7:0.000000010 DEBUG (0): ################################################### 
+0:7:0.000000010 DEBUG (0): ##############   ROUND   15    #################### 
+0:7:0.000000010 DEBUG (0): ###################################################
+0:7:26.782226573 DEBUG (11): Children Array of node 11
+0:7:26.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:7:26.782226573 DEBUG (11): ---| 15 | 43 | 1 |-----
+0:7:27.120117198 DEBUG (7): Children Array of node 7
+0:7:27.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:7:27.120117198 DEBUG (7): ---| 11 | 43 | 2 |-----
+0:7:27.292968761 DEBUG (13): Children Array of node 13
+0:7:27.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:7:27.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:7:27.654296886 DEBUG (12): Children Array of node 12
+0:7:27.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:7:27.654296886 DEBUG (12): ---| 13 | 24 | 2 |-----
+0:7:27.666992198 DEBUG (6): Children Array of node 6
+0:7:27.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:7:27.666992198 DEBUG (6): ---| 7 | 43 | 3 |-----
+0:7:27.666992198 DEBUG (6): ---| 10 | 29 | 1 |-----
+0:7:28.212890635 DEBUG (2): Children Array of node 2
+0:7:28.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:7:28.212890635 DEBUG (2): ---| 3 | 35 | 1 |-----
+0:7:28.354492198 DEBUG (5): Children Array of node 5
+0:7:28.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:7:28.354492198 DEBUG (5): ---| 6 | 74 | 5 |-----
+0:7:28.354492198 DEBUG (5): ---| 9 | 116 | 1 |-----
+0:7:28.389648448 DEBUG (8): Children Array of node 8
+0:7:28.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:7:28.389648448 DEBUG (8): ---| 12 | 24 | 3 |-----
+0:7:28.753906260 DEBUG (1): Children Array of node 1
+0:7:28.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:7:28.753906260 DEBUG (1): ---| 2 | 76 | 2 |-----
+0:7:28.868164072 DEBUG (4): Children Array of node 4
+0:7:28.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:7:28.868164072 DEBUG (4): ---| 5 | 116 | 7 |-----
+0:7:28.868164072 DEBUG (4): ---| 8 | 24 | 4 |-----
+0:7:29.330078135 DEBUG (0): Children Array of node 0
+0:7:29.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:7:29.330078135 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:7:29.330078135 DEBUG (0): ---| 4 | 116 | 12 |-----
+0:7:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 15: 116^^^^^^^^^^^
+
+
+0:7:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 15: 16^^^^^^^^^^^
+
+
+0:7:30.000000010 DEBUG (0): ################################################### 
+0:7:30.000000010 DEBUG (0): ##############   ROUND   16    #################### 
+0:7:30.000000010 DEBUG (0): ###################################################
+0:7:56.782226573 DEBUG (11): Children Array of node 11
+0:7:56.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:7:56.782226573 DEBUG (11): ---| 15 | 43 | 1 |-----
+0:7:57.120117198 DEBUG (7): Children Array of node 7
+0:7:57.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:7:57.120117198 DEBUG (7): ---| 11 | 43 | 2 |-----
+0:7:57.292968761 DEBUG (13): Children Array of node 13
+0:7:57.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:7:57.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:7:57.292968761 DEBUG (13): | ****PASSED TiNA**** | Node: 13 Last MAX: 24 New MAX: 18
+0:7:57.292968761 DEBUG (13): |  ****SEND TiNA****  | Node: 13 MAX: 18
+0:7:57.292968761 DEBUG (13): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:7:57.654296886 DEBUG (12): Children Array of node 12
+0:7:57.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:7:57.654296886 DEBUG (12): ---| 13 | 18 | 2 |-----
+0:7:57.654296886 DEBUG (12): | ****PASSED TiNA**** | Node: 12 Last MAX: 24 New MAX: 18
+0:7:57.654296886 DEBUG (12): |  ****SEND TiNA****  | Node: 12 MAX: 18
+0:7:57.654296886 DEBUG (12): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:7:57.666992198 DEBUG (6): Children Array of node 6
+0:7:57.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:7:57.666992198 DEBUG (6): ---| 7 | 43 | 3 |-----
+0:7:57.666992198 DEBUG (6): ---| 10 | 29 | 1 |-----
+0:7:58.212890635 DEBUG (2): Children Array of node 2
+0:7:58.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:7:58.212890635 DEBUG (2): ---| 3 | 35 | 1 |-----
+0:7:58.212890635 DEBUG (2): | ****PASSED TiNA**** | Node: 2 Last MAX: 76 New MAX: 59
+0:7:58.212890635 DEBUG (2): |  ****SEND TiNA****  | Node: 2 MAX: 59
+0:7:58.212890635 DEBUG (2): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:7:58.354492198 DEBUG (5): Children Array of node 5
+0:7:58.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:7:58.354492198 DEBUG (5): ---| 6 | 74 | 5 |-----
+0:7:58.354492198 DEBUG (5): ---| 9 | 116 | 1 |-----
+0:7:58.389648448 DEBUG (8): Children Array of node 8
+0:7:58.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:7:58.389648448 DEBUG (8): ---| 12 | 18 | 3 |-----
+0:7:58.389648448 DEBUG (8): | ****PASSED TiNA**** | Node: 8 Last MAX: 24 New MAX: 18
+0:7:58.389648448 DEBUG (8): |  ****SEND TiNA****  | Node: 8 MAX: 18
+0:7:58.389648448 DEBUG (8): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:7:58.753906260 DEBUG (1): Children Array of node 1
+0:7:58.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:7:58.753906260 DEBUG (1): ---| 2 | 59 | 2 |-----
+0:7:58.753906260 DEBUG (1): | ****PASSED TiNA**** | Node: 1 Last MAX: 76 New MAX: 59
+0:7:58.753906260 DEBUG (1): |  ****SEND TiNA****  | Node: 1 MAX: 59
+0:7:58.753906260 DEBUG (1): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:7:58.868164072 DEBUG (4): Children Array of node 4
+0:7:58.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:7:58.868164072 DEBUG (4): ---| 5 | 116 | 7 |-----
+0:7:58.868164072 DEBUG (4): ---| 8 | 18 | 4 |-----
+0:7:59.330078135 DEBUG (0): Children Array of node 0
+0:7:59.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:7:59.330078135 DEBUG (0): ---| 1 | 59 | 3 |-----
+0:7:59.330078135 DEBUG (0): ---| 4 | 116 | 12 |-----
+0:7:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 16: 116^^^^^^^^^^^
+
+
+0:7:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 16: 16^^^^^^^^^^^
+
+
+0:8:0.000000010 DEBUG (0): ################################################### 
+0:8:0.000000010 DEBUG (0): ##############   ROUND   17    #################### 
+0:8:0.000000010 DEBUG (0): ###################################################
+0:8:26.782226573 DEBUG (11): Children Array of node 11
+0:8:26.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:8:26.782226573 DEBUG (11): ---| 15 | 43 | 1 |-----
+0:8:27.120117198 DEBUG (7): Children Array of node 7
+0:8:27.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:8:27.120117198 DEBUG (7): ---| 11 | 43 | 2 |-----
+0:8:27.292968761 DEBUG (13): Children Array of node 13
+0:8:27.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:8:27.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:8:27.654296886 DEBUG (12): Children Array of node 12
+0:8:27.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:8:27.654296886 DEBUG (12): ---| 13 | 18 | 2 |-----
+0:8:27.666992198 DEBUG (6): Children Array of node 6
+0:8:27.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:8:27.666992198 DEBUG (6): ---| 7 | 43 | 3 |-----
+0:8:27.666992198 DEBUG (6): ---| 10 | 29 | 1 |-----
+0:8:28.212890635 DEBUG (2): Children Array of node 2
+0:8:28.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:8:28.212890635 DEBUG (2): ---| 3 | 35 | 1 |-----
+0:8:28.354492198 DEBUG (5): Children Array of node 5
+0:8:28.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:8:28.354492198 DEBUG (5): ---| 6 | 74 | 5 |-----
+0:8:28.354492198 DEBUG (5): ---| 9 | 116 | 1 |-----
+0:8:28.389648448 DEBUG (8): Children Array of node 8
+0:8:28.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:8:28.389648448 DEBUG (8): ---| 12 | 18 | 3 |-----
+0:8:28.753906260 DEBUG (1): Children Array of node 1
+0:8:28.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:8:28.753906260 DEBUG (1): ---| 2 | 59 | 2 |-----
+0:8:28.868164072 DEBUG (4): Children Array of node 4
+0:8:28.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:8:28.868164072 DEBUG (4): ---| 5 | 116 | 7 |-----
+0:8:28.868164072 DEBUG (4): ---| 8 | 18 | 4 |-----
+0:8:29.330078135 DEBUG (0): Children Array of node 0
+0:8:29.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:8:29.330078135 DEBUG (0): ---| 1 | 59 | 3 |-----
+0:8:29.330078135 DEBUG (0): ---| 4 | 116 | 12 |-----
+0:8:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 17: 116^^^^^^^^^^^
+
+
+0:8:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 17: 16^^^^^^^^^^^
+
+
+0:8:30.000000010 DEBUG (0): ################################################### 
+0:8:30.000000010 DEBUG (0): ##############   ROUND   18    #################### 
+0:8:30.000000010 DEBUG (0): ###################################################
+0:8:56.782226573 DEBUG (11): Children Array of node 11
+0:8:56.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:8:56.782226573 DEBUG (11): ---| 15 | 43 | 1 |-----
+0:8:57.120117198 DEBUG (7): Children Array of node 7
+0:8:57.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:8:57.120117198 DEBUG (7): ---| 11 | 43 | 2 |-----
+0:8:57.292968761 DEBUG (13): Children Array of node 13
+0:8:57.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:8:57.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:8:57.654296886 DEBUG (12): Children Array of node 12
+0:8:57.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:8:57.654296886 DEBUG (12): ---| 13 | 18 | 2 |-----
+0:8:57.666992198 DEBUG (6): Children Array of node 6
+0:8:57.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:8:57.666992198 DEBUG (6): ---| 7 | 43 | 3 |-----
+0:8:57.666992198 DEBUG (6): ---| 10 | 29 | 1 |-----
+0:8:58.212890635 DEBUG (2): Children Array of node 2
+0:8:58.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:8:58.212890635 DEBUG (2): ---| 3 | 35 | 1 |-----
+0:8:58.354492198 DEBUG (5): Children Array of node 5
+0:8:58.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:8:58.354492198 DEBUG (5): ---| 6 | 74 | 5 |-----
+0:8:58.354492198 DEBUG (5): ---| 9 | 116 | 1 |-----
+0:8:58.389648448 DEBUG (8): Children Array of node 8
+0:8:58.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:8:58.389648448 DEBUG (8): ---| 12 | 18 | 3 |-----
+0:8:58.753906260 DEBUG (1): Children Array of node 1
+0:8:58.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:8:58.753906260 DEBUG (1): ---| 2 | 59 | 2 |-----
+0:8:58.868164072 DEBUG (4): Children Array of node 4
+0:8:58.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:8:58.868164072 DEBUG (4): ---| 5 | 116 | 7 |-----
+0:8:58.868164072 DEBUG (4): ---| 8 | 18 | 4 |-----
+0:8:59.330078135 DEBUG (0): Children Array of node 0
+0:8:59.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:8:59.330078135 DEBUG (0): ---| 1 | 59 | 3 |-----
+0:8:59.330078135 DEBUG (0): ---| 4 | 116 | 12 |-----
+0:8:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 18: 116^^^^^^^^^^^
+
+
+0:8:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 18: 16^^^^^^^^^^^
+
+
+0:9:0.000000010 DEBUG (0): ################################################### 
+0:9:0.000000010 DEBUG (0): ##############   ROUND   19    #################### 
+0:9:0.000000010 DEBUG (0): ###################################################
+0:9:26.782226573 DEBUG (11): Children Array of node 11
+0:9:26.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:9:26.782226573 DEBUG (11): ---| 15 | 43 | 1 |-----
+0:9:27.120117198 DEBUG (7): Children Array of node 7
+0:9:27.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:9:27.120117198 DEBUG (7): ---| 11 | 43 | 2 |-----
+0:9:27.292968761 DEBUG (13): Children Array of node 13
+0:9:27.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:9:27.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:9:27.654296886 DEBUG (12): Children Array of node 12
+0:9:27.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:9:27.654296886 DEBUG (12): ---| 13 | 18 | 2 |-----
+0:9:27.666992198 DEBUG (6): Children Array of node 6
+0:9:27.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:9:27.666992198 DEBUG (6): ---| 7 | 43 | 3 |-----
+0:9:27.666992198 DEBUG (6): ---| 10 | 29 | 1 |-----
+0:9:27.860351572 DEBUG (3): | ****PASSED TiNA**** | Node: 3 Last MAX: 35 New MAX: 43
+0:9:27.860351572 DEBUG (3): |  ****SEND TiNA****  | Node: 3 MAX: 43
+0:9:27.860351572 DEBUG (3): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:9:28.212890635 DEBUG (2): Children Array of node 2
+0:9:28.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:9:28.212890635 DEBUG (2): ---| 3 | 43 | 1 |-----
+0:9:28.354492198 DEBUG (5): Children Array of node 5
+0:9:28.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:9:28.354492198 DEBUG (5): ---| 6 | 74 | 5 |-----
+0:9:28.354492198 DEBUG (5): ---| 9 | 116 | 1 |-----
+0:9:28.389648448 DEBUG (8): Children Array of node 8
+0:9:28.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:9:28.389648448 DEBUG (8): ---| 12 | 18 | 3 |-----
+0:9:28.753906260 DEBUG (1): Children Array of node 1
+0:9:28.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:9:28.753906260 DEBUG (1): ---| 2 | 59 | 2 |-----
+0:9:28.868164072 DEBUG (4): Children Array of node 4
+0:9:28.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:9:28.868164072 DEBUG (4): ---| 5 | 116 | 7 |-----
+0:9:28.868164072 DEBUG (4): ---| 8 | 18 | 4 |-----
+0:9:29.330078135 DEBUG (0): Children Array of node 0
+0:9:29.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:9:29.330078135 DEBUG (0): ---| 1 | 59 | 3 |-----
+0:9:29.330078135 DEBUG (0): ---| 4 | 116 | 12 |-----
+0:9:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 19: 116^^^^^^^^^^^
+
+
+0:9:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 19: 16^^^^^^^^^^^
+
+
+0:9:30.000000010 DEBUG (0): ################################################### 
+0:9:30.000000010 DEBUG (0): ##############   ROUND   20    #################### 
+0:9:30.000000010 DEBUG (0): ###################################################
+0:9:56.782226573 DEBUG (11): Children Array of node 11
+0:9:56.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:9:56.782226573 DEBUG (11): ---| 15 | 43 | 1 |-----
+0:9:57.120117198 DEBUG (7): Children Array of node 7
+0:9:57.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:9:57.120117198 DEBUG (7): ---| 11 | 43 | 2 |-----
+0:9:57.292968761 DEBUG (13): Children Array of node 13
+0:9:57.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:9:57.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:9:57.654296886 DEBUG (12): Children Array of node 12
+0:9:57.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:9:57.654296886 DEBUG (12): ---| 13 | 18 | 2 |-----
+0:9:57.666992198 DEBUG (6): Children Array of node 6
+0:9:57.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:9:57.666992198 DEBUG (6): ---| 7 | 43 | 3 |-----
+0:9:57.666992198 DEBUG (6): ---| 10 | 29 | 1 |-----
+0:9:58.212890635 DEBUG (2): Children Array of node 2
+0:9:58.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:9:58.212890635 DEBUG (2): ---| 3 | 43 | 1 |-----
+0:9:58.354492198 DEBUG (5): Children Array of node 5
+0:9:58.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:9:58.354492198 DEBUG (5): ---| 6 | 74 | 5 |-----
+0:9:58.354492198 DEBUG (5): ---| 9 | 116 | 1 |-----
+0:9:58.389648448 DEBUG (8): Children Array of node 8
+0:9:58.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:9:58.389648448 DEBUG (8): ---| 12 | 18 | 3 |-----
+0:9:58.753906260 DEBUG (1): Children Array of node 1
+0:9:58.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:9:58.753906260 DEBUG (1): ---| 2 | 59 | 2 |-----
+0:9:58.868164072 DEBUG (4): Children Array of node 4
+0:9:58.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:9:58.868164072 DEBUG (4): ---| 5 | 116 | 7 |-----
+0:9:58.868164072 DEBUG (4): ---| 8 | 18 | 4 |-----
+0:9:59.330078135 DEBUG (0): Children Array of node 0
+0:9:59.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:9:59.330078135 DEBUG (0): ---| 1 | 59 | 3 |-----
+0:9:59.330078135 DEBUG (0): ---| 4 | 116 | 12 |-----
+0:9:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 20: 116^^^^^^^^^^^
+
+
+0:9:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 20: 16^^^^^^^^^^^
+
+
+0:10:0.000000010 DEBUG (0): ################################################### 
+0:10:0.000000010 DEBUG (0): ##############   ROUND   21    #################### 
+0:10:0.000000010 DEBUG (0): ###################################################
+0:10:26.782226573 DEBUG (11): Children Array of node 11
+0:10:26.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:10:26.782226573 DEBUG (11): ---| 15 | 43 | 1 |-----
+0:10:27.120117198 DEBUG (7): Children Array of node 7
+0:10:27.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:10:27.120117198 DEBUG (7): ---| 11 | 43 | 2 |-----
+0:10:27.292968761 DEBUG (13): Children Array of node 13
+0:10:27.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:10:27.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:10:27.654296886 DEBUG (12): Children Array of node 12
+0:10:27.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:10:27.654296886 DEBUG (12): ---| 13 | 18 | 2 |-----
+0:10:27.666992198 DEBUG (6): Children Array of node 6
+0:10:27.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:10:27.666992198 DEBUG (6): ---| 7 | 43 | 3 |-----
+0:10:27.666992198 DEBUG (6): ---| 10 | 29 | 1 |-----
+0:10:28.212890635 DEBUG (2): Children Array of node 2
+0:10:28.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:10:28.212890635 DEBUG (2): ---| 3 | 43 | 1 |-----
+0:10:28.354492198 DEBUG (5): Children Array of node 5
+0:10:28.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:10:28.354492198 DEBUG (5): ---| 6 | 74 | 5 |-----
+0:10:28.354492198 DEBUG (5): ---| 9 | 116 | 1 |-----
+0:10:28.389648448 DEBUG (8): Children Array of node 8
+0:10:28.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:10:28.389648448 DEBUG (8): ---| 12 | 18 | 3 |-----
+0:10:28.753906260 DEBUG (1): Children Array of node 1
+0:10:28.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:10:28.753906260 DEBUG (1): ---| 2 | 59 | 2 |-----
+0:10:28.868164072 DEBUG (4): Children Array of node 4
+0:10:28.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:10:28.868164072 DEBUG (4): ---| 5 | 116 | 7 |-----
+0:10:28.868164072 DEBUG (4): ---| 8 | 18 | 4 |-----
+0:10:29.330078135 DEBUG (0): Children Array of node 0
+0:10:29.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:10:29.330078135 DEBUG (0): ---| 1 | 59 | 3 |-----
+0:10:29.330078135 DEBUG (0): ---| 4 | 116 | 12 |-----
+0:10:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 21: 116^^^^^^^^^^^
+
+
+0:10:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 21: 16^^^^^^^^^^^
+
+
+0:10:30.000000010 DEBUG (0): ################################################### 
+0:10:30.000000010 DEBUG (0): ##############   ROUND   22    #################### 
+0:10:30.000000010 DEBUG (0): ###################################################
+0:10:56.782226573 DEBUG (11): Children Array of node 11
+0:10:56.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:10:56.782226573 DEBUG (11): ---| 15 | 43 | 1 |-----
+0:10:57.120117198 DEBUG (7): Children Array of node 7
+0:10:57.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:10:57.120117198 DEBUG (7): ---| 11 | 43 | 2 |-----
+0:10:57.292968761 DEBUG (13): Children Array of node 13
+0:10:57.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:10:57.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:10:57.654296886 DEBUG (12): Children Array of node 12
+0:10:57.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:10:57.654296886 DEBUG (12): ---| 13 | 18 | 2 |-----
+0:10:57.666992198 DEBUG (6): Children Array of node 6
+0:10:57.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:10:57.666992198 DEBUG (6): ---| 7 | 43 | 3 |-----
+0:10:57.666992198 DEBUG (6): ---| 10 | 29 | 1 |-----
+0:10:57.860351572 DEBUG (3): | ****PASSED TiNA**** | Node: 3 Last MAX: 43 New MAX: 33
+0:10:57.860351572 DEBUG (3): |  ****SEND TiNA****  | Node: 3 MAX: 33
+0:10:57.860351572 DEBUG (3): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:10:58.212890635 DEBUG (2): Children Array of node 2
+0:10:58.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:10:58.212890635 DEBUG (2): ---| 3 | 33 | 1 |-----
+0:10:58.354492198 DEBUG (5): Children Array of node 5
+0:10:58.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:10:58.354492198 DEBUG (5): ---| 6 | 74 | 5 |-----
+0:10:58.354492198 DEBUG (5): ---| 9 | 116 | 1 |-----
+0:10:58.389648448 DEBUG (8): Children Array of node 8
+0:10:58.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:10:58.389648448 DEBUG (8): ---| 12 | 18 | 3 |-----
+0:10:58.753906260 DEBUG (1): Children Array of node 1
+0:10:58.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:10:58.753906260 DEBUG (1): ---| 2 | 59 | 2 |-----
+0:10:58.868164072 DEBUG (4): Children Array of node 4
+0:10:58.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:10:58.868164072 DEBUG (4): ---| 5 | 116 | 7 |-----
+0:10:58.868164072 DEBUG (4): ---| 8 | 18 | 4 |-----
+0:10:59.330078135 DEBUG (0): Children Array of node 0
+0:10:59.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:10:59.330078135 DEBUG (0): ---| 1 | 59 | 3 |-----
+0:10:59.330078135 DEBUG (0): ---| 4 | 116 | 12 |-----
+0:10:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 22: 116^^^^^^^^^^^
+
+
+0:10:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 22: 16^^^^^^^^^^^
+
+
+0:11:0.000000010 DEBUG (0): ################################################### 
+0:11:0.000000010 DEBUG (0): ##############   ROUND   23    #################### 
+0:11:0.000000010 DEBUG (0): ###################################################
+0:11:26.782226573 DEBUG (11): Children Array of node 11
+0:11:26.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:11:26.782226573 DEBUG (11): ---| 15 | 43 | 1 |-----
+0:11:27.120117198 DEBUG (7): Children Array of node 7
+0:11:27.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:11:27.120117198 DEBUG (7): ---| 11 | 43 | 2 |-----
+0:11:27.292968761 DEBUG (13): Children Array of node 13
+0:11:27.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:11:27.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:11:27.654296886 DEBUG (12): Children Array of node 12
+0:11:27.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:11:27.654296886 DEBUG (12): ---| 13 | 18 | 2 |-----
+0:11:27.666992198 DEBUG (6): Children Array of node 6
+0:11:27.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:11:27.666992198 DEBUG (6): ---| 7 | 43 | 3 |-----
+0:11:27.666992198 DEBUG (6): ---| 10 | 29 | 1 |-----
+0:11:28.212890635 DEBUG (2): Children Array of node 2
+0:11:28.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:11:28.212890635 DEBUG (2): ---| 3 | 33 | 1 |-----
+0:11:28.354492198 DEBUG (5): Children Array of node 5
+0:11:28.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:11:28.354492198 DEBUG (5): ---| 6 | 74 | 5 |-----
+0:11:28.354492198 DEBUG (5): ---| 9 | 116 | 1 |-----
+0:11:28.389648448 DEBUG (8): Children Array of node 8
+0:11:28.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:11:28.389648448 DEBUG (8): ---| 12 | 18 | 3 |-----
+0:11:28.753906260 DEBUG (1): Children Array of node 1
+0:11:28.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:11:28.753906260 DEBUG (1): ---| 2 | 59 | 2 |-----
+0:11:28.868164072 DEBUG (4): Children Array of node 4
+0:11:28.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:11:28.868164072 DEBUG (4): ---| 5 | 116 | 7 |-----
+0:11:28.868164072 DEBUG (4): ---| 8 | 18 | 4 |-----
+0:11:29.330078135 DEBUG (0): Children Array of node 0
+0:11:29.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:11:29.330078135 DEBUG (0): ---| 1 | 59 | 3 |-----
+0:11:29.330078135 DEBUG (0): ---| 4 | 116 | 12 |-----
+0:11:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 23: 116^^^^^^^^^^^
+
+
+0:11:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 23: 16^^^^^^^^^^^
+
+
+0:11:30.000000010 DEBUG (0): ################################################### 
+0:11:30.000000010 DEBUG (0): ##############   ROUND   24    #################### 
+0:11:30.000000010 DEBUG (0): ###################################################
+0:11:56.782226573 DEBUG (11): Children Array of node 11
+0:11:56.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:11:56.782226573 DEBUG (11): ---| 15 | 43 | 1 |-----
+0:11:57.120117198 DEBUG (7): Children Array of node 7
+0:11:57.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:11:57.120117198 DEBUG (7): ---| 11 | 43 | 2 |-----
+0:11:57.292968761 DEBUG (13): Children Array of node 13
+0:11:57.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:11:57.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:11:57.292968761 DEBUG (13): | ****PASSED TiNA**** | Node: 13 Last MAX: 18 New MAX: 14
+0:11:57.292968761 DEBUG (13): |  ****SEND TiNA****  | Node: 13 MAX: 14
+0:11:57.292968761 DEBUG (13): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:11:57.654296886 DEBUG (12): Children Array of node 12
+0:11:57.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:11:57.654296886 DEBUG (12): ---| 13 | 14 | 2 |-----
+0:11:57.654296886 DEBUG (12): | ****PASSED TiNA**** | Node: 12 Last MAX: 18 New MAX: 14
+0:11:57.654296886 DEBUG (12): |  ****SEND TiNA****  | Node: 12 MAX: 14
+0:11:57.654296886 DEBUG (12): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:11:57.666992198 DEBUG (6): Children Array of node 6
+0:11:57.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:11:57.666992198 DEBUG (6): ---| 7 | 43 | 3 |-----
+0:11:57.666992198 DEBUG (6): ---| 10 | 29 | 1 |-----
+0:11:58.212890635 DEBUG (2): Children Array of node 2
+0:11:58.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:11:58.212890635 DEBUG (2): ---| 3 | 33 | 1 |-----
+0:11:58.354492198 DEBUG (5): Children Array of node 5
+0:11:58.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:11:58.354492198 DEBUG (5): ---| 6 | 74 | 5 |-----
+0:11:58.354492198 DEBUG (5): ---| 9 | 116 | 1 |-----
+0:11:58.389648448 DEBUG (8): Children Array of node 8
+0:11:58.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:11:58.389648448 DEBUG (8): ---| 12 | 14 | 3 |-----
+0:11:58.389648448 DEBUG (8): | ****PASSED TiNA**** | Node: 8 Last MAX: 18 New MAX: 14
+0:11:58.389648448 DEBUG (8): |  ****SEND TiNA****  | Node: 8 MAX: 14
+0:11:58.389648448 DEBUG (8): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:11:58.753906260 DEBUG (1): Children Array of node 1
+0:11:58.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:11:58.753906260 DEBUG (1): ---| 2 | 59 | 2 |-----
+0:11:58.868164072 DEBUG (4): Children Array of node 4
+0:11:58.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:11:58.868164072 DEBUG (4): ---| 5 | 116 | 7 |-----
+0:11:58.868164072 DEBUG (4): ---| 8 | 14 | 4 |-----
+0:11:59.330078135 DEBUG (0): Children Array of node 0
+0:11:59.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:11:59.330078135 DEBUG (0): ---| 1 | 59 | 3 |-----
+0:11:59.330078135 DEBUG (0): ---| 4 | 116 | 12 |-----
+0:11:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 24: 116^^^^^^^^^^^
+
+
+0:11:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 24: 16^^^^^^^^^^^
+
+
+0:12:0.000000010 DEBUG (0): ################################################### 
+0:12:0.000000010 DEBUG (0): ##############   ROUND   25    #################### 
+0:12:0.000000010 DEBUG (0): ###################################################
+0:12:26.782226573 DEBUG (11): Children Array of node 11
+0:12:26.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:12:26.782226573 DEBUG (11): ---| 15 | 43 | 1 |-----
+0:12:27.120117198 DEBUG (7): Children Array of node 7
+0:12:27.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:12:27.120117198 DEBUG (7): ---| 11 | 43 | 2 |-----
+0:12:27.292968761 DEBUG (13): Children Array of node 13
+0:12:27.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:12:27.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:12:27.654296886 DEBUG (12): Children Array of node 12
+0:12:27.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:12:27.654296886 DEBUG (12): ---| 13 | 14 | 2 |-----
+0:12:27.666992198 DEBUG (6): Children Array of node 6
+0:12:27.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:12:27.666992198 DEBUG (6): ---| 7 | 43 | 3 |-----
+0:12:27.666992198 DEBUG (6): ---| 10 | 29 | 1 |-----
+0:12:28.212890635 DEBUG (2): Children Array of node 2
+0:12:28.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:12:28.212890635 DEBUG (2): ---| 3 | 33 | 1 |-----
+0:12:28.354492198 DEBUG (5): Children Array of node 5
+0:12:28.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:12:28.354492198 DEBUG (5): ---| 6 | 74 | 5 |-----
+0:12:28.354492198 DEBUG (5): ---| 9 | 116 | 1 |-----
+0:12:28.389648448 DEBUG (8): Children Array of node 8
+0:12:28.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:12:28.389648448 DEBUG (8): ---| 12 | 14 | 3 |-----
+0:12:28.753906260 DEBUG (1): Children Array of node 1
+0:12:28.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:12:28.753906260 DEBUG (1): ---| 2 | 59 | 2 |-----
+0:12:28.868164072 DEBUG (4): Children Array of node 4
+0:12:28.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:12:28.868164072 DEBUG (4): ---| 5 | 116 | 7 |-----
+0:12:28.868164072 DEBUG (4): ---| 8 | 14 | 4 |-----
+0:12:29.330078135 DEBUG (0): Children Array of node 0
+0:12:29.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:12:29.330078135 DEBUG (0): ---| 1 | 59 | 3 |-----
+0:12:29.330078135 DEBUG (0): ---| 4 | 116 | 12 |-----
+0:12:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 25: 116^^^^^^^^^^^
+
+
+0:12:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 25: 16^^^^^^^^^^^
+
+
+0:12:30.000000010 DEBUG (0): ################################################### 
+0:12:30.000000010 DEBUG (0): ##############   ROUND   26    #################### 
+0:12:30.000000010 DEBUG (0): ###################################################
+0:12:56.627929699 DEBUG (15): | ****PASSED TiNA**** | Node: 15 Last MAX: 43 New MAX: 33
+0:12:56.627929699 DEBUG (15): |  ****SEND TiNA****  | Node: 15 MAX: 33
+0:12:56.627929699 DEBUG (15): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:12:56.782226573 DEBUG (11): Children Array of node 11
+0:12:56.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:12:56.782226573 DEBUG (11): ---| 15 | 33 | 1 |-----
+0:12:56.782226573 DEBUG (11): | ****PASSED TiNA**** | Node: 11 Last MAX: 43 New MAX: 33
+0:12:56.782226573 DEBUG (11): |  ****SEND TiNA****  | Node: 11 MAX: 33
+0:12:56.782226573 DEBUG (11): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:12:57.120117198 DEBUG (7): Children Array of node 7
+0:12:57.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:12:57.120117198 DEBUG (7): ---| 11 | 33 | 2 |-----
+0:12:57.120117198 DEBUG (7): | ****PASSED TiNA**** | Node: 7 Last MAX: 43 New MAX: 33
+0:12:57.120117198 DEBUG (7): |  ****SEND TiNA****  | Node: 7 MAX: 33
+0:12:57.120117198 DEBUG (7): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:12:57.292968761 DEBUG (13): Children Array of node 13
+0:12:57.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:12:57.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:12:57.654296886 DEBUG (12): Children Array of node 12
+0:12:57.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:12:57.654296886 DEBUG (12): ---| 13 | 14 | 2 |-----
+0:12:57.666992198 DEBUG (6): Children Array of node 6
+0:12:57.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:12:57.666992198 DEBUG (6): ---| 7 | 33 | 3 |-----
+0:12:57.666992198 DEBUG (6): ---| 10 | 29 | 1 |-----
+0:12:58.212890635 DEBUG (2): Children Array of node 2
+0:12:58.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:12:58.212890635 DEBUG (2): ---| 3 | 33 | 1 |-----
+0:12:58.354492198 DEBUG (5): Children Array of node 5
+0:12:58.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:12:58.354492198 DEBUG (5): ---| 6 | 74 | 5 |-----
+0:12:58.354492198 DEBUG (5): ---| 9 | 116 | 1 |-----
+0:12:58.389648448 DEBUG (8): Children Array of node 8
+0:12:58.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:12:58.389648448 DEBUG (8): ---| 12 | 14 | 3 |-----
+0:12:58.753906260 DEBUG (1): Children Array of node 1
+0:12:58.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:12:58.753906260 DEBUG (1): ---| 2 | 59 | 2 |-----
+0:12:58.868164072 DEBUG (4): Children Array of node 4
+0:12:58.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:12:58.868164072 DEBUG (4): ---| 5 | 116 | 7 |-----
+0:12:58.868164072 DEBUG (4): ---| 8 | 14 | 4 |-----
+0:12:59.330078135 DEBUG (0): Children Array of node 0
+0:12:59.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:12:59.330078135 DEBUG (0): ---| 1 | 59 | 3 |-----
+0:12:59.330078135 DEBUG (0): ---| 4 | 116 | 12 |-----
+0:12:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 26: 116^^^^^^^^^^^
+
+
+0:12:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 26: 16^^^^^^^^^^^
+
+
+0:13:0.000000010 DEBUG (0): ################################################### 
+0:13:0.000000010 DEBUG (0): ##############   ROUND   27    #################### 
+0:13:0.000000010 DEBUG (0): ###################################################
+0:13:26.782226573 DEBUG (11): Children Array of node 11
+0:13:26.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:13:26.782226573 DEBUG (11): ---| 15 | 33 | 1 |-----
+0:13:27.120117198 DEBUG (7): Children Array of node 7
+0:13:27.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:13:27.120117198 DEBUG (7): ---| 11 | 33 | 2 |-----
+0:13:27.292968761 DEBUG (13): Children Array of node 13
+0:13:27.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:13:27.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:13:27.654296886 DEBUG (12): Children Array of node 12
+0:13:27.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:13:27.654296886 DEBUG (12): ---| 13 | 14 | 2 |-----
+0:13:27.666992198 DEBUG (6): Children Array of node 6
+0:13:27.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:13:27.666992198 DEBUG (6): ---| 7 | 33 | 3 |-----
+0:13:27.666992198 DEBUG (6): ---| 10 | 29 | 1 |-----
+0:13:28.212890635 DEBUG (2): Children Array of node 2
+0:13:28.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:13:28.212890635 DEBUG (2): ---| 3 | 33 | 1 |-----
+0:13:28.354492198 DEBUG (5): Children Array of node 5
+0:13:28.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:13:28.354492198 DEBUG (5): ---| 6 | 74 | 5 |-----
+0:13:28.354492198 DEBUG (5): ---| 9 | 116 | 1 |-----
+0:13:28.389648448 DEBUG (8): Children Array of node 8
+0:13:28.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:13:28.389648448 DEBUG (8): ---| 12 | 14 | 3 |-----
+0:13:28.753906260 DEBUG (1): Children Array of node 1
+0:13:28.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:13:28.753906260 DEBUG (1): ---| 2 | 59 | 2 |-----
+0:13:28.868164072 DEBUG (4): Children Array of node 4
+0:13:28.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:13:28.868164072 DEBUG (4): ---| 5 | 116 | 7 |-----
+0:13:28.868164072 DEBUG (4): ---| 8 | 14 | 4 |-----
+0:13:29.330078135 DEBUG (0): Children Array of node 0
+0:13:29.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:13:29.330078135 DEBUG (0): ---| 1 | 59 | 3 |-----
+0:13:29.330078135 DEBUG (0): ---| 4 | 116 | 12 |-----
+0:13:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 27: 116^^^^^^^^^^^
+
+
+0:13:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 27: 16^^^^^^^^^^^
+
+
+0:13:30.000000010 DEBUG (0): ################################################### 
+0:13:30.000000010 DEBUG (0): ##############   ROUND   28    #################### 
+0:13:30.000000010 DEBUG (0): ###################################################
+0:13:56.782226573 DEBUG (11): Children Array of node 11
+0:13:56.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:13:56.782226573 DEBUG (11): ---| 15 | 33 | 1 |-----
+0:13:57.120117198 DEBUG (7): Children Array of node 7
+0:13:57.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:13:57.120117198 DEBUG (7): ---| 11 | 33 | 2 |-----
+0:13:57.292968761 DEBUG (13): Children Array of node 13
+0:13:57.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:13:57.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:13:57.292968761 DEBUG (13): | ****PASSED TiNA**** | Node: 13 Last MAX: 14 New MAX: 11
+0:13:57.292968761 DEBUG (13): |  ****SEND TiNA****  | Node: 13 MAX: 11
+0:13:57.292968761 DEBUG (13): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:13:57.654296886 DEBUG (12): Children Array of node 12
+0:13:57.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:13:57.654296886 DEBUG (12): ---| 13 | 11 | 2 |-----
+0:13:57.654296886 DEBUG (12): | ****PASSED TiNA**** | Node: 12 Last MAX: 14 New MAX: 11
+0:13:57.654296886 DEBUG (12): |  ****SEND TiNA****  | Node: 12 MAX: 11
+0:13:57.654296886 DEBUG (12): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:13:57.666992198 DEBUG (6): Children Array of node 6
+0:13:57.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:13:57.666992198 DEBUG (6): ---| 7 | 33 | 3 |-----
+0:13:57.666992198 DEBUG (6): ---| 10 | 29 | 1 |-----
+0:13:58.212890635 DEBUG (2): Children Array of node 2
+0:13:58.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:13:58.212890635 DEBUG (2): ---| 3 | 33 | 1 |-----
+0:13:58.354492198 DEBUG (5): Children Array of node 5
+0:13:58.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:13:58.354492198 DEBUG (5): ---| 6 | 74 | 5 |-----
+0:13:58.354492198 DEBUG (5): ---| 9 | 116 | 1 |-----
+0:13:58.389648448 DEBUG (8): Children Array of node 8
+0:13:58.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:13:58.389648448 DEBUG (8): ---| 12 | 11 | 3 |-----
+0:13:58.389648448 DEBUG (8): | ****PASSED TiNA**** | Node: 8 Last MAX: 14 New MAX: 11
+0:13:58.389648448 DEBUG (8): |  ****SEND TiNA****  | Node: 8 MAX: 11
+0:13:58.389648448 DEBUG (8): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:13:58.753906260 DEBUG (1): Children Array of node 1
+0:13:58.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:13:58.753906260 DEBUG (1): ---| 2 | 59 | 2 |-----
+0:13:58.868164072 DEBUG (4): Children Array of node 4
+0:13:58.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:13:58.868164072 DEBUG (4): ---| 5 | 116 | 7 |-----
+0:13:58.868164072 DEBUG (4): ---| 8 | 11 | 4 |-----
+0:13:59.330078135 DEBUG (0): Children Array of node 0
+0:13:59.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:13:59.330078135 DEBUG (0): ---| 1 | 59 | 3 |-----
+0:13:59.330078135 DEBUG (0): ---| 4 | 116 | 12 |-----
+0:13:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 28: 116^^^^^^^^^^^
+
+
+0:13:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 28: 16^^^^^^^^^^^
+
+
+0:14:0.000000010 DEBUG (0): ################################################### 
+0:14:0.000000010 DEBUG (0): ##############   ROUND   29    #################### 
+0:14:0.000000010 DEBUG (0): ###################################################
+0:14:26.782226573 DEBUG (11): Children Array of node 11
+0:14:26.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:14:26.782226573 DEBUG (11): ---| 15 | 33 | 1 |-----
+0:14:27.120117198 DEBUG (7): Children Array of node 7
+0:14:27.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:14:27.120117198 DEBUG (7): ---| 11 | 33 | 2 |-----
+0:14:27.292968761 DEBUG (13): Children Array of node 13
+0:14:27.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:14:27.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:14:27.654296886 DEBUG (12): Children Array of node 12
+0:14:27.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:14:27.654296886 DEBUG (12): ---| 13 | 11 | 2 |-----
+0:14:27.666992198 DEBUG (6): Children Array of node 6
+0:14:27.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:14:27.666992198 DEBUG (6): ---| 7 | 33 | 3 |-----
+0:14:27.666992198 DEBUG (6): ---| 10 | 29 | 1 |-----
+0:14:27.666992198 DEBUG (6): | ****PASSED TiNA**** | Node: 6 Last MAX: 74 New MAX: 57
+0:14:27.666992198 DEBUG (6): |  ****SEND TiNA****  | Node: 6 MAX: 57
+0:14:27.666992198 DEBUG (6): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:14:28.212890635 DEBUG (2): Children Array of node 2
+0:14:28.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:14:28.212890635 DEBUG (2): ---| 3 | 33 | 1 |-----
+0:14:28.354492198 DEBUG (5): Children Array of node 5
+0:14:28.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:14:28.354492198 DEBUG (5): ---| 6 | 57 | 5 |-----
+0:14:28.354492198 DEBUG (5): ---| 9 | 116 | 1 |-----
+0:14:28.389648448 DEBUG (8): Children Array of node 8
+0:14:28.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:14:28.389648448 DEBUG (8): ---| 12 | 11 | 3 |-----
+0:14:28.753906260 DEBUG (1): Children Array of node 1
+0:14:28.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:14:28.753906260 DEBUG (1): ---| 2 | 59 | 2 |-----
+0:14:28.868164072 DEBUG (4): Children Array of node 4
+0:14:28.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:14:28.868164072 DEBUG (4): ---| 5 | 116 | 7 |-----
+0:14:28.868164072 DEBUG (4): ---| 8 | 11 | 4 |-----
+0:14:29.330078135 DEBUG (0): Children Array of node 0
+0:14:29.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:14:29.330078135 DEBUG (0): ---| 1 | 59 | 3 |-----
+0:14:29.330078135 DEBUG (0): ---| 4 | 116 | 12 |-----
+0:14:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 29: 116^^^^^^^^^^^
+
+
+0:14:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 29: 16^^^^^^^^^^^
+
+
+0:14:30.000000010 DEBUG (0): ################################################### 
+0:14:30.000000010 DEBUG (0): ##############   ROUND   30    #################### 
+0:14:30.000000010 DEBUG (0): ###################################################
+0:14:56.782226573 DEBUG (11): Children Array of node 11
+0:14:56.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:14:56.782226573 DEBUG (11): ---| 15 | 33 | 1 |-----
+0:14:57.120117198 DEBUG (7): Children Array of node 7
+0:14:57.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:14:57.120117198 DEBUG (7): ---| 11 | 33 | 2 |-----
+0:14:57.292968761 DEBUG (13): Children Array of node 13
+0:14:57.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:14:57.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:14:57.654296886 DEBUG (12): Children Array of node 12
+0:14:57.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:14:57.654296886 DEBUG (12): ---| 13 | 11 | 2 |-----
+0:14:57.666992198 DEBUG (6): Children Array of node 6
+0:14:57.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:14:57.666992198 DEBUG (6): ---| 7 | 33 | 3 |-----
+0:14:57.666992198 DEBUG (6): ---| 10 | 29 | 1 |-----
+0:14:57.860351572 DEBUG (3): | ****PASSED TiNA**** | Node: 3 Last MAX: 33 New MAX: 26
+0:14:57.860351572 DEBUG (3): |  ****SEND TiNA****  | Node: 3 MAX: 26
+0:14:57.860351572 DEBUG (3): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:14:58.212890635 DEBUG (2): Children Array of node 2
+0:14:58.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:14:58.212890635 DEBUG (2): ---| 3 | 26 | 1 |-----
+0:14:58.354492198 DEBUG (5): Children Array of node 5
+0:14:58.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:14:58.354492198 DEBUG (5): ---| 6 | 57 | 5 |-----
+0:14:58.354492198 DEBUG (5): ---| 9 | 116 | 1 |-----
+0:14:58.389648448 DEBUG (8): Children Array of node 8
+0:14:58.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:14:58.389648448 DEBUG (8): ---| 12 | 11 | 3 |-----
+0:14:58.753906260 DEBUG (1): Children Array of node 1
+0:14:58.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:14:58.753906260 DEBUG (1): ---| 2 | 59 | 2 |-----
+0:14:58.868164072 DEBUG (4): Children Array of node 4
+0:14:58.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:14:58.868164072 DEBUG (4): ---| 5 | 116 | 7 |-----
+0:14:58.868164072 DEBUG (4): ---| 8 | 11 | 4 |-----
+0:14:59.330078135 DEBUG (0): Children Array of node 0
+0:14:59.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:14:59.330078135 DEBUG (0): ---| 1 | 59 | 3 |-----
+0:14:59.330078135 DEBUG (0): ---| 4 | 116 | 12 |-----
+0:14:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 30: 116^^^^^^^^^^^
+
+
+0:14:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 30: 16^^^^^^^^^^^
+
+
+0:15:0.000000010 DEBUG (0): ################################################### 
+0:15:0.000000010 DEBUG (0): ##############   ROUND   31    #################### 
+0:15:0.000000010 DEBUG (0): ###################################################
+0:15:26.782226573 DEBUG (11): Children Array of node 11
+0:15:26.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:15:26.782226573 DEBUG (11): ---| 15 | 33 | 1 |-----
+0:15:27.120117198 DEBUG (7): Children Array of node 7
+0:15:27.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:15:27.120117198 DEBUG (7): ---| 11 | 33 | 2 |-----
+0:15:27.292968761 DEBUG (13): Children Array of node 13
+0:15:27.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:15:27.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:15:27.324218761 DEBUG (10): | ****PASSED TiNA**** | Node: 10 Last MAX: 29 New MAX: 21
+0:15:27.324218761 DEBUG (10): |  ****SEND TiNA****  | Node: 10 MAX: 21
+0:15:27.324218761 DEBUG (10): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:15:27.654296886 DEBUG (12): Children Array of node 12
+0:15:27.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:15:27.654296886 DEBUG (12): ---| 13 | 11 | 2 |-----
+0:15:27.666992198 DEBUG (6): Children Array of node 6
+0:15:27.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:15:27.666992198 DEBUG (6): ---| 7 | 33 | 3 |-----
+0:15:27.666992198 DEBUG (6): ---| 10 | 21 | 1 |-----
+0:15:28.212890635 DEBUG (2): Children Array of node 2
+0:15:28.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:15:28.212890635 DEBUG (2): ---| 3 | 26 | 1 |-----
+0:15:28.354492198 DEBUG (5): Children Array of node 5
+0:15:28.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:15:28.354492198 DEBUG (5): ---| 6 | 57 | 5 |-----
+0:15:28.354492198 DEBUG (5): ---| 9 | 116 | 1 |-----
+0:15:28.389648448 DEBUG (8): Children Array of node 8
+0:15:28.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:15:28.389648448 DEBUG (8): ---| 12 | 11 | 3 |-----
+0:15:28.753906260 DEBUG (1): Children Array of node 1
+0:15:28.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:15:28.753906260 DEBUG (1): ---| 2 | 59 | 2 |-----
+0:15:28.868164072 DEBUG (4): Children Array of node 4
+0:15:28.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:15:28.868164072 DEBUG (4): ---| 5 | 116 | 7 |-----
+0:15:28.868164072 DEBUG (4): ---| 8 | 11 | 4 |-----
+0:15:29.330078135 DEBUG (0): Children Array of node 0
+0:15:29.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:15:29.330078135 DEBUG (0): ---| 1 | 59 | 3 |-----
+0:15:29.330078135 DEBUG (0): ---| 4 | 116 | 12 |-----
+0:15:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 31: 116^^^^^^^^^^^
+
+
+0:15:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 31: 16^^^^^^^^^^^
+
+
+0:15:30.000000010 DEBUG (0): ################################################### 
+0:15:30.000000010 DEBUG (0): ##############   ROUND   32    #################### 
+0:15:30.000000010 DEBUG (0): ###################################################
+0:15:56.782226573 DEBUG (11): Children Array of node 11
+0:15:56.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:15:56.782226573 DEBUG (11): ---| 15 | 33 | 1 |-----
+0:15:57.120117198 DEBUG (7): Children Array of node 7
+0:15:57.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:15:57.120117198 DEBUG (7): ---| 11 | 33 | 2 |-----
+0:15:57.292968761 DEBUG (13): Children Array of node 13
+0:15:57.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:15:57.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:15:57.654296886 DEBUG (12): Children Array of node 12
+0:15:57.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:15:57.654296886 DEBUG (12): ---| 13 | 11 | 2 |-----
+0:15:57.666992198 DEBUG (6): Children Array of node 6
+0:15:57.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:15:57.666992198 DEBUG (6): ---| 7 | 33 | 3 |-----
+0:15:57.666992198 DEBUG (6): ---| 10 | 21 | 1 |-----
+0:15:58.212890635 DEBUG (2): Children Array of node 2
+0:15:58.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:15:58.212890635 DEBUG (2): ---| 3 | 26 | 1 |-----
+0:15:58.212890635 DEBUG (2): | ****PASSED TiNA**** | Node: 2 Last MAX: 59 New MAX: 45
+0:15:58.212890635 DEBUG (2): |  ****SEND TiNA****  | Node: 2 MAX: 45
+0:15:58.212890635 DEBUG (2): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:15:58.354492198 DEBUG (5): Children Array of node 5
+0:15:58.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:15:58.354492198 DEBUG (5): ---| 6 | 57 | 5 |-----
+0:15:58.354492198 DEBUG (5): ---| 9 | 116 | 1 |-----
+0:15:58.389648448 DEBUG (8): Children Array of node 8
+0:15:58.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:15:58.389648448 DEBUG (8): ---| 12 | 11 | 3 |-----
+0:15:58.753906260 DEBUG (1): Children Array of node 1
+0:15:58.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:15:58.753906260 DEBUG (1): ---| 2 | 45 | 2 |-----
+0:15:58.753906260 DEBUG (1): | ****PASSED TiNA**** | Node: 1 Last MAX: 59 New MAX: 45
+0:15:58.753906260 DEBUG (1): |  ****SEND TiNA****  | Node: 1 MAX: 45
+0:15:58.753906260 DEBUG (1): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:15:58.868164072 DEBUG (4): Children Array of node 4
+0:15:58.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:15:58.868164072 DEBUG (4): ---| 5 | 116 | 7 |-----
+0:15:58.868164072 DEBUG (4): ---| 8 | 11 | 4 |-----
+0:15:59.330078135 DEBUG (0): Children Array of node 0
+0:15:59.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:15:59.330078135 DEBUG (0): ---| 1 | 45 | 3 |-----
+0:15:59.330078135 DEBUG (0): ---| 4 | 116 | 12 |-----
+0:15:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 32: 116^^^^^^^^^^^
+
+
+0:15:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 32: 16^^^^^^^^^^^
+
+
+0:16:0.000000010 DEBUG (0): ################################################### 
+0:16:0.000000010 DEBUG (0): ##############   ROUND   33    #################### 
+0:16:0.000000010 DEBUG (0): ###################################################
+0:16:26.782226573 DEBUG (11): Children Array of node 11
+0:16:26.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:16:26.782226573 DEBUG (11): ---| 15 | 33 | 1 |-----
+0:16:27.120117198 DEBUG (7): Children Array of node 7
+0:16:27.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:16:27.120117198 DEBUG (7): ---| 11 | 33 | 2 |-----
+0:16:27.292968761 DEBUG (13): Children Array of node 13
+0:16:27.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:16:27.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:16:27.654296886 DEBUG (12): Children Array of node 12
+0:16:27.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:16:27.654296886 DEBUG (12): ---| 13 | 11 | 2 |-----
+0:16:27.666992198 DEBUG (6): Children Array of node 6
+0:16:27.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:16:27.666992198 DEBUG (6): ---| 7 | 33 | 3 |-----
+0:16:27.666992198 DEBUG (6): ---| 10 | 21 | 1 |-----
+0:16:27.666992198 DEBUG (6): | ****PASSED TiNA**** | Node: 6 Last MAX: 57 New MAX: 44
+0:16:27.666992198 DEBUG (6): |  ****SEND TiNA****  | Node: 6 MAX: 44
+0:16:27.666992198 DEBUG (6): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:16:27.878906260 DEBUG (9): | ****PASSED TiNA**** | Node: 9 Last MAX: 116 New MAX: 89
+0:16:27.878906260 DEBUG (9): |  ****SEND TiNA****  | Node: 9 MAX: 89
+0:16:27.878906260 DEBUG (9): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:16:28.212890635 DEBUG (2): Children Array of node 2
+0:16:28.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:16:28.212890635 DEBUG (2): ---| 3 | 26 | 1 |-----
+0:16:28.354492198 DEBUG (5): Children Array of node 5
+0:16:28.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:16:28.354492198 DEBUG (5): ---| 6 | 44 | 5 |-----
+0:16:28.354492198 DEBUG (5): ---| 9 | 89 | 1 |-----
+0:16:28.354492198 DEBUG (5): | ****PASSED TiNA**** | Node: 5 Last MAX: 116 New MAX: 89
+0:16:28.354492198 DEBUG (5): |  ****SEND TiNA****  | Node: 5 MAX: 89
+0:16:28.354492198 DEBUG (5): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:16:28.389648448 DEBUG (8): Children Array of node 8
+0:16:28.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:16:28.389648448 DEBUG (8): ---| 12 | 11 | 3 |-----
+0:16:28.753906260 DEBUG (1): Children Array of node 1
+0:16:28.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:16:28.753906260 DEBUG (1): ---| 2 | 45 | 2 |-----
+0:16:28.868164072 DEBUG (4): Children Array of node 4
+0:16:28.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:16:28.868164072 DEBUG (4): ---| 5 | 89 | 7 |-----
+0:16:28.868164072 DEBUG (4): ---| 8 | 11 | 4 |-----
+0:16:28.868164072 DEBUG (4): | ****PASSED TiNA**** | Node: 4 Last MAX: 116 New MAX: 89
+0:16:28.868164072 DEBUG (4): |  ****SEND TiNA****  | Node: 4 MAX: 89
+0:16:28.868164072 DEBUG (4): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:16:29.330078135 DEBUG (0): Children Array of node 0
+0:16:29.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:16:29.330078135 DEBUG (0): ---| 1 | 45 | 3 |-----
+0:16:29.330078135 DEBUG (0): ---| 4 | 89 | 12 |-----
+0:16:29.330078135 DEBUG (0): | ****PASSED TiNA**** | Node: 0 Last MAX: 116 New MAX: 89
+0:16:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 33: 89^^^^^^^^^^^
+
+
+0:16:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 33: 16^^^^^^^^^^^
+
+
+0:16:30.000000010 DEBUG (0): ################################################### 
+0:16:30.000000010 DEBUG (0): ##############   ROUND   34    #################### 
+0:16:30.000000010 DEBUG (0): ###################################################
+0:16:56.782226573 DEBUG (11): Children Array of node 11
+0:16:56.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:16:56.782226573 DEBUG (11): ---| 15 | 33 | 1 |-----
+0:16:57.120117198 DEBUG (7): Children Array of node 7
+0:16:57.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:16:57.120117198 DEBUG (7): ---| 11 | 33 | 2 |-----
+0:16:57.292968761 DEBUG (13): Children Array of node 13
+0:16:57.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:16:57.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:16:57.654296886 DEBUG (12): Children Array of node 12
+0:16:57.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:16:57.654296886 DEBUG (12): ---| 13 | 11 | 2 |-----
+0:16:57.666992198 DEBUG (6): Children Array of node 6
+0:16:57.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:16:57.666992198 DEBUG (6): ---| 7 | 33 | 3 |-----
+0:16:57.666992198 DEBUG (6): ---| 10 | 21 | 1 |-----
+0:16:58.212890635 DEBUG (2): Children Array of node 2
+0:16:58.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:16:58.212890635 DEBUG (2): ---| 3 | 26 | 1 |-----
+0:16:58.354492198 DEBUG (5): Children Array of node 5
+0:16:58.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:16:58.354492198 DEBUG (5): ---| 6 | 44 | 5 |-----
+0:16:58.354492198 DEBUG (5): ---| 9 | 89 | 1 |-----
+0:16:58.389648448 DEBUG (8): Children Array of node 8
+0:16:58.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:16:58.389648448 DEBUG (8): ---| 12 | 11 | 3 |-----
+0:16:58.753906260 DEBUG (1): Children Array of node 1
+0:16:58.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:16:58.753906260 DEBUG (1): ---| 2 | 45 | 2 |-----
+0:16:58.868164072 DEBUG (4): Children Array of node 4
+0:16:58.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:16:58.868164072 DEBUG (4): ---| 5 | 89 | 7 |-----
+0:16:58.868164072 DEBUG (4): ---| 8 | 11 | 4 |-----
+0:16:59.330078135 DEBUG (0): Children Array of node 0
+0:16:59.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:16:59.330078135 DEBUG (0): ---| 1 | 45 | 3 |-----
+0:16:59.330078135 DEBUG (0): ---| 4 | 89 | 12 |-----
+0:16:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 34: 89^^^^^^^^^^^
+
+
+0:16:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 34: 16^^^^^^^^^^^
+
+
+0:17:0.000000010 DEBUG (0): ################################################### 
+0:17:0.000000010 DEBUG (0): ##############   ROUND   35    #################### 
+0:17:0.000000010 DEBUG (0): ###################################################
+0:17:26.782226573 DEBUG (11): Children Array of node 11
+0:17:26.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:17:26.782226573 DEBUG (11): ---| 15 | 33 | 1 |-----
+0:17:27.120117198 DEBUG (7): Children Array of node 7
+0:17:27.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:17:27.120117198 DEBUG (7): ---| 11 | 33 | 2 |-----
+0:17:27.292968761 DEBUG (13): Children Array of node 13
+0:17:27.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:17:27.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:17:27.654296886 DEBUG (12): Children Array of node 12
+0:17:27.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:17:27.654296886 DEBUG (12): ---| 13 | 11 | 2 |-----
+0:17:27.666992198 DEBUG (6): Children Array of node 6
+0:17:27.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:17:27.666992198 DEBUG (6): ---| 7 | 33 | 3 |-----
+0:17:27.666992198 DEBUG (6): ---| 10 | 21 | 1 |-----
+0:17:28.212890635 DEBUG (2): Children Array of node 2
+0:17:28.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:17:28.212890635 DEBUG (2): ---| 3 | 26 | 1 |-----
+0:17:28.354492198 DEBUG (5): Children Array of node 5
+0:17:28.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:17:28.354492198 DEBUG (5): ---| 6 | 44 | 5 |-----
+0:17:28.354492198 DEBUG (5): ---| 9 | 89 | 1 |-----
+0:17:28.389648448 DEBUG (8): Children Array of node 8
+0:17:28.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:17:28.389648448 DEBUG (8): ---| 12 | 11 | 3 |-----
+0:17:28.753906260 DEBUG (1): Children Array of node 1
+0:17:28.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:17:28.753906260 DEBUG (1): ---| 2 | 45 | 2 |-----
+0:17:28.868164072 DEBUG (4): Children Array of node 4
+0:17:28.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:17:28.868164072 DEBUG (4): ---| 5 | 89 | 7 |-----
+0:17:28.868164072 DEBUG (4): ---| 8 | 11 | 4 |-----
+0:17:29.330078135 DEBUG (0): Children Array of node 0
+0:17:29.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:17:29.330078135 DEBUG (0): ---| 1 | 45 | 3 |-----
+0:17:29.330078135 DEBUG (0): ---| 4 | 89 | 12 |-----
+0:17:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 35: 89^^^^^^^^^^^
+
+
+0:17:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 35: 16^^^^^^^^^^^
+
+
+0:17:30.000000010 DEBUG (0): ################################################### 
+0:17:30.000000010 DEBUG (0): ##############   ROUND   36    #################### 
+0:17:30.000000010 DEBUG (0): ###################################################
+0:17:56.782226573 DEBUG (11): Children Array of node 11
+0:17:56.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:17:56.782226573 DEBUG (11): ---| 15 | 33 | 1 |-----
+0:17:57.120117198 DEBUG (7): Children Array of node 7
+0:17:57.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:17:57.120117198 DEBUG (7): ---| 11 | 33 | 2 |-----
+0:17:57.292968761 DEBUG (13): Children Array of node 13
+0:17:57.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:17:57.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:17:57.654296886 DEBUG (12): Children Array of node 12
+0:17:57.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:17:57.654296886 DEBUG (12): ---| 13 | 11 | 2 |-----
+0:17:57.666992198 DEBUG (6): Children Array of node 6
+0:17:57.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:17:57.666992198 DEBUG (6): ---| 7 | 33 | 3 |-----
+0:17:57.666992198 DEBUG (6): ---| 10 | 21 | 1 |-----
+0:17:58.212890635 DEBUG (2): Children Array of node 2
+0:17:58.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:17:58.212890635 DEBUG (2): ---| 3 | 26 | 1 |-----
+0:17:58.354492198 DEBUG (5): Children Array of node 5
+0:17:58.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:17:58.354492198 DEBUG (5): ---| 6 | 44 | 5 |-----
+0:17:58.354492198 DEBUG (5): ---| 9 | 89 | 1 |-----
+0:17:58.389648448 DEBUG (8): Children Array of node 8
+0:17:58.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:17:58.389648448 DEBUG (8): ---| 12 | 11 | 3 |-----
+0:17:58.753906260 DEBUG (1): Children Array of node 1
+0:17:58.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:17:58.753906260 DEBUG (1): ---| 2 | 45 | 2 |-----
+0:17:58.868164072 DEBUG (4): Children Array of node 4
+0:17:58.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:17:58.868164072 DEBUG (4): ---| 5 | 89 | 7 |-----
+0:17:58.868164072 DEBUG (4): ---| 8 | 11 | 4 |-----
+0:17:59.330078135 DEBUG (0): Children Array of node 0
+0:17:59.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:17:59.330078135 DEBUG (0): ---| 1 | 45 | 3 |-----
+0:17:59.330078135 DEBUG (0): ---| 4 | 89 | 12 |-----
+0:17:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 36: 89^^^^^^^^^^^
+
+
+0:17:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 36: 16^^^^^^^^^^^
+
+
+0:18:0.000000010 DEBUG (0): ################################################### 
+0:18:0.000000010 DEBUG (0): ##############   ROUND   37    #################### 
+0:18:0.000000010 DEBUG (0): ###################################################
+0:18:0.000000010 DEBUG (0): Aggregation function changed to: 0 for period: 37
+0:18:26.782226573 DEBUG (11): Children Array of node 11
+0:18:26.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:18:26.782226573 DEBUG (11): ---| 15 | 33 | 1 |-----
+0:18:27.120117198 DEBUG (7): Children Array of node 7
+0:18:27.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:18:27.120117198 DEBUG (7): ---| 11 | 33 | 2 |-----
+0:18:27.292968761 DEBUG (13): Children Array of node 13
+0:18:27.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:18:27.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:18:27.654296886 DEBUG (12): Children Array of node 12
+0:18:27.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:18:27.654296886 DEBUG (12): ---| 13 | 11 | 2 |-----
+0:18:27.666992198 DEBUG (6): Children Array of node 6
+0:18:27.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:18:27.666992198 DEBUG (6): ---| 7 | 33 | 3 |-----
+0:18:27.666992198 DEBUG (6): ---| 10 | 21 | 1 |-----
+0:18:28.212890635 DEBUG (2): Children Array of node 2
+0:18:28.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:18:28.212890635 DEBUG (2): ---| 3 | 26 | 1 |-----
+0:18:28.354492198 DEBUG (5): Children Array of node 5
+0:18:28.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:18:28.354492198 DEBUG (5): ---| 6 | 44 | 5 |-----
+0:18:28.354492198 DEBUG (5): ---| 9 | 89 | 1 |-----
+0:18:28.389648448 DEBUG (8): Children Array of node 8
+0:18:28.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:18:28.389648448 DEBUG (8): ---| 12 | 11 | 3 |-----
+0:18:28.753906260 DEBUG (1): Children Array of node 1
+0:18:28.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:18:28.753906260 DEBUG (1): ---| 2 | 45 | 2 |-----
+0:18:28.868164072 DEBUG (4): Children Array of node 4
+0:18:28.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:18:28.868164072 DEBUG (4): ---| 5 | 89 | 7 |-----
+0:18:28.868164072 DEBUG (4): ---| 8 | 11 | 4 |-----
+0:18:29.330078135 DEBUG (0): Children Array of node 0
+0:18:29.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:18:29.330078135 DEBUG (0): ---| 1 | 45 | 3 |-----
+0:18:29.330078135 DEBUG (0): ---| 4 | 89 | 12 |-----
+0:18:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 37: 89^^^^^^^^^^^
+
+
+0:18:30.000000010 DEBUG (0): ################################################### 
+0:18:30.000000010 DEBUG (0): ##############   ROUND   38    #################### 
+0:18:30.000000010 DEBUG (0): ###################################################
+0:18:56.782226573 DEBUG (11): Children Array of node 11
+0:18:56.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:18:56.782226573 DEBUG (11): ---| 15 | 33 | 1 |-----
+0:18:57.120117198 DEBUG (7): Children Array of node 7
+0:18:57.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:18:57.120117198 DEBUG (7): ---| 11 | 33 | 2 |-----
+0:18:57.292968761 DEBUG (13): Children Array of node 13
+0:18:57.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:18:57.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:18:57.654296886 DEBUG (12): Children Array of node 12
+0:18:57.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:18:57.654296886 DEBUG (12): ---| 13 | 11 | 2 |-----
+0:18:57.666992198 DEBUG (6): Children Array of node 6
+0:18:57.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:18:57.666992198 DEBUG (6): ---| 7 | 33 | 3 |-----
+0:18:57.666992198 DEBUG (6): ---| 10 | 21 | 1 |-----
+0:18:57.860351572 DEBUG (3): | ****PASSED TiNA**** | Node: 3 Last MAX: 26 New MAX: 20
+0:18:57.860351572 DEBUG (3): |  ****SEND TiNA****  | Node: 3 MAX: 20
+0:18:57.860351572 DEBUG (3): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:18:58.212890635 DEBUG (2): Children Array of node 2
+0:18:58.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:18:58.212890635 DEBUG (2): ---| 3 | 20 | 1 |-----
+0:18:58.354492198 DEBUG (5): Children Array of node 5
+0:18:58.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:18:58.354492198 DEBUG (5): ---| 6 | 44 | 5 |-----
+0:18:58.354492198 DEBUG (5): ---| 9 | 89 | 1 |-----
+0:18:58.389648448 DEBUG (8): Children Array of node 8
+0:18:58.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:18:58.389648448 DEBUG (8): ---| 12 | 11 | 3 |-----
+0:18:58.753906260 DEBUG (1): Children Array of node 1
+0:18:58.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:18:58.753906260 DEBUG (1): ---| 2 | 45 | 2 |-----
+0:18:58.868164072 DEBUG (4): Children Array of node 4
+0:18:58.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:18:58.868164072 DEBUG (4): ---| 5 | 89 | 7 |-----
+0:18:58.868164072 DEBUG (4): ---| 8 | 11 | 4 |-----
+0:18:59.330078135 DEBUG (0): Children Array of node 0
+0:18:59.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:18:59.330078135 DEBUG (0): ---| 1 | 45 | 3 |-----
+0:18:59.330078135 DEBUG (0): ---| 4 | 89 | 12 |-----
+0:18:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 38: 89^^^^^^^^^^^
+
+
+0:19:0.000000010 DEBUG (0): ################################################### 
+0:19:0.000000010 DEBUG (0): ##############   ROUND   39    #################### 
+0:19:0.000000010 DEBUG (0): ###################################################
+0:19:26.627929699 DEBUG (15): | ****PASSED TiNA**** | Node: 15 Last MAX: 33 New MAX: 26
+0:19:26.627929699 DEBUG (15): |  ****SEND TiNA****  | Node: 15 MAX: 26
+0:19:26.627929699 DEBUG (15): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:19:26.782226573 DEBUG (11): Children Array of node 11
+0:19:26.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:19:26.782226573 DEBUG (11): ---| 15 | 26 | 1 |-----
+0:19:26.782226573 DEBUG (11): | ****PASSED TiNA**** | Node: 11 Last MAX: 33 New MAX: 26
+0:19:26.782226573 DEBUG (11): |  ****SEND TiNA****  | Node: 11 MAX: 26
+0:19:26.782226573 DEBUG (11): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:19:27.120117198 DEBUG (7): Children Array of node 7
+0:19:27.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:19:27.120117198 DEBUG (7): ---| 11 | 26 | 2 |-----
+0:19:27.120117198 DEBUG (7): | ****PASSED TiNA**** | Node: 7 Last MAX: 33 New MAX: 26
+0:19:27.120117198 DEBUG (7): |  ****SEND TiNA****  | Node: 7 MAX: 26
+0:19:27.120117198 DEBUG (7): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:19:27.292968761 DEBUG (13): Children Array of node 13
+0:19:27.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:19:27.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:19:27.654296886 DEBUG (12): Children Array of node 12
+0:19:27.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:19:27.654296886 DEBUG (12): ---| 13 | 11 | 2 |-----
+0:19:27.666992198 DEBUG (6): Children Array of node 6
+0:19:27.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:19:27.666992198 DEBUG (6): ---| 7 | 26 | 3 |-----
+0:19:27.666992198 DEBUG (6): ---| 10 | 21 | 1 |-----
+0:19:28.212890635 DEBUG (2): Children Array of node 2
+0:19:28.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:19:28.212890635 DEBUG (2): ---| 3 | 20 | 1 |-----
+0:19:28.354492198 DEBUG (5): Children Array of node 5
+0:19:28.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:19:28.354492198 DEBUG (5): ---| 6 | 44 | 5 |-----
+0:19:28.354492198 DEBUG (5): ---| 9 | 89 | 1 |-----
+0:19:28.389648448 DEBUG (8): Children Array of node 8
+0:19:28.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:19:28.389648448 DEBUG (8): ---| 12 | 11 | 3 |-----
+0:19:28.753906260 DEBUG (1): Children Array of node 1
+0:19:28.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:19:28.753906260 DEBUG (1): ---| 2 | 45 | 2 |-----
+0:19:28.868164072 DEBUG (4): Children Array of node 4
+0:19:28.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:19:28.868164072 DEBUG (4): ---| 5 | 89 | 7 |-----
+0:19:28.868164072 DEBUG (4): ---| 8 | 11 | 4 |-----
+0:19:29.330078135 DEBUG (0): Children Array of node 0
+0:19:29.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:19:29.330078135 DEBUG (0): ---| 1 | 45 | 3 |-----
+0:19:29.330078135 DEBUG (0): ---| 4 | 89 | 12 |-----
+0:19:29.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 39: 89^^^^^^^^^^^
+
+
+0:19:30.000000010 DEBUG (0): ################################################### 
+0:19:30.000000010 DEBUG (0): ##############   ROUND   40    #################### 
+0:19:30.000000010 DEBUG (0): ###################################################
+0:19:56.782226573 DEBUG (11): Children Array of node 11
+0:19:56.782226573 DEBUG (11): ---Child-MAX-COUNT---
+0:19:56.782226573 DEBUG (11): ---| 15 | 26 | 1 |-----
+0:19:57.120117198 DEBUG (7): Children Array of node 7
+0:19:57.120117198 DEBUG (7): ---Child-MAX-COUNT---
+0:19:57.120117198 DEBUG (7): ---| 11 | 26 | 2 |-----
+0:19:57.292968761 DEBUG (13): Children Array of node 13
+0:19:57.292968761 DEBUG (13): ---Child-MAX-COUNT---
+0:19:57.292968761 DEBUG (13): ---| 14 | 5 | 1 |-----
+0:19:57.324218761 DEBUG (10): | ****PASSED TiNA**** | Node: 10 Last MAX: 21 New MAX: 16
+0:19:57.324218761 DEBUG (10): |  ****SEND TiNA****  | Node: 10 MAX: 16
+0:19:57.324218761 DEBUG (10): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:19:57.654296886 DEBUG (12): Children Array of node 12
+0:19:57.654296886 DEBUG (12): ---Child-MAX-COUNT---
+0:19:57.654296886 DEBUG (12): ---| 13 | 11 | 2 |-----
+0:19:57.666992198 DEBUG (6): Children Array of node 6
+0:19:57.666992198 DEBUG (6): ---Child-MAX-COUNT---
+0:19:57.666992198 DEBUG (6): ---| 7 | 26 | 3 |-----
+0:19:57.666992198 DEBUG (6): ---| 10 | 16 | 1 |-----
+0:19:58.212890635 DEBUG (2): Children Array of node 2
+0:19:58.212890635 DEBUG (2): ---Child-MAX-COUNT---
+0:19:58.212890635 DEBUG (2): ---| 3 | 20 | 1 |-----
+0:19:58.354492198 DEBUG (5): Children Array of node 5
+0:19:58.354492198 DEBUG (5): ---Child-MAX-COUNT---
+0:19:58.354492198 DEBUG (5): ---| 6 | 44 | 5 |-----
+0:19:58.354492198 DEBUG (5): ---| 9 | 89 | 1 |-----
+0:19:58.389648448 DEBUG (8): Children Array of node 8
+0:19:58.389648448 DEBUG (8): ---Child-MAX-COUNT---
+0:19:58.389648448 DEBUG (8): ---| 12 | 11 | 3 |-----
+0:19:58.753906260 DEBUG (1): Children Array of node 1
+0:19:58.753906260 DEBUG (1): ---Child-MAX-COUNT---
+0:19:58.753906260 DEBUG (1): ---| 2 | 45 | 2 |-----
+0:19:58.868164072 DEBUG (4): Children Array of node 4
+0:19:58.868164072 DEBUG (4): ---Child-MAX-COUNT---
+0:19:58.868164072 DEBUG (4): ---| 5 | 89 | 7 |-----
+0:19:58.868164072 DEBUG (4): ---| 8 | 11 | 4 |-----
+0:19:59.330078135 DEBUG (0): Children Array of node 0
+0:19:59.330078135 DEBUG (0): ---Child-MAX-COUNT---
+0:19:59.330078135 DEBUG (0): ---| 1 | 45 | 3 |-----
+0:19:59.330078135 DEBUG (0): ---| 4 | 89 | 12 |-----
+0:19:59.330078135 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 40: 89^^^^^^^^^^^
+
+

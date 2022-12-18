@@ -65,8 +65,8 @@ implementation
 	bool count=FALSE;
 	bool max_change=FALSE;
 	bool count_change=FALSE;
-	bool agg_change=FALSE;
-	bool sendAggChange = FALSE;
+	bool agg_change=FALSE; //boolean for changing  the aggregation
+	bool sendAggChange = FALSE; //boolean for sending the change for the current node
 
 	uint8_t curdepth;
 	uint16_t parentID;
@@ -82,7 +82,7 @@ implementation
 	uint8_t last_tina_count;
 	uint8_t meas_max;
 	uint8_t meas_count;
-	sim_time_t sim;
+	sim_time_t sim; //variable to sim time
 	uint16_t p;
 	
 	FILE* urandom_file;
@@ -166,7 +166,6 @@ implementation
 		if (err == SUCCESS)
 		{
 			dbg("Radio" , "Radio initialized successfully!!!\n");
-			//call EndRoutingTimer.startOneShot(TIMER_ROUTING);
 			
 			if (TOS_NODE_ID==0)
 			{
@@ -204,8 +203,8 @@ implementation
 			//Calculate random TCT and Aggregation function
 			tct = rand() % 4;
 			dbg("TCT", "TCT for round %u is %u\n", roundCounter, (tct + 1)*5);
-			//agg_function = rand() % 3;
-			agg_function = 2;
+			agg_function = rand() % 3;
+			//agg_function = 2;
 
 			if(agg_function == 0){
 				dbg("aggregation_function", "Aggregation function for round %u is MAX\n", roundCounter);
@@ -265,10 +264,13 @@ implementation
 
 			p = rand()%100;
 
+			//propability for new aggregation
+			//if p<5 go to the next aggregation if p>5 and p<10 jump two aggregations
+			//also initialize variables
 			if(p<=5)
 			{
 				agg_function = (agg_function + 1) % 3;
-				agg_change = TRUE;
+				agg_change = TRUE; 
 				sendAggChange = TRUE;
 			}
 			else if(p>5 && p<=10)
@@ -442,26 +444,12 @@ implementation
 			setLostRoutingRecTask(TRUE);
 			return;
 		}
-		rand_num = rand() % (TIMER_VERY_FAST_PERIOD-20);
+		rand_num = rand() % (TIMER_VERY_FAST_PERIOD-40);
 		dbg("Random", "Node: %d, Random: %d \n", TOS_NODE_ID, rand_num);
 
 		sim = sim_time()/10000000;
 		call StartMeasureTimer.startPeriodicAt(-sim-((curdepth+1)*TIMER_VERY_FAST_PERIOD+rand_num),TIMER_PERIOD_MILLI);
 	}
-
-	//Start the periodic timer to produce random measures every round
-	/*event void EndRoutingTimer.fired(){
-
-		if(!MeasureTimerSet){
-			rand_num = rand() % (TIMER_VERY_FAST_PERIOD-20);
-		
-			dbg("Random", "Node: %d, Random: %d \n", TOS_NODE_ID, rand_num);
-			call StartMeasureTimer.startPeriodicAt(-BOOT_TIME-((curdepth+1)*TIMER_VERY_FAST_PERIOD+rand_num),TIMER_PERIOD_MILLI);
-			MeasureTimerSet = TRUE;
-			
-		}
-	}*/
-
 
 	// Send one measurement
 	task void sendMeasMsg()
@@ -638,7 +626,7 @@ implementation
 		OneMeasMsg* ommpkt;
 		TwoMeasMsg* tmmpkt;	
 
-		sendAggChange = FALSE;
+		sendAggChange = FALSE; //initialize variable for the next round for agg change
 
 		if(!sendAggChange)
 		{
@@ -930,7 +918,7 @@ implementation
 		uint8_t len;
 		message_t radioAggrMsgRecPkt;
 
-		if(!sendAggChange)
+		if(!sendAggChange) //check if we didnt receive the change
 		{
 
 			radioAggrMsgRecPkt= call AggregationReceiveQueue.dequeue();
@@ -949,14 +937,14 @@ implementation
 				AggMessage* ampkt = (AggMessage*) (call AggregationPacket.getPayload(&radioAggrMsgRecPkt,len));
 
 				agg_function = ampkt->agg_msg;
-				sendAggChange = TRUE;
+				sendAggChange = TRUE; //if we came here means that we sent the change so set TRUE
 				dbg("ChangeAggrResult", "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\n");
 				dbg("ChangeAggrResult", "Node: %d Depth: %d New Aggregation is : %d\n", TOS_NODE_ID, curdepth, agg_function);
 				dbg("ChangeAggrResult", "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\n");
 
 				if (TOS_NODE_ID!=0)
 				{
-					call NewAggTimer.startOneShot(TIMER_FAST_PERIOD);
+					call NewAggTimer.startOneShot(TIMER_FAST_PERIOD); //start the timers for all the other nodes
 				}
 			}
 			else
@@ -981,7 +969,7 @@ implementation
 		message_t tmp;
 		uint16_t msource;
 
-		if(!sendAggChange)
+		if(!sendAggChange) //check if we didnt receive the change
 		{
 			msource = call AggregationAMPacket.source(msg);
 		

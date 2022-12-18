@@ -17,7 +17,7 @@ print "TicksPerSecond : ", t.ticksPerSecond(),"\n"
 #t.addChannel("Serial",f)
 #t.addChannel("SRTreeC",f)
 #t.addChannel("PacketQueueC",f)
-t.addChannel("TCT",f)
+#t.addChannel("TCT",f)
 #t.addChannel("aggregation_function",f)
 t.addChannel("Routing result",f)
 #t.addChannel("Measures",f)
@@ -31,12 +31,12 @@ t.addChannel("Result",f)
 #t.addChannel("ChangeAggrResult",f)
 
 
-for i in range(0,10):
+for i in range(0,36):
 	m=t.getNode(i)
 	m.bootAtTime(10*t.ticksPerSecond() + i)
 
 
-topo = open("topology3.1.50.txt", "r")
+topo = open("topology6.1.0.txt", "r")
 
 if topo is None:
 	print "Topology file not opened!!! \n"
@@ -59,10 +59,10 @@ for line in  lines:
 	str1=line.strip()
 	if str1:
 		val=int(str1)
-		for i in range(0,10):
+		for i in range(0,36):
 			t.getNode(i).addNoiseTraceReading(val)
 noiseF.close()
-for i in range(0,10):
+for i in range(0,36):
 	t.getNode(i).createNoiseModel()
 	
 ok=False
