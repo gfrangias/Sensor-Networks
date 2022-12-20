@@ -23,8 +23,8 @@ implementation{
 	components new PacketQueueC(SENDER_QUEUE_SIZE) as RoutingSendQueueC;
 	components new PacketQueueC(RECEIVER_QUEUE_SIZE) as RoutingReceiveQueueC;
 
-	components new AMSenderC(AM_TWOMEASMSG) as MeasureSenderC;
-	components new AMReceiverC(AM_TWOMEASMSG) as MeasureReceiverC;
+	components new AMSenderC(AM_MEASMSG) as MeasureSenderC;
+	components new AMReceiverC(AM_MEASMSG) as MeasureReceiverC;
 	components new PacketQueueC(SENDER_QUEUE_SIZE) as MeasureSendQueueC;
 	components new PacketQueueC(RECEIVER_QUEUE_SIZE) as MeasureReceiveQueueC;
 

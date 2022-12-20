@@ -1,0 +1,2228 @@
+TicksPerSecond :  10000000000 
+
+  0   1   -50.0
+  0   3   -50.0
+  0   4   -50.0
+  1   0   -50.0
+  1   2   -50.0
+  1   3   -50.0
+  1   4   -50.0
+  1   5   -50.0
+  2   1   -50.0
+  2   4   -50.0
+  2   5   -50.0
+  3   0   -50.0
+  3   1   -50.0
+  3   4   -50.0
+  3   6   -50.0
+  3   7   -50.0
+  4   0   -50.0
+  4   1   -50.0
+  4   2   -50.0
+  4   3   -50.0
+  4   5   -50.0
+  4   6   -50.0
+  4   7   -50.0
+  4   8   -50.0
+  5   1   -50.0
+  5   2   -50.0
+  5   4   -50.0
+  5   7   -50.0
+  5   8   -50.0
+  6   3   -50.0
+  6   4   -50.0
+  6   7   -50.0
+  7   3   -50.0
+  7   4   -50.0
+  7   5   -50.0
+  7   6   -50.0
+  7   8   -50.0
+  8   4   -50.0
+  8   5   -50.0
+  8   7   -50.0
+0:0:10.195312510 DEBUG (0): ################################################### 
+0:0:10.195312510 DEBUG (0): ##############   ROUND   1    #################### 
+0:0:10.195312510 DEBUG (0): ###################################################
+0:0:10.195312510 DEBUG (0): TCT for round 1 is 10
+0:0:10.205474824 DEBUG (0): ----------------------------
+0:0:10.205474824 DEBUG (0): |------ROUTING RESULT------|
+0:0:10.407470681 DEBUG (1): |          1 => 0          |
+0:0:10.410110437 DEBUG (4): |          4 => 0          |
+0:0:10.411178546 DEBUG (3): |          3 => 0          |
+0:0:10.603942883 DEBUG (2): |          2 => 1          |
+0:0:10.607269291 DEBUG (6): |          6 => 4          |
+0:0:10.607955933 DEBUG (8): |          8 => 4          |
+0:0:10.611633285 DEBUG (7): |          7 => 3          |
+0:0:10.613220173 DEBUG (5): |          5 => 1          |
+0:0:28.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 MAX: 39
+0:0:28.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 MAX: 39
+.........................................
+0:0:28.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 COUNT: 1
+.........................................
+0:0:28.375976573 DEBUG (7): | ****PASSED TiNA**** | Node: 7 Last MAX: 0 New MAX: 39
+0:0:28.375976573 DEBUG (7): | ****PASSED TiNA**** | Node: 7 Last COUNT: 0 New COUNT: 1
+0:0:28.375976573 DEBUG (7): |  ****SEND TiNA****  | Node: 7 MAX: 39
+0:0:28.375976573 DEBUG (7): |  ****SEND TiNA****  | Node: 7 COUNT: 1
+0:0:28.375976573 DEBUG (7): |  ****SEND TiNA****  | Sending TWO MEAS
+*****************************************
+0:0:28.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 MAX: 15
+0:0:28.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 MAX: 15
+.........................................
+0:0:28.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 COUNT: 1
+.........................................
+0:0:28.385742198 DEBUG (8): | ****PASSED TiNA**** | Node: 8 Last MAX: 0 New MAX: 15
+0:0:28.385742198 DEBUG (8): | ****PASSED TiNA**** | Node: 8 Last COUNT: 0 New COUNT: 1
+0:0:28.385742198 DEBUG (8): |  ****SEND TiNA****  | Node: 8 MAX: 15
+0:0:28.385742198 DEBUG (8): |  ****SEND TiNA****  | Node: 8 COUNT: 1
+0:0:28.385742198 DEBUG (8): |  ****SEND TiNA****  | Sending TWO MEAS
+*****************************************
+0:0:28.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 MAX: 55
+0:0:28.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 MAX: 55
+.........................................
+0:0:28.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 COUNT: 1
+.........................................
+0:0:28.448242197 DEBUG (2): | ****PASSED TiNA**** | Node: 2 Last MAX: 0 New MAX: 55
+0:0:28.448242197 DEBUG (2): | ****PASSED TiNA**** | Node: 2 Last COUNT: 0 New COUNT: 1
+0:0:28.448242197 DEBUG (2): |  ****SEND TiNA****  | Node: 2 MAX: 55
+0:0:28.448242197 DEBUG (2): |  ****SEND TiNA****  | Node: 2 COUNT: 1
+0:0:28.448242197 DEBUG (2): |  ****SEND TiNA****  | Sending TWO MEAS
+*****************************************
+0:0:28.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 MAX: 18
+0:0:28.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 MAX: 18
+.........................................
+0:0:28.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 COUNT: 1
+.........................................
+0:0:28.533203135 DEBUG (6): | ****PASSED TiNA**** | Node: 6 Last MAX: 0 New MAX: 18
+0:0:28.533203135 DEBUG (6): | ****PASSED TiNA**** | Node: 6 Last COUNT: 0 New COUNT: 1
+0:0:28.533203135 DEBUG (6): |  ****SEND TiNA****  | Node: 6 MAX: 18
+0:0:28.533203135 DEBUG (6): |  ****SEND TiNA****  | Node: 6 COUNT: 1
+0:0:28.533203135 DEBUG (6): |  ****SEND TiNA****  | Sending TWO MEAS
+*****************************************
+0:0:28.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 MAX: 76
+0:0:28.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 MAX: 76
+.........................................
+0:0:28.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 COUNT: 1
+.........................................
+0:0:28.570312510 DEBUG (5): | ****PASSED TiNA**** | Node: 5 Last MAX: 0 New MAX: 76
+0:0:28.570312510 DEBUG (5): | ****PASSED TiNA**** | Node: 5 Last COUNT: 0 New COUNT: 1
+0:0:28.570312510 DEBUG (5): |  ****SEND TiNA****  | Node: 5 MAX: 76
+0:0:28.570312510 DEBUG (5): |  ****SEND TiNA****  | Node: 5 COUNT: 1
+0:0:28.570312510 DEBUG (5): |  ****SEND TiNA****  | Sending TWO MEAS
+*****************************************
+0:0:28.721679697 DEBUG (1): Children Array of node 1
+0:0:28.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:0:28.721679697 DEBUG (1): ---| 2 | 55 | 1 |-----
+0:0:28.721679697 DEBUG (1): ---| 5 | 76 | 1 |-----
+0:0:28.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 MAX: 3
+0:0:28.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 MAX: 76
+.........................................
+0:0:28.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 COUNT: 3
+.........................................
+0:0:28.721679697 DEBUG (1): | ****PASSED TiNA**** | Node: 1 Last MAX: 0 New MAX: 76
+0:0:28.721679697 DEBUG (1): | ****PASSED TiNA**** | Node: 1 Last COUNT: 0 New COUNT: 3
+0:0:28.721679697 DEBUG (1): |  ****SEND TiNA****  | Node: 1 MAX: 76
+0:0:28.721679697 DEBUG (1): |  ****SEND TiNA****  | Node: 1 COUNT: 3
+0:0:28.721679697 DEBUG (1): |  ****SEND TiNA****  | Sending TWO MEAS
+*****************************************
+0:0:28.721679697 DEBUG (1): Children values: 2 55 1
+0:0:28.721679697 DEBUG (1): Children values: 5 76 1
+0:0:28.820312510 DEBUG (3): Children Array of node 3
+0:0:28.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:0:28.820312510 DEBUG (3): ---| 7 | 39 | 1 |-----
+0:0:28.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 MAX: 9
+0:0:28.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 MAX: 39
+.........................................
+0:0:28.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 COUNT: 2
+.........................................
+0:0:28.820312510 DEBUG (3): | ****PASSED TiNA**** | Node: 3 Last MAX: 0 New MAX: 39
+0:0:28.820312510 DEBUG (3): | ****PASSED TiNA**** | Node: 3 Last COUNT: 0 New COUNT: 2
+0:0:28.820312510 DEBUG (3): |  ****SEND TiNA****  | Node: 3 MAX: 39
+0:0:28.820312510 DEBUG (3): |  ****SEND TiNA****  | Node: 3 COUNT: 2
+0:0:28.820312510 DEBUG (3): |  ****SEND TiNA****  | Sending TWO MEAS
+*****************************************
+0:0:28.820312510 DEBUG (3): Children values: 7 39 1
+0:0:28.877929697 DEBUG (4): Children Array of node 4
+0:0:28.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:0:28.877929697 DEBUG (4): ---| 8 | 15 | 1 |-----
+0:0:28.877929697 DEBUG (4): ---| 6 | 18 | 1 |-----
+0:0:28.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 MAX: 40
+0:0:28.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 MAX: 40
+.........................................
+0:0:28.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 COUNT: 3
+.........................................
+0:0:28.877929697 DEBUG (4): | ****PASSED TiNA**** | Node: 4 Last MAX: 0 New MAX: 40
+0:0:28.877929697 DEBUG (4): | ****PASSED TiNA**** | Node: 4 Last COUNT: 0 New COUNT: 3
+0:0:28.877929697 DEBUG (4): |  ****SEND TiNA****  | Node: 4 MAX: 40
+0:0:28.877929697 DEBUG (4): |  ****SEND TiNA****  | Node: 4 COUNT: 3
+0:0:28.877929697 DEBUG (4): |  ****SEND TiNA****  | Sending TWO MEAS
+*****************************************
+0:0:28.877929697 DEBUG (4): Children values: 8 15 1
+0:0:28.877929697 DEBUG (4): Children values: 6 18 1
+0:0:29.338867197 DEBUG (0): Children Array of node 0
+0:0:29.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:0:29.338867197 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:0:29.338867197 DEBUG (0): ---| 3 | 39 | 2 |-----
+0:0:29.338867197 DEBUG (0): ---| 4 | 40 | 3 |-----
+0:0:29.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 MAX: 68
+0:0:29.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 MAX: 76
+.........................................
+0:0:29.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 COUNT: 9
+.........................................
+0:0:29.338867197 DEBUG (0): | ****PASSED TiNA**** | Node: 0 Last MAX: 0 New MAX: 76
+0:0:29.338867197 DEBUG (0): | ****PASSED TiNA**** | Node: 0 Last COUNT: 0 New COUNT: 9
+0:0:29.338867197 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 1: 76^^^^^^^^^^^
+
+
+0:0:29.338867197 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 1: 9^^^^^^^^^^^
+
+
+0:0:30.000000010 DEBUG (0): ################################################### 
+0:0:30.000000010 DEBUG (0): ##############   ROUND   2    #################### 
+0:0:30.000000010 DEBUG (0): ###################################################
+0:0:30.000000010 DEBUG (0): Aggregation function changed to: 1 for period: 2
+0:0:58.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 Although COUNT Measure: 39
+0:0:58.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 COUNT: 1
+.........................................
+0:0:58.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 Although COUNT Measure: 15
+0:0:58.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 COUNT: 1
+.........................................
+0:0:58.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 Although COUNT Measure: 54
+0:0:58.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 COUNT: 1
+.........................................
+0:0:58.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 Although COUNT Measure: 17
+0:0:58.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 COUNT: 1
+.........................................
+0:0:58.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 Although COUNT Measure: 69
+0:0:58.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 COUNT: 1
+.........................................
+0:0:58.721679697 DEBUG (1): Children Array of node 1
+0:0:58.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:0:58.721679697 DEBUG (1): ---| 2 | 55 | 1 |-----
+0:0:58.721679697 DEBUG (1): ---| 5 | 76 | 1 |-----
+0:0:58.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 Although COUNT Measure: 3
+0:0:58.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 COUNT: 3
+.........................................
+0:0:58.820312510 DEBUG (3): Children Array of node 3
+0:0:58.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:0:58.820312510 DEBUG (3): ---| 7 | 39 | 1 |-----
+0:0:58.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 Although COUNT Measure: 9
+0:0:58.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 COUNT: 2
+.........................................
+0:0:58.877929697 DEBUG (4): Children Array of node 4
+0:0:58.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:0:58.877929697 DEBUG (4): ---| 8 | 15 | 1 |-----
+0:0:58.877929697 DEBUG (4): ---| 6 | 18 | 1 |-----
+0:0:58.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 Although COUNT Measure: 39
+0:0:58.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 COUNT: 3
+.........................................
+0:0:59.338867197 DEBUG (0): Children Array of node 0
+0:0:59.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:0:59.338867197 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:0:59.338867197 DEBUG (0): ---| 3 | 39 | 2 |-----
+0:0:59.338867197 DEBUG (0): ---| 4 | 40 | 3 |-----
+0:0:59.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 Although COUNT Measure: 65
+0:0:59.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 COUNT: 9
+.........................................
+0:0:59.338867197 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 2: 9^^^^^^^^^^^
+
+
+0:1:0.000000010 DEBUG (0): ################################################### 
+0:1:0.000000010 DEBUG (0): ##############   ROUND   3    #################### 
+0:1:0.000000010 DEBUG (0): ###################################################
+0:1:28.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 Although COUNT Measure: 36
+0:1:28.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 COUNT: 1
+.........................................
+0:1:28.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 Although COUNT Measure: 14
+0:1:28.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 COUNT: 1
+.........................................
+0:1:28.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 Although COUNT Measure: 53
+0:1:28.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 COUNT: 1
+.........................................
+0:1:28.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 Although COUNT Measure: 16
+0:1:28.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 COUNT: 1
+.........................................
+0:1:28.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 Although COUNT Measure: 68
+0:1:28.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 COUNT: 1
+.........................................
+0:1:28.721679697 DEBUG (1): Children Array of node 1
+0:1:28.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:1:28.721679697 DEBUG (1): ---| 2 | 55 | 1 |-----
+0:1:28.721679697 DEBUG (1): ---| 5 | 76 | 1 |-----
+0:1:28.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 Although COUNT Measure: 3
+0:1:28.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 COUNT: 3
+.........................................
+0:1:28.820312510 DEBUG (3): Children Array of node 3
+0:1:28.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:1:28.820312510 DEBUG (3): ---| 7 | 39 | 1 |-----
+0:1:28.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 Although COUNT Measure: 9
+0:1:28.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 COUNT: 2
+.........................................
+0:1:28.877929697 DEBUG (4): Children Array of node 4
+0:1:28.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:1:28.877929697 DEBUG (4): ---| 8 | 15 | 1 |-----
+0:1:28.877929697 DEBUG (4): ---| 6 | 18 | 1 |-----
+0:1:28.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 Although COUNT Measure: 38
+0:1:28.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 COUNT: 3
+.........................................
+0:1:29.338867197 DEBUG (0): Children Array of node 0
+0:1:29.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:1:29.338867197 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:1:29.338867197 DEBUG (0): ---| 3 | 39 | 2 |-----
+0:1:29.338867197 DEBUG (0): ---| 4 | 40 | 3 |-----
+0:1:29.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 Although COUNT Measure: 64
+0:1:29.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 COUNT: 9
+.........................................
+0:1:29.338867197 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 3: 9^^^^^^^^^^^
+
+
+0:1:30.000000010 DEBUG (0): ################################################### 
+0:1:30.000000010 DEBUG (0): ##############   ROUND   4    #################### 
+0:1:30.000000010 DEBUG (0): ###################################################
+0:1:58.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 Although COUNT Measure: 36
+0:1:58.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 COUNT: 1
+.........................................
+0:1:58.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 Although COUNT Measure: 13
+0:1:58.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 COUNT: 1
+.........................................
+0:1:58.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 Although COUNT Measure: 57
+0:1:58.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 COUNT: 1
+.........................................
+0:1:58.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 Although COUNT Measure: 16
+0:1:58.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 COUNT: 1
+.........................................
+0:1:58.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 Although COUNT Measure: 68
+0:1:58.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 COUNT: 1
+.........................................
+0:1:58.721679697 DEBUG (1): Children Array of node 1
+0:1:58.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:1:58.721679697 DEBUG (1): ---| 2 | 55 | 1 |-----
+0:1:58.721679697 DEBUG (1): ---| 5 | 76 | 1 |-----
+0:1:58.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 Although COUNT Measure: 3
+0:1:58.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 COUNT: 3
+.........................................
+0:1:58.820312510 DEBUG (3): Children Array of node 3
+0:1:58.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:1:58.820312510 DEBUG (3): ---| 7 | 39 | 1 |-----
+0:1:58.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 Although COUNT Measure: 9
+0:1:58.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 COUNT: 2
+.........................................
+0:1:58.877929697 DEBUG (4): Children Array of node 4
+0:1:58.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:1:58.877929697 DEBUG (4): ---| 8 | 15 | 1 |-----
+0:1:58.877929697 DEBUG (4): ---| 6 | 18 | 1 |-----
+0:1:58.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 Although COUNT Measure: 38
+0:1:58.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 COUNT: 3
+.........................................
+0:1:59.338867197 DEBUG (0): Children Array of node 0
+0:1:59.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:1:59.338867197 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:1:59.338867197 DEBUG (0): ---| 3 | 39 | 2 |-----
+0:1:59.338867197 DEBUG (0): ---| 4 | 40 | 3 |-----
+0:1:59.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 Although COUNT Measure: 59
+0:1:59.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 COUNT: 9
+.........................................
+0:1:59.338867197 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 4: 9^^^^^^^^^^^
+
+
+0:2:0.000000010 DEBUG (0): ################################################### 
+0:2:0.000000010 DEBUG (0): ##############   ROUND   5    #################### 
+0:2:0.000000010 DEBUG (0): ###################################################
+0:2:28.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 Although COUNT Measure: 37
+0:2:28.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 COUNT: 1
+.........................................
+0:2:28.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 Although COUNT Measure: 12
+0:2:28.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 COUNT: 1
+.........................................
+0:2:28.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 Although COUNT Measure: 53
+0:2:28.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 COUNT: 1
+.........................................
+0:2:28.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 Although COUNT Measure: 15
+0:2:28.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 COUNT: 1
+.........................................
+0:2:28.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 Although COUNT Measure: 73
+0:2:28.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 COUNT: 1
+.........................................
+0:2:28.721679697 DEBUG (1): Children Array of node 1
+0:2:28.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:2:28.721679697 DEBUG (1): ---| 2 | 55 | 1 |-----
+0:2:28.721679697 DEBUG (1): ---| 5 | 76 | 1 |-----
+0:2:28.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 Although COUNT Measure: 3
+0:2:28.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 COUNT: 3
+.........................................
+0:2:28.820312510 DEBUG (3): Children Array of node 3
+0:2:28.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:2:28.820312510 DEBUG (3): ---| 7 | 39 | 1 |-----
+0:2:28.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 Although COUNT Measure: 9
+0:2:28.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 COUNT: 2
+.........................................
+0:2:28.877929697 DEBUG (4): Children Array of node 4
+0:2:28.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:2:28.877929697 DEBUG (4): ---| 8 | 15 | 1 |-----
+0:2:28.877929697 DEBUG (4): ---| 6 | 18 | 1 |-----
+0:2:28.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 Although COUNT Measure: 35
+0:2:28.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 COUNT: 3
+.........................................
+0:2:29.338867197 DEBUG (0): Children Array of node 0
+0:2:29.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:2:29.338867197 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:2:29.338867197 DEBUG (0): ---| 3 | 39 | 2 |-----
+0:2:29.338867197 DEBUG (0): ---| 4 | 40 | 3 |-----
+0:2:29.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 Although COUNT Measure: 57
+0:2:29.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 COUNT: 9
+.........................................
+0:2:29.338867197 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 5: 9^^^^^^^^^^^
+
+
+0:2:30.000000010 DEBUG (0): ################################################### 
+0:2:30.000000010 DEBUG (0): ##############   ROUND   6    #################### 
+0:2:30.000000010 DEBUG (0): ###################################################
+0:2:30.000000010 DEBUG (0): Aggregation function changed to: 0 for period: 6
+0:2:58.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 MAX: 38
+0:2:58.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 MAX: 38
+.........................................
+0:2:58.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 MAX: 12
+0:2:58.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 MAX: 12
+.........................................
+0:2:58.385742198 DEBUG (8): | ****PASSED TiNA**** | Node: 8 Last MAX: 15 New MAX: 12
+0:2:58.385742198 DEBUG (8): |  ****SEND TiNA****  | Node: 8 MAX: 12
+0:2:58.385742198 DEBUG (8): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:2:58.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 MAX: 50
+0:2:58.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 MAX: 50
+.........................................
+0:2:58.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 MAX: 14
+0:2:58.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 MAX: 14
+.........................................
+0:2:58.533203135 DEBUG (6): | ****PASSED TiNA**** | Node: 6 Last MAX: 18 New MAX: 14
+0:2:58.533203135 DEBUG (6): |  ****SEND TiNA****  | Node: 6 MAX: 14
+0:2:58.533203135 DEBUG (6): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:2:58.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 MAX: 66
+0:2:58.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 MAX: 66
+.........................................
+0:2:58.570312510 DEBUG (5): | ****PASSED TiNA**** | Node: 5 Last MAX: 76 New MAX: 66
+0:2:58.570312510 DEBUG (5): |  ****SEND TiNA****  | Node: 5 MAX: 66
+0:2:58.570312510 DEBUG (5): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:2:58.721679697 DEBUG (1): Children Array of node 1
+0:2:58.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:2:58.721679697 DEBUG (1): ---| 2 | 55 | 1 |-----
+0:2:58.721679697 DEBUG (1): ---| 5 | 66 | 1 |-----
+0:2:58.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 MAX: 3
+0:2:58.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 MAX: 66
+.........................................
+0:2:58.721679697 DEBUG (1): | ****PASSED TiNA**** | Node: 1 Last MAX: 76 New MAX: 66
+0:2:58.721679697 DEBUG (1): |  ****SEND TiNA****  | Node: 1 MAX: 66
+0:2:58.721679697 DEBUG (1): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:2:58.820312510 DEBUG (3): Children Array of node 3
+0:2:58.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:2:58.820312510 DEBUG (3): ---| 7 | 39 | 1 |-----
+0:2:58.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 MAX: 9
+0:2:58.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 MAX: 39
+.........................................
+0:2:58.877929697 DEBUG (4): Children Array of node 4
+0:2:58.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:2:58.877929697 DEBUG (4): ---| 8 | 12 | 1 |-----
+0:2:58.877929697 DEBUG (4): ---| 6 | 14 | 1 |-----
+0:2:58.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 MAX: 36
+0:2:58.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 MAX: 36
+.........................................
+0:2:59.338867197 DEBUG (0): Children Array of node 0
+0:2:59.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:2:59.338867197 DEBUG (0): ---| 1 | 66 | 3 |-----
+0:2:59.338867197 DEBUG (0): ---| 3 | 39 | 2 |-----
+0:2:59.338867197 DEBUG (0): ---| 4 | 40 | 3 |-----
+0:2:59.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 MAX: 53
+0:2:59.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 MAX: 66
+.........................................
+0:2:59.338867197 DEBUG (0): | ****PASSED TiNA**** | Node: 0 Last MAX: 76 New MAX: 66
+0:2:59.338867197 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 6: 66^^^^^^^^^^^
+
+
+0:3:0.000000010 DEBUG (0): ################################################### 
+0:3:0.000000010 DEBUG (0): ##############   ROUND   7    #################### 
+0:3:0.000000010 DEBUG (0): ###################################################
+0:3:28.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 MAX: 35
+0:3:28.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 MAX: 35
+.........................................
+0:3:28.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 MAX: 12
+0:3:28.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 MAX: 12
+.........................................
+0:3:28.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 MAX: 45
+0:3:28.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 MAX: 45
+.........................................
+0:3:28.448242197 DEBUG (2): | ****PASSED TiNA**** | Node: 2 Last MAX: 55 New MAX: 45
+0:3:28.448242197 DEBUG (2): |  ****SEND TiNA****  | Node: 2 MAX: 45
+0:3:28.448242197 DEBUG (2): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:3:28.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 MAX: 13
+0:3:28.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 MAX: 13
+.........................................
+0:3:28.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 MAX: 68
+0:3:28.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 MAX: 68
+.........................................
+0:3:28.721679697 DEBUG (1): Children Array of node 1
+0:3:28.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:3:28.721679697 DEBUG (1): ---| 2 | 45 | 1 |-----
+0:3:28.721679697 DEBUG (1): ---| 5 | 66 | 1 |-----
+0:3:28.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 MAX: 3
+0:3:28.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 MAX: 66
+.........................................
+0:3:28.820312510 DEBUG (3): Children Array of node 3
+0:3:28.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:3:28.820312510 DEBUG (3): ---| 7 | 39 | 1 |-----
+0:3:28.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 MAX: 9
+0:3:28.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 MAX: 39
+.........................................
+0:3:28.877929697 DEBUG (4): Children Array of node 4
+0:3:28.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:3:28.877929697 DEBUG (4): ---| 8 | 12 | 1 |-----
+0:3:28.877929697 DEBUG (4): ---| 6 | 14 | 1 |-----
+0:3:28.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 MAX: 35
+0:3:28.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 MAX: 35
+.........................................
+0:3:28.877929697 DEBUG (4): | ****PASSED TiNA**** | Node: 4 Last MAX: 40 New MAX: 35
+0:3:28.877929697 DEBUG (4): |  ****SEND TiNA****  | Node: 4 MAX: 35
+0:3:28.877929697 DEBUG (4): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:3:29.338867197 DEBUG (0): Children Array of node 0
+0:3:29.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:3:29.338867197 DEBUG (0): ---| 1 | 66 | 3 |-----
+0:3:29.338867197 DEBUG (0): ---| 3 | 39 | 2 |-----
+0:3:29.338867197 DEBUG (0): ---| 4 | 35 | 3 |-----
+0:3:29.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 MAX: 48
+0:3:29.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 MAX: 66
+.........................................
+0:3:29.338867197 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 7: 66^^^^^^^^^^^
+
+
+0:3:30.000000010 DEBUG (0): ################################################### 
+0:3:30.000000010 DEBUG (0): ##############   ROUND   8    #################### 
+0:3:30.000000010 DEBUG (0): ###################################################
+0:3:58.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 MAX: 34
+0:3:58.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 MAX: 34
+.........................................
+0:3:58.375976573 DEBUG (7): | ****PASSED TiNA**** | Node: 7 Last MAX: 39 New MAX: 34
+0:3:58.375976573 DEBUG (7): |  ****SEND TiNA****  | Node: 7 MAX: 34
+0:3:58.375976573 DEBUG (7): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:3:58.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 MAX: 12
+0:3:58.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 MAX: 12
+.........................................
+0:3:58.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 MAX: 47
+0:3:58.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 MAX: 47
+.........................................
+0:3:58.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 MAX: 12
+0:3:58.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 MAX: 12
+.........................................
+0:3:58.533203135 DEBUG (6): | ****PASSED TiNA**** | Node: 6 Last MAX: 14 New MAX: 12
+0:3:58.533203135 DEBUG (6): |  ****SEND TiNA****  | Node: 6 MAX: 12
+0:3:58.533203135 DEBUG (6): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:3:58.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 MAX: 65
+0:3:58.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 MAX: 65
+.........................................
+0:3:58.721679697 DEBUG (1): Children Array of node 1
+0:3:58.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:3:58.721679697 DEBUG (1): ---| 2 | 45 | 1 |-----
+0:3:58.721679697 DEBUG (1): ---| 5 | 66 | 1 |-----
+0:3:58.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 MAX: 3
+0:3:58.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 MAX: 66
+.........................................
+0:3:58.820312510 DEBUG (3): Children Array of node 3
+0:3:58.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:3:58.820312510 DEBUG (3): ---| 7 | 34 | 1 |-----
+0:3:58.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 MAX: 9
+0:3:58.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 MAX: 34
+.........................................
+0:3:58.820312510 DEBUG (3): | ****PASSED TiNA**** | Node: 3 Last MAX: 39 New MAX: 34
+0:3:58.820312510 DEBUG (3): |  ****SEND TiNA****  | Node: 3 MAX: 34
+0:3:58.820312510 DEBUG (3): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:3:58.877929697 DEBUG (4): Children Array of node 4
+0:3:58.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:3:58.877929697 DEBUG (4): ---| 8 | 12 | 1 |-----
+0:3:58.877929697 DEBUG (4): ---| 6 | 12 | 1 |-----
+0:3:58.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 MAX: 37
+0:3:58.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 MAX: 37
+.........................................
+0:3:59.338867197 DEBUG (0): Children Array of node 0
+0:3:59.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:3:59.338867197 DEBUG (0): ---| 1 | 66 | 3 |-----
+0:3:59.338867197 DEBUG (0): ---| 3 | 34 | 2 |-----
+0:3:59.338867197 DEBUG (0): ---| 4 | 35 | 3 |-----
+0:3:59.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 MAX: 47
+0:3:59.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 MAX: 66
+.........................................
+0:3:59.338867197 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 8: 66^^^^^^^^^^^
+
+
+0:4:0.000000010 DEBUG (0): ################################################### 
+0:4:0.000000010 DEBUG (0): ##############   ROUND   9    #################### 
+0:4:0.000000010 DEBUG (0): ###################################################
+0:4:28.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 MAX: 32
+0:4:28.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 MAX: 32
+.........................................
+0:4:28.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 MAX: 11
+0:4:28.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 MAX: 11
+.........................................
+0:4:28.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 MAX: 43
+0:4:28.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 MAX: 43
+.........................................
+0:4:28.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 MAX: 12
+0:4:28.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 MAX: 12
+.........................................
+0:4:28.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 MAX: 68
+0:4:28.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 MAX: 68
+.........................................
+0:4:28.721679697 DEBUG (1): Children Array of node 1
+0:4:28.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:4:28.721679697 DEBUG (1): ---| 2 | 45 | 1 |-----
+0:4:28.721679697 DEBUG (1): ---| 5 | 66 | 1 |-----
+0:4:28.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 MAX: 3
+0:4:28.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 MAX: 66
+.........................................
+0:4:28.820312510 DEBUG (3): Children Array of node 3
+0:4:28.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:4:28.820312510 DEBUG (3): ---| 7 | 34 | 1 |-----
+0:4:28.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 MAX: 9
+0:4:28.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 MAX: 34
+.........................................
+0:4:28.877929697 DEBUG (4): Children Array of node 4
+0:4:28.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:4:28.877929697 DEBUG (4): ---| 8 | 12 | 1 |-----
+0:4:28.877929697 DEBUG (4): ---| 6 | 12 | 1 |-----
+0:4:28.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 MAX: 39
+0:4:28.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 MAX: 39
+.........................................
+0:4:28.877929697 DEBUG (4): | ****PASSED TiNA**** | Node: 4 Last MAX: 35 New MAX: 39
+0:4:28.877929697 DEBUG (4): |  ****SEND TiNA****  | Node: 4 MAX: 39
+0:4:28.877929697 DEBUG (4): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:4:29.338867197 DEBUG (0): Children Array of node 0
+0:4:29.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:4:29.338867197 DEBUG (0): ---| 1 | 66 | 3 |-----
+0:4:29.338867197 DEBUG (0): ---| 3 | 34 | 2 |-----
+0:4:29.338867197 DEBUG (0): ---| 4 | 39 | 3 |-----
+0:4:29.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 MAX: 44
+0:4:29.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 MAX: 66
+.........................................
+0:4:29.338867197 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 9: 66^^^^^^^^^^^
+
+
+0:4:30.000000010 DEBUG (0): ################################################### 
+0:4:30.000000010 DEBUG (0): ##############   ROUND   10    #################### 
+0:4:30.000000010 DEBUG (0): ###################################################
+0:4:58.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 MAX: 31
+0:4:58.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 MAX: 31
+.........................................
+0:4:58.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 MAX: 10
+0:4:58.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 MAX: 10
+.........................................
+0:4:58.385742198 DEBUG (8): | ****PASSED TiNA**** | Node: 8 Last MAX: 12 New MAX: 10
+0:4:58.385742198 DEBUG (8): |  ****SEND TiNA****  | Node: 8 MAX: 10
+0:4:58.385742198 DEBUG (8): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:4:58.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 MAX: 40
+0:4:58.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 MAX: 40
+.........................................
+0:4:58.448242197 DEBUG (2): | ****PASSED TiNA**** | Node: 2 Last MAX: 45 New MAX: 40
+0:4:58.448242197 DEBUG (2): |  ****SEND TiNA****  | Node: 2 MAX: 40
+0:4:58.448242197 DEBUG (2): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:4:58.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 MAX: 11
+0:4:58.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 MAX: 11
+.........................................
+0:4:58.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 MAX: 72
+0:4:58.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 MAX: 72
+.........................................
+0:4:58.721679697 DEBUG (1): Children Array of node 1
+0:4:58.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:4:58.721679697 DEBUG (1): ---| 2 | 40 | 1 |-----
+0:4:58.721679697 DEBUG (1): ---| 5 | 66 | 1 |-----
+0:4:58.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 MAX: 3
+0:4:58.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 MAX: 66
+.........................................
+0:4:58.820312510 DEBUG (3): Children Array of node 3
+0:4:58.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:4:58.820312510 DEBUG (3): ---| 7 | 34 | 1 |-----
+0:4:58.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 MAX: 9
+0:4:58.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 MAX: 34
+.........................................
+0:4:58.877929697 DEBUG (4): Children Array of node 4
+0:4:58.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:4:58.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:4:58.877929697 DEBUG (4): ---| 6 | 12 | 1 |-----
+0:4:58.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 MAX: 40
+0:4:58.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 MAX: 40
+.........................................
+0:4:59.338867197 DEBUG (0): Children Array of node 0
+0:4:59.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:4:59.338867197 DEBUG (0): ---| 1 | 66 | 3 |-----
+0:4:59.338867197 DEBUG (0): ---| 3 | 34 | 2 |-----
+0:4:59.338867197 DEBUG (0): ---| 4 | 39 | 3 |-----
+0:4:59.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 MAX: 45
+0:4:59.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 MAX: 66
+.........................................
+0:4:59.338867197 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 10: 66^^^^^^^^^^^
+
+
+0:5:0.000000010 DEBUG (0): ################################################### 
+0:5:0.000000010 DEBUG (0): ##############   ROUND   11    #################### 
+0:5:0.000000010 DEBUG (0): ###################################################
+0:5:28.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 MAX: 30
+0:5:28.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 MAX: 30
+.........................................
+0:5:28.375976573 DEBUG (7): | ****PASSED TiNA**** | Node: 7 Last MAX: 34 New MAX: 30
+0:5:28.375976573 DEBUG (7): |  ****SEND TiNA****  | Node: 7 MAX: 30
+0:5:28.375976573 DEBUG (7): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:5:28.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 MAX: 10
+0:5:28.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 MAX: 10
+.........................................
+0:5:28.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 MAX: 36
+0:5:28.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 MAX: 36
+.........................................
+0:5:28.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 MAX: 10
+0:5:28.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 MAX: 10
+.........................................
+0:5:28.533203135 DEBUG (6): | ****PASSED TiNA**** | Node: 6 Last MAX: 12 New MAX: 10
+0:5:28.533203135 DEBUG (6): |  ****SEND TiNA****  | Node: 6 MAX: 10
+0:5:28.533203135 DEBUG (6): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:5:28.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 MAX: 76
+0:5:28.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 MAX: 76
+.........................................
+0:5:28.570312510 DEBUG (5): | ****PASSED TiNA**** | Node: 5 Last MAX: 66 New MAX: 76
+0:5:28.570312510 DEBUG (5): |  ****SEND TiNA****  | Node: 5 MAX: 76
+0:5:28.570312510 DEBUG (5): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:5:28.721679697 DEBUG (1): Children Array of node 1
+0:5:28.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:5:28.721679697 DEBUG (1): ---| 2 | 40 | 1 |-----
+0:5:28.721679697 DEBUG (1): ---| 5 | 76 | 1 |-----
+0:5:28.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 MAX: 3
+0:5:28.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 MAX: 76
+.........................................
+0:5:28.721679697 DEBUG (1): | ****PASSED TiNA**** | Node: 1 Last MAX: 66 New MAX: 76
+0:5:28.721679697 DEBUG (1): |  ****SEND TiNA****  | Node: 1 MAX: 76
+0:5:28.721679697 DEBUG (1): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:5:28.820312510 DEBUG (3): Children Array of node 3
+0:5:28.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:5:28.820312510 DEBUG (3): ---| 7 | 30 | 1 |-----
+0:5:28.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 MAX: 9
+0:5:28.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 MAX: 30
+.........................................
+0:5:28.820312510 DEBUG (3): | ****PASSED TiNA**** | Node: 3 Last MAX: 34 New MAX: 30
+0:5:28.820312510 DEBUG (3): |  ****SEND TiNA****  | Node: 3 MAX: 30
+0:5:28.820312510 DEBUG (3): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:5:28.877929697 DEBUG (4): Children Array of node 4
+0:5:28.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:5:28.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:5:28.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:5:28.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 MAX: 43
+0:5:28.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 MAX: 43
+.........................................
+0:5:29.338867197 DEBUG (0): Children Array of node 0
+0:5:29.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:5:29.338867197 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:5:29.338867197 DEBUG (0): ---| 3 | 30 | 2 |-----
+0:5:29.338867197 DEBUG (0): ---| 4 | 39 | 3 |-----
+0:5:29.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 MAX: 48
+0:5:29.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 MAX: 76
+.........................................
+0:5:29.338867197 DEBUG (0): | ****PASSED TiNA**** | Node: 0 Last MAX: 66 New MAX: 76
+0:5:29.338867197 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 11: 76^^^^^^^^^^^
+
+
+0:5:30.000000010 DEBUG (0): ################################################### 
+0:5:30.000000010 DEBUG (0): ##############   ROUND   12    #################### 
+0:5:30.000000010 DEBUG (0): ###################################################
+0:5:58.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 MAX: 29
+0:5:58.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 MAX: 29
+.........................................
+0:5:58.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 MAX: 10
+0:5:58.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 MAX: 10
+.........................................
+0:5:58.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 MAX: 35
+0:5:58.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 MAX: 35
+.........................................
+0:5:58.448242197 DEBUG (2): | ****PASSED TiNA**** | Node: 2 Last MAX: 40 New MAX: 35
+0:5:58.448242197 DEBUG (2): |  ****SEND TiNA****  | Node: 2 MAX: 35
+0:5:58.448242197 DEBUG (2): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:5:58.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 MAX: 10
+0:5:58.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 MAX: 10
+.........................................
+0:5:58.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 MAX: 69
+0:5:58.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 MAX: 69
+.........................................
+0:5:58.721679697 DEBUG (1): Children Array of node 1
+0:5:58.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:5:58.721679697 DEBUG (1): ---| 2 | 40 | 1 |-----
+0:5:58.721679697 DEBUG (1): ---| 5 | 76 | 1 |-----
+0:5:58.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 MAX: 3
+0:5:58.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 MAX: 76
+.........................................
+0:5:58.820312510 DEBUG (3): Children Array of node 3
+0:5:58.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:5:58.820312510 DEBUG (3): ---| 7 | 30 | 1 |-----
+0:5:58.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 MAX: 9
+0:5:58.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 MAX: 30
+.........................................
+0:5:58.877929697 DEBUG (4): Children Array of node 4
+0:5:58.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:5:58.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:5:58.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:5:58.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 MAX: 44
+0:5:58.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 MAX: 44
+.........................................
+0:5:58.877929697 DEBUG (4): | ****PASSED TiNA**** | Node: 4 Last MAX: 39 New MAX: 44
+0:5:58.877929697 DEBUG (4): |  ****SEND TiNA****  | Node: 4 MAX: 44
+0:5:58.877929697 DEBUG (4): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:5:59.338867197 DEBUG (0): Children Array of node 0
+0:5:59.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:5:59.338867197 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:5:59.338867197 DEBUG (0): ---| 3 | 30 | 2 |-----
+0:5:59.338867197 DEBUG (0): ---| 4 | 44 | 3 |-----
+0:5:59.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 MAX: 49
+0:5:59.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 MAX: 76
+.........................................
+0:5:59.338867197 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 12: 76^^^^^^^^^^^
+
+
+0:6:0.000000010 DEBUG (0): ################################################### 
+0:6:0.000000010 DEBUG (0): ##############   ROUND   13    #################### 
+0:6:0.000000010 DEBUG (0): ###################################################
+0:6:28.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 MAX: 27
+0:6:28.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 MAX: 27
+.........................................
+0:6:28.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 MAX: 10
+0:6:28.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 MAX: 10
+.........................................
+0:6:28.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 MAX: 32
+0:6:28.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 MAX: 32
+.........................................
+0:6:28.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 MAX: 10
+0:6:28.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 MAX: 10
+.........................................
+0:6:28.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 MAX: 69
+0:6:28.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 MAX: 69
+.........................................
+0:6:28.721679697 DEBUG (1): Children Array of node 1
+0:6:28.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:6:28.721679697 DEBUG (1): ---| 2 | 40 | 1 |-----
+0:6:28.721679697 DEBUG (1): ---| 5 | 76 | 1 |-----
+0:6:28.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 MAX: 3
+0:6:28.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 MAX: 76
+.........................................
+0:6:28.820312510 DEBUG (3): Children Array of node 3
+0:6:28.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:6:28.820312510 DEBUG (3): ---| 7 | 30 | 1 |-----
+0:6:28.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 MAX: 9
+0:6:28.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 MAX: 30
+.........................................
+0:6:28.877929697 DEBUG (4): Children Array of node 4
+0:6:28.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:6:28.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:6:28.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:6:28.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 MAX: 40
+0:6:28.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 MAX: 40
+.........................................
+0:6:29.338867197 DEBUG (0): Children Array of node 0
+0:6:29.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:6:29.338867197 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:6:29.338867197 DEBUG (0): ---| 3 | 30 | 2 |-----
+0:6:29.338867197 DEBUG (0): ---| 4 | 44 | 3 |-----
+0:6:29.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 MAX: 47
+0:6:29.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 MAX: 76
+.........................................
+0:6:29.338867197 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 13: 76^^^^^^^^^^^
+
+
+0:6:30.000000010 DEBUG (0): ################################################### 
+0:6:30.000000010 DEBUG (0): ##############   ROUND   14    #################### 
+0:6:30.000000010 DEBUG (0): ###################################################
+0:6:30.000000010 DEBUG (0): Aggregation function changed to: 1 for period: 14
+0:6:58.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 Although COUNT Measure: 25
+0:6:58.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 COUNT: 1
+.........................................
+0:6:58.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 Although COUNT Measure: 10
+0:6:58.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 COUNT: 1
+.........................................
+0:6:58.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 Although COUNT Measure: 31
+0:6:58.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 COUNT: 1
+.........................................
+0:6:58.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 Although COUNT Measure: 9
+0:6:58.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 COUNT: 1
+.........................................
+0:6:58.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 Although COUNT Measure: 73
+0:6:58.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 COUNT: 1
+.........................................
+0:6:58.721679697 DEBUG (1): Children Array of node 1
+0:6:58.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:6:58.721679697 DEBUG (1): ---| 2 | 40 | 1 |-----
+0:6:58.721679697 DEBUG (1): ---| 5 | 76 | 1 |-----
+0:6:58.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 Although COUNT Measure: 3
+0:6:58.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 COUNT: 3
+.........................................
+0:6:58.820312510 DEBUG (3): Children Array of node 3
+0:6:58.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:6:58.820312510 DEBUG (3): ---| 7 | 30 | 1 |-----
+0:6:58.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 Although COUNT Measure: 9
+0:6:58.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 COUNT: 2
+.........................................
+0:6:58.877929697 DEBUG (4): Children Array of node 4
+0:6:58.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:6:58.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:6:58.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:6:58.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 Although COUNT Measure: 41
+0:6:58.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 COUNT: 3
+.........................................
+0:6:59.338867197 DEBUG (0): Children Array of node 0
+0:6:59.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:6:59.338867197 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:6:59.338867197 DEBUG (0): ---| 3 | 30 | 2 |-----
+0:6:59.338867197 DEBUG (0): ---| 4 | 44 | 3 |-----
+0:6:59.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 Although COUNT Measure: 47
+0:6:59.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 COUNT: 9
+.........................................
+0:6:59.338867197 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 14: 9^^^^^^^^^^^
+
+
+0:7:0.000000010 DEBUG (0): ################################################### 
+0:7:0.000000010 DEBUG (0): ##############   ROUND   15    #################### 
+0:7:0.000000010 DEBUG (0): ###################################################
+0:7:28.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 Although COUNT Measure: 26
+0:7:28.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 COUNT: 1
+.........................................
+0:7:28.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 Although COUNT Measure: 10
+0:7:28.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 COUNT: 1
+.........................................
+0:7:28.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 Although COUNT Measure: 28
+0:7:28.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 COUNT: 1
+.........................................
+0:7:28.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 Although COUNT Measure: 9
+0:7:28.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 COUNT: 1
+.........................................
+0:7:28.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 Although COUNT Measure: 68
+0:7:28.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 COUNT: 1
+.........................................
+0:7:28.721679697 DEBUG (1): Children Array of node 1
+0:7:28.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:7:28.721679697 DEBUG (1): ---| 2 | 40 | 1 |-----
+0:7:28.721679697 DEBUG (1): ---| 5 | 76 | 1 |-----
+0:7:28.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 Although COUNT Measure: 3
+0:7:28.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 COUNT: 3
+.........................................
+0:7:28.820312510 DEBUG (3): Children Array of node 3
+0:7:28.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:7:28.820312510 DEBUG (3): ---| 7 | 30 | 1 |-----
+0:7:28.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 Although COUNT Measure: 9
+0:7:28.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 COUNT: 2
+.........................................
+0:7:28.877929697 DEBUG (4): Children Array of node 4
+0:7:28.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:7:28.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:7:28.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:7:28.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 Although COUNT Measure: 41
+0:7:28.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 COUNT: 3
+.........................................
+0:7:29.338867197 DEBUG (0): Children Array of node 0
+0:7:29.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:7:29.338867197 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:7:29.338867197 DEBUG (0): ---| 3 | 30 | 2 |-----
+0:7:29.338867197 DEBUG (0): ---| 4 | 44 | 3 |-----
+0:7:29.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 Although COUNT Measure: 44
+0:7:29.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 COUNT: 9
+.........................................
+0:7:29.338867197 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 15: 9^^^^^^^^^^^
+
+
+0:7:30.000000010 DEBUG (0): ################################################### 
+0:7:30.000000010 DEBUG (0): ##############   ROUND   16    #################### 
+0:7:30.000000010 DEBUG (0): ###################################################
+0:7:58.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 Although COUNT Measure: 26
+0:7:58.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 COUNT: 1
+.........................................
+0:7:58.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 Although COUNT Measure: 9
+0:7:58.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 COUNT: 1
+.........................................
+0:7:58.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 Although COUNT Measure: 26
+0:7:58.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 COUNT: 1
+.........................................
+0:7:58.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 Although COUNT Measure: 9
+0:7:58.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 COUNT: 1
+.........................................
+0:7:58.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 Although COUNT Measure: 70
+0:7:58.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 COUNT: 1
+.........................................
+0:7:58.721679697 DEBUG (1): Children Array of node 1
+0:7:58.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:7:58.721679697 DEBUG (1): ---| 2 | 40 | 1 |-----
+0:7:58.721679697 DEBUG (1): ---| 5 | 76 | 1 |-----
+0:7:58.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 Although COUNT Measure: 3
+0:7:58.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 COUNT: 3
+.........................................
+0:7:58.820312510 DEBUG (3): Children Array of node 3
+0:7:58.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:7:58.820312510 DEBUG (3): ---| 7 | 30 | 1 |-----
+0:7:58.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 Although COUNT Measure: 9
+0:7:58.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 COUNT: 2
+.........................................
+0:7:58.877929697 DEBUG (4): Children Array of node 4
+0:7:58.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:7:58.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:7:58.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:7:58.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 Although COUNT Measure: 43
+0:7:58.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 COUNT: 3
+.........................................
+0:7:59.338867197 DEBUG (0): Children Array of node 0
+0:7:59.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:7:59.338867197 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:7:59.338867197 DEBUG (0): ---| 3 | 30 | 2 |-----
+0:7:59.338867197 DEBUG (0): ---| 4 | 44 | 3 |-----
+0:7:59.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 Although COUNT Measure: 45
+0:7:59.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 COUNT: 9
+.........................................
+0:7:59.338867197 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 16: 9^^^^^^^^^^^
+
+
+0:8:0.000000010 DEBUG (0): ################################################### 
+0:8:0.000000010 DEBUG (0): ##############   ROUND   17    #################### 
+0:8:0.000000010 DEBUG (0): ###################################################
+0:8:28.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 Although COUNT Measure: 25
+0:8:28.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 COUNT: 1
+.........................................
+0:8:28.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 Although COUNT Measure: 9
+0:8:28.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 COUNT: 1
+.........................................
+0:8:28.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 Although COUNT Measure: 25
+0:8:28.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 COUNT: 1
+.........................................
+0:8:28.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 Although COUNT Measure: 9
+0:8:28.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 COUNT: 1
+.........................................
+0:8:28.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 Although COUNT Measure: 71
+0:8:28.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 COUNT: 1
+.........................................
+0:8:28.721679697 DEBUG (1): Children Array of node 1
+0:8:28.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:8:28.721679697 DEBUG (1): ---| 2 | 40 | 1 |-----
+0:8:28.721679697 DEBUG (1): ---| 5 | 76 | 1 |-----
+0:8:28.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 Although COUNT Measure: 3
+0:8:28.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 COUNT: 3
+.........................................
+0:8:28.820312510 DEBUG (3): Children Array of node 3
+0:8:28.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:8:28.820312510 DEBUG (3): ---| 7 | 30 | 1 |-----
+0:8:28.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 Although COUNT Measure: 9
+0:8:28.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 COUNT: 2
+.........................................
+0:8:28.877929697 DEBUG (4): Children Array of node 4
+0:8:28.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:8:28.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:8:28.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:8:28.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 Although COUNT Measure: 39
+0:8:28.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 COUNT: 3
+.........................................
+0:8:29.338867197 DEBUG (0): Children Array of node 0
+0:8:29.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:8:29.338867197 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:8:29.338867197 DEBUG (0): ---| 3 | 30 | 2 |-----
+0:8:29.338867197 DEBUG (0): ---| 4 | 44 | 3 |-----
+0:8:29.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 Although COUNT Measure: 43
+0:8:29.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 COUNT: 9
+.........................................
+0:8:29.338867197 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 17: 9^^^^^^^^^^^
+
+
+0:8:30.000000010 DEBUG (0): ################################################### 
+0:8:30.000000010 DEBUG (0): ##############   ROUND   18    #################### 
+0:8:30.000000010 DEBUG (0): ###################################################
+0:8:58.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 Although COUNT Measure: 23
+0:8:58.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 COUNT: 1
+.........................................
+0:8:58.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 Although COUNT Measure: 9
+0:8:58.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 COUNT: 1
+.........................................
+0:8:58.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 Although COUNT Measure: 23
+0:8:58.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 COUNT: 1
+.........................................
+0:8:58.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 Although COUNT Measure: 9
+0:8:58.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 COUNT: 1
+.........................................
+0:8:58.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 Although COUNT Measure: 70
+0:8:58.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 COUNT: 1
+.........................................
+0:8:58.721679697 DEBUG (1): Children Array of node 1
+0:8:58.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:8:58.721679697 DEBUG (1): ---| 2 | 40 | 1 |-----
+0:8:58.721679697 DEBUG (1): ---| 5 | 76 | 1 |-----
+0:8:58.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 Although COUNT Measure: 3
+0:8:58.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 COUNT: 3
+.........................................
+0:8:58.820312510 DEBUG (3): Children Array of node 3
+0:8:58.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:8:58.820312510 DEBUG (3): ---| 7 | 30 | 1 |-----
+0:8:58.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 Although COUNT Measure: 9
+0:8:58.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 COUNT: 2
+.........................................
+0:8:58.877929697 DEBUG (4): Children Array of node 4
+0:8:58.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:8:58.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:8:58.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:8:58.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 Although COUNT Measure: 36
+0:8:58.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 COUNT: 3
+.........................................
+0:8:59.338867197 DEBUG (0): Children Array of node 0
+0:8:59.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:8:59.338867197 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:8:59.338867197 DEBUG (0): ---| 3 | 30 | 2 |-----
+0:8:59.338867197 DEBUG (0): ---| 4 | 44 | 3 |-----
+0:8:59.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 Although COUNT Measure: 39
+0:8:59.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 COUNT: 9
+.........................................
+0:8:59.338867197 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 18: 9^^^^^^^^^^^
+
+
+0:9:0.000000010 DEBUG (0): ################################################### 
+0:9:0.000000010 DEBUG (0): ##############   ROUND   19    #################### 
+0:9:0.000000010 DEBUG (0): ###################################################
+0:9:28.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 Although COUNT Measure: 23
+0:9:28.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 COUNT: 1
+.........................................
+0:9:28.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 Although COUNT Measure: 9
+0:9:28.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 COUNT: 1
+.........................................
+0:9:28.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 Although COUNT Measure: 23
+0:9:28.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 COUNT: 1
+.........................................
+0:9:28.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 Although COUNT Measure: 9
+0:9:28.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 COUNT: 1
+.........................................
+0:9:28.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 Although COUNT Measure: 63
+0:9:28.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 COUNT: 1
+.........................................
+0:9:28.721679697 DEBUG (1): Children Array of node 1
+0:9:28.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:9:28.721679697 DEBUG (1): ---| 2 | 40 | 1 |-----
+0:9:28.721679697 DEBUG (1): ---| 5 | 76 | 1 |-----
+0:9:28.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 Although COUNT Measure: 3
+0:9:28.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 COUNT: 3
+.........................................
+0:9:28.820312510 DEBUG (3): Children Array of node 3
+0:9:28.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:9:28.820312510 DEBUG (3): ---| 7 | 30 | 1 |-----
+0:9:28.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 Although COUNT Measure: 9
+0:9:28.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 COUNT: 2
+.........................................
+0:9:28.877929697 DEBUG (4): Children Array of node 4
+0:9:28.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:9:28.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:9:28.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:9:28.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 Although COUNT Measure: 33
+0:9:28.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 COUNT: 3
+.........................................
+0:9:29.338867197 DEBUG (0): Children Array of node 0
+0:9:29.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:9:29.338867197 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:9:29.338867197 DEBUG (0): ---| 3 | 30 | 2 |-----
+0:9:29.338867197 DEBUG (0): ---| 4 | 44 | 3 |-----
+0:9:29.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 Although COUNT Measure: 38
+0:9:29.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 COUNT: 9
+.........................................
+0:9:29.338867197 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 19: 9^^^^^^^^^^^
+
+
+0:9:30.000000010 DEBUG (0): ################################################### 
+0:9:30.000000010 DEBUG (0): ##############   ROUND   20    #################### 
+0:9:30.000000010 DEBUG (0): ###################################################
+0:9:58.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 Although COUNT Measure: 24
+0:9:58.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 COUNT: 1
+.........................................
+0:9:58.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 Although COUNT Measure: 9
+0:9:58.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 COUNT: 1
+.........................................
+0:9:58.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 Although COUNT Measure: 23
+0:9:58.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 COUNT: 1
+.........................................
+0:9:58.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 Although COUNT Measure: 9
+0:9:58.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 COUNT: 1
+.........................................
+0:9:58.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 Although COUNT Measure: 62
+0:9:58.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 COUNT: 1
+.........................................
+0:9:58.721679697 DEBUG (1): Children Array of node 1
+0:9:58.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:9:58.721679697 DEBUG (1): ---| 2 | 40 | 1 |-----
+0:9:58.721679697 DEBUG (1): ---| 5 | 76 | 1 |-----
+0:9:58.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 Although COUNT Measure: 3
+0:9:58.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 COUNT: 3
+.........................................
+0:9:58.820312510 DEBUG (3): Children Array of node 3
+0:9:58.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:9:58.820312510 DEBUG (3): ---| 7 | 30 | 1 |-----
+0:9:58.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 Although COUNT Measure: 9
+0:9:58.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 COUNT: 2
+.........................................
+0:9:58.877929697 DEBUG (4): Children Array of node 4
+0:9:58.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:9:58.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:9:58.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:9:58.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 Although COUNT Measure: 35
+0:9:58.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 COUNT: 3
+.........................................
+0:9:59.338867197 DEBUG (0): Children Array of node 0
+0:9:59.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:9:59.338867197 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:9:59.338867197 DEBUG (0): ---| 3 | 30 | 2 |-----
+0:9:59.338867197 DEBUG (0): ---| 4 | 44 | 3 |-----
+0:9:59.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 Although COUNT Measure: 38
+0:9:59.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 COUNT: 9
+.........................................
+0:9:59.338867197 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 20: 9^^^^^^^^^^^
+
+
+0:10:0.000000010 DEBUG (0): ################################################### 
+0:10:0.000000010 DEBUG (0): ##############   ROUND   21    #################### 
+0:10:0.000000010 DEBUG (0): ###################################################
+0:10:28.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 Although COUNT Measure: 24
+0:10:28.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 COUNT: 1
+.........................................
+0:10:28.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 Although COUNT Measure: 9
+0:10:28.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 COUNT: 1
+.........................................
+0:10:28.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 Although COUNT Measure: 22
+0:10:28.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 COUNT: 1
+.........................................
+0:10:28.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 Although COUNT Measure: 9
+0:10:28.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 COUNT: 1
+.........................................
+0:10:28.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 Although COUNT Measure: 63
+0:10:28.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 COUNT: 1
+.........................................
+0:10:28.721679697 DEBUG (1): Children Array of node 1
+0:10:28.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:10:28.721679697 DEBUG (1): ---| 2 | 40 | 1 |-----
+0:10:28.721679697 DEBUG (1): ---| 5 | 76 | 1 |-----
+0:10:28.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 Although COUNT Measure: 3
+0:10:28.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 COUNT: 3
+.........................................
+0:10:28.820312510 DEBUG (3): Children Array of node 3
+0:10:28.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:10:28.820312510 DEBUG (3): ---| 7 | 30 | 1 |-----
+0:10:28.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 Although COUNT Measure: 9
+0:10:28.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 COUNT: 2
+.........................................
+0:10:28.877929697 DEBUG (4): Children Array of node 4
+0:10:28.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:10:28.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:10:28.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:10:28.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 Although COUNT Measure: 36
+0:10:28.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 COUNT: 3
+.........................................
+0:10:29.338867197 DEBUG (0): Children Array of node 0
+0:10:29.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:10:29.338867197 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:10:29.338867197 DEBUG (0): ---| 3 | 30 | 2 |-----
+0:10:29.338867197 DEBUG (0): ---| 4 | 44 | 3 |-----
+0:10:29.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 Although COUNT Measure: 36
+0:10:29.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 COUNT: 9
+.........................................
+0:10:29.338867197 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 21: 9^^^^^^^^^^^
+
+
+0:10:30.000000010 DEBUG (0): ################################################### 
+0:10:30.000000010 DEBUG (0): ##############   ROUND   22    #################### 
+0:10:30.000000010 DEBUG (0): ###################################################
+0:10:58.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 Although COUNT Measure: 25
+0:10:58.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 COUNT: 1
+.........................................
+0:10:58.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 Although COUNT Measure: 9
+0:10:58.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 COUNT: 1
+.........................................
+0:10:58.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 Although COUNT Measure: 20
+0:10:58.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 COUNT: 1
+.........................................
+0:10:58.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 Although COUNT Measure: 9
+0:10:58.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 COUNT: 1
+.........................................
+0:10:58.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 Although COUNT Measure: 59
+0:10:58.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 COUNT: 1
+.........................................
+0:10:58.721679697 DEBUG (1): Children Array of node 1
+0:10:58.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:10:58.721679697 DEBUG (1): ---| 2 | 40 | 1 |-----
+0:10:58.721679697 DEBUG (1): ---| 5 | 76 | 1 |-----
+0:10:58.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 Although COUNT Measure: 3
+0:10:58.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 COUNT: 3
+.........................................
+0:10:58.820312510 DEBUG (3): Children Array of node 3
+0:10:58.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:10:58.820312510 DEBUG (3): ---| 7 | 30 | 1 |-----
+0:10:58.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 Although COUNT Measure: 9
+0:10:58.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 COUNT: 2
+.........................................
+0:10:58.877929697 DEBUG (4): Children Array of node 4
+0:10:58.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:10:58.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:10:58.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:10:58.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 Although COUNT Measure: 38
+0:10:58.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 COUNT: 3
+.........................................
+0:10:59.338867197 DEBUG (0): Children Array of node 0
+0:10:59.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:10:59.338867197 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:10:59.338867197 DEBUG (0): ---| 3 | 30 | 2 |-----
+0:10:59.338867197 DEBUG (0): ---| 4 | 44 | 3 |-----
+0:10:59.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 Although COUNT Measure: 33
+0:10:59.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 COUNT: 9
+.........................................
+0:10:59.338867197 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 22: 9^^^^^^^^^^^
+
+
+0:11:0.000000010 DEBUG (0): ################################################### 
+0:11:0.000000010 DEBUG (0): ##############   ROUND   23    #################### 
+0:11:0.000000010 DEBUG (0): ###################################################
+0:11:28.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 Although COUNT Measure: 24
+0:11:28.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 COUNT: 1
+.........................................
+0:11:28.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 Although COUNT Measure: 9
+0:11:28.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 COUNT: 1
+.........................................
+0:11:28.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 Although COUNT Measure: 18
+0:11:28.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 COUNT: 1
+.........................................
+0:11:28.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 Although COUNT Measure: 9
+0:11:28.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 COUNT: 1
+.........................................
+0:11:28.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 Although COUNT Measure: 63
+0:11:28.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 COUNT: 1
+.........................................
+0:11:28.721679697 DEBUG (1): Children Array of node 1
+0:11:28.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:11:28.721679697 DEBUG (1): ---| 2 | 40 | 1 |-----
+0:11:28.721679697 DEBUG (1): ---| 5 | 76 | 1 |-----
+0:11:28.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 Although COUNT Measure: 3
+0:11:28.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 COUNT: 3
+.........................................
+0:11:28.820312510 DEBUG (3): Children Array of node 3
+0:11:28.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:11:28.820312510 DEBUG (3): ---| 7 | 30 | 1 |-----
+0:11:28.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 Although COUNT Measure: 9
+0:11:28.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 COUNT: 2
+.........................................
+0:11:28.877929697 DEBUG (4): Children Array of node 4
+0:11:28.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:11:28.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:11:28.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:11:28.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 Although COUNT Measure: 40
+0:11:28.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 COUNT: 3
+.........................................
+0:11:29.338867197 DEBUG (0): Children Array of node 0
+0:11:29.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:11:29.338867197 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:11:29.338867197 DEBUG (0): ---| 3 | 30 | 2 |-----
+0:11:29.338867197 DEBUG (0): ---| 4 | 44 | 3 |-----
+0:11:29.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 Although COUNT Measure: 30
+0:11:29.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 COUNT: 9
+.........................................
+0:11:29.338867197 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 23: 9^^^^^^^^^^^
+
+
+0:11:30.000000010 DEBUG (0): ################################################### 
+0:11:30.000000010 DEBUG (0): ##############   ROUND   24    #################### 
+0:11:30.000000010 DEBUG (0): ###################################################
+0:11:58.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 Although COUNT Measure: 23
+0:11:58.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 COUNT: 1
+.........................................
+0:11:58.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 Although COUNT Measure: 9
+0:11:58.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 COUNT: 1
+.........................................
+0:11:58.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 Although COUNT Measure: 17
+0:11:58.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 COUNT: 1
+.........................................
+0:11:58.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 Although COUNT Measure: 9
+0:11:58.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 COUNT: 1
+.........................................
+0:11:58.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 Although COUNT Measure: 60
+0:11:58.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 COUNT: 1
+.........................................
+0:11:58.721679697 DEBUG (1): Children Array of node 1
+0:11:58.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:11:58.721679697 DEBUG (1): ---| 2 | 40 | 1 |-----
+0:11:58.721679697 DEBUG (1): ---| 5 | 76 | 1 |-----
+0:11:58.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 Although COUNT Measure: 3
+0:11:58.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 COUNT: 3
+.........................................
+0:11:58.820312510 DEBUG (3): Children Array of node 3
+0:11:58.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:11:58.820312510 DEBUG (3): ---| 7 | 30 | 1 |-----
+0:11:58.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 Although COUNT Measure: 9
+0:11:58.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 COUNT: 2
+.........................................
+0:11:58.877929697 DEBUG (4): Children Array of node 4
+0:11:58.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:11:58.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:11:58.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:11:58.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 Although COUNT Measure: 37
+0:11:58.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 COUNT: 3
+.........................................
+0:11:59.338867197 DEBUG (0): Children Array of node 0
+0:11:59.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:11:59.338867197 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:11:59.338867197 DEBUG (0): ---| 3 | 30 | 2 |-----
+0:11:59.338867197 DEBUG (0): ---| 4 | 44 | 3 |-----
+0:11:59.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 Although COUNT Measure: 30
+0:11:59.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 COUNT: 9
+.........................................
+0:11:59.338867197 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 24: 9^^^^^^^^^^^
+
+
+0:12:0.000000010 DEBUG (0): ################################################### 
+0:12:0.000000010 DEBUG (0): ##############   ROUND   25    #################### 
+0:12:0.000000010 DEBUG (0): ###################################################
+0:12:28.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 Although COUNT Measure: 21
+0:12:28.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 COUNT: 1
+.........................................
+0:12:28.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 Although COUNT Measure: 9
+0:12:28.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 COUNT: 1
+.........................................
+0:12:28.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 Although COUNT Measure: 16
+0:12:28.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 COUNT: 1
+.........................................
+0:12:28.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 Although COUNT Measure: 9
+0:12:28.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 COUNT: 1
+.........................................
+0:12:28.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 Although COUNT Measure: 63
+0:12:28.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 COUNT: 1
+.........................................
+0:12:28.721679697 DEBUG (1): Children Array of node 1
+0:12:28.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:12:28.721679697 DEBUG (1): ---| 2 | 40 | 1 |-----
+0:12:28.721679697 DEBUG (1): ---| 5 | 76 | 1 |-----
+0:12:28.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 Although COUNT Measure: 3
+0:12:28.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 COUNT: 3
+.........................................
+0:12:28.820312510 DEBUG (3): Children Array of node 3
+0:12:28.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:12:28.820312510 DEBUG (3): ---| 7 | 30 | 1 |-----
+0:12:28.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 Although COUNT Measure: 9
+0:12:28.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 COUNT: 2
+.........................................
+0:12:28.877929697 DEBUG (4): Children Array of node 4
+0:12:28.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:12:28.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:12:28.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:12:28.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 Although COUNT Measure: 36
+0:12:28.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 COUNT: 3
+.........................................
+0:12:29.338867197 DEBUG (0): Children Array of node 0
+0:12:29.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:12:29.338867197 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:12:29.338867197 DEBUG (0): ---| 3 | 30 | 2 |-----
+0:12:29.338867197 DEBUG (0): ---| 4 | 44 | 3 |-----
+0:12:29.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 Although COUNT Measure: 27
+0:12:29.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 COUNT: 9
+.........................................
+0:12:29.338867197 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 25: 9^^^^^^^^^^^
+
+
+0:12:30.000000010 DEBUG (0): ################################################### 
+0:12:30.000000010 DEBUG (0): ##############   ROUND   26    #################### 
+0:12:30.000000010 DEBUG (0): ###################################################
+0:12:58.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 Although COUNT Measure: 20
+0:12:58.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 COUNT: 1
+.........................................
+0:12:58.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 Although COUNT Measure: 9
+0:12:58.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 COUNT: 1
+.........................................
+0:12:58.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 Although COUNT Measure: 15
+0:12:58.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 COUNT: 1
+.........................................
+0:12:58.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 Although COUNT Measure: 9
+0:12:58.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 COUNT: 1
+.........................................
+0:12:58.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 Although COUNT Measure: 62
+0:12:58.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 COUNT: 1
+.........................................
+0:12:58.721679697 DEBUG (1): Children Array of node 1
+0:12:58.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:12:58.721679697 DEBUG (1): ---| 2 | 40 | 1 |-----
+0:12:58.721679697 DEBUG (1): ---| 5 | 76 | 1 |-----
+0:12:58.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 Although COUNT Measure: 3
+0:12:58.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 COUNT: 3
+.........................................
+0:12:58.820312510 DEBUG (3): Children Array of node 3
+0:12:58.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:12:58.820312510 DEBUG (3): ---| 7 | 30 | 1 |-----
+0:12:58.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 Although COUNT Measure: 9
+0:12:58.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 COUNT: 2
+.........................................
+0:12:58.877929697 DEBUG (4): Children Array of node 4
+0:12:58.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:12:58.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:12:58.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:12:58.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 Although COUNT Measure: 36
+0:12:58.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 COUNT: 3
+.........................................
+0:12:59.338867197 DEBUG (0): Children Array of node 0
+0:12:59.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:12:59.338867197 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:12:59.338867197 DEBUG (0): ---| 3 | 30 | 2 |-----
+0:12:59.338867197 DEBUG (0): ---| 4 | 44 | 3 |-----
+0:12:59.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 Although COUNT Measure: 25
+0:12:59.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 COUNT: 9
+.........................................
+0:12:59.338867197 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 26: 9^^^^^^^^^^^
+
+
+0:13:0.000000010 DEBUG (0): ################################################### 
+0:13:0.000000010 DEBUG (0): ##############   ROUND   27    #################### 
+0:13:0.000000010 DEBUG (0): ###################################################
+0:13:28.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 Although COUNT Measure: 20
+0:13:28.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 COUNT: 1
+.........................................
+0:13:28.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 Although COUNT Measure: 9
+0:13:28.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 COUNT: 1
+.........................................
+0:13:28.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 Although COUNT Measure: 15
+0:13:28.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 COUNT: 1
+.........................................
+0:13:28.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 Although COUNT Measure: 9
+0:13:28.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 COUNT: 1
+.........................................
+0:13:28.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 Although COUNT Measure: 57
+0:13:28.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 COUNT: 1
+.........................................
+0:13:28.721679697 DEBUG (1): Children Array of node 1
+0:13:28.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:13:28.721679697 DEBUG (1): ---| 2 | 40 | 1 |-----
+0:13:28.721679697 DEBUG (1): ---| 5 | 76 | 1 |-----
+0:13:28.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 Although COUNT Measure: 3
+0:13:28.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 COUNT: 3
+.........................................
+0:13:28.820312510 DEBUG (3): Children Array of node 3
+0:13:28.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:13:28.820312510 DEBUG (3): ---| 7 | 30 | 1 |-----
+0:13:28.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 Although COUNT Measure: 9
+0:13:28.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 COUNT: 2
+.........................................
+0:13:28.877929697 DEBUG (4): Children Array of node 4
+0:13:28.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:13:28.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:13:28.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:13:28.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 Although COUNT Measure: 37
+0:13:28.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 COUNT: 3
+.........................................
+0:13:29.338867197 DEBUG (0): Children Array of node 0
+0:13:29.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:13:29.338867197 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:13:29.338867197 DEBUG (0): ---| 3 | 30 | 2 |-----
+0:13:29.338867197 DEBUG (0): ---| 4 | 44 | 3 |-----
+0:13:29.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 Although COUNT Measure: 23
+0:13:29.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 COUNT: 9
+.........................................
+0:13:29.338867197 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 27: 9^^^^^^^^^^^
+
+
+0:13:30.000000010 DEBUG (0): ################################################### 
+0:13:30.000000010 DEBUG (0): ##############   ROUND   28    #################### 
+0:13:30.000000010 DEBUG (0): ###################################################
+0:13:58.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 Although COUNT Measure: 19
+0:13:58.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 COUNT: 1
+.........................................
+0:13:58.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 Although COUNT Measure: 9
+0:13:58.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 COUNT: 1
+.........................................
+0:13:58.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 Although COUNT Measure: 15
+0:13:58.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 COUNT: 1
+.........................................
+0:13:58.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 Although COUNT Measure: 9
+0:13:58.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 COUNT: 1
+.........................................
+0:13:58.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 Although COUNT Measure: 56
+0:13:58.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 COUNT: 1
+.........................................
+0:13:58.721679697 DEBUG (1): Children Array of node 1
+0:13:58.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:13:58.721679697 DEBUG (1): ---| 2 | 40 | 1 |-----
+0:13:58.721679697 DEBUG (1): ---| 5 | 76 | 1 |-----
+0:13:58.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 Although COUNT Measure: 3
+0:13:58.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 COUNT: 3
+.........................................
+0:13:58.820312510 DEBUG (3): Children Array of node 3
+0:13:58.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:13:58.820312510 DEBUG (3): ---| 7 | 30 | 1 |-----
+0:13:58.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 Although COUNT Measure: 9
+0:13:58.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 COUNT: 2
+.........................................
+0:13:58.877929697 DEBUG (4): Children Array of node 4
+0:13:58.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:13:58.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:13:58.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:13:58.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 Although COUNT Measure: 37
+0:13:58.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 COUNT: 3
+.........................................
+0:13:59.338867197 DEBUG (0): Children Array of node 0
+0:13:59.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:13:59.338867197 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:13:59.338867197 DEBUG (0): ---| 3 | 30 | 2 |-----
+0:13:59.338867197 DEBUG (0): ---| 4 | 44 | 3 |-----
+0:13:59.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 Although COUNT Measure: 21
+0:13:59.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 COUNT: 9
+.........................................
+0:13:59.338867197 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 28: 9^^^^^^^^^^^
+
+
+0:14:0.000000010 DEBUG (0): ################################################### 
+0:14:0.000000010 DEBUG (0): ##############   ROUND   29    #################### 
+0:14:0.000000010 DEBUG (0): ###################################################
+0:14:28.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 Although COUNT Measure: 18
+0:14:28.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 COUNT: 1
+.........................................
+0:14:28.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 Although COUNT Measure: 9
+0:14:28.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 COUNT: 1
+.........................................
+0:14:28.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 Although COUNT Measure: 15
+0:14:28.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 COUNT: 1
+.........................................
+0:14:28.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 Although COUNT Measure: 9
+0:14:28.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 COUNT: 1
+.........................................
+0:14:28.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 Although COUNT Measure: 58
+0:14:28.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 COUNT: 1
+.........................................
+0:14:28.721679697 DEBUG (1): Children Array of node 1
+0:14:28.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:14:28.721679697 DEBUG (1): ---| 2 | 40 | 1 |-----
+0:14:28.721679697 DEBUG (1): ---| 5 | 76 | 1 |-----
+0:14:28.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 Although COUNT Measure: 3
+0:14:28.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 COUNT: 3
+.........................................
+0:14:28.820312510 DEBUG (3): Children Array of node 3
+0:14:28.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:14:28.820312510 DEBUG (3): ---| 7 | 30 | 1 |-----
+0:14:28.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 Although COUNT Measure: 9
+0:14:28.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 COUNT: 2
+.........................................
+0:14:28.877929697 DEBUG (4): Children Array of node 4
+0:14:28.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:14:28.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:14:28.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:14:28.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 Although COUNT Measure: 38
+0:14:28.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 COUNT: 3
+.........................................
+0:14:29.338867197 DEBUG (0): Children Array of node 0
+0:14:29.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:14:29.338867197 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:14:29.338867197 DEBUG (0): ---| 3 | 30 | 2 |-----
+0:14:29.338867197 DEBUG (0): ---| 4 | 44 | 3 |-----
+0:14:29.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 Although COUNT Measure: 22
+0:14:29.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 COUNT: 9
+.........................................
+0:14:29.338867197 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 29: 9^^^^^^^^^^^
+
+
+0:14:30.000000010 DEBUG (0): ################################################### 
+0:14:30.000000010 DEBUG (0): ##############   ROUND   30    #################### 
+0:14:30.000000010 DEBUG (0): ###################################################
+0:14:58.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 Although COUNT Measure: 18
+0:14:58.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 COUNT: 1
+.........................................
+0:14:58.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 Although COUNT Measure: 9
+0:14:58.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 COUNT: 1
+.........................................
+0:14:58.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 Although COUNT Measure: 15
+0:14:58.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 COUNT: 1
+.........................................
+0:14:58.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 Although COUNT Measure: 9
+0:14:58.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 COUNT: 1
+.........................................
+0:14:58.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 Although COUNT Measure: 55
+0:14:58.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 COUNT: 1
+.........................................
+0:14:58.721679697 DEBUG (1): Children Array of node 1
+0:14:58.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:14:58.721679697 DEBUG (1): ---| 2 | 40 | 1 |-----
+0:14:58.721679697 DEBUG (1): ---| 5 | 76 | 1 |-----
+0:14:58.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 Although COUNT Measure: 3
+0:14:58.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 COUNT: 3
+.........................................
+0:14:58.820312510 DEBUG (3): Children Array of node 3
+0:14:58.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:14:58.820312510 DEBUG (3): ---| 7 | 30 | 1 |-----
+0:14:58.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 Although COUNT Measure: 9
+0:14:58.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 COUNT: 2
+.........................................
+0:14:58.877929697 DEBUG (4): Children Array of node 4
+0:14:58.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:14:58.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:14:58.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:14:58.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 Although COUNT Measure: 38
+0:14:58.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 COUNT: 3
+.........................................
+0:14:59.338867197 DEBUG (0): Children Array of node 0
+0:14:59.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:14:59.338867197 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:14:59.338867197 DEBUG (0): ---| 3 | 30 | 2 |-----
+0:14:59.338867197 DEBUG (0): ---| 4 | 44 | 3 |-----
+0:14:59.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 Although COUNT Measure: 21
+0:14:59.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 COUNT: 9
+.........................................
+0:14:59.338867197 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 30: 9^^^^^^^^^^^
+
+
+0:15:0.000000010 DEBUG (0): ################################################### 
+0:15:0.000000010 DEBUG (0): ##############   ROUND   31    #################### 
+0:15:0.000000010 DEBUG (0): ###################################################
+0:15:28.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 Although COUNT Measure: 18
+0:15:28.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 COUNT: 1
+.........................................
+0:15:28.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 Although COUNT Measure: 9
+0:15:28.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 COUNT: 1
+.........................................
+0:15:28.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 Although COUNT Measure: 15
+0:15:28.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 COUNT: 1
+.........................................
+0:15:28.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 Although COUNT Measure: 9
+0:15:28.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 COUNT: 1
+.........................................
+0:15:28.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 Although COUNT Measure: 52
+0:15:28.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 COUNT: 1
+.........................................
+0:15:28.721679697 DEBUG (1): Children Array of node 1
+0:15:28.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:15:28.721679697 DEBUG (1): ---| 2 | 40 | 1 |-----
+0:15:28.721679697 DEBUG (1): ---| 5 | 76 | 1 |-----
+0:15:28.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 Although COUNT Measure: 3
+0:15:28.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 COUNT: 3
+.........................................
+0:15:28.820312510 DEBUG (3): Children Array of node 3
+0:15:28.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:15:28.820312510 DEBUG (3): ---| 7 | 30 | 1 |-----
+0:15:28.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 Although COUNT Measure: 9
+0:15:28.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 COUNT: 2
+.........................................
+0:15:28.877929697 DEBUG (4): Children Array of node 4
+0:15:28.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:15:28.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:15:28.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:15:28.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 Although COUNT Measure: 36
+0:15:28.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 COUNT: 3
+.........................................
+0:15:29.338867197 DEBUG (0): Children Array of node 0
+0:15:29.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:15:29.338867197 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:15:29.338867197 DEBUG (0): ---| 3 | 30 | 2 |-----
+0:15:29.338867197 DEBUG (0): ---| 4 | 44 | 3 |-----
+0:15:29.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 Although COUNT Measure: 19
+0:15:29.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 COUNT: 9
+.........................................
+0:15:29.338867197 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 31: 9^^^^^^^^^^^
+
+
+0:15:30.000000010 DEBUG (0): ################################################### 
+0:15:30.000000010 DEBUG (0): ##############   ROUND   32    #################### 
+0:15:30.000000010 DEBUG (0): ###################################################
+0:15:58.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 Although COUNT Measure: 18
+0:15:58.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 COUNT: 1
+.........................................
+0:15:58.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 Although COUNT Measure: 9
+0:15:58.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 COUNT: 1
+.........................................
+0:15:58.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 Although COUNT Measure: 14
+0:15:58.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 COUNT: 1
+.........................................
+0:15:58.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 Although COUNT Measure: 9
+0:15:58.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 COUNT: 1
+.........................................
+0:15:58.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 Although COUNT Measure: 56
+0:15:58.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 COUNT: 1
+.........................................
+0:15:58.721679697 DEBUG (1): Children Array of node 1
+0:15:58.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:15:58.721679697 DEBUG (1): ---| 2 | 40 | 1 |-----
+0:15:58.721679697 DEBUG (1): ---| 5 | 76 | 1 |-----
+0:15:58.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 Although COUNT Measure: 3
+0:15:58.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 COUNT: 3
+.........................................
+0:15:58.820312510 DEBUG (3): Children Array of node 3
+0:15:58.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:15:58.820312510 DEBUG (3): ---| 7 | 30 | 1 |-----
+0:15:58.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 Although COUNT Measure: 9
+0:15:58.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 COUNT: 2
+.........................................
+0:15:58.877929697 DEBUG (4): Children Array of node 4
+0:15:58.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:15:58.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:15:58.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:15:58.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 Although COUNT Measure: 33
+0:15:58.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 COUNT: 3
+.........................................
+0:15:59.338867197 DEBUG (0): Children Array of node 0
+0:15:59.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:15:59.338867197 DEBUG (0): ---| 1 | 76 | 3 |-----
+0:15:59.338867197 DEBUG (0): ---| 3 | 30 | 2 |-----
+0:15:59.338867197 DEBUG (0): ---| 4 | 44 | 3 |-----
+0:15:59.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 Although COUNT Measure: 18
+0:15:59.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 COUNT: 9
+.........................................
+0:15:59.338867197 DEBUG (0): ^^^^^^^^^^^Result of COUNT for epoch 32: 9^^^^^^^^^^^
+
+
+0:16:0.000000010 DEBUG (0): ################################################### 
+0:16:0.000000010 DEBUG (0): ##############   ROUND   33    #################### 
+0:16:0.000000010 DEBUG (0): ###################################################
+0:16:0.000000010 DEBUG (0): Aggregation function changed to: 0 for period: 33
+0:16:28.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 MAX: 17
+0:16:28.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 MAX: 17
+.........................................
+0:16:28.375976573 DEBUG (7): | ****PASSED TiNA**** | Node: 7 Last MAX: 30 New MAX: 17
+0:16:28.375976573 DEBUG (7): |  ****SEND TiNA****  | Node: 7 MAX: 17
+0:16:28.375976573 DEBUG (7): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:16:28.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 MAX: 9
+0:16:28.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 MAX: 9
+.........................................
+0:16:28.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 MAX: 13
+0:16:28.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 MAX: 13
+.........................................
+0:16:28.448242197 DEBUG (2): | ****PASSED TiNA**** | Node: 2 Last MAX: 35 New MAX: 13
+0:16:28.448242197 DEBUG (2): |  ****SEND TiNA****  | Node: 2 MAX: 13
+0:16:28.448242197 DEBUG (2): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:16:28.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 MAX: 9
+0:16:28.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 MAX: 9
+.........................................
+0:16:28.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 MAX: 51
+0:16:28.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 MAX: 51
+.........................................
+0:16:28.570312510 DEBUG (5): | ****PASSED TiNA**** | Node: 5 Last MAX: 76 New MAX: 51
+0:16:28.570312510 DEBUG (5): |  ****SEND TiNA****  | Node: 5 MAX: 51
+0:16:28.570312510 DEBUG (5): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:16:28.721679697 DEBUG (1): Children Array of node 1
+0:16:28.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:16:28.721679697 DEBUG (1): ---| 2 | 13 | 1 |-----
+0:16:28.721679697 DEBUG (1): ---| 5 | 51 | 1 |-----
+0:16:28.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 MAX: 3
+0:16:28.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 MAX: 51
+.........................................
+0:16:28.721679697 DEBUG (1): | ****PASSED TiNA**** | Node: 1 Last MAX: 76 New MAX: 51
+0:16:28.721679697 DEBUG (1): |  ****SEND TiNA****  | Node: 1 MAX: 51
+0:16:28.721679697 DEBUG (1): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:16:28.820312510 DEBUG (3): Children Array of node 3
+0:16:28.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:16:28.820312510 DEBUG (3): ---| 7 | 17 | 1 |-----
+0:16:28.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 MAX: 9
+0:16:28.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 MAX: 17
+.........................................
+0:16:28.820312510 DEBUG (3): | ****PASSED TiNA**** | Node: 3 Last MAX: 30 New MAX: 17
+0:16:28.820312510 DEBUG (3): |  ****SEND TiNA****  | Node: 3 MAX: 17
+0:16:28.820312510 DEBUG (3): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:16:28.877929697 DEBUG (4): Children Array of node 4
+0:16:28.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:16:28.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:16:28.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:16:28.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 MAX: 30
+0:16:28.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 MAX: 30
+.........................................
+0:16:28.877929697 DEBUG (4): | ****PASSED TiNA**** | Node: 4 Last MAX: 44 New MAX: 30
+0:16:28.877929697 DEBUG (4): |  ****SEND TiNA****  | Node: 4 MAX: 30
+0:16:28.877929697 DEBUG (4): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:16:29.338867197 DEBUG (0): Children Array of node 0
+0:16:29.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:16:29.338867197 DEBUG (0): ---| 1 | 51 | 3 |-----
+0:16:29.338867197 DEBUG (0): ---| 3 | 17 | 2 |-----
+0:16:29.338867197 DEBUG (0): ---| 4 | 30 | 3 |-----
+0:16:29.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 MAX: 18
+0:16:29.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 MAX: 51
+.........................................
+0:16:29.338867197 DEBUG (0): | ****PASSED TiNA**** | Node: 0 Last MAX: 76 New MAX: 51
+0:16:29.338867197 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 33: 51^^^^^^^^^^^
+
+
+0:16:30.000000010 DEBUG (0): ################################################### 
+0:16:30.000000010 DEBUG (0): ##############   ROUND   34    #################### 
+0:16:30.000000010 DEBUG (0): ###################################################
+0:16:58.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 MAX: 16
+0:16:58.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 MAX: 16
+.........................................
+0:16:58.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 MAX: 9
+0:16:58.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 MAX: 9
+.........................................
+0:16:58.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 MAX: 13
+0:16:58.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 MAX: 13
+.........................................
+0:16:58.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 MAX: 9
+0:16:58.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 MAX: 9
+.........................................
+0:16:58.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 MAX: 46
+0:16:58.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 MAX: 46
+.........................................
+0:16:58.721679697 DEBUG (1): Children Array of node 1
+0:16:58.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:16:58.721679697 DEBUG (1): ---| 2 | 13 | 1 |-----
+0:16:58.721679697 DEBUG (1): ---| 5 | 51 | 1 |-----
+0:16:58.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 MAX: 3
+0:16:58.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 MAX: 51
+.........................................
+0:16:58.820312510 DEBUG (3): Children Array of node 3
+0:16:58.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:16:58.820312510 DEBUG (3): ---| 7 | 17 | 1 |-----
+0:16:58.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 MAX: 9
+0:16:58.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 MAX: 17
+.........................................
+0:16:58.877929697 DEBUG (4): Children Array of node 4
+0:16:58.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:16:58.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:16:58.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:16:58.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 MAX: 28
+0:16:58.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 MAX: 28
+.........................................
+0:16:59.338867197 DEBUG (0): Children Array of node 0
+0:16:59.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:16:59.338867197 DEBUG (0): ---| 1 | 51 | 3 |-----
+0:16:59.338867197 DEBUG (0): ---| 3 | 17 | 2 |-----
+0:16:59.338867197 DEBUG (0): ---| 4 | 30 | 3 |-----
+0:16:59.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 MAX: 18
+0:16:59.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 MAX: 51
+.........................................
+0:16:59.338867197 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 34: 51^^^^^^^^^^^
+
+
+0:17:0.000000010 DEBUG (0): ################################################### 
+0:17:0.000000010 DEBUG (0): ##############   ROUND   35    #################### 
+0:17:0.000000010 DEBUG (0): ###################################################
+0:17:28.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 MAX: 16
+0:17:28.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 MAX: 16
+.........................................
+0:17:28.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 MAX: 9
+0:17:28.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 MAX: 9
+.........................................
+0:17:28.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 MAX: 13
+0:17:28.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 MAX: 13
+.........................................
+0:17:28.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 MAX: 9
+0:17:28.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 MAX: 9
+.........................................
+0:17:28.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 MAX: 46
+0:17:28.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 MAX: 46
+.........................................
+0:17:28.721679697 DEBUG (1): Children Array of node 1
+0:17:28.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:17:28.721679697 DEBUG (1): ---| 2 | 13 | 1 |-----
+0:17:28.721679697 DEBUG (1): ---| 5 | 51 | 1 |-----
+0:17:28.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 MAX: 3
+0:17:28.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 MAX: 51
+.........................................
+0:17:28.820312510 DEBUG (3): Children Array of node 3
+0:17:28.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:17:28.820312510 DEBUG (3): ---| 7 | 17 | 1 |-----
+0:17:28.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 MAX: 9
+0:17:28.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 MAX: 17
+.........................................
+0:17:28.877929697 DEBUG (4): Children Array of node 4
+0:17:28.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:17:28.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:17:28.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:17:28.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 MAX: 26
+0:17:28.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 MAX: 26
+.........................................
+0:17:28.877929697 DEBUG (4): | ****PASSED TiNA**** | Node: 4 Last MAX: 30 New MAX: 26
+0:17:28.877929697 DEBUG (4): |  ****SEND TiNA****  | Node: 4 MAX: 26
+0:17:28.877929697 DEBUG (4): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:17:29.338867197 DEBUG (0): Children Array of node 0
+0:17:29.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:17:29.338867197 DEBUG (0): ---| 1 | 51 | 3 |-----
+0:17:29.338867197 DEBUG (0): ---| 3 | 17 | 2 |-----
+0:17:29.338867197 DEBUG (0): ---| 4 | 26 | 3 |-----
+0:17:29.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 MAX: 17
+0:17:29.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 MAX: 51
+.........................................
+0:17:29.338867197 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 35: 51^^^^^^^^^^^
+
+
+0:17:30.000000010 DEBUG (0): ################################################### 
+0:17:30.000000010 DEBUG (0): ##############   ROUND   36    #################### 
+0:17:30.000000010 DEBUG (0): ###################################################
+0:17:58.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 MAX: 15
+0:17:58.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 MAX: 15
+.........................................
+0:17:58.375976573 DEBUG (7): | ****PASSED TiNA**** | Node: 7 Last MAX: 17 New MAX: 15
+0:17:58.375976573 DEBUG (7): |  ****SEND TiNA****  | Node: 7 MAX: 15
+0:17:58.375976573 DEBUG (7): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:17:58.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 MAX: 9
+0:17:58.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 MAX: 9
+.........................................
+0:17:58.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 MAX: 13
+0:17:58.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 MAX: 13
+.........................................
+0:17:58.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 MAX: 9
+0:17:58.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 MAX: 9
+.........................................
+0:17:58.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 MAX: 47
+0:17:58.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 MAX: 47
+.........................................
+0:17:58.721679697 DEBUG (1): Children Array of node 1
+0:17:58.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:17:58.721679697 DEBUG (1): ---| 2 | 13 | 1 |-----
+0:17:58.721679697 DEBUG (1): ---| 5 | 51 | 1 |-----
+0:17:58.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 MAX: 3
+0:17:58.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 MAX: 51
+.........................................
+0:17:58.820312510 DEBUG (3): Children Array of node 3
+0:17:58.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:17:58.820312510 DEBUG (3): ---| 7 | 15 | 1 |-----
+0:17:58.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 MAX: 9
+0:17:58.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 MAX: 15
+.........................................
+0:17:58.820312510 DEBUG (3): | ****PASSED TiNA**** | Node: 3 Last MAX: 17 New MAX: 15
+0:17:58.820312510 DEBUG (3): |  ****SEND TiNA****  | Node: 3 MAX: 15
+0:17:58.820312510 DEBUG (3): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:17:58.877929697 DEBUG (4): Children Array of node 4
+0:17:58.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:17:58.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:17:58.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:17:58.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 MAX: 27
+0:17:58.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 MAX: 27
+.........................................
+0:17:59.338867197 DEBUG (0): Children Array of node 0
+0:17:59.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:17:59.338867197 DEBUG (0): ---| 1 | 51 | 3 |-----
+0:17:59.338867197 DEBUG (0): ---| 3 | 15 | 2 |-----
+0:17:59.338867197 DEBUG (0): ---| 4 | 26 | 3 |-----
+0:17:59.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 MAX: 16
+0:17:59.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 MAX: 51
+.........................................
+0:17:59.338867197 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 36: 51^^^^^^^^^^^
+
+
+0:18:0.000000010 DEBUG (0): ################################################### 
+0:18:0.000000010 DEBUG (0): ##############   ROUND   37    #################### 
+0:18:0.000000010 DEBUG (0): ###################################################
+0:18:28.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 MAX: 15
+0:18:28.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 MAX: 15
+.........................................
+0:18:28.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 MAX: 9
+0:18:28.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 MAX: 9
+.........................................
+0:18:28.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 MAX: 12
+0:18:28.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 MAX: 12
+.........................................
+0:18:28.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 MAX: 9
+0:18:28.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 MAX: 9
+.........................................
+0:18:28.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 MAX: 50
+0:18:28.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 MAX: 50
+.........................................
+0:18:28.721679697 DEBUG (1): Children Array of node 1
+0:18:28.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:18:28.721679697 DEBUG (1): ---| 2 | 13 | 1 |-----
+0:18:28.721679697 DEBUG (1): ---| 5 | 51 | 1 |-----
+0:18:28.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 MAX: 3
+0:18:28.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 MAX: 51
+.........................................
+0:18:28.820312510 DEBUG (3): Children Array of node 3
+0:18:28.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:18:28.820312510 DEBUG (3): ---| 7 | 15 | 1 |-----
+0:18:28.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 MAX: 9
+0:18:28.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 MAX: 15
+.........................................
+0:18:28.877929697 DEBUG (4): Children Array of node 4
+0:18:28.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:18:28.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:18:28.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:18:28.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 MAX: 28
+0:18:28.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 MAX: 28
+.........................................
+0:18:29.338867197 DEBUG (0): Children Array of node 0
+0:18:29.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:18:29.338867197 DEBUG (0): ---| 1 | 51 | 3 |-----
+0:18:29.338867197 DEBUG (0): ---| 3 | 15 | 2 |-----
+0:18:29.338867197 DEBUG (0): ---| 4 | 26 | 3 |-----
+0:18:29.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 MAX: 15
+0:18:29.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 MAX: 51
+.........................................
+0:18:29.338867197 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 37: 51^^^^^^^^^^^
+
+
+0:18:30.000000010 DEBUG (0): ################################################### 
+0:18:30.000000010 DEBUG (0): ##############   ROUND   38    #################### 
+0:18:30.000000010 DEBUG (0): ###################################################
+0:18:58.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 MAX: 14
+0:18:58.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 MAX: 14
+.........................................
+0:18:58.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 MAX: 9
+0:18:58.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 MAX: 9
+.........................................
+0:18:58.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 MAX: 11
+0:18:58.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 MAX: 11
+.........................................
+0:18:58.448242197 DEBUG (2): | ****PASSED TiNA**** | Node: 2 Last MAX: 13 New MAX: 11
+0:18:58.448242197 DEBUG (2): |  ****SEND TiNA****  | Node: 2 MAX: 11
+0:18:58.448242197 DEBUG (2): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:18:58.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 MAX: 9
+0:18:58.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 MAX: 9
+.........................................
+0:18:58.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 MAX: 48
+0:18:58.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 MAX: 48
+.........................................
+0:18:58.721679697 DEBUG (1): Children Array of node 1
+0:18:58.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:18:58.721679697 DEBUG (1): ---| 2 | 11 | 1 |-----
+0:18:58.721679697 DEBUG (1): ---| 5 | 51 | 1 |-----
+0:18:58.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 MAX: 3
+0:18:58.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 MAX: 51
+.........................................
+0:18:58.820312510 DEBUG (3): Children Array of node 3
+0:18:58.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:18:58.820312510 DEBUG (3): ---| 7 | 15 | 1 |-----
+0:18:58.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 MAX: 9
+0:18:58.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 MAX: 15
+.........................................
+0:18:58.877929697 DEBUG (4): Children Array of node 4
+0:18:58.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:18:58.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:18:58.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:18:58.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 MAX: 29
+0:18:58.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 MAX: 29
+.........................................
+0:18:58.877929697 DEBUG (4): | ****PASSED TiNA**** | Node: 4 Last MAX: 26 New MAX: 29
+0:18:58.877929697 DEBUG (4): |  ****SEND TiNA****  | Node: 4 MAX: 29
+0:18:58.877929697 DEBUG (4): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:18:59.338867197 DEBUG (0): Children Array of node 0
+0:18:59.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:18:59.338867197 DEBUG (0): ---| 1 | 51 | 3 |-----
+0:18:59.338867197 DEBUG (0): ---| 3 | 15 | 2 |-----
+0:18:59.338867197 DEBUG (0): ---| 4 | 29 | 3 |-----
+0:18:59.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 MAX: 14
+0:18:59.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 MAX: 51
+.........................................
+0:18:59.338867197 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 38: 51^^^^^^^^^^^
+
+
+0:19:0.000000010 DEBUG (0): ################################################### 
+0:19:0.000000010 DEBUG (0): ##############   ROUND   39    #################### 
+0:19:0.000000010 DEBUG (0): ###################################################
+0:19:28.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 MAX: 14
+0:19:28.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 MAX: 14
+.........................................
+0:19:28.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 MAX: 9
+0:19:28.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 MAX: 9
+.........................................
+0:19:28.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 MAX: 11
+0:19:28.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 MAX: 11
+.........................................
+0:19:28.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 MAX: 9
+0:19:28.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 MAX: 9
+.........................................
+0:19:28.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 MAX: 44
+0:19:28.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 MAX: 44
+.........................................
+0:19:28.570312510 DEBUG (5): | ****PASSED TiNA**** | Node: 5 Last MAX: 51 New MAX: 44
+0:19:28.570312510 DEBUG (5): |  ****SEND TiNA****  | Node: 5 MAX: 44
+0:19:28.570312510 DEBUG (5): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:19:28.721679697 DEBUG (1): Children Array of node 1
+0:19:28.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:19:28.721679697 DEBUG (1): ---| 2 | 11 | 1 |-----
+0:19:28.721679697 DEBUG (1): ---| 5 | 51 | 1 |-----
+0:19:28.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 MAX: 3
+0:19:28.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 MAX: 51
+.........................................
+0:19:28.820312510 DEBUG (3): Children Array of node 3
+0:19:28.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:19:28.820312510 DEBUG (3): ---| 7 | 15 | 1 |-----
+0:19:28.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 MAX: 9
+0:19:28.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 MAX: 15
+.........................................
+0:19:28.877929697 DEBUG (4): Children Array of node 4
+0:19:28.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:19:28.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:19:28.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:19:28.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 MAX: 28
+0:19:28.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 MAX: 28
+.........................................
+0:19:29.338867197 DEBUG (0): Children Array of node 0
+0:19:29.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:19:29.338867197 DEBUG (0): ---| 1 | 51 | 3 |-----
+0:19:29.338867197 DEBUG (0): ---| 3 | 15 | 2 |-----
+0:19:29.338867197 DEBUG (0): ---| 4 | 29 | 3 |-----
+0:19:29.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 MAX: 13
+0:19:29.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 MAX: 51
+.........................................
+0:19:29.338867197 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 39: 51^^^^^^^^^^^
+
+
+0:19:30.000000010 DEBUG (0): ################################################### 
+0:19:30.000000010 DEBUG (0): ##############   ROUND   40    #################### 
+0:19:30.000000010 DEBUG (0): ###################################################
+0:19:58.375976573 DEBUG (7): | Before agg. / No TiNA | Node: 7 Depth: 2 MAX: 13
+0:19:58.375976573 DEBUG (7): | After agg. / No TiNA  | Node: 7 Depth: 2 MAX: 13
+.........................................
+0:19:58.375976573 DEBUG (7): | ****PASSED TiNA**** | Node: 7 Last MAX: 15 New MAX: 13
+0:19:58.375976573 DEBUG (7): |  ****SEND TiNA****  | Node: 7 MAX: 13
+0:19:58.375976573 DEBUG (7): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:19:58.385742198 DEBUG (8): | Before agg. / No TiNA | Node: 8 Depth: 2 MAX: 9
+0:19:58.385742198 DEBUG (8): | After agg. / No TiNA  | Node: 8 Depth: 2 MAX: 9
+.........................................
+0:19:58.448242197 DEBUG (2): | Before agg. / No TiNA | Node: 2 Depth: 2 MAX: 10
+0:19:58.448242197 DEBUG (2): | After agg. / No TiNA  | Node: 2 Depth: 2 MAX: 10
+.........................................
+0:19:58.533203135 DEBUG (6): | Before agg. / No TiNA | Node: 6 Depth: 2 MAX: 9
+0:19:58.533203135 DEBUG (6): | After agg. / No TiNA  | Node: 6 Depth: 2 MAX: 9
+.........................................
+0:19:58.570312510 DEBUG (5): | Before agg. / No TiNA | Node: 5 Depth: 2 MAX: 42
+0:19:58.570312510 DEBUG (5): | After agg. / No TiNA  | Node: 5 Depth: 2 MAX: 42
+.........................................
+0:19:58.721679697 DEBUG (1): Children Array of node 1
+0:19:58.721679697 DEBUG (1): ---Child-MAX-COUNT---
+0:19:58.721679697 DEBUG (1): ---| 2 | 11 | 1 |-----
+0:19:58.721679697 DEBUG (1): ---| 5 | 51 | 1 |-----
+0:19:58.721679697 DEBUG (1): | Before agg. / No TiNA | Node: 1 Depth: 1 MAX: 3
+0:19:58.721679697 DEBUG (1): | After agg. / No TiNA  | Node: 1 Depth: 1 MAX: 51
+.........................................
+0:19:58.820312510 DEBUG (3): Children Array of node 3
+0:19:58.820312510 DEBUG (3): ---Child-MAX-COUNT---
+0:19:58.820312510 DEBUG (3): ---| 7 | 13 | 1 |-----
+0:19:58.820312510 DEBUG (3): | Before agg. / No TiNA | Node: 3 Depth: 1 MAX: 9
+0:19:58.820312510 DEBUG (3): | After agg. / No TiNA  | Node: 3 Depth: 1 MAX: 13
+.........................................
+0:19:58.820312510 DEBUG (3): | ****PASSED TiNA**** | Node: 3 Last MAX: 15 New MAX: 13
+0:19:58.820312510 DEBUG (3): |  ****SEND TiNA****  | Node: 3 MAX: 13
+0:19:58.820312510 DEBUG (3): |  ****SEND TiNA****  | Sending ONE MEAS
+*****************************************
+0:19:58.877929697 DEBUG (4): Children Array of node 4
+0:19:58.877929697 DEBUG (4): ---Child-MAX-COUNT---
+0:19:58.877929697 DEBUG (4): ---| 8 | 10 | 1 |-----
+0:19:58.877929697 DEBUG (4): ---| 6 | 10 | 1 |-----
+0:19:58.877929697 DEBUG (4): | Before agg. / No TiNA | Node: 4 Depth: 1 MAX: 29
+0:19:58.877929697 DEBUG (4): | After agg. / No TiNA  | Node: 4 Depth: 1 MAX: 29
+.........................................
+0:19:59.338867197 DEBUG (0): Children Array of node 0
+0:19:59.338867197 DEBUG (0): ---Child-MAX-COUNT---
+0:19:59.338867197 DEBUG (0): ---| 1 | 51 | 3 |-----
+0:19:59.338867197 DEBUG (0): ---| 3 | 13 | 2 |-----
+0:19:59.338867197 DEBUG (0): ---| 4 | 29 | 3 |-----
+0:19:59.338867197 DEBUG (0): | Before agg. / No TiNA | Node: 0 Depth: 0 MAX: 12
+0:19:59.338867197 DEBUG (0): | After agg. / No TiNA  | Node: 0 Depth: 0 MAX: 51
+.........................................
+0:19:59.338867197 DEBUG (0): ^^^^^^^^^^^Result of MAX for epoch 40: 51^^^^^^^^^^^
+
+

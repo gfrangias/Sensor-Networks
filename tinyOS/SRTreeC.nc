@@ -267,13 +267,13 @@ implementation
 			//propability for new aggregation
 			//if p<5 go to the next aggregation if p>5 and p<10 jump two aggregations
 			//also initialize variables
-			if(p<=5)
+			if(p<=4)
 			{
 				agg_function = (agg_function + 1) % 3;
 				agg_change = TRUE; 
 				sendAggChange = TRUE;
 			}
-			else if(p>5 && p<=10)
+			else if(p>4 && p<=9)
 			{
 				agg_function = (agg_function + 2) % 3;
 				agg_change = TRUE;
@@ -424,7 +424,7 @@ implementation
 			//Extract the tct and aggregation function from parameters
 			tct = mpkt->parameters >> 4;
 			agg_function = mpkt->parameters & 0x0f;
-			dbg("TCT", "TCT is %u\n",tct);
+			//dbg("TCT", "TCT is %u\n",tct);
 			dbg("aggregation_function", "Aggregation is %u\n",agg_function);
 			if ( (parentID<0)||(parentID>=65535))
 			{
@@ -701,9 +701,29 @@ implementation
 			}
 			dbg("Measures", "| After agg. / No TiNA  | Node: %d Depth: %d MAX: %d\n.........................................\n", TOS_NODE_ID, curdepth, last_max);
 		}
+
 		//agg_function = COUNT
 		if(count) 
 		{	
+			// Measurements should change for each node even if only COUNT is selected
+			if(agg_function!=2)
+			{
+				// If it's the first epoch and there is no measurement
+				if(meas_max==0){
+					//dbg("Measures", "Measurement was 0 \n");
+					meas_max = (rand() % 80) + 1;
+				// If a new measurement is needed
+				}else{
+					//dbg("Measures", "Old Measurement: %d\n", meas);
+					if((meas_max / 10)>0){
+						min_val = meas_max - (meas_max / 10);
+						max_val = meas_max + (meas_max / 10);
+						meas_max =  min_val + (rand() % (max_val-min_val));
+					}
+				}
+			dbg("Measures", "| Before agg. / No TiNA | Node: %d Depth: %d Although COUNT Measure: %d\n", TOS_NODE_ID, curdepth, meas_max);
+			}
+
 			last_count = 1;
 			//Calculate COUNT
 			for(i=0; i<MAX_CHILDREN; i++)
